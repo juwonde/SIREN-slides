@@ -20,7 +20,7 @@
   <text x="280" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">eMMC</text>
   <text x="280" y="390.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">64 GiB</text>
   <rect x="390" y="320" width="170" height="100" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="475" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PDU (P60)</text>
+  <text x="475" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Power unit</text>
   <text x="475" y="390.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">5 V supply</text>
   <line x1="85" y1="320" x2="85" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="85" y1="300" x2="130" y2="300" stroke="#4a4f5c" stroke-width="2"/>
@@ -28,16 +28,14 @@
   <line x1="475" y1="320" x2="475" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="475" y1="300" x2="430" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <rect x="0" y="40" width="110" height="90" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="55" y="78.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">OBC</text>
-  <text x="55" y="105.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">A3200</text>
+  <text x="55" y="92.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">OBC</text>
   <line x1="110" y1="85" x2="136" y2="85" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="148,85 136.0,78.4 136.0,91.6" fill="#4a4f5c"/>
   <line x1="148" y1="100" x2="122" y2="100" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="110,100 122.0,106.6 122.0,93.4" fill="#4a4f5c"/>
   <text x="55" y="156" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">CAN</text>
   <rect x="450" y="40" width="110" height="90" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="505" y="78.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">S-band</text>
-  <text x="505" y="105.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">SRS-4</text>
+  <text x="505" y="92.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">S-band</text>
   <line x1="412" y1="85" x2="436" y2="85" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="448,85 436.0,78.4 436.0,91.6" fill="#4a4f5c"/>
   <text x="505" y="156" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">RS-422</text>

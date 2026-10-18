@@ -1,4 +1,4 @@
-# 작업 계획 (alpha-5, 2026-10-18)
+# 작업 계획 (alpha-6, 2026-10-18)
 
 ## 0. 고정 조건
 
@@ -34,6 +34,15 @@
 29. SVG 관련 작업은 묻지 않고 진행
 30. (alpha-5) 모든 모델: **Baseline 모델과 성능을 표로** 비교
 31. (alpha-5) **Thank you 슬라이드 별도**
+32. (alpha-6) Introduction **빌드업**: 문제 → 기존 탑재 AI와 빈 곳 → 접근 → 플랫폼
+33. (alpha-6) 그림에 **제품명 쓰지 않음** ("SIREN AI Processing Unit", OBC, S-band transceiver)
+34. (alpha-6) 배치 슬라이드와 배선 슬라이드 제목에 차이 표시 (Placement / Routing)
+35. (alpha-6) Future works: 쉬운 표현, "Flux-field based" + Ref. VERB-3D (Subbotin & Shprits, 2009)
+36. (alpha-6) **FINN 설명**: GPU = temporal (SIMT, 공유 SM) vs FINN = streaming (계층마다 블록) vs 공유 엔진 = single computation engine (Sze 2017, Venieris 2018, Umuroglu 2017)
+37. (alpha-6) Fault management를 Appendix에서 **본문**으로
+38. (alpha-6) 우주 환경 그림은 **자기권 모양만** (500 km SSO 궤도가 방사선대 안쪽으로 보이지 않게)
+39. (alpha-6) 마지막 소속: **School of Space Research, Kyung Hee University** (우주탐사학과 공식 영문명)
+40. (alpha-6) **TE0715 보드로 실험**한다는 내용을 본문에 표시
 
 ## 1. 발표 정보 (초록집 기준)
 
@@ -41,36 +50,34 @@
 - II-2-7, 10월 27일(화) 17:25 (날짜는 초록집 순서로 추정)
 - 저자: **Woncheol Joo**¹ (발표자, 확인됨), Subin Kim¹, Jeongin Yeo¹, Nayeong Hwang¹, Yangha Ju¹, Jiwon Lee¹, Young-Joo Song¹ ², Yong-Jae Moon¹ ²
 
-## 2. 발표 흐름 (본편 22장, 마지막 장은 Thank you)
+## 2. 발표 흐름 (본편 25장: 제목 + 내용 23장 + Thank you)
 
-| # | 구간 | 제목 (EN) | 시간 |
-|---|---|---|---|
-| 1 | Title | Onboard AI Payload of PADO-SAT: SIREN | 0:10 |
-| 2 | Introduction | Why onboard AI on a CubeSat | 0:35 |
-| 3 | Introduction | PADO-SAT and SIREN | 0:35 |
-| 4 | Introduction | SIREN processing unit and requirements | 0:30 |
-| 5 | Background · Space environment | Charged particles around a LEO CubeSat | 0:35 |
-| 6 | Background · Spacecraft health | Anomaly detection in housekeeping telemetry | 0:30 |
-| 7 | Background · Science data | Predictive compression of particle counts | 0:30 |
-| 8 | Background · Deep learning | Time-series models in SIREN (ModernTCN, GRU) | 0:35 |
-| 9 | Background · Hardware | Integer inference on an FPGA | 0:35 |
-| 10 | Background · Method | How SIREN is built | 0:30 |
-| 11 | Results · Architecture | SIREN hardware on one chip (mermaid 구조도 요약) | 0:30 |
-| 12 | Results · PD | PD: high-energy particle risk detection (GIF, 정확도 A/B/C) | 0:30 |
-| 13 | Results · PD | PD on the FPGA | 0:25 |
-| 14 | Results · BUS | BUS: equipment anomaly detection (GIF, 정확도 A/B/C) | 0:30 |
-| 15 | Results · BUS | BUS on the FPGA | 0:25 |
-| 16 | Results · GRU | GRU: predictive compression of CREST data (이미지, A/B/C) | 0:30 |
-| 17 | Results · GRU | GRU on the FPGA | 0:25 |
-| 18 | Results · Placement | Where each block sits on the chip (그리드 배치도) | 0:25 |
-| 19 | Results · System | One bitstream, three models (배선도) | 0:30 |
-| 20 | Future works | Toward the final version (Digital Twin I/II) | 0:30 |
-| 21 | Summary | SIREN at a glance | 0:10 |
-| 22 | Closing | Thank you (로고, 발표자) | — |
+| # | 구간 | 제목 (EN) |
+|---|---|---|
+| 1 | Title | Onboard AI Payload of PADO-SAT: SIREN |
+| 2 | Introduction · Problem | CubeSat data reach the ground late |
+| 3 | Introduction · Prior work | Onboard AI so far, and what is missing |
+| 4 | Introduction · Approach | PADO-SAT and SIREN |
+| 5 | Introduction · Platform | SIREN AI Processing Unit and requirements |
+| 6 | Background · Space environment | Charged particles around a LEO CubeSat (자기권 그림) |
+| 7 | Background · Spacecraft health | Anomaly detection in housekeeping telemetry |
+| 8 | Background · Science data | Predictive compression of particle counts |
+| 9 | Background · Deep learning | Time-series models in SIREN |
+| 10 | Background · Hardware | Quantization: from float to integer |
+| 11 | Background · Hardware | FINN: one hardware block per layer |
+| 12 | Background · Method | How SIREN is built |
+| 13 | Results · Architecture | SIREN hardware on one chip |
+| 14–19 | Results · PD / BUS / GRU | 모델 + Baseline 표 / FPGA 구현 (DNN 6장) |
+| 20 | Results · Placement | Placement: where each block sits |
+| 21 | Results · Routing | Routing: the real wires of one bitstream |
+| 22 | Results · Reliability | Fault management: detect, recover, report |
+| 23 | Future works | Toward the final version |
+| 24 | Summary | SIREN at a glance |
+| 25 | Closing | Thank you |
 
-- 합계 약 10:15. 배정 15분 안에서 질의응답 약 4–5분
-- 시간 초과 시 감축 순서: 4번을 19번 상태표에 합침 → 6·7번을 한 장으로 → 15번을 14번에 합침(DNN 5장)
-- Appendix: Abstract · Why an FPGA SoC · Correctness · Fault management · Resources/weight update · Abbreviations
+- 예상 시간 약 11분 (내용 23장 × 약 28초). 10분 목표보다 약 1분 김
+- 줄이는 후보: 7·8번 합치기(−30초), 20·21번 합치기(−25초), 10번을 11·12번에 흡수(−30초)
+- Appendix: Abstract · Why an FPGA SoC · Correctness · Resources/weight update · Abbreviations
 
 ## 3. 친절도 장치
 
@@ -123,8 +130,9 @@
 | alpha-2 | 이론 보강(본편 20장), 구조도·배선도·모델 GIF, 진행 표시, Cambria | 10/18 |
 | alpha-3 | 아래쪽 정리 박스 제거, 발표자 확인 | 10/18 |
 | alpha-4 | 그리드 배치도 슬라이드, 바닥글 PADO/SIREN | 10/18 |
-| **alpha-5** | **모델별 Baseline 표, Thank you 분리** | **10/18** |
-| alpha-6 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성 | 검토 후 |
+| alpha-5 | 모델별 Baseline 표, Thank you 분리 | 10/18 |
+| **alpha-6** | **Introduction 빌드업, FINN·양자화 슬라이드, FM 본문, 자기권 그림, 제품명 제거, 공식 소속명** | **10/18** |
+| alpha-7 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 시간 맞추기 | 검토 후 |
 | beta-1 | 전력 측정 반영, 정확도 판 확정 | 측정 후 |
 | v1.0 | 리허설 반영 최종판 | 10/26 이전 |
 

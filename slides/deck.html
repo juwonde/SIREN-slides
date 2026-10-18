@@ -43,37 +43,64 @@
   <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>preliminary results · power measurement pending</li></ul></aside>
 </section>
 
-<!-- ============ 2. Why onboard AI ============ -->
+<!-- ============ 2. Problem ============ -->
 <section class="slide" data-sec="intro">
-  <div class="part">Introduction</div>
-  <h2>Why onboard AI on a CubeSat</h2>
-  <div class="cols" style="grid-template-columns: 1fr 470px;">
+  <div class="part">Introduction · Problem</div>
+  <h2>CubeSat data reach the ground late</h2>
+  <div class="cols" style="grid-template-columns: 1fr 560px;">
     <div class="stack">
       <ul>
-        <li>LEO charged-particle hazard
-          <ul><li>radiation belts · SAA · SEP events</li></ul></li>
-        <li>Downlink bottleneck
-          <ul><li>CREST science data: up to <b class="k">50 MB/day</b></li></ul></li>
-        <li>Onboard AI: <b class="k">information, not raw data</b></li>
+        <li>CREST science data: up to <b class="k">50 MB/day</b></li>
+        <li>Ground contact: about 3 of 15 orbits per day</li>
+        <li>Raw data wait on board for the next pass</li>
+        <li>Particle risk and equipment faults
+          <ul><li>seen on the ground <b class="todo">hours later</b></li></ul></li>
+        <li>Need: interpretation <b class="k">on board</b>, small results to send</li>
       </ul>
-      <table>
-        <tr><th>Onboard AI mission</th><th>Processor</th></tr>
-        <tr><td>Φ-Sat-1</td><td>Myriad 2 VPU</td></tr>
-        <tr><td>CogniSAT-6</td><td>Myriad X VPU</td></tr>
-        <tr><td>BlueBON</td><td>Jetson Orin NX</td></tr>
-        <tr><td><b class="k">SIREN</b></td><td><b class="k">Zynq-7000 FPGA SoC · ≤ 5 W</b></td></tr>
-      </table>
-      <div class="gloss">SAA: South Atlantic Anomaly · SEP: solar energetic particle</div>
+      <div class="cap">Contact and data volume: PADO-SAT preliminary design</div>
     </div>
-    <div class="fig" data-svg="F01-onboard-ai.svg"></div>
+    <div class="fig" data-svg="F17-ground-vs-onboard.svg"></div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>particle hazard changes fast · ground contact short</li><li>prior missions: VPU / GPU · SIREN: FPGA SoC under 5 W</li></ul></aside>
+  <aside class="notes"><ul><li>science CubeSat: more data than the link can carry</li><li>ground-only processing → late risk awareness</li></ul></aside>
+</section>
+
+<!-- ============ 3. Prior onboard AI ============ -->
+<section class="slide" data-sec="intro">
+  <div class="part">Introduction · Prior work</div>
+  <h2>Onboard AI so far, and what is missing</h2>
+  <div class="cols" style="grid-template-columns: 1fr 1fr;">
+    <div class="stack">
+      <table>
+        <tr><th>Mission</th><th>Processor</th><th>Data</th></tr>
+        <tr><td>OPS-SAT (2019)</td><td>FPGA SoC</td><td>images</td></tr>
+        <tr><td>Φ-Sat-1 (2020)</td><td>Myriad 2 VPU</td><td>images</td></tr>
+        <tr><td>CogniSAT-6 (2024)</td><td>Myriad X VPU</td><td>images</td></tr>
+        <tr><td>BlueBON</td><td>Jetson Orin NX</td><td>edge AI</td></tr>
+      </table>
+      <div class="cap">VPU: vision processing unit · year: launch</div>
+    </div>
+    <div class="stack">
+      <h3>Gap</h3>
+      <ul>
+        <li>Mostly <b>images</b> on VPU / GPU</li>
+        <li>Few <b class="k">time-series</b> models
+          <ul><li>space environment · spacecraft health</li></ul></li>
+        <li>Few <b class="k">≤ 5 W FPGA</b> designs with outputs checked <b class="k">bit for bit</b></li>
+      </ul>
+      <h3 style="margin-top: 18px;">SIREN</h3>
+      <ul>
+        <li>3 time-series DNNs on one FPGA SoC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>image tasks dominate prior missions</li><li>SIREN: time-series, low power, verifiable</li></ul></aside>
 </section>
 
 <!-- ============ 3. PADO-SAT and SIREN ============ -->
 <section class="slide" data-sec="intro">
-  <div class="part">Introduction</div>
+  <div class="part">Introduction · Approach</div>
   <h2>PADO-SAT and SIREN</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
     <ul>
@@ -85,7 +112,7 @@
         <ul><li><b>PD</b>: particle risk detection</li>
             <li><b>BUS</b>: equipment anomaly detection</li>
             <li><b>GRU</b>: CREST data compression</li></ul></li>
-      <li>Success: ≥ 1 pre-trained → ≥ 3 fine-tuned results</li>
+      <li>Success: ≥ 1 pre-trained → ≥ 3 fine-tuned results in orbit</li>
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
@@ -95,8 +122,8 @@
 
 <!-- ============ 4. SIREN unit and requirements ============ -->
 <section class="slide" data-sec="intro">
-  <div class="part">Introduction</div>
-  <h2>SIREN processing unit and requirements</h2>
+  <div class="part">Introduction · Platform</div>
+  <h2>SIREN AI Processing Unit and requirements</h2>
   <div class="cols" style="grid-template-columns: 560px 1fr;">
     <div class="fig" data-svg="F06-siren-unit.svg"></div>
     <div class="stack">
@@ -110,7 +137,7 @@
       </table>
       <ul>
         <li>Models run <b>one at a time</b></li>
-        <li>Lab testbed: TE0715, same XC7Z030</li>
+        <li><b class="k">Testbed</b>: TE0715 board, same XC7Z030</li>
       </ul>
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>
     </div>
@@ -226,30 +253,55 @@
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
 </section>
 
-<!-- ============ 9. Theory: integer inference ============ -->
+<!-- ============ 10. Theory: quantization ============ -->
 <section class="slide" data-sec="bg">
   <div class="part">Background · Hardware</div>
-  <h2>Integer inference on an FPGA</h2>
-  <div class="cols">
+  <h2>Quantization: from float to integer</h2>
+  <div class="cols" style="grid-template-columns: 1fr 548px;">
     <div class="stack">
-      <h3>Quantization</h3>
       <ul>
-        <li>real value ≈ scale × integer</li>
+        <li>Real value ≈ scale × integer</li>
         <li><b class="k">QAT</b>: quantizers inside training</li>
         <li>8-bit weights · 8/16-bit activations
           <ul><li><b class="k">mixed precision</b> per layer</li></ul></li>
-        <li>exact integer MAC, wide accumulator</li>
-        <li>integer reference = <b class="k">bit-exact oracle</b></li>
+        <li>Exact integer MAC, wide accumulator</li>
+        <li>Integer reference = <b class="k">bit-exact oracle</b></li>
       </ul>
-      <div class="gloss">QAT: quantization-aware training · MAC: multiply-accumulate<br>FINN: open-source dataflow compiler (AMD Research)</div>
+      <div class="gloss">QAT: quantization-aware training · MAC: multiply-accumulate</div>
     </div>
     <div class="stack">
-      <div class="fig" data-svg="F05-hardware-styles.svg"></div>
+      <div class="fig" data-svg="F19-quantization.svg"></div>
       <div class="panel">GOPS = 2 × MACs per inference / inference time</div>
     </div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>dataflow: fast, many LUTs · shared engine: one MAC array reused</li></ul></aside>
+  <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>integer model defines the correct output, bit for bit</li></ul></aside>
+</section>
+
+<!-- ============ 11. Theory: FINN ============ -->
+<section class="slide" data-sec="bg">
+  <div class="part">Background · Hardware</div>
+  <h2>FINN: one hardware block per layer</h2>
+  <div class="cols" style="grid-template-columns: 600px 1fr;">
+    <div class="fig" data-svg="F18-gpu-finn-engine.svg"></div>
+    <div class="side stack">
+      <ul>
+        <li><b class="k">FINN</b>: open-source compiler (AMD Research)
+          <ul><li>quantized network → FPGA accelerator</li></ul></li>
+        <li>GPU: <b>temporal</b> architecture (SIMT)
+          <ul><li>all layers take turns on shared SMs</li></ul></li>
+        <li>FINN: <b class="k">streaming</b> architecture
+          <ul><li>one block per layer, all busy at once</li>
+              <li>parallelism per layer: PE × SIMD</li></ul></li>
+        <li>Shared engine: <b class="todo">single computation engine</b>
+          <ul><li>SIREN: only where faster than FINN</li></ul></li>
+      </ul>
+      <div class="gloss">SIMT: single instruction, multiple threads · SM: streaming multiprocessor · PE: processing element</div>
+    </div>
+  </div>
+  <div class="cap">Terms: Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · Umuroglu et al., FPGA 2017</div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>GPU: same SMs reused layer after layer · FINN: each layer gets its own hardware</li><li>SIREN mixes both styles on one FPGA</li></ul></aside>
 </section>
 
 <!-- ============ 10. Method ============ -->
@@ -261,6 +313,7 @@
     <li>Declared bit width of every layer <b class="k">kept</b>, never narrowed</li>
     <li>Shared engine only if <b class="k">faster</b> than FINN and outputs <b class="k">identical</b></li>
     <li>All other layers: FINN-generated streaming operators</li>
+    <li>All results measured on the <b class="k">TE0715 lab board</b> (XC7Z030)</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>same six steps for all three models</li><li>engine mapping needs both speed and identical output</li></ul></aside>
@@ -271,6 +324,7 @@
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg"></div>
+  <div class="cap" style="margin-top: 8px;">Implemented and measured on the TE0715 lab board (XC7Z030, same chip as the flight unit)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
@@ -457,7 +511,7 @@
 <!-- ============ 18. Placement map ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Placement</div>
-  <h2>Where each block sits on the chip</h2>
+  <h2>Placement: where each block sits</h2>
   <div class="cols" style="grid-template-columns: 350px 250px 1fr; gap: 28px;">
     <div class="fig" data-svg="F16-chip-map.svg"></div>
     <div class="legend">
@@ -489,8 +543,8 @@
 
 <!-- ============ 19. One bitstream ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · System</div>
-  <h2>One bitstream, three models</h2>
+  <div class="part">Results (Preliminary) · Routing</div>
+  <h2>Routing: the real wires of one bitstream</h2>
   <div class="cols" style="grid-template-columns: 370px 210px 1fr; gap: 20px;">
     <div class="media">
       <img src="../assets/hw/routing-150mhz.png" width="370" height="455" alt="Routed design on the XC7Z030">
@@ -502,14 +556,14 @@
       <div><i style="background:#8e5bb5"></i>GRU tail</div>
       <div><i style="background:#5f6b7a"></i>DMA · buses</div>
       <div><i style="background:#c0392b"></i>Guards · control</div>
-      <div class="cap">Vivado routed design, XC7Z030</div>
+      <div class="cap">Every coloured line: a routed wire</div>
     </div>
     <div class="stack">
       <div class="bars">
         <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
         <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
         <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
-        <div class="cap">GOPS @ 150 MHz · dashed: 50 GOPS</div>
+        <div class="cap">GOPS @ 150 MHz, TE0715 board · dashed: 50 GOPS</div>
       </div>
       <table>
         <tr><th>Requirement</th><th>Status</th></tr>
@@ -525,17 +579,39 @@
   <aside class="notes"><ul><li>real routing: colours = blocks of the architecture slide</li><li>LUT 77.6 % · DSP 60.5 % · fault management 22 of 23 items on board</li></ul></aside>
 </section>
 
+<!-- ============ Fault management ============ -->
+<section class="slide" data-sec="res">
+  <div class="part">Results (Preliminary) · Reliability</div>
+  <h2>Fault management: detect, recover, report</h2>
+  <table>
+    <tr><th>Level</th><th>Detects</th><th>Recovery</th><th class="num">Items</th></tr>
+    <tr><td><b>L0</b> hardware</td><td>output range / format / timing · SEM · watchdogs · parity · bus timeout</td><td>reset IP → reconfigure PL → system reset</td><td class="num">13</td></tr>
+    <tr><td><b>L1</b> software</td><td>service hang · I/O errors · inference errors</td><td>restart service or pipeline</td><td class="num">6</td></tr>
+    <tr><td><b>L2</b> ground</td><td>repeated failures · boot failure</td><td>safehold → recovery image</td><td class="num">4</td></tr>
+  </table>
+  <ul style="margin-top: 22px;">
+    <li><b class="ok">22 / 23</b> items verified on the board · 1 in simulation</li>
+    <li>Guard in front of every accelerator (red blocks on the chip map)</li>
+    <li>3 h continuous run: 10,260 batches, outputs = integer reference</li>
+  </ul>
+  <div class="gloss" style="margin-top: 10px;">SEM: soft error mitigation (configuration memory scrubbing) · PL: FPGA side</div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>three levels from the PDR fault management design</li><li>all but one item shown on the board</li></ul></aside>
+</section>
+
 <!-- ============ 19. Future works ============ -->
 <section class="slide" data-sec="fut">
   <div class="part">Future works</div>
   <h2>Toward the final version</h2>
   <div class="fig" data-svg="F12-digital-twin.svg"></div>
-  <ul style="margin-top: 18px;">
-    <li><b class="todo">Power</b>: 12 V input measurement → final version</li>
-    <li><b class="k">Flight unit</b>: port to Z7000-P3 · on-orbit weight upload rehearsal</li>
+  <div class="cap">Ref. flux-field model: VERB-3D (Subbotin &amp; Shprits, 2009, Space Weather)</div>
+  <ul style="margin-top: 16px;">
+    <li><b class="todo">Power check</b>: board input power during inference vs 5 W limit</li>
+    <li><b class="k">Flight hardware</b>: lab board → flight AI Processing Unit (same chip)</li>
+    <li><b class="k">Weight upload test</b>: new weights over S-band, no new bitstream</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit</li><li>Digital Twin II: bus HK, method open</li></ul></aside>
+  <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit · II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul></aside>
 </section>
 
 <!-- ============ 20. Summary ============ -->
@@ -547,7 +623,7 @@
     <li>Each model above its baseline (PDR test set)</li>
     <li>Each model <b class="ok">&gt; 50 GOPS</b>, outputs = integer reference</li>
     <li>Built from QAT integer models: FINN dataflow + shared engine</li>
-    <li>Next: <b class="todo">power</b> · Digital Twin data · flight unit</li>
+    <li>Next: <b class="todo">power check</b> · Digital Twin data · flight hardware</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>three points to remember</li></ul></aside>
@@ -562,7 +638,8 @@
   </div>
   <div class="thanks">Thank you</div>
   <div class="thanks-sub">Onboard AI Payload of PADO-SAT: SIREN</div>
-  <div class="thanks-name"><span class="presenter">Woncheol Joo</span> · Kyung Hee University</div>
+  <div class="thanks-name"><span class="presenter">Woncheol Joo</span></div>
+  <div class="thanks-sub" style="margin-top: 6px;">School of Space Research, Kyung Hee University</div>
   <aside class="notes"><ul><li>questions</li></ul></aside>
 </section>
 
@@ -591,7 +668,7 @@
     <li>Deterministic latency · bit-exact integer outputs</li>
     <li>Configuration memory scrubbing (SEM) · watchdogs</li>
     <li>ARM (Linux) + FPGA fabric in one chip</li>
-    <li>Flight unit: Z7000-P3 with carrier board and shielding</li>
+    <li>Flight AI Processing Unit: carrier board and shielding included</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
@@ -606,21 +683,6 @@
           <li>BUS / PD: 1,391 frames</li>
           <li>3 h continuous run: 10,260 batches</li></ul></li>
     <li>Shared engine adopted per structure only after full-corpus match</li>
-  </ul>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
-</section>
-
-<section class="slide" data-sec="app">
-  <div class="part">Appendix · Q&amp;A</div>
-  <h2>Fault management</h2>
-  <ul>
-    <li>23 items: L0 hardware 13 · L1 software 6 · L2 ground 4</li>
-    <li><b class="ok">22</b> verified on board · 1 in simulation</li>
-    <li>Examples
-      <ul><li>output range / format / timing guards</li>
-          <li>SEM correction · PS and PL watchdogs</li>
-          <li>cache / OCM parity · AXI timeout</li>
-          <li>recovery image after repeated failures</li></ul></li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
@@ -668,6 +730,7 @@
       <li><b>SEP</b>: solar energetic particle</li>
       <li><b>PS / PL</b>: ARM side / FPGA side</li>
       <li><b>OBC</b>: on-board computer</li>
+      <li><b>SIMT</b>: single instruction, multiple threads</li>
     </ul>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>

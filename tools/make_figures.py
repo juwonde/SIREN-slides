@@ -82,31 +82,18 @@ class Svg:
         print("write", path.name)
 
 
-def f01():
-    s = Svg("F01-onboard-ai", 470, 470)
-    s.box(35, 0, 400, 92, [("Raw data", 22, 700), ("CREST counts · bus HK", 22)], fill=PANEL)
-    s.arrow(235, 92, 235, 132)
-    s.box(35, 132, 400, 92, [("SIREN onboard inference", 22, 700, NAVY), ("3 DNNs on one FPGA SoC", 22)],
-          fill=FINN_FILL, stroke=NAVY)
-    for i, (t, c) in enumerate([("Risk", "score"), ("Anomaly", "flag"), ("Compressed", "packet")]):
-        x = 5 + i * 158
-        s.arrow(235, 224, x + 72, 264)
-        s.box(x, 264, 144, 92, [(t, 22, 700, K), (c, 22)], fill="#ffffff", stroke=K)
-    s.arrow(235, 356, 235, 396)
-    s.box(35, 396, 400, 70, [("Downlink: information, not raw data", 22, 700)], fill=PANEL)
-    return s
 
 
 def f02():
     s = Svg("F02-siren-in-padosat", 560, 460)
     s.box(0, 0, 170, 80, [("CREST", 22, 700), ("detector", 22)])
     s.box(195, 0, 170, 80, [("Bus", 22, 700), ("HK", 22)])
-    s.box(390, 0, 170, 80, [("S-band", 22, 700), ("SRS-4", 22)])
-    s.box(0, 140, 365, 70, [("OBC (A3200)", 22, 700)], fill="#ffffff", stroke=NAVY)
+    s.box(390, 0, 170, 80, [("S-band", 22, 700), ("transceiver", 22)])
+    s.box(0, 140, 365, 70, [("On-board computer (OBC)", 22, 700)], fill="#ffffff", stroke=NAVY)
     s.arrow(85, 80, 85, 138)
     s.arrow(280, 80, 280, 138)
     s.box(190, 260, 370, 196, [], fill=FINN_FILL, stroke=NAVY, stroke_w=3)
-    s.text(375, 290, "SIREN APU · Z7000-P3", 22, 700, NAVY)
+    s.text(375, 290, "SIREN AI Processing Unit", 22, 700, NAVY)
     for i, (t, c) in enumerate([("PD", "risk detection"), ("BUS", "anomaly detection"), ("GRU", "compression")]):
         y = 306 + i * 48
         s.box(206, y, 338, 40, [], fill="#ffffff", stroke=K, rx=6)
@@ -122,28 +109,42 @@ def f02():
 
 
 def f03():
-    s = Svg("F03-radiation-environment", 560, 430)
-    cx, cy = 340, 220
-    for dx in (-1, 1):
-        s.raw(f'<ellipse cx="{cx + dx * 130}" cy="{cy}" rx="58" ry="108" fill="#f6d5c3" stroke="{TODO}" stroke-width="2"/>')
-        s.raw(f'<ellipse cx="{cx + dx * 64}" cy="{cy}" rx="20" ry="44" fill="#d6e2f5" stroke="{K}" stroke-width="2"/>')
-    s.raw(f'<circle cx="{cx}" cy="{cy}" r="34" fill="#7fa7d9" stroke="{NAVY}" stroke-width="2"/>')
-    s.raw(f'<circle cx="{cx}" cy="{cy}" r="41" fill="none" stroke="{RED}" stroke-width="3" stroke-dasharray="6 5"/>')
-    s.text(cx, cy + 7, "Earth", 20, 700, "#ffffff")
-    s.text(cx + 130, 70, "Outer belt", 22, 700, TODO)
-    s.text(cx + 130, 94, "electrons", 20, 400, INK)
-    s.line(cx - 70, cy + 30, cx - 150, 372, color=K, width=2)
-    s.text(cx - 150, 396, "Inner belt", 22, 700, K)
-    s.text(cx - 150, 420, "protons", 20, 400, INK)
-    s.line(cx + 30, cy + 30, cx + 70, 372, color=RED, width=2)
-    s.text(cx + 70, 396, "LEO orbit", 22, 700, RED)
-    s.text(cx + 70, 420, "CubeSat", 20, 400, INK)
-    s.raw(f'<circle cx="40" cy="40" r="26" fill="#f7c948" stroke="{TODO}" stroke-width="2"/>')
-    s.text(40, 92, "Sun", 20, 700, INK)
-    s.arrow(72, 46, 186, 112, color=TODO)
-    s.text(8, 136, "SEP protons", 20, 700, TODO, "start")
-    s.text(8, 160, "minutes", 20, 400, INK, "start")
-    s.text(8, 184, "to hours", 20, 400, INK, "start")
+    import math
+    s = Svg("F03-radiation-environment", 560, 446)
+    cx, cy, re_px = 320, 215, 16           # Earth centre, Earth radius in px (not to scale beyond this)
+    # magnetopause: compressed on the dayside (left), stretched into the tail (right)
+    s.raw(f'<path d="M 560 52 C 330 40 170 110 170 {cy} C 170 320 330 390 560 378" fill="#eef3fb" '
+          f'stroke="{NAVY}" stroke-width="3"/>')
+    # dipole field lines r = L cos^2(lat), dayside and nightside
+    for L in (2.0, 3.2, 4.4):
+        for side in (-1, 1):
+            pts = []
+            for k in range(0, 61):
+                lat = -math.radians(70) + k * math.radians(140) / 60
+                r = L * math.cos(lat) ** 2 * re_px
+                pts.append(f"{cx + side * r * math.cos(lat):.1f},{cy - r * math.sin(lat):.1f}")
+            s.raw(f'<polyline points="{" ".join(pts)}" fill="none" stroke="{K}" stroke-width="1.6" opacity="0.8"/>')
+    # open tail field lines on the night side
+    for dy in (-1, 1):
+        for k, off in enumerate((44, 70, 96)):
+            y_end = cy + dy * off
+            s.raw(f'<path d="M {cx + 4} {cy + dy * (re_px - 2)} C {cx + 60} {cy + dy * (off + 30)} {cx + 140} {y_end} '
+                  f'550 {y_end}" fill="none" stroke="{K}" stroke-width="1.6" opacity="0.8"/>')
+    s.raw(f'<circle cx="{cx}" cy="{cy}" r="{re_px}" fill="#7fa7d9" stroke="{NAVY}" stroke-width="2"/>')
+    s.raw(f'<circle cx="{cx}" cy="{cy}" r="{re_px + 3}" fill="none" stroke="{RED}" stroke-width="2.5" stroke-dasharray="4 3"/>')
+    # Sun, solar wind and SEP protons
+    s.raw(f'<circle cx="34" cy="{cy}" r="30" fill="#f7c948" stroke="{TODO}" stroke-width="2"/>')
+    s.text(34, cy + 54, "Sun", 20, 700, INK)
+    for y in (cy - 70, cy, cy + 70):
+        s.arrow(76, y, 150, y, color=TODO, width=2)
+    s.text(8, 40, "Solar wind", 20, 700, TODO, "start")
+    s.text(8, 64, "SEP protons", 20, 700, TODO, "start")
+    s.text(540, 40, "Magnetopause", 20, 700, NAVY, "end")
+    s.text(540, 406, "Magnetotail", 20, 700, NAVY, "end")
+    s.line(cx + 10, cy + 17, 300, 392, color=RED, width=2)
+    s.text(300, 414, "PADO-SAT orbit", 20, 700, RED)
+    s.text(300, 438, "500 km SSO", 20, 400, RED)
+    s.text(8, 438, "not to scale", 20, 400, MUTED, "start")
     return s
 
 
@@ -185,27 +186,6 @@ def f04b():
     return s
 
 
-def f05():
-    s = Svg("F05-hardware-styles", 548, 330)
-    s.text(0, 24, "Dataflow: one block per layer", 22, 700, NAVY, "start")
-    for i in range(3):
-        x = 20 + i * 180
-        s.box(x, 40, 140, 64, [(f"Layer {i + 1}", 22, 700)], fill=FINN_FILL, stroke=NAVY)
-        if i < 2:
-            s.arrow(x + 140, 72, x + 180, 72)
-    s.text(274, 136, "streams in parallel · PE x SIMD folding", 20, 400, MUTED)
-    s.line(0, 160, 548, 160, color=LINE, width=2)
-    s.text(0, 196, "Shared engine: one MAC array", 22, 700, TODO, "start")
-    s.box(20, 212, 170, 100, [("MAC array", 22, 700), ("+ buffers", 22)], fill=ENGINE_FILL, stroke=TODO)
-    s.arrow(190, 262, 236, 262)
-    s.arrow(236, 280, 190, 280)
-    s.box(236, 230, 80, 64, [("DDR", 22, 700)])
-    for i in range(3):
-        x = 340 + i * 69
-        s.box(x, 236, 66, 52, [(f"L{i + 1}", 22, 700)], fill="#ffffff", stroke=TODO, rx=4)
-    s.arrow(340, 306, 548, 306, color=MUTED)
-    s.text(444, 228, "time-multiplexed", 20, 400, MUTED)
-    return s
 
 
 def f06():
@@ -220,17 +200,17 @@ def f06():
           fill=FINN_FILL, stroke=NAVY)
     s.box(0, 320, 170, 100, [("DDR3L", 22, 700), ("1 GiB", 22)])
     s.box(195, 320, 170, 100, [("eMMC", 22, 700), ("64 GiB", 22)])
-    s.box(390, 320, 170, 100, [("PDU (P60)", 22, 700), ("5 V supply", 22)])
+    s.box(390, 320, 170, 100, [("Power unit", 22, 700), ("5 V supply", 22)])
     s.line(85, 320, 85, 300, width=2)
     s.line(85, 300, 130, 300, width=2)
     s.line(280, 320, 280, 300, width=2)
     s.line(475, 320, 475, 300, width=2)
     s.line(475, 300, 430, 300, width=2)
-    s.box(0, 40, 110, 90, [("OBC", 22, 700), ("A3200", 22)])
+    s.box(0, 40, 110, 90, [("OBC", 22, 700)])
     s.arrow(110, 85, 148, 85)
     s.arrow(148, 100, 110, 100)
     s.text(55, 156, "CAN", 20, 700, MUTED)
-    s.box(450, 40, 110, 90, [("S-band", 22, 700), ("SRS-4", 22)])
+    s.box(450, 40, 110, 90, [("S-band", 22, 700)])
     s.arrow(412, 85, 448, 85)
     s.text(505, 156, "RS-422", 20, 700, MUTED)
     return s
@@ -262,17 +242,19 @@ def f07():
 def f08():
     s = Svg("F08-pd-hybrid", 600, 400)
     s.box(0, 0, 600, 70, [("ARM (PS): schedules segments, checks outputs", 22, 700)], fill=PS_FILL, stroke=OK)
-    s.box(200, 150, 200, 100, [("DDR", 24, 700), ("activations · weights", 20)])
-    s.box(0, 290, 260, 104, [("FINN streams", 22, 700, NAVY), ("LayerNorm x 7", 22), ("8-bit · 16-bit", 20, 400, MUTED)],
+    s.box(0, 150, 180, 140, [("FINN streams", 22, 700, NAVY), ("LayerNorm x 7", 22), ("8-bit · 16-bit", 20, 400, MUTED)],
           fill=FINN_FILL, stroke=NAVY)
-    s.box(340, 290, 260, 104, [("Shared engine", 22, 700, TODO), ("pw · dw conv · head", 22), ("8-bit W · 16-bit A", 20, 400, MUTED)],
-          fill=ENGINE_FILL, stroke=TODO)
-    s.arrow(150, 288, 230, 252)
-    s.arrow(250, 252, 170, 288)
-    s.arrow(450, 288, 370, 252)
-    s.arrow(350, 252, 430, 288)
-    s.arrow(300, 72, 300, 148)
-    s.text(310, 118, "DMA", 20, 400, MUTED, "start")
+    s.box(230, 170, 140, 100, [("DDR", 24, 700), ("activations", 20)])
+    s.box(420, 150, 180, 140, [("Shared engine", 22, 700, TODO), ("pointwise conv", 20), ("depthwise conv", 20),
+                               ("risk head", 20)], fill=ENGINE_FILL, stroke=TODO)
+    s.arrow(182, 205, 228, 205)
+    s.arrow(228, 235, 182, 235)
+    s.arrow(372, 205, 418, 205)
+    s.arrow(418, 235, 372, 235)
+    s.arrow(300, 72, 300, 168)
+    s.text(310, 126, "DMA", 20, 400, MUTED, "start")
+    s.box(0, 320, 600, 74, [("Per block (x 3): LayerNorm → depthwise conv", 20),
+                            ("→ LayerNorm → FFN, all through DDR", 20)], fill=PANEL)
     return s
 
 
@@ -316,18 +298,12 @@ def f10():
     return s
 
 
-def f11():
-    s = Svg("F11-floorplan-placeholder", 470, 400)
-    s.box(0, 0, 470, 400, [("Placement map", 24, 700, MUTED), ("of the shared bitstream", 22, 400, MUTED),
-                           ("(SVG from placement data,", 20, 400, TODO), ("next draft)", 20, 400, TODO)],
-          fill="#ffffff", stroke=LINE, dash=True)
-    return s
 
 
 def f12():
     s = Svg("F12-digital-twin", 1168, 270)
     s.text(0, 26, "Digital Twin I · CREST data", 24, 700, NAVY, "start")
-    row1 = [("VERB-3D-style", "flux field"), ("PADO-SAT orbit", "sampling"), ("CREST", "response"),
+    row1 = [("Flux-field", "based model"), ("PADO-SAT orbit", "sampling"), ("CREST", "response"),
             ("Count", "time series"), ("PD · GRU", "retrain · fine-tune")]
     for i, (a, b) in enumerate(row1):
         x = i * 236
@@ -340,6 +316,31 @@ def f12():
           fill=PANEL, stroke=TODO, dash=True)
     s.arrow(436, 228, 470, 228)
     s.box(472, 192, 200, 72, [("BUS", 22, 700), ("retrain · fine-tune", 22)], fill=FINN_FILL, stroke=NAVY)
+    return s
+
+
+def f17():
+    s = Svg("F17-ground-vs-onboard", 560, 400)
+    s.text(0, 24, "Ground-only processing", 22, 700, INK, "start")
+    steps = ["Observe", "Store", "Wait for pass", "Downlink raw", "Analyse"]
+    for i, t in enumerate(steps):
+        x = i * 116
+        s.box(x, 40, 96, 76, [(w, 20, 700 if i == 0 else 400) for w in t.split(" ", 1)], fill=PANEL)
+        if i < 4:
+            s.arrow(x + 96, 78, x + 114, 78)
+    s.arrow(0, 140, 556, 140, color=TODO)
+    s.text(556, 170, "risk known hours later", 20, 700, TODO, "end")
+    s.line(0, 200, 560, 200, color=LINE, width=2)
+    s.text(0, 238, "Onboard AI (SIREN)", 22, 700, K, "start")
+    steps2 = ["Observe", "Infer on board", "Send results"]
+    for i, t in enumerate(steps2):
+        x = i * 116
+        s.box(x, 254, 96, 76, [(w, 20, 700 if i == 0 else 400) for w in t.split(" ", 1)],
+              fill=FINN_FILL if i == 1 else PANEL, stroke=NAVY if i == 1 else LINE)
+        if i < 2:
+            s.arrow(x + 96, 292, x + 114, 292)
+    s.arrow(0, 354, 324, 354, color=OK)
+    s.text(324, 384, "risk known in minutes", 20, 700, OK, "end")
     return s
 
 
@@ -467,7 +468,59 @@ def f15():
     return s
 
 
-ALL = (f01, f02, f03, f04a, f04b, f04c, f05, f06, f07, f08, f09, f10, f11, f12, f13, f14, f15)
+def f18():
+    s = Svg("F18-gpu-finn-engine", 600, 446)
+    s.text(0, 22, "GPU · temporal architecture (SIMT)", 22, 700, INK, "start")
+    s.box(0, 36, 150, 70, [("Shared SMs", 22, 700)], fill="#e6e9ef", stroke=MUTED)
+    for i in range(3):
+        s.box(180 + i * 125, 36, 115, 70, [(f"Layer {i + 1}", 20, 700)], fill="#e6e9ef", stroke=MUTED, rx=4)
+    s.arrow(180, 124, 556, 124)
+    s.text(556, 148, "layers take turns", 20, 400, MUTED, "end")
+    s.text(0, 188, "FINN · streaming architecture", 22, 700, NAVY, "start")
+    for i in range(3):
+        x = i * 210
+        s.box(x, 202, 170, 80, [(f"Layer {i + 1}", 22, 700, NAVY), ("PE x SIMD", 20)], fill=FINN_FILL, stroke=NAVY)
+        if i < 2:
+            s.arrow(x + 170, 242, x + 208, 242)
+    s.text(590, 304, "all layers busy at once", 20, 400, MUTED, "end")
+    s.text(0, 344, "Single computation engine", 22, 700, TODO, "start")
+    s.box(0, 358, 170, 76, [("MAC array", 22, 700), ("+ buffers", 20)], fill=ENGINE_FILL, stroke=TODO)
+    s.arrow(170, 386, 214, 386)
+    s.arrow(214, 406, 170, 406)
+    s.box(216, 366, 84, 60, [("DDR", 22, 700)])
+    for i in range(3):
+        s.box(330 + i * 88, 366, 80, 60, [(f"L{i + 1}", 22, 700)], fill="#ffffff", stroke=TODO, rx=4)
+    s.arrow(330, 440, 592, 440, color=MUTED, width=2)
+    return s
+
+
+def f19():
+    s = Svg("F19-quantization", 548, 300)
+    s.text(0, 24, "x ≈ s · q,  q = round(x / s)", 22, 700, INK, "start")
+    s.line(20, 90, 528, 90, color=INK, width=2)
+    for k in range(9):
+        x = 20 + k * 63.5
+        s.line(x, 80, x, 100, color=INK, width=2)
+    s.text(20, 126, "-128", 20, 400, MUTED)
+    s.text(274, 126, "0", 20, 400, MUTED)
+    s.text(528, 126, "127", 20, 400, MUTED)
+    for fx in (60, 175, 300, 420, 495):
+        tick = 20 + round((fx - 20) / 63.5) * 63.5
+        s.raw(f'<circle cx="{fx}" cy="48" r="7" fill="{K}"/>')
+        s.arrow(fx, 56, tick, 86, color=K, width=2, head=9)
+    s.text(548, 24, "float → int8", 20, 700, K, "end")
+    s.text(0, 176, "Integer MAC pipeline", 20, 700, INK, "start")
+    steps = [("int8 × int8", ""), ("int32 sum", ""), ("× scale", ""), ("int8 / int16", "")]
+    for i, (a, _) in enumerate(steps):
+        x = i * 142
+        s.box(x, 192, 122, 64, [(a, 20, 700)], fill=FINN_FILL if i < 2 else PANEL, stroke=NAVY if i < 2 else LINE)
+        if i < 3:
+            s.arrow(x + 122, 224, x + 140, 224)
+    s.text(0, 292, "exact on the FPGA → bit-exact reference", 20, 400, MUTED, "start")
+    return s
+
+
+ALL = (f02, f03, f04a, f04b, f04c, f06, f07, f08, f09, f10, f12, f13, f14, f15, f17, f18, f19)
 
 
 def main():

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="548" height="300" viewBox="0 0 548 300">
+  <text x="0" y="24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="start">x ≈ s · q,  q = round(x / s)</text>
+  <line x1="20" y1="90" x2="528" y2="90" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="20" y1="80" x2="20" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="83.5" y1="80" x2="83.5" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="147" y1="80" x2="147" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="210.5" y1="80" x2="210.5" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="274" y1="80" x2="274" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="337.5" y1="80" x2="337.5" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="401" y1="80" x2="401" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="464.5" y1="80" x2="464.5" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <line x1="528" y1="80" x2="528" y2="100" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="20" y="126" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">-128</text>
+  <text x="274" y="126" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">0</text>
+  <text x="528" y="126" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">127</text>
+  <circle cx="60" cy="48" r="7" fill="#1f5fbf"/>
+  <line x1="60" y1="56" x2="77.95" y2="78.9149" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="83.5,86 81.8,75.9 74.1,82.0" fill="#1f5fbf"/>
+  <circle cx="175" cy="48" r="7" fill="#1f5fbf"/>
+  <line x1="175" y1="56" x2="153.141" y2="79.4205" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="147,86 156.8,82.8 149.5,76.0" fill="#1f5fbf"/>
+  <circle cx="300" cy="48" r="7" fill="#1f5fbf"/>
+  <line x1="300" y1="56" x2="279.894" y2="79.1988" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="274,86 283.6,82.4 276.2,76.0" fill="#1f5fbf"/>
+  <circle cx="420" cy="48" r="7" fill="#1f5fbf"/>
+  <line x1="420" y1="56" x2="405.815" y2="78.3966" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="401,86 410.0,81.0 401.6,75.7" fill="#1f5fbf"/>
+  <circle cx="495" cy="48" r="7" fill="#1f5fbf"/>
+  <line x1="495" y1="56" x2="470.916" y2="79.6888" stroke="#1f5fbf" stroke-width="2"/>
+  <polygon points="464.5,86 474.4,83.2 467.4,76.2" fill="#1f5fbf"/>
+  <text x="548" y="24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="end">float → int8</text>
+  <text x="0" y="176" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="start">Integer MAC pipeline</text>
+  <rect x="0" y="192" width="122" height="64" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
+  <text x="61" y="230.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">int8 × int8</text>
+  <line x1="122" y1="224" x2="128" y2="224" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="140,224 128.0,217.4 128.0,230.6" fill="#4a4f5c"/>
+  <rect x="142" y="192" width="122" height="64" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
+  <text x="203" y="230.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">int32 sum</text>
+  <line x1="264" y1="224" x2="270" y2="224" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="282,224 270.0,217.4 270.0,230.6" fill="#4a4f5c"/>
+  <rect x="284" y="192" width="122" height="64" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
+  <text x="345" y="230.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">× scale</text>
+  <line x1="406" y1="224" x2="412" y2="224" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="424,224 412.0,217.4 412.0,230.6" fill="#4a4f5c"/>
+  <rect x="426" y="192" width="122" height="64" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
+  <text x="487" y="230.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">int8 / int16</text>
+  <text x="0" y="292" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">exact on the FPGA → bit-exact reference</text>
+</svg>

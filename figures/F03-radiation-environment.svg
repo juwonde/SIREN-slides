@@ -1,24 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="430" viewBox="0 0 560 430">
-  <ellipse cx="210" cy="220" rx="58" ry="108" fill="#f6d5c3" stroke="#c25e00" stroke-width="2"/>
-  <ellipse cx="276" cy="220" rx="20" ry="44" fill="#d6e2f5" stroke="#1f5fbf" stroke-width="2"/>
-  <ellipse cx="470" cy="220" rx="58" ry="108" fill="#f6d5c3" stroke="#c25e00" stroke-width="2"/>
-  <ellipse cx="404" cy="220" rx="20" ry="44" fill="#d6e2f5" stroke="#1f5fbf" stroke-width="2"/>
-  <circle cx="340" cy="220" r="34" fill="#7fa7d9" stroke="#1b2a57" stroke-width="2"/>
-  <circle cx="340" cy="220" r="41" fill="none" stroke="#9c1b1f" stroke-width="3" stroke-dasharray="6 5"/>
-  <text x="340" y="227" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Earth</text>
-  <text x="470" y="70" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#c25e00" text-anchor="middle">Outer belt</text>
-  <text x="470" y="94" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">electrons</text>
-  <line x1="270" y1="250" x2="190" y2="372" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="190" y="396" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Inner belt</text>
-  <text x="190" y="420" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">protons</text>
-  <line x1="370" y1="250" x2="410" y2="372" stroke="#9c1b1f" stroke-width="2"/>
-  <text x="410" y="396" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#9c1b1f" text-anchor="middle">LEO orbit</text>
-  <text x="410" y="420" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">CubeSat</text>
-  <circle cx="40" cy="40" r="26" fill="#f7c948" stroke="#c25e00" stroke-width="2"/>
-  <text x="40" y="92" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">Sun</text>
-  <line x1="72" y1="46" x2="175.615" y2="105.988" stroke="#c25e00" stroke-width="3"/>
-  <polygon points="186,112 178.9,100.3 172.3,111.7" fill="#c25e00"/>
-  <text x="8" y="136" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="start">SEP protons</text>
-  <text x="8" y="160" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">minutes</text>
-  <text x="8" y="184" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">to hours</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="446" viewBox="0 0 560 446">
+  <path d="M 560 52 C 330 40 170 110 170 215 C 170 320 330 390 560 378" fill="#eef3fb" stroke="#1b2a57" stroke-width="3"/>
+  <polyline points="318.7,218.5 318.2,219.3 317.7,220.1 317.0,220.9 316.2,221.7 315.4,222.5 314.4,223.3 313.3,224.0 312.2,224.8 311.0,225.4 309.7,226.0 308.3,226.4 306.9,226.8 305.4,227.1 303.9,227.3 302.4,227.3 300.9,227.2 299.4,227.0 298.0,226.7 296.6,226.3 295.2,225.7 294.0,225.0 292.8,224.2 291.7,223.3 290.8,222.3 289.9,221.2 289.3,220.1 288.7,218.8 288.3,217.6 288.1,216.3 288.0,215.0 288.1,213.7 288.3,212.4 288.7,211.2 289.3,209.9 289.9,208.8 290.8,207.7 291.7,206.7 292.8,205.8 294.0,205.0 295.2,204.3 296.6,203.7 298.0,203.3 299.4,203.0 300.9,202.8 302.4,202.7 303.9,202.7 305.4,202.9 306.9,203.2 308.3,203.6 309.7,204.0 311.0,204.6 312.2,205.2 313.3,206.0 314.4,206.7 315.4,207.5 316.2,208.3 317.0,209.1 317.7,209.9 318.2,210.7 318.7,211.5" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <polyline points="321.3,218.5 321.8,219.3 322.3,220.1 323.0,220.9 323.8,221.7 324.6,222.5 325.6,223.3 326.7,224.0 327.8,224.8 329.0,225.4 330.3,226.0 331.7,226.4 333.1,226.8 334.6,227.1 336.1,227.3 337.6,227.3 339.1,227.2 340.6,227.0 342.0,226.7 343.4,226.3 344.8,225.7 346.0,225.0 347.2,224.2 348.3,223.3 349.2,222.3 350.1,221.2 350.7,220.1 351.3,218.8 351.7,217.6 351.9,216.3 352.0,215.0 351.9,213.7 351.7,212.4 351.3,211.2 350.7,209.9 350.1,208.8 349.2,207.7 348.3,206.7 347.2,205.8 346.0,205.0 344.8,204.3 343.4,203.7 342.0,203.3 340.6,203.0 339.1,202.8 337.6,202.7 336.1,202.7 334.6,202.9 333.1,203.2 331.7,203.6 330.3,204.0 329.0,204.6 327.8,205.2 326.7,206.0 325.6,206.7 324.6,207.5 323.8,208.3 323.0,209.1 322.3,209.9 321.8,210.7 321.3,211.5" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <polyline points="318.0,220.6 317.2,221.8 316.3,223.1 315.2,224.4 314.0,225.7 312.6,227.0 311.0,228.3 309.4,229.5 307.5,230.6 305.5,231.6 303.5,232.5 301.3,233.3 299.0,233.9 296.6,234.4 294.3,234.6 291.9,234.7 289.5,234.6 287.1,234.3 284.8,233.7 282.5,233.0 280.4,232.1 278.3,231.0 276.5,229.7 274.8,228.3 273.2,226.7 271.9,224.9 270.8,223.1 269.9,221.1 269.3,219.1 268.9,217.1 268.8,215.0 268.9,212.9 269.3,210.9 269.9,208.9 270.8,206.9 271.9,205.1 273.2,203.3 274.8,201.7 276.5,200.3 278.3,199.0 280.4,197.9 282.5,197.0 284.8,196.3 287.1,195.7 289.5,195.4 291.9,195.3 294.3,195.4 296.6,195.6 299.0,196.1 301.3,196.7 303.5,197.5 305.5,198.4 307.5,199.4 309.4,200.5 311.0,201.7 312.6,203.0 314.0,204.3 315.2,205.6 316.3,206.9 317.2,208.2 318.0,209.4" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <polyline points="322.0,220.6 322.8,221.8 323.7,223.1 324.8,224.4 326.0,225.7 327.4,227.0 329.0,228.3 330.6,229.5 332.5,230.6 334.5,231.6 336.5,232.5 338.7,233.3 341.0,233.9 343.4,234.4 345.7,234.6 348.1,234.7 350.5,234.6 352.9,234.3 355.2,233.7 357.5,233.0 359.6,232.1 361.7,231.0 363.5,229.7 365.2,228.3 366.8,226.7 368.1,224.9 369.2,223.1 370.1,221.1 370.7,219.1 371.1,217.1 371.2,215.0 371.1,212.9 370.7,210.9 370.1,208.9 369.2,206.9 368.1,205.1 366.8,203.3 365.2,201.7 363.5,200.3 361.7,199.0 359.6,197.9 357.5,197.0 355.2,196.3 352.9,195.7 350.5,195.4 348.1,195.3 345.7,195.4 343.4,195.6 341.0,196.1 338.7,196.7 336.5,197.5 334.5,198.4 332.5,199.4 330.6,200.5 329.0,201.7 327.4,203.0 326.0,204.3 324.8,205.6 323.7,206.9 322.8,208.2 322.0,209.4" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <polyline points="317.2,222.7 316.1,224.4 314.9,226.1 313.4,227.9 311.7,229.7 309.8,231.5 307.7,233.3 305.4,234.9 302.8,236.5 300.1,237.9 297.2,239.1 294.2,240.2 291.1,241.0 287.9,241.6 284.6,242.0 281.3,242.1 278.0,241.9 274.7,241.5 271.5,240.8 268.5,239.8 265.5,238.5 262.7,237.0 260.1,235.2 257.8,233.2 255.7,231.0 253.9,228.7 252.4,226.1 251.2,223.5 250.3,220.7 249.8,217.9 249.6,215.0 249.8,212.1 250.3,209.3 251.2,206.5 252.4,203.9 253.9,201.3 255.7,199.0 257.8,196.8 260.1,194.8 262.7,193.0 265.5,191.5 268.5,190.2 271.5,189.2 274.7,188.5 278.0,188.1 281.3,187.9 284.6,188.0 287.9,188.4 291.1,189.0 294.2,189.8 297.2,190.9 300.1,192.1 302.8,193.5 305.4,195.1 307.7,196.7 309.8,198.5 311.7,200.3 313.4,202.1 314.9,203.9 316.1,205.6 317.2,207.3" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <polyline points="322.8,222.7 323.9,224.4 325.1,226.1 326.6,227.9 328.3,229.7 330.2,231.5 332.3,233.3 334.6,234.9 337.2,236.5 339.9,237.9 342.8,239.1 345.8,240.2 348.9,241.0 352.1,241.6 355.4,242.0 358.7,242.1 362.0,241.9 365.3,241.5 368.5,240.8 371.5,239.8 374.5,238.5 377.3,237.0 379.9,235.2 382.2,233.2 384.3,231.0 386.1,228.7 387.6,226.1 388.8,223.5 389.7,220.7 390.2,217.9 390.4,215.0 390.2,212.1 389.7,209.3 388.8,206.5 387.6,203.9 386.1,201.3 384.3,199.0 382.2,196.8 379.9,194.8 377.3,193.0 374.5,191.5 371.5,190.2 368.5,189.2 365.3,188.5 362.0,188.1 358.7,187.9 355.4,188.0 352.1,188.4 348.9,189.0 345.8,189.8 342.8,190.9 339.9,192.1 337.2,193.5 334.6,195.1 332.3,196.7 330.2,198.5 328.3,200.3 326.6,202.1 325.1,203.9 323.9,205.6 322.8,207.3" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 201 C 380 141 460 171 550 171" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 201 C 380 115 460 145 550 145" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 201 C 380 89 460 119 550 119" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 229 C 380 289 460 259 550 259" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 229 C 380 315 460 285 550 285" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <path d="M 324 229 C 380 341 460 311 550 311" fill="none" stroke="#1f5fbf" stroke-width="1.6" opacity="0.8"/>
+  <circle cx="320" cy="215" r="16" fill="#7fa7d9" stroke="#1b2a57" stroke-width="2"/>
+  <circle cx="320" cy="215" r="19" fill="none" stroke="#9c1b1f" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <circle cx="34" cy="215" r="30" fill="#f7c948" stroke="#c25e00" stroke-width="2"/>
+  <text x="34" y="269" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">Sun</text>
+  <line x1="76" y1="145" x2="138" y2="145" stroke="#c25e00" stroke-width="2"/>
+  <polygon points="150,145 138.0,138.4 138.0,151.6" fill="#c25e00"/>
+  <line x1="76" y1="215" x2="138" y2="215" stroke="#c25e00" stroke-width="2"/>
+  <polygon points="150,215 138.0,208.4 138.0,221.6" fill="#c25e00"/>
+  <line x1="76" y1="285" x2="138" y2="285" stroke="#c25e00" stroke-width="2"/>
+  <polygon points="150,285 138.0,278.4 138.0,291.6" fill="#c25e00"/>
+  <text x="8" y="40" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="start">Solar wind</text>
+  <text x="8" y="64" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="start">SEP protons</text>
+  <text x="540" y="40" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1b2a57" text-anchor="end">Magnetopause</text>
+  <text x="540" y="406" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1b2a57" text-anchor="end">Magnetotail</text>
+  <line x1="330" y1="232" x2="300" y2="392" stroke="#9c1b1f" stroke-width="2"/>
+  <text x="300" y="414" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#9c1b1f" text-anchor="middle">PADO-SAT orbit</text>
+  <text x="300" y="438" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#9c1b1f" text-anchor="middle">500 km SSO</text>
+  <text x="8" y="438" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">not to scale</text>
 </svg>
