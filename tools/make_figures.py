@@ -389,7 +389,7 @@ def f18():
         if i < 2:
             s.arrow(x + 170, 242, x + 208, 242)
     s.text(590, 304, "all layers busy at once", 20, 400, MUTED, "end")
-    s.text(0, 344, "Single computation engine", 22, 700, TODO, "start")
+    s.text(0, 344, "Vitis AI DPU · single computation engine", 22, 700, TODO, "start")
     s.box(0, 358, 170, 76, [("MAC array", 22, 700), ("+ buffers", 20)], fill=ENGINE_FILL, stroke=TODO)
     s.arrow(170, 386, 214, 386)
     s.arrow(214, 406, 170, 406)

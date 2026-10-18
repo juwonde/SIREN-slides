@@ -26,7 +26,7 @@
   <text x="505" y="237.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Layer 3</text>
   <text x="505" y="261.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">PE x SIMD</text>
   <text x="590" y="304" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="end">all layers busy at once</text>
-  <text x="0" y="344" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#c25e00" text-anchor="start">Single computation engine</text>
+  <text x="0" y="344" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#c25e00" text-anchor="start">Vitis AI DPU · single computation engine</text>
   <rect x="0" y="358" width="170" height="76" rx="10" fill="#fbe9d7" stroke="#c25e00" stroke-width="2"/>
   <text x="85" y="391.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">MAC array</text>
   <text x="85" y="415.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">+ buffers</text>
