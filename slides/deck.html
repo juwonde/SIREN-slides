@@ -64,7 +64,7 @@
       <li>II <b class="k">SIREN</b>: onboard AI on CREST and bus data</li>
     </ul>
   </div>
-  <div class="ref" data-min-px="14">Ref. render: PADO-SAT PDR (2026)</div>
+  <div class="ref" data-min-px="14">Ref. render: PADO-SAT PDR 2026</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>two missions: CREST observes, SIREN decides on board</li><li>secondary payload, 2028 launch planned, design in progress</li></ul></aside>
 </section>
@@ -123,7 +123,7 @@
       </ul>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. Φ-Sat-1: Giuffrida et al., IEEE TGRS 60 (2022) · OPS-SAT: Evans &amp; Merri, SpaceOps 2014 · others: PADO-SAT PDR (2026)</div>
+  <div class="ref" data-min-px="14">Ref. Φ-Sat-1: Giuffrida et al., IEEE TGRS 2022 · OPS-SAT: Evans &amp; Merri, SpaceOps 2014 · others: PADO-SAT PDR 2026</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>image tasks dominate prior missions</li><li>SIREN: time-series, low power, verifiable</li></ul></aside>
 </section>
@@ -200,7 +200,7 @@
       <div class="cap">Orbit: 500 km SSO assumed (recent Nuri (KSLV-II) launches) · rideshare, launch vehicle TBD</div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. NOAA SWPC Space Weather Scales (S1)</div>
+  <div class="ref" data-min-px="14">Ref. S1: NOAA SWPC, Space Weather Scales</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
 </section>
@@ -228,7 +228,7 @@
       <div class="cap">Illustration: each channel inside its limits, joint pattern abnormal</div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024)</div>
+  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv 2024</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>limits catch single-channel outliers only</li><li>learned score catches joint patterns · ESA-ADB as public benchmark</li></ul></aside>
 </section>
@@ -251,7 +251,7 @@
     <div class="fig" data-svg="F15-compression-illustration.svg"></div>
   </div>
   <div class="fig" data-svg="F04b-predictive-coding.svg" style="margin-top: 10px;"></div>
-  <div class="ref" data-min-px="14">Ref. BWT: Burrows &amp; Wheeler, DEC SRC Report 124 (1994)</div>
+  <div class="ref" data-min-px="14">Ref. BWT: Burrows &amp; Wheeler, DEC SRC 1994</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>residuals cluster near zero → entropy coder works well</li><li>same predictor on ground → reconstruction</li></ul></aside>
 </section>
@@ -334,7 +334,7 @@
       <div class="gloss">SIMT: single instruction, multiple threads · SM: streaming multiprocessor · PE: processing element</div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · FINN: Umuroglu et al., FPGA 2017</div>
+  <div class="ref" data-min-px="14">Ref. Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · FINN: Umuroglu et al., FPGA 2017 · FINN-R: Blott et al., ACM TRETS 2018</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>GPU: same SMs reused layer after layer · FINN: each layer gets its own hardware</li><li>SIREN mixes both styles on one FPGA</li></ul></aside>
 </section>
@@ -407,7 +407,7 @@
       </div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. baseline and test set: PADO-SAT PDR (2026) · data: NOAA GOES, POES/MetOp</div>
+  <div class="ref" data-min-px="14">Ref. baseline, test set: PADO-SAT PDR 2026 · data: NOAA GOES, POES/MetOp</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>top: GOES flux, NOAA event · bottom: SIREN risk score and warning band</li><li>SIREN above CRATERRE in F1 and CSI</li></ul></aside>
 </section>
@@ -470,7 +470,7 @@
       </div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024) · baseline: PADO-SAT PDR (2026)</div>
+  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv 2024 · baseline: PADO-SAT PDR 2026</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>red band: expert label · blue bar: SIREN alarm</li><li>two more events than EWMA, one false alarm</li></ul></aside>
 </section>
@@ -533,7 +533,7 @@
       </div>
     </div>
   </div>
-  <div class="ref" data-min-px="14">Ref. data: KSEM on GK2A · baseline: PADO-SAT PDR (2026)</div>
+  <div class="ref" data-min-px="14">Ref. data: KSEM on GK2A · baseline: PADO-SAT PDR 2026</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>about 3x the baseline compression ratio, lower error</li></ul></aside>
 </section>
@@ -626,7 +626,7 @@
     <li><b class="k">Protected zone</b>: accelerators limited to non-secure memory (TrustZone) · golden data read-only + CRC</li>
     <li>Board limits handled: DDR ECC → CRC scrub · BootROM fallback → SD fallback boot</li>
   </ul>
-  <div class="ref" data-min-px="14">Ref. SEM: AMD Soft Error Mitigation Controller, PG036 · design: PADO-SAT PDR (2026)</div>
+  <div class="ref" data-min-px="14">Ref. SEM: AMD, PG036 · design: PADO-SAT PDR 2026</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>items re-mapped to the Zynq-7000 testbed from the PDR design</li><li>guards in front of every accelerator, SEM for configuration memory</li></ul></aside>
 </section>
@@ -642,7 +642,7 @@
     <li><b class="k">Flight hardware</b>: lab board → flight AI Processing Unit (same chip)</li>
     <li><b class="k">Weight upload</b> after fine-tuning: selected layers only, <b class="k">≤ 1 MB</b> for all 3 models</li>
   </ul>
-  <div class="ref" data-min-px="14">Ref. flux-field model: VERB-3D, Subbotin &amp; Shprits, Space Weather 7 (2009)</div>
+  <div class="ref" data-min-px="14">Ref. VERB-3D: Subbotin &amp; Shprits, Space Weather 2009</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit · II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul></aside>
 </section>
