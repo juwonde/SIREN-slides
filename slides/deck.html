@@ -67,7 +67,6 @@
     </div>
     <div class="fig" data-svg="F01-onboard-ai.svg"></div>
   </div>
-  <div class="take">→ Send results, not raw data: risk, anomaly and compressed packets</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>particle hazard changes fast · ground contact short</li><li>prior missions: VPU / GPU · SIREN: FPGA SoC under 5 W</li></ul></aside>
 </section>
@@ -90,7 +89,6 @@
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
-  <div class="take">→ CREST measures, SIREN interprets on board</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>two payloads · three AI tasks</li><li>SIREN output: logged and downlinked, never changes satellite mode</li></ul></aside>
 </section>
@@ -117,7 +115,6 @@
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>
     </div>
   </div>
-  <div class="take">→ Target: ≥ 50 GOPS within 5 W, with verifiable outputs</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Z7000-P3: ARM + FPGA in one chip · CAN to OBC · RS-422 to S-band</li><li>requirements SIR00100, 01100, 01000, 00900, 01600</li></ul></aside>
 </section>
@@ -143,7 +140,6 @@
     </div>
     <div class="fig" data-svg="F03-radiation-environment.svg"></div>
   </div>
-  <div class="take">→ Particle risk changes within minutes: detect it on board (PD)</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
 </section>
@@ -171,7 +167,6 @@
       <div class="cap">Illustration: each channel inside its limits, joint pattern abnormal</div>
     </div>
   </div>
-  <div class="take">→ Multichannel patterns need a learned detector (BUS)</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>limits catch single-channel outliers only</li><li>learned score catches joint patterns · ESA-ADB as public benchmark</li></ul></aside>
 </section>
@@ -199,7 +194,6 @@
       <div class="fig" data-svg="F04b-predictive-coding.svg"></div>
     </div>
   </div>
-  <div class="take">→ Good predictor = small residuals = small packets (GRU)</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>residuals cluster near zero → entropy coder works well</li><li>same predictor on ground → reconstruction</li></ul></aside>
 </section>
@@ -228,7 +222,6 @@
       <div class="fig" data-svg="F04c-gru-cell.svg"></div>
     </div>
   </div>
-  <div class="take">→ Both models reduce to convolutions and matrix products: FPGA-friendly</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
 </section>
@@ -255,7 +248,6 @@
       <div class="panel">GOPS = 2 × MACs per inference / inference time</div>
     </div>
   </div>
-  <div class="take">→ Integer models make FPGA outputs checkable bit for bit</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>dataflow: fast, many LUTs · shared engine: one MAC array reused</li></ul></aside>
 </section>
@@ -270,7 +262,6 @@
     <li>Shared engine only if <b class="k">faster</b> than FINN and outputs <b class="k">identical</b></li>
     <li>All other layers: FINN-generated streaming operators</li>
   </ul>
-  <div class="take">→ Speed from hardware, correctness from the integer reference</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>same six steps for all three models</li><li>engine mapping needs both speed and identical output</li></ul></aside>
 </section>
@@ -280,7 +271,6 @@
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg"></div>
-  <div class="take">→ Three accelerators + shared engine + safety guards; one model at a time</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
@@ -325,7 +315,6 @@
       </div>
     </div>
   </div>
-  <div class="take">→ Risk score flags the SEP event as it develops</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>top: GOES flux, NOAA event · bottom: SIREN risk score and warning band</li><li>accuracy vs CRATERRE baseline</li></ul></aside>
 </section>
@@ -348,7 +337,6 @@
       <div class="cap">Engine vs FINN: same structure, same board (133 MHz build)</div>
     </div>
   </div>
-  <div class="take">→ Engine where it is 32× faster, FINN elsewhere, outputs identical</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM alternates FINN LayerNorm and engine segments through DDR</li><li>every output checked against the integer reference</li></ul></aside>
 </section>
@@ -393,7 +381,6 @@
       </div>
     </div>
   </div>
-  <div class="take">→ Multichannel anomaly flagged inside the labelled window</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>red band: expert label · blue bar: SIREN alarm</li><li>more events found than EWMA baseline</li></ul></aside>
 </section>
@@ -416,7 +403,6 @@
       <div class="cap">BUS-only bitstream: 133 MHz · shared bitstream: 150 MHz</div>
     </div>
   </div>
-  <div class="take">→ Pure FINN dataflow; weights replaceable in orbit</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>DSP packing halves DSP use</li><li>weight reload over AXI-Lite meets the update requirement</li></ul></aside>
 </section>
@@ -460,7 +446,6 @@
       </div>
     </div>
   </div>
-  <div class="take">→ Ground reconstruction follows the original count rate</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>compression vs NASA log baseline</li></ul></aside>
 </section>
@@ -479,7 +464,6 @@
       <li><b class="ok">63.76 GOPS</b> @ 150 MHz</li>
     </ul>
   </div>
-  <div class="take">→ Engine shared with PD; ARM builds the packet, ground decodes it</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>aligner joins gate sums and hidden state</li><li>packet bytes identical to the reference encoder</li></ul></aside>
 </section>
@@ -518,7 +502,6 @@
       </table>
     </div>
   </div>
-  <div class="take">→ All three models &gt; 50 GOPS on one chip; power measurement next</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>real routing: colours = blocks of the architecture slide</li><li>LUT 77.6 % · DSP 60.5 % · fault management 22 of 23 items on board</li></ul></aside>
 </section>
@@ -532,7 +515,6 @@
     <li><b class="todo">Power</b>: 12 V input measurement → final version</li>
     <li><b class="k">Flight unit</b>: port to Z7000-P3 · on-orbit weight upload rehearsal</li>
   </ul>
-  <div class="take">→ Digital twin data and measured power complete SIREN</div>
   <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit</li><li>Digital Twin II: bus HK, method open</li></ul></aside>
 </section>

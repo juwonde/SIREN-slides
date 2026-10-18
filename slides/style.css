@@ -124,13 +124,6 @@ body { counter-reset: slide; }
 .prog span { padding: 2px 12px; border-radius: 14px; color: var(--muted); background: var(--panel); }
 .prog span.on { color: #ffffff; background: var(--red); font-weight: 700; }
 
-/* One-line key message per slide */
-.take {
-  position: absolute; left: 56px; right: 56px; bottom: 60px; padding: 7px 16px;
-  border-left: 6px solid var(--red); background: #fbf1f1; border-radius: 4px;
-  font-size: 24px; font-weight: 700; color: var(--navy);
-}
-
 /* Captions, glossary lines, media */
 .cap { font-size: 20px; color: var(--muted); margin-top: 6px; line-height: 1.25; }
 .gloss { font-size: 20px; color: var(--muted); line-height: 1.3; }
