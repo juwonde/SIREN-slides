@@ -39,9 +39,9 @@
     <sup>1</sup> G-LAMP NEXUS Institute / School of Space Research, Kyung Hee University<br>
     <sup>2</sup> Department of Astronomy and Space Science, Kyung Hee University
   </div>
-  <div class="event">KSSS 2026 Fall Conference · Session II-2 · Oct 27, 2026<span class="badge">Preliminary · Alpha</span></div>
+  <div class="event">KSSS 2026 Fall Conference · Session II-2 · Oct 27, 2026<span class="badge">Initial implementation · Alpha</span></div>
   <div class="qr-slot">QR code</div>
-  <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>preliminary results · power measurement pending</li></ul></aside>
+  <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>initial implementation · power measurement pending</li></ul></aside>
 </section>
 
 <!-- ============ 2. Problem ============ -->
@@ -64,7 +64,7 @@
     </div>
     <div class="fig" data-svg="F17-ground-vs-onboard.svg"></div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>legacy small satellites: payloads compete for one link</li><li>PADO-SAT has spare S-band → chance to prove onboard AI with ground truth</li></ul></aside>
 </section>
 
@@ -98,7 +98,7 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. Φ-Sat-1: Giuffrida et al., IEEE TGRS 60 (2022) · OPS-SAT: Evans &amp; Merri, SpaceOps 2014 · others: PADO-SAT PDR (2026)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>image tasks dominate prior missions</li><li>SIREN: time-series, low power, verifiable</li></ul></aside>
 </section>
 
@@ -120,7 +120,7 @@
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>in-situ detection on board · on PADO-SAT results never change the satellite mode</li><li>goal beyond PADO-SAT: operations and crewed missions · forecasting still open (performance)</li></ul></aside>
 </section>
 
@@ -146,7 +146,7 @@
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>
     </div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Z7000-P3: ARM + FPGA in one chip · CAN to OBC · RS-422 to S-band</li><li>requirements SIR00100, 01100, 01000, 00900, 01600</li></ul></aside>
 </section>
 
@@ -175,7 +175,7 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. NOAA SWPC Space Weather Scales (S1)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
 </section>
 
@@ -203,7 +203,7 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>limits catch single-channel outliers only</li><li>learned score catches joint patterns · ESA-ADB as public benchmark</li></ul></aside>
 </section>
 
@@ -226,7 +226,7 @@
   </div>
   <div class="fig" data-svg="F04b-predictive-coding.svg" style="margin-top: 10px;"></div>
   <div class="ref" data-min-px="14">Ref. BWT: Burrows &amp; Wheeler, DEC SRC Report 124 (1994)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>residuals cluster near zero → entropy coder works well</li><li>same predictor on ground → reconstruction</li></ul></aside>
 </section>
 
@@ -257,7 +257,7 @@
     <div class="fig" data-svg="F04c-gru-cell.svg"></div>
   </div>
   <div class="ref" data-min-px="14">Ref. ModernTCN: Luo &amp; Wang, ICLR 2024 · GRU: Cho et al., EMNLP 2014</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
 </section>
 
@@ -283,7 +283,7 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. QAT: Jacob et al., CVPR 2018</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>integer model defines the correct output, bit for bit</li></ul></aside>
 </section>
 
@@ -309,7 +309,7 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · FINN: Umuroglu et al., FPGA 2017</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>GPU: same SMs reused layer after layer · FINN: each layer gets its own hardware</li><li>SIREN mixes both styles on one FPGA</li></ul></aside>
 </section>
 
@@ -324,13 +324,13 @@
     <li>All other layers: FINN-generated streaming operators</li>
     <li>All results measured on the lab testbed: <b class="k">TE0715 SoM + TE0705 carrier board</b></li>
   </ul>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>same six steps for all three models</li><li>engine mapping needs both speed and identical output</li></ul></aside>
 </section>
 
 <!-- ============ 11. Hardware architecture ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Architecture</div>
+  <div class="part">Initial Implementation · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg" data-min-px="18"></div>
   <div class="boxes" data-min-px="18">
@@ -343,13 +343,13 @@
     <div><b>Dashed</b>: PD hands data to the engine through DDR</div>
     <div><b>Not drawn</b>: SEM scrubs configuration memory</div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
 
 <!-- ============ 12. PD model ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · PD</div>
+  <div class="part">Initial Implementation · PD</div>
   <h2>PD: High-Energy Charged Particle Hazard Detection</h2>
   <div class="cols" style="grid-template-columns: 700px 1fr;">
     <div class="media">
@@ -382,13 +382,13 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. baseline and test set: PADO-SAT PDR (2026) · data: NOAA GOES, POES/MetOp</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>top: GOES flux, NOAA event · bottom: SIREN risk score and warning band</li><li>SIREN above CRATERRE in F1 and CSI</li></ul></aside>
 </section>
 
 <!-- ============ 13. PD on FPGA ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · PD</div>
+  <div class="part">Initial Implementation · PD</div>
   <h2>PD on the FPGA</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="fig" data-svg="F08-pd-hybrid.svg"></div>
@@ -404,13 +404,13 @@
       <div class="cap">Engine vs FINN: same structure, same board (133 MHz build)</div>
     </div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM alternates FINN LayerNorm and engine segments through DDR</li><li>every output checked against the integer reference</li></ul></aside>
 </section>
 
 <!-- ============ 14. BUS model ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · BUS</div>
+  <div class="part">Initial Implementation · BUS</div>
   <h2>BUS: Housekeeping Anomaly Detection</h2>
   <div class="cols" style="grid-template-columns: 560px 1fr;">
     <div class="media">
@@ -445,13 +445,13 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024) · baseline: PADO-SAT PDR (2026)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>red band: expert label · blue bar: SIREN alarm</li><li>two more events than EWMA, one false alarm</li></ul></aside>
 </section>
 
 <!-- ============ 15. BUS on FPGA ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · BUS</div>
+  <div class="part">Initial Implementation · BUS</div>
   <h2>BUS on the FPGA</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="fig" data-svg="F09-bus-dataflow.svg"></div>
@@ -467,13 +467,13 @@
       <div class="cap">BUS-only bitstream: 133 MHz · shared bitstream: 150 MHz</div>
     </div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>DSP packing halves DSP use</li><li>weight reload over AXI-Lite meets the update requirement</li></ul></aside>
 </section>
 
 <!-- ============ 16. COMP model ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · COMP</div>
+  <div class="part">Initial Implementation · COMP</div>
   <h2>COMP: Compression via Prediction</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="media">
@@ -508,13 +508,13 @@
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. data: KSEM on GK2A · baseline: PADO-SAT PDR (2026)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>about 3x the baseline compression ratio, lower error</li></ul></aside>
 </section>
 
 <!-- ============ 17. COMP on FPGA ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · COMP</div>
+  <div class="part">Initial Implementation · COMP</div>
   <h2>COMP on the FPGA</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="fig" data-svg="F10-gru-path.svg"></div>
@@ -526,13 +526,13 @@
       <li><b class="ok">63.76 GOPS</b> @ 150 MHz</li>
     </ul>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>aligner joins gate sums and hidden state</li><li>packet bytes identical to the reference encoder</li></ul></aside>
 </section>
 
 <!-- ============ 18. Placement and routing ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Chip</div>
+  <div class="part">Initial Implementation · Chip</div>
   <h2>Placement &amp; Routing</h2>
   <div class="cols" style="grid-template-columns: 290px 330px 1fr; gap: 24px;">
     <div>
@@ -564,13 +564,13 @@
       <div class="cap">Logic spread over 98 % of sites, yet every resource keeps over 20 % free · grid cell: 2 site columns × 5 rows</div>
     </div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>left: where each block was placed · right: the real wires between them</li><li>same colours as the architecture slide</li></ul></aside>
 </section>
 
 <!-- ============ Power trade-off (placeholder) ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Power</div>
+  <div class="part">Initial Implementation · Power</div>
   <h2>Performance trade-off per model</h2>
   <div class="slot3">
     <div class="slot"><b>PD</b>GOPS vs LUT use<br>Pareto front per W<br>after measurement</div>
@@ -578,13 +578,13 @@
     <div class="slot"><b>COMP</b>GOPS vs LUT use<br>Pareto front per W<br>after measurement</div>
   </div>
   <div class="cap" style="margin-top: 12px;">x: LUT use of the model · one Pareto front per board power level (W, 12 V input) · placeholder until measured</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>short slide: one trade-off curve per model</li></ul></aside>
 </section>
 
 <!-- ============ Fault management ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Reliability</div>
+  <div class="part">Initial Implementation · Reliability</div>
   <h2>Fault management as implemented</h2>
   <table class="cmp">
     <tr><th>Level · where</th><th>Detects</th><th>Recovery</th></tr>
@@ -601,7 +601,7 @@
     <li>Board limits handled: DDR ECC → CRC scrub · BootROM fallback → SD fallback boot</li>
   </ul>
   <div class="ref" data-min-px="14">Ref. SEM: AMD Soft Error Mitigation Controller, PG036 · design: PADO-SAT PDR (2026)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>items re-mapped to the Zynq-7000 testbed from the PDR design</li><li>guards in front of every accelerator, SEM for configuration memory</li></ul></aside>
 </section>
 
@@ -617,7 +617,7 @@
     <li><b class="k">Weight upload</b> after fine-tuning: selected layers only, <b class="k">≤ 1 MB</b> for all 3 models</li>
   </ul>
   <div class="ref" data-min-px="14">Ref. flux-field model: VERB-3D, Subbotin &amp; Shprits, Space Weather 7 (2009)</div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit · II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul></aside>
 </section>
 
@@ -650,7 +650,7 @@
       </table>
     </div>
   </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>three models, one chip, all above 50 GOPS · power measurement next</li></ul></aside>
 </section>
 

@@ -12,7 +12,7 @@
 7. 그림 **SVG**(Figma 편집), 슬라이드 HTML(headless) → PDF/PPT
 8. 발표 **10분 목표**, 슬라이드 **영어** (배정 15분, 질의응답 포함)
 9. 모든 글자 **15 pt 이상** (본문, 그림)
-10. 구성: **Introduction – Background – Results (Preliminary) – Future works**
+10. 구성: **Introduction – Background – Initial Implementation – Future works** (alpha-16: "Preliminary"는 학술 연구 용어라 "Initial implementation"으로 통일)
 11. Digital Twin: DT-I CREST(VERB-3D 개념, flux field) · DT-II Bus HK(방법 미정)
 12. 모든 글 **개조식**
 13. **질문 대응용 Abstract** 포함 (Appendix)
@@ -72,6 +72,7 @@
 55. (alpha-11) 궤도 500 km SSO는 **가정** (최근 누리호 발사 궤도 기준, rideshare라 주탑재체에 따름)
 56. (alpha-11) 20번에 **자원 여유 표** (LUT 22.4 %, FF 44.2 %, BRAM 31.9 %, DSP 39.5 % 남음)
 70. (alpha-15) PD 과제명은 제안서 표기 **High-Energy Charged Particle Hazard Detection** (고에너지 대전입자 위험 탐지)으로 통일. 모델 출력은 "risk score" 그대로
+71. (alpha-16) "Preliminary (results)" 대신 **Initial Implementation** (구역 이름, 바닥글, 표지): 개발 결과임을 드러내는 표현
 53. (alpha-9) FM 슬라이드에 Safe 상태(Safe Output → Safehold)와 보호 영역(TrustZone T1 non-secure, golden 읽기 전용 + CRC), 페이지 추가 없음
 
 ## 1. 발표 정보 (초록집 기준)
