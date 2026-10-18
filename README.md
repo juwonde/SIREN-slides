@@ -41,6 +41,16 @@ python tools/build.py --label alpha-14
 - 발표용 HTML: `build/present-A.html` 등 (GIF 재생). PDF에는 GIF 대표 프레임이 들어갑니다
 - 검사만: `python tools/build.py --lint-only`
 
+### Figma 발표본용 그림
+
+발표는 Figma Slides로 하고, HTML은 내부 검토용입니다. Figma에 올릴 그림은 아래 두 스크립트로 만듭니다 (결과는 `build/figma/`, git 제외).
+
+```bash
+python tools/figma_assets.py --preview   # 팔레트·글꼴 바꾼 SVG, Mermaid 평탄화, 배치도 PNG, 배선도 재색칠
+curl -o build/vendor/mathjax-tex-svg.js https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js
+python tools/render_tex.py               # figures/src/equations.json의 LaTeX 수식 → SVG
+```
+
 ### Mermaid 그림
 
 ```bash

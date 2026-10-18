@@ -44,18 +44,44 @@
   <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>initial implementation · power measurement pending</li></ul></aside>
 </section>
 
+<!-- ============ 2. Mission overview ============ -->
+<section class="slide" data-sec="intro">
+  <div class="part">Introduction · Mission</div>
+  <h2>PADO-SAT: one CubeSat, two missions</h2>
+  <div class="cols" style="grid-template-columns: 560px 1fr;">
+    <div class="media">
+      <img src="../assets/mission/pado-sat-render.png" width="560" height="435" alt="PADO-SAT deployed configuration (PDR render)">
+      <div class="cap">I CREST: particle detector (aperture on the end face) · II SIREN: onboard AI inside the bus</div>
+    </div>
+    <ul class="side">
+      <li><b>3U CubeSat</b>, Kyung Hee University</li>
+      <li>Selected as a <b>secondary payload</b>
+        <ul><li>7th CubeSat Competition (2026)</li></ul></li>
+      <li>Launch: <b class="k">2028</b> (planned)
+        <ul><li>Nuri (KSLV-II) · launch vehicle TBD</li></ul></li>
+      <li>Status: <b class="todo">design in progress</b> (PDR)</li>
+      <li>I <b class="k">CREST</b>: high-energy e⁻ / p⁺, energy + pitch angle at once</li>
+      <li>II <b class="k">SIREN</b>: onboard AI on CREST and bus data</li>
+    </ul>
+  </div>
+  <div class="ref" data-min-px="14">Ref. render: PADO-SAT PDR (2026)</div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Initial implementation</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>two missions: CREST observes, SIREN decides on board</li><li>secondary payload, 2028 launch planned, design in progress</li></ul></aside>
+</section>
+
 <!-- ============ 2. Problem ============ -->
 <section class="slide" data-sec="intro">
   <div class="part">Introduction · Problem</div>
-  <h2>Small science satellites share a narrow downlink</h2>
+  <h2>Even large science satellites wait for the downlink</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
     <div class="stack">
       <ul>
-        <li>Earlier missions: particle detector + EO camera, or + solar observation
+        <li>Earlier <b>large</b> satellites: particle detector + EO camera, or + solar observation
           <ul><li>all payloads share one downlink</li></ul></li>
-        <li>In operation: link too small for all raw data
-          <ul><li>data wait for ground passes</li>
-              <li>particle hazards, equipment faults seen <b class="todo">hours later</b></li></ul></li>
+        <li>Even there, raw data wait for ground passes
+          <ul><li>particle hazards, equipment faults seen <b class="todo">hours later</b></li></ul></li>
+        <li>→ <b class="k">Onboard AI</b>: decide on board, send results first
+          <ul><li>CubeSats: even less power and downlink</li></ul></li>
         <li><b class="k">PADO-SAT</b>: S-band margin for CREST + SIREN
           <ul><li>raw data <b>and</b> AI results downlinked</li>
               <li>→ <b class="k">verify onboard AI</b> against the ground</li></ul></li>
@@ -79,7 +105,7 @@
         <tr><td>OPS-SAT (2019)</td><td>FPGA SoC</td><td>images</td></tr>
         <tr><td>Φ-Sat-1 (2020)</td><td>Myriad 2 VPU</td><td>images</td></tr>
         <tr><td>CogniSAT-6 (2024)</td><td>Myriad X VPU</td><td>images</td></tr>
-        <tr><td>BlueBON</td><td>Jetson Orin NX</td><td>edge AI</td></tr>
+        <tr><td>BlueBON</td><td>Jetson Orin NX</td><td>images</td></tr>
       </table>
       <div class="cap">VPU: vision processing unit · year: launch</div>
     </div>
@@ -105,13 +131,13 @@
 <!-- ============ 3. PADO-SAT and SIREN ============ -->
 <section class="slide" data-sec="intro">
   <div class="part">Introduction · Approach</div>
-  <h2>PADO-SAT and SIREN</h2>
+  <h2>SIREN: onboard AI of PADO-SAT</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
     <ul class="side">
-      <li><b class="k">PADO-SAT</b>: 3U CubeSat (Kyung Hee Univ.), CREST + SIREN</li>
-      <li><b class="k">SIREN</b>: 3 DNNs, <b>in-situ</b> on board
-        <ul><li><b>PD</b> high-energy charged particle hazard detection</li>
-            <li><b>BUS</b> housekeeping anomaly detection · <b>COMP</b> compression via prediction</li></ul></li>
+      <li><b class="k">SIREN</b>: 3 onboard AI models on CREST and bus data
+        <ul><li><b>PD</b>: in-situ high-energy charged particle hazard detection</li>
+            <li><b>BUS</b>: in-situ housekeeping anomaly detection</li>
+            <li><b>COMP</b>: compression via prediction for the downlink</li></ul></li>
       <li><b>Design</b>: real-time capable · <b>Operation</b>: once a week, stored data in one batch (experimental)</li>
       <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
       <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
@@ -171,7 +197,7 @@
     </div>
     <div class="stack">
       <div class="fig" data-svg="F03-radiation-environment.svg"></div>
-      <div class="cap">Orbit assumed from recent Nuri launches · rideshare: final orbit set by the primary payload</div>
+      <div class="cap">Orbit: 500 km SSO assumed (recent Nuri (KSLV-II) launches) · rideshare, launch vehicle TBD</div>
     </div>
   </div>
   <div class="ref" data-min-px="14">Ref. NOAA SWPC Space Weather Scales (S1)</div>
@@ -675,7 +701,7 @@
   <div class="part">Appendix · Q&amp;A</div>
   <h2>Abstract</h2>
   <ul>
-    <li><b>Background</b>: CubeSat limits (power · compute · downlink) vs high-energy charged particle hazards in LEO</li>
+    <li><b>Background</b>: hazards reach the ground hours late, even on large satellites; CubeSats have less power, compute, downlink</li>
     <li><b>Payload</b>: SIREN, onboard AI of PADO-SAT (3U)</li>
     <li><b>Models</b>: PD and BUS (ModernTCN) · COMP (GRU predictor)</li>
     <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · COMP CR 11.841</li>

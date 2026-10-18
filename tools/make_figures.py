@@ -162,7 +162,7 @@ def f06():
     s.arrow(250, 140, 250, 168)
     s.arrow(310, 168, 310, 140)
     s.text(370, 160, "AXI", 20, 400, MUTED)
-    s.box(150, 168, 260, 112, [("PL: FPGA fabric", 22, 700), ("PD · BUS · GRU", 22, 700, K), ("accelerators + guards", 22)],
+    s.box(150, 168, 260, 112, [("PL: FPGA fabric", 22, 700), ("PD · BUS · COMP", 22, 700, K), ("accelerators + guards", 22)],
           fill=FINN_FILL, stroke=NAVY)
     s.box(0, 320, 170, 100, [("DDR3L", 22, 700), ("1 GiB", 22)])
     s.box(195, 320, 170, 100, [("eMMC", 22, 700), ("64 GiB", 22)])

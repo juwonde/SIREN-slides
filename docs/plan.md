@@ -73,6 +73,11 @@
 56. (alpha-11) 20번에 **자원 여유 표** (LUT 22.4 %, FF 44.2 %, BRAM 31.9 %, DSP 39.5 % 남음)
 70. (alpha-15) PD 과제명은 제안서 표기 **High-Energy Charged Particle Hazard Detection** (고에너지 대전입자 위험 탐지)으로 통일. 모델 출력은 "risk score" 그대로
 71. (alpha-16) "Preliminary (results)" 대신 **Initial Implementation** (구역 이름, 바닥글, 표지): 개발 결과임을 드러내는 표현
+72. (alpha-17) 누리호는 **Nuri (KSLV-II)**, 궤도 문구에 **launch vehicle TBD**
+73. (alpha-17) 문제 제기 스탠스: **이전 대형 위성**도 하향링크를 기다려 위험·이상을 몇 시간 뒤에 안다 → 온보드 AI 필요 (큐브위성은 더 부족)
+74. (alpha-17) 선행 사례 표 BlueBON 데이터 = images. SIREN 설명에서 **in-situ는 탐지(PD, BUS)에만**, COMP는 하향링크용 압축
+75. (alpha-17) **미션 전체 소개** 슬라이드를 맨 앞에: 위성 렌더(PDR) + 두 미션(I CREST, II SIREN) 화살표, 큐브위성 경연대회 **부탑재체 선정, 2028 발사 예정, 설계 진행 중**
+76. (alpha-17) 수식은 **LaTeX 렌더러**(MathJax, `tools/render_tex.py`, `figures/src/equations.json`)로 그림 생성 (Figma 발표본)
 53. (alpha-9) FM 슬라이드에 Safe 상태(Safe Output → Safehold)와 보호 영역(TrustZone T1 non-secure, golden 읽기 전용 + CRC), 페이지 추가 없음
 
 ## 1. 발표 정보 (초록집 기준)

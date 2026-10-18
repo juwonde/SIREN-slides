@@ -11,7 +11,7 @@
   <text x="370" y="160" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">AXI</text>
   <rect x="150" y="168" width="260" height="112" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
   <text x="280" y="204.64" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PL: FPGA fabric</text>
-  <text x="280" y="231.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">PD · BUS · GRU</text>
+  <text x="280" y="231.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">PD · BUS · COMP</text>
   <text x="280" y="257.44" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">accelerators + guards</text>
   <rect x="0" y="320" width="170" height="100" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
   <text x="85" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">DDR3L</text>
