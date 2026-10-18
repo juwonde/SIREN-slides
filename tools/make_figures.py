@@ -148,25 +148,6 @@ def f03():
     return s
 
 
-def f04a():
-    s = Svg("F04a-moderntcn-block", 548, 196)
-    labels = [("DW Conv", "time"), ("ConvFFN1", "features"), ("ConvFFN2", "variables")]
-    for i, (t, sub) in enumerate(labels):
-        x = 40 + i * 168
-        s.box(x, 40, 140, 62, [(t, 22, 700, NAVY)], fill=FINN_FILL, stroke=NAVY)
-        s.text(x + 70, 128, sub, 20, 400, MUTED)
-        if i < 2:
-            s.arrow(x + 140, 71, x + 168, 71)
-    s.arrow(0, 71, 40, 71)
-    s.arrow(516, 71, 548, 71)
-    s.line(20, 71, 20, 150)
-    s.line(20, 150, 530, 150)
-    s.arrow(530, 150, 530, 85)
-    s.text(275, 182, "residual path", 20, 400, MUTED)
-    s.raw(f'<circle cx="530" cy="71" r="12" fill="#ffffff" stroke="{MUTED}" stroke-width="3"/>')
-    s.text(530, 79, "+", 22, 700, MUTED)
-    s.text(0, 24, "ModernTCN block", 20, 700, INK, "start")
-    return s
 
 
 def f04b():
@@ -348,102 +329,8 @@ C_BUS, C_LN, C_ENG, C_GRU, C_MOVE, C_SAFE = "#2f6fbf", "#3fa34d", "#d9822b", "#8
 WHITE = "#ffffff"
 
 
-def f04c():
-    s = Svg("F04c-gru-cell", 548, 210)
-    s.text(0, 20, "GRU cell", 20, 700, INK, "start")
-    s.box(0, 40, 90, 50, [("x(t)", 22, 700)])
-    s.box(0, 118, 90, 50, [("h(t-1)", 22, 700)])
-    s.line(90, 65, 120, 65)
-    s.line(90, 143, 120, 143)
-    s.line(120, 50, 120, 170)
-    for i, t in enumerate(["reset r · σ", "update z · σ", "cand. h̃ · tanh"]):
-        y = 30 + i * 56
-        s.arrow(120, y + 23, 148, y + 23)
-        s.box(150, y, 200, 46, [(t, 20, 700, NAVY)], fill=FINN_FILL, stroke=NAVY)
-    for y, ty in ((53, 96), (109, 109), (165, 122)):
-        s.arrow(350, y, 418, ty, width=2)
-    s.box(420, 84, 56, 50, [("mix", 20, 700)])
-    s.arrow(476, 109, 496, 109)
-    s.box(496, 84, 52, 50, [("h(t)", 20, 700, K)], fill="#ffffff", stroke=K)
-    s.line(522, 134, 522, 200, color=K, width=2)
-    s.line(522, 200, 45, 200, color=K, width=2)
-    s.arrow(45, 200, 45, 170, color=K, width=2)
-    return s
 
 
-def f13():
-    # left-to-right version of the compute-structure mermaid diagram (shared repository README, figure 1);
-    # node details at 18 px (user: slightly below the 20 px body minimum is fine for this figure)
-    s = Svg("F13-hw-architecture", 1168, 486, min_size=18)
-    W = WHITE
-    # PS and DDR
-    s.raw(f'<rect x="0" y="0" width="200" height="232" rx="12" fill="#eef6f0" stroke="{OK}" stroke-width="2"/>')
-    s.text(12, 26, "PS (ARM, Linux)", 20, 700, INK, "start")
-    s.box(10, 40, 180, 82, [("Runner", 20, 700), ("models · engine", 18), ("hybrid segments", 18)], fill="#ffffff", stroke=OK)
-    s.box(10, 134, 180, 86, [("FM service", 20, 700), ("supervision · SWDT", 18), ("CAN report", 18)], fill="#ffffff", stroke=OK)
-    s.line(100, 232, 100, 272, width=3)
-    s.box(0, 272, 200, 96, [("DDR3", 20, 700), ("inputs · weights", 18), ("intermediates", 18)])
-    # PS-PL ports
-    s.box(225, 20, 110, 70, [("GP0", 20, 700, W), ("control", 18, 400, W)], fill=C_MOVE, stroke=C_MOVE)
-    s.arrow(200, 55, 223, 55)
-    for y, h, lines in ((150, 60, [("HP0", 20, 700, W), ("64-bit", 18, 400, W)]), (298, 52, [("HP1", 20, 700, W)]),
-                        (380, 52, [("HP2", 20, 700, W)])):
-        s.box(225, y, 110, h, lines, fill=C_MOVE, stroke=C_MOVE)
-        s.arrow(212, y + h / 2, 223, y + h / 2)
-    s.line(200, 320, 212, 320, width=3)
-    s.line(212, 180, 212, 406, width=3)
-    # PL frame
-    s.raw(f'<rect x="355" y="0" width="813" height="486" rx="12" fill="none" stroke="{NAVY}" stroke-width="2" stroke-dasharray="10 6"/>')
-    s.text(1152, 24, "PL · XC7Z030 @ 150 MHz", 20, 700, NAVY, "end")
-    s.text(368, 24, "AXI-Lite control to every block", 18, 400, MUTED, "start")
-    s.arrow(335, 55, 353, 55)
-    lanes = [
-        (36, C_BUS, "#eaf1fb", "1 · BUS: 62.58 GOPS", "DMA 0", "guard 0",
-         [(612, 306, [("BUS FINN accelerator", 20, 700, W), ("W8A8 QAT · DSP 2-lane", 18, 400, W)], C_BUS)]),
-        (150, C_LN, "#eaf6ec", "2 · PD hybrid: 70.88 GOPS", "DMA 1", "guard 1",
-         [(612, 200, [("FINN LayerNorm", 20, 700, W), ("7 norm sets", 18, 400, W)], C_LN)]),
-        (264, C_GRU, "#f3ecf8", "3 · GRU: 63.76 GOPS", "DMA 3", "guard 3",
-         [(612, 130, [("Aligner", 20, 700, W), ("sums + state", 18, 400, W)], C_GRU),
-          (760, 158, [("FINN GRU tail", 20, 700, W), ("gates · state", 18, 400, W)], C_GRU)]),
-    ]
-    for y0, c, bg, title, dma, guard, nodes in lanes:
-        s.raw(f'<rect x="370" y="{y0}" width="560" height="100" rx="10" fill="{bg}" stroke="{c}" stroke-width="2"/>')
-        s.text(382, y0 + 22, title, 18, 700, c, "start")
-        ny = y0 + 32
-        s.box(382, ny, 80, 56, [(dma, 18, 700, W)], fill=C_MOVE, stroke=C_MOVE)
-        s.arrow(462, ny + 28, 480, ny + 28)
-        s.box(482, ny, 110, 56, [(guard, 18, 700, W)], fill=C_SAFE, stroke=C_SAFE)
-        s.arrow(592, ny + 28, 610, ny + 28)
-        for k, (x, w, lines, fill) in enumerate(nodes):
-            s.box(x, ny, w, 56, lines, fill=fill, stroke=fill)
-            if k:
-                s.arrow(nodes[k - 1][0] + nodes[k - 1][1], ny + 28, x - 2, ny + 28)
-    # DDR ports to the DMAs
-    s.line(335, 180, 350, 180, width=2)
-    s.line(350, 96, 350, 210, width=2)
-    s.arrow(350, 96, 380, 96)
-    s.arrow(350, 210, 380, 210)
-    s.arrow(335, 324, 380, 324)
-    # shared engine
-    s.box(950, 150, 200, 214, [("Shared w8a16", 20, 700, W), ("engine", 20, 700, W), ("256 MAC lanes", 18, 400, W),
-                               ("2x clock", 18, 400, W), ("pw · dw conv", 18, 400, W), ("GELU · residual", 18, 400, W),
-                               ("GRU gate sums", 18, 400, W)], fill=C_ENG, stroke=C_ENG)
-    s.arrow(814, 203, 948, 203, color=C_ENG, dash=True)
-    s.arrow(948, 219, 814, 219, color=C_ENG, dash=True)
-    s.text(880, 192, "via DDR", 18, 400, MUTED)
-    s.line(980, 364, 980, 378, color=C_ENG)
-    s.line(980, 378, 677, 378, color=C_ENG)
-    s.arrow(677, 378, 677, 354, color=C_ENG)
-    s.text(830, 400, "gate sums", 18, 400, MUTED)
-    # engine weights through HP2
-    s.line(335, 406, 343, 406, width=2)
-    s.line(343, 406, 343, 474, width=2)
-    s.line(343, 474, 1060, 474, width=2)
-    s.arrow(1060, 474, 1060, 366, width=2)
-    s.text(1072, 446, "weights", 18, 400, MUTED, "start")
-    # SEM
-    s.box(370, 388, 300, 64, [("SEM", 20, 700, W), ("config. memory scrubbing", 18, 400, W)], fill=C_SAFE, stroke=C_SAFE)
-    return s
 
 
 def _trace(s, x0, x1, ybase, amp, fn, color=INK, width=2.5):
@@ -554,7 +441,8 @@ def f19():
     return s
 
 
-ALL = (f02, f03, f04a, f04b, f04c, f06, f07, f08, f09, f10, f12, f13, f14, f15, f17, f18, f19)
+# F04a, F04c and F13 come from Mermaid sources (figures/src, tools/render_mermaid.py)
+ALL = (f02, f03, f04b, f06, f07, f08, f09, f10, f12, f14, f15, f17, f18, f19)
 
 
 def main():
