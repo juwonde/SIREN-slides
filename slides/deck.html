@@ -40,29 +40,32 @@
     <sup>2</sup> Department of Astronomy and Space Science, Kyung Hee University
   </div>
   <div class="event">KSS 2026 Fall Meeting · Session II-2 · Oct 27, 2026<span class="badge">Preliminary · Alpha</span></div>
+  <div class="qr-slot">QR code</div>
   <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>preliminary results · power measurement pending</li></ul></aside>
 </section>
 
 <!-- ============ 2. Problem ============ -->
 <section class="slide" data-sec="intro">
   <div class="part">Introduction · Problem</div>
-  <h2>CubeSat data reach the ground late</h2>
+  <h2>Small science satellites share a narrow downlink</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
     <div class="stack">
       <ul>
-        <li>CREST science data: up to <b class="k">50 MB/day</b></li>
-        <li>Ground contact: about 3 of 15 orbits per day</li>
-        <li>Raw data wait on board for the next pass</li>
-        <li>Particle risk and equipment faults
-          <ul><li>seen on the ground <b class="todo">hours later</b></li></ul></li>
-        <li>Need: interpretation <b class="k">on board</b>, small results to send</li>
+        <li>Earlier missions: particle detector + EO camera, or + solar observation
+          <ul><li>all payloads share one downlink</li></ul></li>
+        <li>In operation: link too small for all raw data
+          <ul><li>data wait for ground passes</li>
+              <li>particle risk, equipment faults seen <b class="todo">hours later</b></li></ul></li>
+        <li><b class="k">PADO-SAT</b>: S-band margin for CREST + SIREN
+          <ul><li>raw data <b>and</b> AI results downlinked</li>
+              <li>→ <b class="k">verify onboard AI</b> against the ground</li></ul></li>
       </ul>
-      <div class="cap">Contact and data volume: PADO-SAT preliminary design</div>
+      <div class="cap">EO: Earth observation · CREST: up to 50 MB/day</div>
     </div>
     <div class="fig" data-svg="F17-ground-vs-onboard.svg"></div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>science CubeSat: more data than the link can carry</li><li>ground-only processing → late risk awareness</li></ul></aside>
+  <aside class="notes"><ul><li>legacy small satellites: payloads compete for one link</li><li>PADO-SAT has spare S-band → chance to prove onboard AI with ground truth</li></ul></aside>
 </section>
 
 <!-- ============ 3. Prior onboard AI ============ -->
@@ -104,20 +107,18 @@
   <h2>PADO-SAT and SIREN</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
     <ul>
-      <li><b class="k">PADO-SAT</b>: 3U CubeSat, Kyung Hee Univ.
-        <ul><li>PArticle Detector On-board AI</li></ul></li>
-      <li><b>CREST</b>: charged-particle detector
-        <ul><li>e⁻ 100 keV–1 MeV · p⁺ &gt; 1 MeV</li></ul></li>
-      <li><b class="k">SIREN</b>: onboard AI payload, 3 DNNs
-        <ul><li><b>PD</b>: particle risk detection</li>
-            <li><b>BUS</b>: equipment anomaly detection</li>
-            <li><b>GRU</b>: CREST data compression</li></ul></li>
+      <li><b class="k">PADO-SAT</b>: 3U CubeSat (Kyung Hee Univ.), CREST + SIREN</li>
+      <li><b class="k">SIREN</b>: 3 DNNs, <b>in-situ</b> on board
+        <ul><li><b>PD</b> particle risk · <b>BUS</b> anomaly · <b>GRU</b> compression</li></ul></li>
+      <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
+      <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
+      <li>Forecasting: <b class="todo">under study</b> (performance)</li>
       <li>Success: ≥ 1 pre-trained → ≥ 3 fine-tuned results in orbit</li>
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>two payloads · three AI tasks</li><li>SIREN output: logged and downlinked, never changes satellite mode</li></ul></aside>
+  <aside class="notes"><ul><li>in-situ detection on board · on PADO-SAT results never change the satellite mode</li><li>goal beyond PADO-SAT: operations and crewed missions · forecasting still open (performance)</li></ul></aside>
 </section>
 
 <!-- ============ 4. SIREN unit and requirements ============ -->
@@ -137,7 +138,7 @@
       </table>
       <ul>
         <li>Models run <b>one at a time</b></li>
-        <li><b class="k">Testbed</b>: TE0715 board, same XC7Z030</li>
+        <li><b class="k">Testbed</b>: TE0715 SoM + TE0705 carrier board (same XC7Z030)</li>
       </ul>
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>
     </div>
@@ -313,7 +314,7 @@
     <li>Declared bit width of every layer <b class="k">kept</b>, never narrowed</li>
     <li>Shared engine only if <b class="k">faster</b> than FINN and outputs <b class="k">identical</b></li>
     <li>All other layers: FINN-generated streaming operators</li>
-    <li>All results measured on the <b class="k">TE0715 lab board</b> (XC7Z030)</li>
+    <li>All results measured on the lab testbed: <b class="k">TE0715 SoM + TE0705 carrier board</b></li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>same six steps for all three models</li><li>engine mapping needs both speed and identical output</li></ul></aside>
@@ -323,8 +324,8 @@
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
-  <div class="fig" data-svg="F13-hw-architecture.svg"></div>
-  <div class="cap" style="margin-top: 8px;">Implemented and measured on the TE0715 lab board (XC7Z030, same chip as the flight unit)</div>
+  <div class="fig" data-svg="F13-hw-architecture.svg" data-min-px="18"></div>
+  <div class="cap" style="margin-top: 8px;">Measured on TE0715 SoM + TE0705 carrier board (XC7Z030, same chip as the flight unit)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
@@ -563,7 +564,7 @@
         <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
         <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
         <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
-        <div class="cap">GOPS @ 150 MHz, TE0715 board · dashed: 50 GOPS</div>
+        <div class="cap">GOPS @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
       </div>
       <table>
         <tr><th>Requirement</th><th>Status</th></tr>
@@ -579,24 +580,38 @@
   <aside class="notes"><ul><li>real routing: colours = blocks of the architecture slide</li><li>LUT 77.6 % · DSP 60.5 % · fault management 22 of 23 items on board</li></ul></aside>
 </section>
 
+<!-- ============ Power trade-off (placeholder) ============ -->
+<section class="slide" data-sec="res">
+  <div class="part">Results (Preliminary) · Power</div>
+  <h2>Power vs performance per model</h2>
+  <div class="slot3">
+    <div class="slot"><b>PD</b>power vs GOPS<br>after measurement</div>
+    <div class="slot"><b>BUS</b>power vs GOPS<br>after measurement</div>
+    <div class="slot"><b>GRU</b>power vs GOPS<br>after measurement</div>
+  </div>
+  <div class="cap" style="margin-top: 12px;">Board input power (12 V) during inference · placeholder for the measured trade-off</div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>short slide: one trade-off curve per model</li></ul></aside>
+</section>
+
 <!-- ============ Fault management ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Reliability</div>
-  <h2>Fault management: detect, recover, report</h2>
-  <table>
-    <tr><th>Level</th><th>Detects</th><th>Recovery</th><th class="num">Items</th></tr>
-    <tr><td><b>L0</b> hardware</td><td>output range / format / timing · SEM · watchdogs · parity · bus timeout</td><td>reset IP → reconfigure PL → system reset</td><td class="num">13</td></tr>
-    <tr><td><b>L1</b> software</td><td>service hang · I/O errors · inference errors</td><td>restart service or pipeline</td><td class="num">6</td></tr>
-    <tr><td><b>L2</b> ground</td><td>repeated failures · boot failure</td><td>safehold → recovery image</td><td class="num">4</td></tr>
+  <h2>Fault management as implemented</h2>
+  <table class="cmp">
+    <tr><th>Level · where</th><th>Detects</th><th>Recovery</th></tr>
+    <tr><td><b>L0</b> · PL guards</td><td>output range · format · timing · heartbeat · DMA errors</td><td>block output → reset accelerator</td></tr>
+    <tr><td><b>L0</b> · SEM</td><td>configuration memory errors</td><td>golden check · full PL reload</td></tr>
+    <tr><td><b>L0</b> · PS health</td><td>watchdog · cache/OCM parity · weight CRC · PLL · XADC</td><td>reload data · system reset</td></tr>
+    <tr><td><b>L1</b> · services</td><td>worker hang · crash · input CRC · deadline · output rules</td><td>restart worker or pipeline</td></tr>
+    <tr><td><b>L2</b> · boot, ground</td><td>repeated failures · unhealthy boot</td><td>Safehold · fallback image · signed upload</td></tr>
   </table>
-  <ul style="margin-top: 22px;">
-    <li><b class="ok">22 / 23</b> items verified on the board · 1 in simulation</li>
-    <li>Guard in front of every accelerator (red blocks on the chip map)</li>
-    <li>3 h continuous run: 10,260 batches, outputs = integer reference</li>
+  <ul style="margin-top: 18px;">
+    <li><b class="ok">23 items</b>: 22 shown on the board, 1 in simulation</li>
+    <li>Board limits handled: DDR ECC → CRC scrub · BootROM fallback → SD fallback boot</li>
   </ul>
-  <div class="gloss" style="margin-top: 10px;">SEM: soft error mitigation (configuration memory scrubbing) · PL: FPGA side</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>three levels from the PDR fault management design</li><li>all but one item shown on the board</li></ul></aside>
+  <aside class="notes"><ul><li>items re-mapped to the Zynq-7000 testbed from the PDR design</li><li>guards in front of every accelerator, SEM for configuration memory</li></ul></aside>
 </section>
 
 <!-- ============ 19. Future works ============ -->
@@ -636,10 +651,12 @@
     <div class="logo-slot">PADO-SAT<br>logo</div>
     <img src="../assets/logos/ssw-lab-patch.png" alt="Sun and Space Weather Laboratory">
   </div>
-  <div class="thanks">Thank you</div>
+  <div class="thanks" style="margin-top: 60px;">Thank you</div>
   <div class="thanks-sub">Onboard AI Payload of PADO-SAT: SIREN</div>
   <div class="thanks-name"><span class="presenter">Woncheol Joo</span></div>
   <div class="thanks-sub" style="margin-top: 6px;">School of Space Research, Kyung Hee University</div>
+  <div class="contact">juwonde@khu.ac.kr<br>github.com/juwonde/siren-kss-2026-fall<br>github.com/juwonde/pd-bus-moderntcn-fpga</div>
+  <div class="qr-slot">QR code</div>
   <aside class="notes"><ul><li>questions</li></ul></aside>
 </section>
 
@@ -654,6 +671,7 @@
     <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · GRU CR 11.841</li>
     <li><b>Method</b>: QAT → integer reference → FINN + shared engine → one bitstream</li>
     <li><b>Testbed</b>: BUS 62.58 · PD 70.88 · GRU 63.76 GOPS @ 150 MHz</li>
+    <li><b>Fault management</b>: 23 items (L0 · L1 · L2), 22 shown on the board</li>
     <li><b>Next</b>: power (≤ 5 W) · Digital Twin I / II data · flight unit</li>
   </ul>
   <div class="cap" style="margin-top: 16px;">Accuracy: submitted abstract (PDR test set, float models)</div>

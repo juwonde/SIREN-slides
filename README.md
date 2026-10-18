@@ -4,7 +4,7 @@
 
 - 발표: 10분 목표 (배정 15분, 질의응답 포함), 영어 슬라이드
 - 구성: Introduction – Background – Results (Preliminary) – Future works
-- 현재 판: **alpha-6** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
+- 현재 판: **alpha-7** (본편 26장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
 
 ## 폴더
 
@@ -24,7 +24,7 @@
 Python 3 (표준 라이브러리만)과 Chrome 또는 Edge가 필요합니다. 브라우저는 `CHROME_PATH`, `PATH`, 표준 설치 위치 순서로 찾습니다.
 
 ```bash
-python tools/build.py --label alpha-6
+python tools/build.py --label alpha-7
 ```
 
 - 검사가 먼저 돌고, 문제가 있으면 PDF를 만들지 않습니다.

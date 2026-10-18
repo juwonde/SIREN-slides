@@ -24,12 +24,12 @@ def esc(s):
 
 
 class Svg:
-    def __init__(self, name, w, h):
-        self.name, self.w, self.h, self.parts = name, w, h, []
+    def __init__(self, name, w, h, min_size=MIN_SIZE):
+        self.name, self.w, self.h, self.parts, self.min_size = name, w, h, [], min_size
 
     def text(self, x, y, s, size=22, weight=400, color=INK, anchor="middle", italic=False):
-        if size < MIN_SIZE:
-            raise ValueError(f"{self.name}: font size {size} < {MIN_SIZE}")
+        if size < self.min_size:
+            raise ValueError(f"{self.name}: font size {size} < {self.min_size}")
         style = ' font-style="italic"' if italic else ""
         self.parts.append(
             f'<text x="{x:g}" y="{y:g}" font-family="{FONT}" font-size="{size}" font-weight="{weight}" '
@@ -372,43 +372,77 @@ def f04c():
 
 
 def f13():
-    s = Svg("F13-hw-architecture", 1168, 460)
-    s.box(0, 0, 220, 150, [("PS · ARM x 2", 22, 700), ("Linux runner", 20), ("FM service", 20)], fill=PS_FILL, stroke=OK)
-    s.box(0, 280, 220, 120, [("DDR3", 22, 700), ("inputs · weights", 20), ("intermediate data", 20)])
-    s.line(110, 150, 110, 280, width=3)
-    s.raw(f'<rect x="250" y="0" width="918" height="460" rx="12" fill="none" stroke="{NAVY}" stroke-width="2" stroke-dasharray="10 6"/>')
-    s.text(1150, 30, "PL · XC7Z030 @ 150 MHz", 22, 700, NAVY, "end")
-    s.arrow(220, 50, 318, 50)
-    s.text(232, 40, "control", 20, 400, MUTED, "start")
-    s.raw(f'<rect x="275" y="70" width="26" height="340" rx="4" fill="{C_MOVE}"/>')
-    s.text(262, 444, "DDR ports", 20, 700, C_MOVE, "start")
-    s.arrow(220, 340, 273, 340)
-    s.arrow(273, 356, 220, 356)
-    lanes = [(100, "DMA"), (215, "DMA"), (330, "DMA")]
-    for y, t in lanes:
-        s.arrow(301, y, 318, y)
-        s.box(320, y - 28, 90, 56, [(t, 20, 700, WHITE)], fill=C_MOVE, stroke=C_MOVE)
-        s.arrow(410, y, 428, y)
-        s.box(430, y - 28, 100, 56, [("guard", 20, 700, WHITE)], fill=C_SAFE, stroke=C_SAFE)
-        s.arrow(530, y, 553, y)
-    s.box(555, 68, 330, 64, [("BUS · FINN accelerator", 22, 700, WHITE), ("8-bit streaming", 20, 400, WHITE)],
-          fill=C_BUS, stroke=C_BUS)
-    s.box(905, 68, 245, 64, [("SEM", 22, 700, WHITE), ("config. scrubbing", 20, 400, WHITE)], fill=C_SAFE, stroke=C_SAFE)
-    s.box(555, 183, 200, 64, [("PD · FINN", 22, 700, WHITE), ("LayerNorm", 20, 400, WHITE)], fill=C_LN, stroke=C_LN)
-    s.box(900, 160, 250, 210, [("Shared engine", 22, 700, WHITE), ("256 MAC lanes", 20, 400, WHITE),
-                               ("2x clock", 20, 400, WHITE), ("conv · GELU", 20, 400, WHITE),
-                               ("residual add", 20, 400, WHITE), ("GRU gate sums", 20, 400, WHITE)],
-          fill=C_ENG, stroke=C_ENG)
-    s.arrow(757, 222, 898, 222, color=C_ENG, dash=True)
-    s.arrow(898, 208, 757, 208, color=C_ENG, dash=True)
-    s.text(828, 196, "via DDR", 20, 400, MUTED)
-    s.box(555, 298, 130, 64, [("Aligner", 22, 700, WHITE)], fill=C_GRU, stroke=C_GRU)
-    s.arrow(685, 330, 703, 330)
-    s.box(705, 298, 175, 64, [("GRU tail", 22, 700, WHITE), ("FINN", 20, 400, WHITE)], fill=C_GRU, stroke=C_GRU)
-    s.line(960, 370, 960, 400, color=C_ENG)
-    s.line(960, 400, 620, 400, color=C_ENG)
-    s.arrow(620, 400, 620, 364, color=C_ENG)
-    s.text(790, 428, "gate sums", 20, 400, MUTED)
+    # left-to-right version of the compute-structure mermaid diagram (shared repository README, figure 1);
+    # node details at 18 px (user: slightly below the 20 px body minimum is fine for this figure)
+    s = Svg("F13-hw-architecture", 1168, 486, min_size=18)
+    W = WHITE
+    # PS and DDR
+    s.raw(f'<rect x="0" y="0" width="200" height="232" rx="12" fill="#eef6f0" stroke="{OK}" stroke-width="2"/>')
+    s.text(12, 26, "PS (ARM, Linux)", 20, 700, INK, "start")
+    s.box(10, 40, 180, 82, [("Runner", 20, 700), ("models · engine", 18), ("hybrid segments", 18)], fill="#ffffff", stroke=OK)
+    s.box(10, 134, 180, 86, [("FM service", 20, 700), ("supervision · SWDT", 18), ("CAN report", 18)], fill="#ffffff", stroke=OK)
+    s.line(100, 232, 100, 272, width=3)
+    s.box(0, 272, 200, 96, [("DDR3", 20, 700), ("inputs · weights", 18), ("intermediates", 18)])
+    # PS-PL ports
+    s.box(225, 20, 110, 70, [("GP0", 20, 700, W), ("control", 18, 400, W)], fill=C_MOVE, stroke=C_MOVE)
+    s.arrow(200, 55, 223, 55)
+    for y, h, lines in ((150, 60, [("HP0", 20, 700, W), ("64-bit", 18, 400, W)]), (298, 52, [("HP1", 20, 700, W)]),
+                        (380, 52, [("HP2", 20, 700, W)])):
+        s.box(225, y, 110, h, lines, fill=C_MOVE, stroke=C_MOVE)
+        s.arrow(212, y + h / 2, 223, y + h / 2)
+    s.line(200, 320, 212, 320, width=3)
+    s.line(212, 180, 212, 406, width=3)
+    # PL frame
+    s.raw(f'<rect x="355" y="0" width="813" height="486" rx="12" fill="none" stroke="{NAVY}" stroke-width="2" stroke-dasharray="10 6"/>')
+    s.text(1152, 24, "PL · XC7Z030 @ 150 MHz", 20, 700, NAVY, "end")
+    s.text(368, 24, "AXI-Lite control to every block", 18, 400, MUTED, "start")
+    s.arrow(335, 55, 353, 55)
+    lanes = [
+        (36, C_BUS, "#eaf1fb", "1 · BUS: 62.58 GOPS", "DMA 0", "guard 0",
+         [(612, 306, [("BUS FINN accelerator", 20, 700, W), ("W8A8 QAT · DSP 2-lane", 18, 400, W)], C_BUS)]),
+        (150, C_LN, "#eaf6ec", "2 · PD hybrid: 70.88 GOPS", "DMA 1", "guard 1",
+         [(612, 200, [("FINN LayerNorm", 20, 700, W), ("7 norm sets", 18, 400, W)], C_LN)]),
+        (264, C_GRU, "#f3ecf8", "3 · GRU: 63.76 GOPS", "DMA 3", "guard 3",
+         [(612, 130, [("Aligner", 20, 700, W), ("sums + state", 18, 400, W)], C_GRU),
+          (760, 158, [("FINN GRU tail", 20, 700, W), ("gates · state", 18, 400, W)], C_GRU)]),
+    ]
+    for y0, c, bg, title, dma, guard, nodes in lanes:
+        s.raw(f'<rect x="370" y="{y0}" width="560" height="100" rx="10" fill="{bg}" stroke="{c}" stroke-width="2"/>')
+        s.text(382, y0 + 22, title, 18, 700, c, "start")
+        ny = y0 + 32
+        s.box(382, ny, 80, 56, [(dma, 18, 700, W)], fill=C_MOVE, stroke=C_MOVE)
+        s.arrow(462, ny + 28, 480, ny + 28)
+        s.box(482, ny, 110, 56, [(guard, 18, 700, W)], fill=C_SAFE, stroke=C_SAFE)
+        s.arrow(592, ny + 28, 610, ny + 28)
+        for k, (x, w, lines, fill) in enumerate(nodes):
+            s.box(x, ny, w, 56, lines, fill=fill, stroke=fill)
+            if k:
+                s.arrow(nodes[k - 1][0] + nodes[k - 1][1], ny + 28, x - 2, ny + 28)
+    # DDR ports to the DMAs
+    s.line(335, 180, 350, 180, width=2)
+    s.line(350, 96, 350, 210, width=2)
+    s.arrow(350, 96, 380, 96)
+    s.arrow(350, 210, 380, 210)
+    s.arrow(335, 324, 380, 324)
+    # shared engine
+    s.box(950, 150, 200, 214, [("Shared w8a16", 20, 700, W), ("engine", 20, 700, W), ("256 MAC lanes", 18, 400, W),
+                               ("2x clock", 18, 400, W), ("pw · dw conv", 18, 400, W), ("GELU · residual", 18, 400, W),
+                               ("GRU gate sums", 18, 400, W)], fill=C_ENG, stroke=C_ENG)
+    s.arrow(814, 203, 948, 203, color=C_ENG, dash=True)
+    s.arrow(948, 219, 814, 219, color=C_ENG, dash=True)
+    s.text(880, 192, "via DDR", 18, 400, MUTED)
+    s.line(980, 364, 980, 378, color=C_ENG)
+    s.line(980, 378, 677, 378, color=C_ENG)
+    s.arrow(677, 378, 677, 354, color=C_ENG)
+    s.text(830, 400, "gate sums", 18, 400, MUTED)
+    # engine weights through HP2
+    s.line(335, 406, 343, 406, width=2)
+    s.line(343, 406, 343, 474, width=2)
+    s.line(343, 474, 1060, 474, width=2)
+    s.arrow(1060, 474, 1060, 366, width=2)
+    s.text(1072, 446, "weights", 18, 400, MUTED, "start")
+    # SEM
+    s.box(370, 388, 300, 64, [("SEM", 20, 700, W), ("config. memory scrubbing", 18, 400, W)], fill=C_SAFE, stroke=C_SAFE)
     return s
 
 

@@ -119,10 +119,6 @@ body { counter-reset: slide; }
 .authors .au { white-space: nowrap; }
 .authors .presenter sup { color: var(--ink); }
 
-/* Navigation: section progress (injected by tools/build.py from data-sec) */
-.prog { position: absolute; top: 32px; right: 56px; display: flex; gap: 6px; font-size: 20px; }
-.prog span { padding: 2px 12px; border-radius: 14px; color: var(--muted); background: var(--panel); }
-.prog span.on { color: #ffffff; background: var(--red); font-weight: 700; }
 
 /* Captions, glossary lines, media */
 .cap { font-size: 20px; color: var(--muted); margin-top: 6px; line-height: 1.25; }
@@ -145,3 +141,17 @@ table.cmp .num { white-space: nowrap; }
 .thanks-sub { margin-top: 24px; text-align: center; font-size: 28px; color: var(--muted); }
 .thanks-name { margin-top: 10px; text-align: center; font-size: 26px; }
 .thanks-name .presenter { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; color: var(--k); }
+
+/* QR code slot (title and closing slides) */
+.qr-slot {
+  position: absolute; right: 72px; bottom: 64px; width: 150px; height: 150px;
+  border: 3px dashed var(--line); border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  text-align: center; font-size: 20px; line-height: 1.2; color: var(--muted);
+}
+.contact { margin-top: 22px; text-align: center; font-size: 24px; line-height: 1.5; }
+
+/* Placeholder panels for figures added later */
+.slot3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.slot { height: 380px; border: 3px dashed var(--line); border-radius: 10px; display: flex; flex-direction: column;
+        align-items: center; justify-content: center; text-align: center; color: var(--muted); font-size: 22px; }
+.slot b { font-size: 28px; color: var(--navy); margin-bottom: 8px; }

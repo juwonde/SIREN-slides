@@ -60,22 +60,8 @@ def inline_figures(html):
         svg = (ROOT / "figures" / name).read_text(encoding="utf-8")
         svg = re.sub(r"<\?xml[^>]*\?>\s*", "", svg)
         svg = svg.replace("<svg ", f'<svg data-name="{name}" ', 1)
-        return f'<div class="fig">{svg}</div>'
-    return re.sub(r'<div class="fig" data-svg="([^"]+)"></div>', repl, html)
-
-
-SECTIONS = (("intro", "Introduction"), ("bg", "Background"), ("res", "Results"), ("fut", "Future works"))
-
-
-def add_progress(html):
-    def repl(m):
-        sec = m.group(1)
-        if sec not in dict(SECTIONS):
-            return m.group(0)
-        pills = "".join(f'<span class="on">{name}</span>' if key == sec else f"<span>{name}</span>"
-                        for key, name in SECTIONS)
-        return f'{m.group(0)}\n  <nav class="prog">{pills}</nav>'
-    return re.sub(r'<section class="slide" data-sec="(\w+)">', repl, html)
+        return f'<div class="fig"{m.group(2)}>{svg}</div>'
+    return re.sub(r'<div class="fig" data-svg="([^"]+)"([^>]*)></div>', repl, html)
 
 
 def use_stills(html):
@@ -86,7 +72,7 @@ def use_stills(html):
 def render(variant, lint, still=True):
     html = (ROOT / "slides" / "deck.html").read_text(encoding="utf-8")
     html = re.sub(r'<html lang="en" data-variant="[A-Z]">', f'<html lang="en" data-variant="{variant}">', html, count=1)
-    html = add_progress(inline_figures(html))
+    html = inline_figures(html)
     if still:
         html = use_stills(html)
     if lint:

@@ -1,4 +1,4 @@
-# 작업 계획 (alpha-6, 2026-10-18)
+# 작업 계획 (alpha-7, 2026-10-18)
 
 ## 0. 고정 조건
 
@@ -43,6 +43,15 @@
 38. (alpha-6) 우주 환경 그림은 **자기권 모양만** (500 km SSO 궤도가 방사선대 안쪽으로 보이지 않게)
 39. (alpha-6) 마지막 소속: **School of Space Research, Kyung Hee University** (우주탐사학과 공식 영문명)
 40. (alpha-6) **TE0715 보드로 실험**한다는 내용을 본문에 표시
+41. (alpha-7) 오른쪽 위 **구간 진행 표시 삭제**
+42. (alpha-7) 실험 보드는 **TE0715 SoM + TE0705 carrier board** 둘 다 명시
+43. (alpha-7) **전력 trade-off 그래프 자리** 한 장 (모델별 3개, 짧게)
+44. (alpha-7) 구조도: git mermaid 그림을 **가로**로, 이 그림만 18 px 허용
+45. (alpha-7) 표지·Thank you에 **QR 코드 자리**, Thank you에 이메일 juwonde@khu.ac.kr과 GitHub 두 개
+46. (alpha-7) 빌드업: 기존 위성은 입자 검출기 + EO 또는 + 태양 관측으로 downlink 공유 → 실무에선 부족, PADO-SAT은 S-band 여유 → 탑재 AI 검증
+47. (alpha-7) 빌드업: **in-situ 탐지** → 다음 단계 위성 전체 운용 변경·유인 임무, **Forecasting은 성능 문제로 검토 중**
+48. (alpha-7) FM 슬라이드: **현재 구현 기준** 항목 요약, Appendix Abstract에도 한 줄
+49. 작업 완료 후 저장소 정리, 공개 전환 예정 (사용자)
 
 ## 1. 발표 정보 (초록집 기준)
 
@@ -50,12 +59,12 @@
 - II-2-7, 10월 27일(화) 17:25 (날짜는 초록집 순서로 추정)
 - 저자: **Woncheol Joo**¹ (발표자, 확인됨), Subin Kim¹, Jeongin Yeo¹, Nayeong Hwang¹, Yangha Ju¹, Jiwon Lee¹, Young-Joo Song¹ ², Yong-Jae Moon¹ ²
 
-## 2. 발표 흐름 (본편 25장: 제목 + 내용 23장 + Thank you)
+## 2. 발표 흐름 (본편 26장: 제목 + 내용 24장 + Thank you)
 
 | # | 구간 | 제목 (EN) |
 |---|---|---|
 | 1 | Title | Onboard AI Payload of PADO-SAT: SIREN |
-| 2 | Introduction · Problem | CubeSat data reach the ground late |
+| 2 | Introduction · Problem | Small science satellites share a narrow downlink |
 | 3 | Introduction · Prior work | Onboard AI so far, and what is missing |
 | 4 | Introduction · Approach | PADO-SAT and SIREN |
 | 5 | Introduction · Platform | SIREN AI Processing Unit and requirements |
@@ -70,18 +79,18 @@
 | 14–19 | Results · PD / BUS / GRU | 모델 + Baseline 표 / FPGA 구현 (DNN 6장) |
 | 20 | Results · Placement | Placement: where each block sits |
 | 21 | Results · Routing | Routing: the real wires of one bitstream |
-| 22 | Results · Reliability | Fault management: detect, recover, report |
-| 23 | Future works | Toward the final version |
-| 24 | Summary | SIREN at a glance |
-| 25 | Closing | Thank you |
+| 22 | Results · Power | Power vs performance per model (그래프 자리) |
+| 23 | Results · Reliability | Fault management as implemented |
+| 24 | Future works | Toward the final version |
+| 25 | Summary | SIREN at a glance |
+| 26 | Closing | Thank you (연락처, QR 자리) |
 
-- 예상 시간 약 11분 (내용 23장 × 약 28초). 10분 목표보다 약 1분 김
+- 예상 시간 약 11분 (내용 24장, 전력 자리 슬라이드는 짧게). 10분 목표보다 약 1분 김
 - 줄이는 후보: 7·8번 합치기(−30초), 20·21번 합치기(−25초), 10번을 11·12번에 흡수(−30초)
 - Appendix: Abstract · Why an FPGA SoC · Correctness · Resources/weight update · Abbreviations
 
 ## 3. 친절도 장치
 
-- 모든 본편 슬라이드 오른쪽 위 **구간 진행 표시** (Introduction / Background / Results / Future works)
 - 약어는 처음 나오는 슬라이드 아래 회색 줄에 풀이, Appendix에 약어표
 - 모델 결과 슬라이드: 그림(무엇을 하는지) → 숫자(얼마나 잘하는지) 순서
 - 내부 용어 풀어 쓰기: pointwise (1×1) / depthwise conv, "outputs = integer reference"
@@ -131,8 +140,9 @@
 | alpha-3 | 아래쪽 정리 박스 제거, 발표자 확인 | 10/18 |
 | alpha-4 | 그리드 배치도 슬라이드, 바닥글 PADO/SIREN | 10/18 |
 | alpha-5 | 모델별 Baseline 표, Thank you 분리 | 10/18 |
-| **alpha-6** | **Introduction 빌드업, FINN·양자화 슬라이드, FM 본문, 자기권 그림, 제품명 제거, 공식 소속명** | **10/18** |
-| alpha-7 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 시간 맞추기 | 검토 후 |
+| alpha-6 | Introduction 빌드업, FINN·양자화 슬라이드, FM 본문, 자기권 그림, 제품명 제거, 공식 소속명 | 10/18 |
+| **alpha-7** | **진행 표시 삭제, 가로 구조도, 전력 그래프 자리, QR·연락처, downlink·in-situ 빌드업, 구현 기준 FM** | **10/18** |
+| alpha-8 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 시간 맞추기, 공개 전 저장소 정리 | 검토 후 |
 | beta-1 | 전력 측정 반영, 정확도 판 확정 | 측정 후 |
 | v1.0 | 리허설 반영 최종판 | 10/26 이전 |
 

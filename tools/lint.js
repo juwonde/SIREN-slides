@@ -29,7 +29,9 @@
         const m = el.getScreenCTM();
         px *= m ? Math.hypot(m.a, m.b) : 1;
       }
-      if (px < MIN_PX - 0.01) res.small.push({ slide: i + 1, px: +px.toFixed(1), text: text.slice(0, 40) });
+      const own = el.closest("[data-min-px]");
+      const minPx = own ? parseFloat(own.getAttribute("data-min-px")) : MIN_PX;
+      if (px < minPx - 0.01) res.small.push({ slide: i + 1, px: +px.toFixed(1), text: text.slice(0, 40) });
       const inFoot = !!el.closest(".foot");
       for (const r of rects) {
         const bottomLimit = inFoot ? sr.bottom : sr.top + FOOT_TOP;
