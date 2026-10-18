@@ -570,8 +570,10 @@
     <tr><td><b>L1</b> · services</td><td>worker hang · crash · input CRC · deadline · output rules</td><td>restart worker or pipeline</td></tr>
     <tr><td><b>L2</b> · boot, ground</td><td>repeated failures · unhealthy boot</td><td>Safehold · fallback image · signed upload</td></tr>
   </table>
-  <ul style="margin-top: 18px;">
+  <ul class="side" style="margin-top: 16px;">
     <li><b class="ok">23 items</b>: 22 shown on the board, 1 in simulation</li>
+    <li><b class="k">Safe states</b>: Safe Output (guard fills the frame with a safe value) → Safehold (AI stopped, health report to OBC)</li>
+    <li><b class="k">Protected zone</b>: accelerators limited to non-secure memory (TrustZone) · golden data read-only + CRC</li>
     <li>Board limits handled: DDR ECC → CRC scrub · BootROM fallback → SD fallback boot</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
