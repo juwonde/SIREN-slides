@@ -9,7 +9,7 @@ SIREN 2026 가을 학회 발표 자료 저장소입니다.
 
 - 발표: 10분 목표 (배정 15분, 질의응답 포함), 영어 슬라이드
 - 구성: Introduction – Background – Results (Preliminary) – Future works
-- 현재 판: **alpha-11** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
+- 현재 판: **alpha-12** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
 
 ## 폴더
 
@@ -19,9 +19,10 @@ SIREN 2026 가을 학회 발표 자료 저장소입니다.
 | `docs/numbers.md` | 슬라이드에 들어가는 모든 수치와 출처 |
 | `slides/deck.html`, `slides/style.css` | 슬라이드 원본 (1280×720 CSS px, 16:9) |
 | `figures/` | 그림 SVG. Figma에서 편집하고 같은 이름으로 다시 저장 |
-| `assets/logos/` | 경희대 대학휘장(SVG), 연구실 패치 |
+| `assets/logos/` | 경희대 대학휘장(공식 AI 원본에서 만든 투명 PNG), 연구실 패치 |
 | `assets/models/`, `assets/hw/` | 모델 시각화(GIF, 이미지, PDF용 대표 프레임), 배선도 |
-| `tools/` | 빌드·검사 (`build.py`, `lint.js`), 초안 그림 생성 (`make_figures.py`), 배치도 생성 (`chip_map.py`), 로고 정리 (`prep_svg_logo.py`) |
+| `figures/src/` | Mermaid 원본 (`*.mmd`): 구조도(F13), ModernTCN 블록(F04a), GRU 셀(F04c) |
+| `tools/` | 빌드·검사 (`build.py`, `lint.js`), 초안 그림 생성 (`make_figures.py`), 배치도 생성 (`chip_map.py`), Mermaid 렌더 (`render_mermaid.py`) |
 | `build/`, `dist/` | 빌드 결과 (git 제외). PDF는 GitHub release에 첨부 |
 
 ## 빌드
@@ -29,7 +30,7 @@ SIREN 2026 가을 학회 발표 자료 저장소입니다.
 Python 3 (표준 라이브러리만)과 Chrome 또는 Edge가 필요합니다. 브라우저는 `CHROME_PATH`, `PATH`, 표준 설치 위치 순서로 찾습니다.
 
 ```bash
-python tools/build.py --label alpha-11
+python tools/build.py --label alpha-12
 ```
 
 - 검사가 먼저 돌고, 문제가 있으면 PDF를 만들지 않습니다.
@@ -39,6 +40,16 @@ python tools/build.py --label alpha-11
 - 결과: `dist/SIREN-KSS2026-<label>-A.pdf`, `-B.pdf`, `-C.pdf` (정확도 판 3종)
 - 발표용 HTML: `build/present-A.html` 등 (GIF 재생). PDF에는 GIF 대표 프레임이 들어갑니다
 - 검사만: `python tools/build.py --lint-only`
+
+### Mermaid 그림
+
+```bash
+curl -o build/vendor/mermaid.min.js https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js
+python tools/render_mermaid.py
+```
+
+- `figures/src/*.mmd`를 headless Chrome에서 렌더해 `figures/*.svg`로 저장합니다. 글자는 SVG text(Figma 편집 가능)입니다.
+- 첫 줄 `%% px=18`이 글자 크기입니다. 구조도(F13)만 18 px(13.5 pt)를 허용하고 슬라이드에 `data-min-px="18"`로 표시합니다.
 
 ## 규칙
 

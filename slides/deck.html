@@ -19,7 +19,7 @@
 <!-- ============ 1. Title ============ -->
 <section class="slide title-slide">
   <div class="logos">
-    <img src="../assets/logos/khu-university-seal.svg" alt="Kyung Hee University seal">
+    <img class="seal" src="../assets/logos/khu-university-seal.png" alt="Kyung Hee University seal">
     <div class="logo-slot">PADO-SAT<br>logo</div>
     <img src="../assets/logos/ssw-lab-patch.png" alt="Sun and Space Weather Laboratory">
   </div>
@@ -109,7 +109,7 @@
     <ul>
       <li><b class="k">PADO-SAT</b>: 3U CubeSat (Kyung Hee Univ.), CREST + SIREN</li>
       <li><b class="k">SIREN</b>: 3 DNNs, <b>in-situ</b> on board
-        <ul><li><b>PD</b> particle risk · <b>BUS</b> anomaly · <b>GRU</b> compression</li></ul></li>
+        <ul><li><b>PD</b> particle risk · <b>BUS</b> anomaly · <b>COMP</b> compression</li></ul></li>
       <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
       <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
       <li>Forecasting: <b class="todo">under study</b> (performance)</li>
@@ -233,25 +233,27 @@
 <section class="slide" data-sec="bg">
   <div class="part">Background · Deep learning</div>
   <h2>Time-series models in SIREN</h2>
-  <div class="cols">
-    <div class="stack">
+  <div class="cols" style="grid-template-columns: 400px 1fr; align-items: center;">
+    <div>
       <h3>ModernTCN <span class="note">(Luo &amp; Wang, ICLR 2024)</span> → PD, BUS</h3>
-      <ul>
+      <ul class="side">
         <li>large-kernel <b class="k">depthwise conv</b>: long context</li>
         <li>ConvFFN1 / 2: features / variables</li>
         <li>only conv, norm, GELU</li>
       </ul>
-      <div class="fig" data-svg="F04a-moderntcn-block.svg"></div>
     </div>
-    <div class="stack">
-      <h3>GRU <span class="note">(Cho et al., 2014)</span> → compression</h3>
-      <ul>
+    <div class="fig" data-svg="F04a-moderntcn-block.svg"></div>
+  </div>
+  <div class="cols" style="grid-template-columns: 400px 1fr; align-items: center; margin-top: 26px;">
+    <div>
+      <h3>GRU <span class="note">(Cho et al., 2014)</span> → COMP</h3>
+      <ul class="side">
         <li>gates r, z: what to keep</li>
         <li>h(t) = (1 − z) ⊙ h(t−1) + z ⊙ h̃(t)</li>
         <li>one step per sample: streaming</li>
       </ul>
-      <div class="fig" data-svg="F04c-gru-cell.svg"></div>
     </div>
+    <div class="fig" data-svg="F04c-gru-cell.svg"></div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
@@ -328,7 +330,7 @@
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg" data-min-px="18"></div>
-  <div class="cap" style="margin-top: 8px;">Measured on TE0715 SoM + TE0705 carrier board (XC7Z030, same chip as the flight unit)</div>
+  <div class="cap" style="margin-top: 6px;">Dashed: PD passes data between FINN and the engine through DDR · measured on TE0715 SoM + TE0705 carrier board</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
@@ -336,7 +338,7 @@
 <!-- ============ 12. PD model ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · PD</div>
-  <h2>PD: high-energy particle risk detection</h2>
+  <h2>PD: Particle Risk Detection</h2>
   <div class="cols" style="grid-template-columns: 700px 1fr;">
     <div class="media">
       <img src="../assets/models/pd-risk-score.gif" data-still="../assets/models/pd-risk-score-still.png" width="700" height="400" alt="PD risk score during an SEP event">
@@ -396,7 +398,7 @@
 <!-- ============ 14. BUS model ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · BUS</div>
-  <h2>BUS: equipment anomaly detection</h2>
+  <h2>BUS: Housekeeping Anomaly Detection</h2>
   <div class="cols" style="grid-template-columns: 560px 1fr;">
     <div class="media">
       <img src="../assets/models/bus-anomaly.gif" data-still="../assets/models/bus-anomaly-still.png" width="560" height="420" alt="BUS anomaly detection on ESA-ADB telemetry">
@@ -455,13 +457,13 @@
   <aside class="notes"><ul><li>DSP packing halves DSP use</li><li>weight reload over AXI-Lite meets the update requirement</li></ul></aside>
 </section>
 
-<!-- ============ 16. GRU model ============ -->
+<!-- ============ 16. COMP model ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · GRU</div>
-  <h2>GRU: predictive compression of CREST data</h2>
+  <div class="part">Results (Preliminary) · COMP</div>
+  <h2>COMP: Compression via Prediction</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="media">
-      <img src="../assets/models/gru-reconstruction.png" width="600" height="401" alt="GRU compression and ground reconstruction">
+      <img src="../assets/models/gru-reconstruction.png" width="600" height="401" alt="COMP compression and ground reconstruction">
       <div class="cap">KSEM A5 count rate: original vs ground reconstruction</div>
     </div>
     <div class="side stack">
@@ -494,10 +496,10 @@
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>about 3x the baseline compression ratio, lower error</li></ul></aside>
 </section>
 
-<!-- ============ 17. GRU on FPGA ============ -->
+<!-- ============ 17. COMP on FPGA ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · GRU</div>
-  <h2>GRU on the FPGA</h2>
+  <div class="part">Results (Preliminary) · COMP</div>
+  <h2>COMP on the FPGA</h2>
   <div class="cols" style="grid-template-columns: 600px 1fr;">
     <div class="fig" data-svg="F10-gru-path.svg"></div>
     <ul>
@@ -515,7 +517,7 @@
 <!-- ============ 18. Placement and routing ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Chip</div>
-  <h2>Placement and routing: where blocks sit, how they are wired</h2>
+  <h2>Placement &amp; Routing</h2>
   <div class="cols" style="grid-template-columns: 290px 330px 1fr; gap: 24px;">
     <div>
       <div class="cap" style="margin: 0 0 6px;"><b>Placement</b> (grid)</div>
@@ -533,7 +535,7 @@
         <div><i style="background:#c0392b"></i>Guards · SEM</div>
         <div><i style="background:#d9822b"></i>Shared engine</div>
         <div><i style="background:#ffffff; border: 1.5px solid #b4bcc8"></i>Empty</div>
-        <div><i style="background:#8e5bb5"></i>GRU tail</div>
+        <div><i style="background:#8e5bb5"></i>COMP (GRU tail)</div>
         <div><i style="background:#e9ecf1"></i>ARM processor</div>
       </div>
       <table class="cmp">
@@ -553,13 +555,13 @@
 <!-- ============ Power trade-off (placeholder) ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Power</div>
-  <h2>Power budget: GOPS vs resource use per model</h2>
+  <h2>Performance trade-off per model</h2>
   <div class="slot3">
-    <div class="slot"><b>PD</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
-    <div class="slot"><b>BUS</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
-    <div class="slot"><b>GRU</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
+    <div class="slot"><b>PD</b>GOPS vs LUT use<br>Pareto front per W<br>after measurement</div>
+    <div class="slot"><b>BUS</b>GOPS vs LUT use<br>Pareto front per W<br>after measurement</div>
+    <div class="slot"><b>COMP</b>GOPS vs LUT use<br>Pareto front per W<br>after measurement</div>
   </div>
-  <div class="cap" style="margin-top: 12px;">One Pareto front per power budget (W) · board input power at 12 V · placeholder until measured</div>
+  <div class="cap" style="margin-top: 12px;">x: LUT use of the model · one Pareto front per board power level (W, 12 V input) · placeholder until measured</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>short slide: one trade-off curve per model</li></ul></aside>
 </section>
@@ -617,7 +619,7 @@
       <div class="bars">
         <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
         <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
-        <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
+        <div class="bar"><span>COMP</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
         <div class="cap">GOPS @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
       </div>
       <table>
@@ -637,7 +639,7 @@
 <!-- ============ 21. Thank you ============ -->
 <section class="slide title-slide">
   <div class="logos">
-    <img src="../assets/logos/khu-university-seal.svg" alt="Kyung Hee University seal">
+    <img class="seal" src="../assets/logos/khu-university-seal.png" alt="Kyung Hee University seal">
     <div class="logo-slot">PADO-SAT<br>logo</div>
     <img src="../assets/logos/ssw-lab-patch.png" alt="Sun and Space Weather Laboratory">
   </div>
@@ -657,10 +659,10 @@
   <ul>
     <li><b>Background</b>: CubeSat limits (power · compute · downlink) vs LEO particle risk</li>
     <li><b>Payload</b>: SIREN, onboard AI of PADO-SAT (3U)</li>
-    <li><b>Models</b>: ModernTCN risk score · ModernTCN anomaly · GRU compression</li>
-    <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · GRU CR 11.841</li>
+    <li><b>Models</b>: PD and BUS (ModernTCN) · COMP (GRU predictor)</li>
+    <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · COMP CR 11.841</li>
     <li><b>Method</b>: QAT → integer reference → FINN + shared engine → one bitstream</li>
-    <li><b>Testbed</b>: BUS 62.58 · PD 70.88 · GRU 63.76 GOPS @ 150 MHz</li>
+    <li><b>Testbed</b>: BUS 62.58 · PD 70.88 · COMP 63.76 GOPS @ 150 MHz</li>
     <li><b>Fault management</b>: 23 items (L0 · L1 · L2), 22 shown on the board</li>
     <li><b>Next</b>: power (≤ 5 W) · Digital Twin I / II data · flight unit</li>
   </ul>

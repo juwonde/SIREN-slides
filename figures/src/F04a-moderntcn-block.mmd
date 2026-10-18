@@ -1,0 +1,8 @@
+%% px=20  ModernTCN block (one block of the PD and BUS models)
+flowchart LR
+    IN["input"] --> DW["DW Conv<br/>time"] --> F1["ConvFFN1<br/>features"] --> F2["ConvFFN2<br/>variables"] --> ADD(("+")) --> OUT["output"]
+    IN -. "residual" .-> ADD
+    classDef blk fill:#e3ecfa,stroke:#1b2a57,color:#1b2a57
+    classDef io fill:#ffffff,stroke:#9aa3b2,color:#1a1a1a
+    class DW,F1,F2 blk
+    class IN,OUT,ADD io

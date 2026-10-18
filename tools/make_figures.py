@@ -94,7 +94,7 @@ def f02():
     s.arrow(280, 80, 280, 138)
     s.box(190, 260, 370, 196, [], fill=FINN_FILL, stroke=NAVY, stroke_w=3)
     s.text(375, 290, "SIREN AI Processing Unit", 22, 700, NAVY)
-    for i, (t, c) in enumerate([("PD", "risk detection"), ("BUS", "anomaly detection"), ("GRU", "compression")]):
+    for i, (t, c) in enumerate([("PD", "risk detection"), ("BUS", "anomaly detection"), ("COMP", "compression")]):
         y = 306 + i * 48
         s.box(206, y, 338, 40, [], fill="#ffffff", stroke=K, rx=6)
         s.text(222, y + 28, t, 20, 700, K, "start")
@@ -304,7 +304,7 @@ def f12():
     s = Svg("F12-digital-twin", 1168, 270)
     s.text(0, 26, "Digital Twin I · CREST data", 24, 700, NAVY, "start")
     row1 = [("Flux-field", "based model"), ("PADO-SAT orbit", "sampling"), ("CREST", "response"),
-            ("Count", "time series"), ("PD · GRU", "retrain · fine-tune")]
+            ("Count", "time series"), ("PD · COMP", "retrain · fine-tune")]
     for i, (a, b) in enumerate(row1):
         x = i * 236
         s.box(x, 42, 200, 84, [(a, 22, 700), (b, 22)], fill=FINN_FILL if i == 4 else PANEL,

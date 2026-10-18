@@ -1,0 +1,37 @@
+%% px=18  SIREN compute structure, left to right (after the mermaid diagram in the shared repository README)
+flowchart LR
+    PS["PS: ARM x2 · Linux<br/>runner · FM service"]
+    DDR[("DDR3<br/>via HP ports")]
+    subgraph PL["PL: XC7Z030 @ 150 MHz"]
+        subgraph COMPM["3 · COMP: 63.76 GOPS"]
+            D3["DMA"] --> G3["guard"] --> ZIP["Aligner"] --> GRT["FINN GRU tail"]
+        end
+        subgraph PDM["2 · PD hybrid: 70.88 GOPS"]
+            D1["DMA"] --> G1["guard"] --> LN["FINN LayerNorm"]
+        end
+        subgraph BUSM["1 · BUS: 62.58 GOPS"]
+            D0["DMA"] --> G0["guard"] --> BUS["BUS FINN accelerator"]
+        end
+        ENG["Shared engine<br/>w8a16 · 256 lanes"]
+        SEM["SEM scrubbing"]
+    end
+    PS --- DDR
+    DDR <==> D0 & D1 & D3
+    DDR ==> ENG
+    ENG <-.-> LN
+    ENG --> ZIP
+
+    classDef bus fill:#2f6fbf,stroke:#1d4f8f,color:#ffffff
+    classDef pdln fill:#3fa34d,stroke:#2b7a36,color:#ffffff
+    classDef engine fill:#d9822b,stroke:#a8601a,color:#ffffff
+    classDef gru fill:#8e5bb5,stroke:#6a3f8a,color:#ffffff
+    classDef move fill:#5f6b7a,stroke:#3f4955,color:#ffffff
+    classDef safe fill:#c0392b,stroke:#8e2a20,color:#ffffff
+    classDef ps fill:#eef6f0,stroke:#1a7f43,color:#1a1a1a
+    class BUS bus
+    class LN pdln
+    class ENG engine
+    class ZIP,GRT gru
+    class D0,D1,D3 move
+    class G0,G1,G3,SEM safe
+    class PS ps

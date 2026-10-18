@@ -21,7 +21,7 @@
   <line x1="908" y1="84" x2="930" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="942,84 930.0,77.4 930.0,90.6" fill="#4a4f5c"/>
   <rect x="944" y="42" width="200" height="84" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="1044" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PD · GRU</text>
+  <text x="1044" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PD · COMP</text>
   <text x="1044" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">retrain · fine-tune</text>
   <text x="0" y="176" font-family="Cambria, Georgia, Times New Roman, serif" font-size="24" font-weight="700" fill="#1b2a57" text-anchor="start">Digital Twin II · bus HK data</text>
   <rect x="0" y="192" width="436" height="72" rx="10" fill="#f3f5f9" stroke="#c25e00" stroke-width="2" stroke-dasharray="8 6"/>

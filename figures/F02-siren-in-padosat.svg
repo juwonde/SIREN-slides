@@ -23,7 +23,7 @@
   <text x="222" y="382" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="start">BUS</text>
   <text x="290" y="382" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">anomaly detection</text>
   <rect x="206" y="402" width="338" height="40" rx="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="222" y="430" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="start">GRU</text>
+  <text x="222" y="430" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="start">COMP</text>
   <text x="290" y="430" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">compression</text>
   <line x1="250" y1="212" x2="250" y2="246" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="250,258 256.6,246.0 243.4,246.0" fill="#4a4f5c"/>
