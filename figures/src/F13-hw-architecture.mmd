@@ -13,7 +13,6 @@ flowchart LR
             D0["DMA"] --> G0["guard"] --> BUS["BUS FINN accelerator"]
         end
         ENG["Shared engine<br/>w8a16 · 256 lanes"]
-        SEM["SEM scrubbing"]
     end
     PS --- DDR
     DDR <==> D0 & D1 & D3
@@ -33,5 +32,5 @@ flowchart LR
     class ENG engine
     class ZIP,GRT gru
     class D0,D1,D3 move
-    class G0,G1,G3,SEM safe
+    class G0,G1,G3 safe
     class PS ps

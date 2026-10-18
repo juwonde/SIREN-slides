@@ -161,3 +161,9 @@ table.cmp .num { white-space: nowrap; }
 /* Two-column legend */
 .legend2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
 .legend2 div { margin-bottom: 6px; }
+
+/* References: bottom-left, small (user: may be below 15 pt) */
+.ref { position: absolute; left: 56px; right: 300px; bottom: 50px; font-size: 14px; line-height: 1.25; color: var(--muted); }
+
+/* Box descriptions under a diagram */
+.boxes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; row-gap: 2px; margin-top: 8px; font-size: 18px; line-height: 1.3; }

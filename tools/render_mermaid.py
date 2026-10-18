@@ -41,7 +41,7 @@ def config(px):
             "clusterBkg": "#f7f8fb", "clusterBorder": "#9aa3b2", "edgeLabelBackground": "#ffffff",
             "titleColor": "#1b2a57",
         },
-        "flowchart": {"htmlLabels": False, "curve": "basis", "nodeSpacing": 16, "rankSpacing": 30,
+        "flowchart": {"htmlLabels": False, "curve": "basis", "nodeSpacing": 12, "rankSpacing": 30,
                       "padding": 10, "diagramPadding": 4, "wrappingWidth": 400},
     }
 

@@ -97,6 +97,7 @@
       </ul>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. Φ-Sat-1: Giuffrida et al., IEEE TGRS 60 (2022) · OPS-SAT: Evans &amp; Merri, SpaceOps 2014 · others: PADO-SAT PDR (2026)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>image tasks dominate prior missions</li><li>SIREN: time-series, low power, verifiable</li></ul></aside>
 </section>
@@ -113,7 +114,7 @@
       <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
       <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
       <li>Forecasting: <b class="todo">under study</b> (performance)</li>
-      <li>Success: ≥ 1 pre-trained → ≥ 3 fine-tuned results in orbit</li>
+      <li>Training data now: proxies (POES, KSEM, ESA-ADB) → <b class="k">Digital Twin</b> for CREST, bus HK</li>
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
@@ -171,6 +172,7 @@
       <div class="cap">Orbit assumed from recent Nuri launches · rideshare: final orbit set by the primary payload</div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. NOAA SWPC Space Weather Scales (S1)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
 </section>
@@ -198,6 +200,7 @@
       <div class="cap">Illustration: each channel inside its limits, joint pattern abnormal</div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>limits catch single-channel outliers only</li><li>learned score catches joint patterns · ESA-ADB as public benchmark</li></ul></aside>
 </section>
@@ -206,25 +209,21 @@
 <section class="slide" data-sec="bg">
   <div class="part">Background · Science data</div>
   <h2>Predictive compression of particle counts</h2>
-  <div class="cols" style="grid-template-columns: 1fr 560px;">
+  <div class="cols" style="grid-template-columns: 1fr 548px;">
     <div class="stack">
       <ul>
         <li>CR = original size / compressed size</li>
-        <li>Predictive coding
-          <ul><li>predict next sample, code only residual</li>
-              <li>better prediction → smaller residual</li></ul></li>
-        <li>Zigzag: signed → unsigned
-          <ul><li>0, −1, 1, −2 → 0, 1, 2, 3</li></ul></li>
-        <li>BZ2 entropy coding</li>
+        <li>Predictive coding: send only what the predictor misses</li>
+        <li>3 candidates per block and channel
+          <ul><li>raw · delta · GRU residual → smallest kept</li></ul></li>
         <li>Decoder repeats the same prediction</li>
       </ul>
-      <div class="gloss">CR: compression ratio · BZ2: BWT + MTF + RLE + Huffman coding</div>
+      <div class="gloss">CR: compression ratio · zigzag: 0, −1, 1, −2 → 0, 1, 2, 3 · BZ2: BWT + MTF + RLE + Huffman</div>
     </div>
-    <div class="stack">
-      <div class="fig" data-svg="F15-compression-illustration.svg"></div>
-      <div class="fig" data-svg="F04b-predictive-coding.svg"></div>
-    </div>
+    <div class="fig" data-svg="F15-compression-illustration.svg"></div>
   </div>
+  <div class="fig" data-svg="F04b-predictive-coding.svg" style="margin-top: 10px;"></div>
+  <div class="ref" data-min-px="14">Ref. BWT: Burrows &amp; Wheeler, DEC SRC Report 124 (1994)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>residuals cluster near zero → entropy coder works well</li><li>same predictor on ground → reconstruction</li></ul></aside>
 </section>
@@ -235,7 +234,7 @@
   <h2>Time-series models in SIREN</h2>
   <div class="cols" style="grid-template-columns: 400px 1fr; align-items: center;">
     <div>
-      <h3>ModernTCN <span class="note">(Luo &amp; Wang, ICLR 2024)</span> → PD, BUS</h3>
+      <h3>ModernTCN → PD, BUS</h3>
       <ul class="side">
         <li>large-kernel <b class="k">depthwise conv</b>: long context</li>
         <li>ConvFFN1 / 2: features / variables</li>
@@ -246,7 +245,7 @@
   </div>
   <div class="cols" style="grid-template-columns: 400px 1fr; align-items: center; margin-top: 26px;">
     <div>
-      <h3>GRU <span class="note">(Cho et al., 2014)</span> → COMP</h3>
+      <h3>GRU → COMP</h3>
       <ul class="side">
         <li>gates r, z: what to keep</li>
         <li>h(t) = (1 − z) ⊙ h(t−1) + z ⊙ h̃(t)</li>
@@ -255,6 +254,7 @@
     </div>
     <div class="fig" data-svg="F04c-gru-cell.svg"></div>
   </div>
+  <div class="ref" data-min-px="14">Ref. ModernTCN: Luo &amp; Wang, ICLR 2024 · GRU: Cho et al., EMNLP 2014</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
 </section>
@@ -280,6 +280,7 @@
       <div class="panel">GOPS = 2 × MACs per inference / inference time</div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. QAT: Jacob et al., CVPR 2018</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>integer model defines the correct output, bit for bit</li></ul></aside>
 </section>
@@ -305,7 +306,7 @@
       <div class="gloss">SIMT: single instruction, multiple threads · SM: streaming multiprocessor · PE: processing element</div>
     </div>
   </div>
-  <div class="cap">Terms: Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · Umuroglu et al., FPGA 2017</div>
+  <div class="ref" data-min-px="14">Ref. Sze et al., Proc. IEEE 2017 · Venieris et al., ACM CSUR 2018 · FINN: Umuroglu et al., FPGA 2017</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>GPU: same SMs reused layer after layer · FINN: each layer gets its own hardware</li><li>SIREN mixes both styles on one FPGA</li></ul></aside>
 </section>
@@ -330,7 +331,16 @@
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg" data-min-px="18"></div>
-  <div class="cap" style="margin-top: 6px;">Dashed: PD passes data between FINN and the engine through DDR · measured on TE0715 SoM + TE0705 carrier board</div>
+  <div class="boxes" data-min-px="18">
+    <div><b>Runner, FM service</b>: schedule models, supervise faults</div>
+    <div><b>DMA</b>: streams between DDR and the PL</div>
+    <div><b>guard</b>: checks output range, timing, order</div>
+    <div><b>BUS accelerator, LayerNorm</b>: FINN streaming blocks</div>
+    <div><b>Shared engine</b>: 256 MAC lanes at 2× clock (conv, GELU, residual)</div>
+    <div><b>Aligner, GRU tail</b>: gate sums + hidden state → GRU cell</div>
+    <div><b>Dashed</b>: PD hands data to the engine through DDR</div>
+    <div><b>Not drawn</b>: SEM scrubs configuration memory</div>
+  </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
@@ -346,21 +356,21 @@
     </div>
     <div class="side stack">
       <ul>
-        <li>Input: 24 h of 5-min counts, e⁻ / p⁺</li>
+        <li>Input: 24 h of 5-min counts, e⁻ / p⁺ (POES as CREST proxy)</li>
         <li>ModernTCN → <b class="k">risk 0–1</b> at t + 5 min</li>
       </ul>
       <table class="cmp">
         <tr><th>Metric</th><th class="num">CRATERRE</th><th class="num">SIREN</th></tr>
-        <tr><td>F1</td><td class="num">0.575</td><td class="num"><b class="k">0.611</b></td></tr>
-        <tr><td>CSI</td><td class="num">0.403</td><td class="num"><b class="k">0.440</b></td></tr>
+        <tr><td>F1 ⇑</td><td class="num">0.575</td><td class="num"><b class="k">0.611</b></td></tr>
+        <tr><td>CSI ⇑</td><td class="num">0.403</td><td class="num"><b class="k">0.440</b></td></tr>
       </table>
-      <div class="cap">Baseline: CRATERRE · PDR test set, float model</div>
+      <div class="cap">Baseline: CRATERRE · PDR test set, float model · ⇑ higher is better, ⇓ lower is better</div>
       <div class="v v-A"><span class="vlabel">A · baseline only</span></div>
       <div class="v v-B">
         <span class="vlabel">B · + quantization</span>
         <table class="cmp">
           <tr><th>Validation</th><th class="num">Float</th><th class="num">Integer</th></tr>
-          <tr><td>F1</td><td class="num">0.756</td><td class="num"><b class="ok">0.757</b></td></tr>
+          <tr><td>F1 ⇑</td><td class="num">0.756</td><td class="num"><b class="ok">0.757</b></td></tr>
         </table>
       </div>
       <div class="v v-C">
@@ -369,6 +379,7 @@
       </div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. baseline and test set: PADO-SAT PDR (2026) · data: NOAA GOES, POES/MetOp</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>top: GOES flux, NOAA event · bottom: SIREN risk score and warning band</li><li>SIREN above CRATERRE in F1 and CSI</li></ul></aside>
 </section>
@@ -406,23 +417,23 @@
     </div>
     <div class="side stack">
       <ul>
-        <li>Input: multichannel bus HK, 1 h / 3 h windows</li>
+        <li>Input: multichannel HK, 1 h / 3 h windows (ESA-ADB as proxy)</li>
         <li>ModernTCN → <b class="k">anomaly score</b> → alarm</li>
       </ul>
       <table class="cmp">
         <tr><th>Metric</th><th class="num">EWMA</th><th class="num">SIREN</th></tr>
-        <tr><td>F1</td><td class="num">0.833</td><td class="num"><b class="k">0.889</b></td></tr>
-        <tr><td>Detected events</td><td class="num">10 / 14</td><td class="num"><b class="k">12 / 14</b></td></tr>
-        <tr><td>False alarms</td><td class="num">0</td><td class="num">1</td></tr>
+        <tr><td>F1 ⇑</td><td class="num">0.833</td><td class="num"><b class="k">0.889</b></td></tr>
+        <tr><td>Detected events ⇑</td><td class="num">10 / 14</td><td class="num"><b class="k">12 / 14</b></td></tr>
+        <tr><td>False alarms ⇓</td><td class="num">0</td><td class="num">1</td></tr>
       </table>
-      <div class="cap">Baseline: EWMA with robust threshold · PDR test set, float model</div>
+      <div class="cap">Baseline: EWMA with robust threshold · PDR test set, float model · ⇑ higher is better, ⇓ lower is better</div>
       <div class="v v-A"><span class="vlabel">A · baseline only</span></div>
       <div class="v v-B">
         <span class="vlabel">B · + quantization</span>
         <table class="cmp">
           <tr><th>Validation F1</th><th class="num">Float</th><th class="num">Integer</th></tr>
-          <tr><td>smoothed</td><td class="num">0.621</td><td class="num"><b class="ok">0.630</b></td></tr>
-          <tr><td>window</td><td class="num">0.527</td><td class="num">0.520</td></tr>
+          <tr><td>smoothed ⇑</td><td class="num">0.621</td><td class="num"><b class="ok">0.630</b></td></tr>
+          <tr><td>window ⇑</td><td class="num">0.527</td><td class="num">0.520</td></tr>
         </table>
       </div>
       <div class="v v-C">
@@ -431,6 +442,7 @@
       </div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. ESA-ADB: Kotowski et al., arXiv:2406.17826 (2024) · baseline: PADO-SAT PDR (2026)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>red band: expert label · blue bar: SIREN alarm</li><li>two more events than EWMA, one false alarm</li></ul></aside>
 </section>
@@ -469,21 +481,22 @@
     <div class="side stack">
       <ul>
         <li>1-layer GRU predicts next counts</li>
-        <li>Residual → zigzag → BZ2 packet</li>
+        <li>3 candidates per block: raw · delta · GRU residual</li>
+        <li>Smallest after BZ2 is sent</li>
         <li>Ground: same predictor → counts back</li>
       </ul>
       <table class="cmp">
         <tr><th>Metric</th><th class="num">NASA log</th><th class="num">SIREN</th></tr>
-        <tr><td>Compression ratio</td><td class="num">4</td><td class="num"><b class="k">11.84</b></td></tr>
-        <tr><td>RMSE (count)</td><td class="num">1.89</td><td class="num"><b class="k">0.58</b></td></tr>
+        <tr><td>Compression ratio ⇑</td><td class="num">4</td><td class="num"><b class="k">11.84</b></td></tr>
+        <tr><td>RMSE (count) ⇓</td><td class="num">1.89</td><td class="num"><b class="k">0.58</b></td></tr>
       </table>
-      <div class="cap">Baseline: NASA 8-bit log compression · PDR test set, float model</div>
+      <div class="cap">Baseline: NASA 8-bit log compression · PDR test set, float model · ⇑ higher is better, ⇓ lower is better</div>
       <div class="v v-A"><span class="vlabel">A · baseline only</span></div>
       <div class="v v-B">
         <span class="vlabel">B · + quantization</span>
         <table class="cmp">
           <tr><th>31 days, lossless</th><th class="num">Float</th><th class="num">Integer</th></tr>
-          <tr><td>Compression ratio</td><td class="num">3.246</td><td class="num"><b class="ok">3.246</b></td></tr>
+          <tr><td>Compression ratio ⇑</td><td class="num">3.246</td><td class="num"><b class="ok">3.246</b></td></tr>
         </table>
       </div>
       <div class="v v-C">
@@ -492,6 +505,7 @@
       </div>
     </div>
   </div>
+  <div class="ref" data-min-px="14">Ref. data: KSEM on GK2A · baseline: PADO-SAT PDR (2026)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>about 3x the baseline compression ratio, lower error</li></ul></aside>
 </section>
@@ -539,7 +553,7 @@
         <div><i style="background:#e9ecf1"></i>ARM processor</div>
       </div>
       <table class="cmp">
-        <tr><th>Resource</th><th class="num">Used</th><th class="num">Free</th></tr>
+        <tr><th>Resource</th><th class="num">Used</th><th class="num">Free ⇑</th></tr>
         <tr><td>LUT</td><td class="num">77.6 %</td><td class="num"><b class="ok">22.4 %</b></td></tr>
         <tr><td>FF</td><td class="num">55.8 %</td><td class="num"><b class="ok">44.2 %</b></td></tr>
         <tr><td>BRAM36</td><td class="num">68.1 %</td><td class="num"><b class="ok">31.9 %</b></td></tr>
@@ -584,6 +598,7 @@
     <li><b class="k">Protected zone</b>: accelerators limited to non-secure memory (TrustZone) · golden data read-only + CRC</li>
     <li>Board limits handled: DDR ECC → CRC scrub · BootROM fallback → SD fallback boot</li>
   </ul>
+  <div class="ref" data-min-px="14">Ref. SEM: AMD Soft Error Mitigation Controller, PG036 · design: PADO-SAT PDR (2026)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>items re-mapped to the Zynq-7000 testbed from the PDR design</li><li>guards in front of every accelerator, SEM for configuration memory</li></ul></aside>
 </section>
@@ -591,14 +606,15 @@
 <!-- ============ 19. Future works ============ -->
 <section class="slide" data-sec="fut">
   <div class="part">Future works</div>
-  <h2>Toward the final version</h2>
+  <h2>Digital Twin data and remaining checks</h2>
+  <ul class="side" style="margin-bottom: 10px;"><li>Why: no CREST or PADO-SAT HK data before launch · proxies differ in channels, orbit, spacecraft</li></ul>
   <div class="fig" data-svg="F12-digital-twin.svg"></div>
-  <div class="cap">Ref. flux-field model: VERB-3D (Subbotin &amp; Shprits, 2009, Space Weather)</div>
   <ul style="margin-top: 16px;">
     <li><b class="todo">Power check</b>: board input power during inference vs 5 W limit</li>
     <li><b class="k">Flight hardware</b>: lab board → flight AI Processing Unit (same chip)</li>
     <li><b class="k">Weight upload</b> after fine-tuning: selected layers only, <b class="k">≤ 1 MB</b> for all 3 models</li>
   </ul>
+  <div class="ref" data-min-px="14">Ref. flux-field model: VERB-3D, Subbotin &amp; Shprits, Space Weather 7 (2009)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit · II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul></aside>
 </section>
@@ -620,7 +636,7 @@
         <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
         <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
         <div class="bar"><span>COMP</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
-        <div class="cap">GOPS @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
+        <div class="cap">GOPS ⇑ @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
       </div>
       <table>
         <tr><th>Requirement</th><th>Status</th></tr>

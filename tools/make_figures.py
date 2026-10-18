@@ -150,21 +150,6 @@ def f03():
 
 
 
-def f04b():
-    s = Svg("F04b-predictive-coding", 548, 190)
-    s.text(0, 24, "Predictive coding (lossless)", 20, 700, INK, "start")
-    s.box(0, 40, 92, 56, [("x(t)", 22, 700)])
-    s.arrow(92, 68, 116, 68)
-    s.box(116, 40, 92, 56, [("GRU", 22, 700, NAVY)], fill=FINN_FILL, stroke=NAVY)
-    s.arrow(208, 68, 232, 68)
-    s.box(232, 40, 120, 56, [("x - x̂", 22, 700)])
-    s.arrow(352, 68, 376, 68)
-    s.box(376, 40, 172, 56, [("zigzag · BZ2", 22, 700, K)], fill="#ffffff", stroke=K)
-    s.arrow(462, 96, 462, 126)
-    s.box(260, 126, 288, 56, [("ground: same GRU", 22, 700), ], fill=PS_FILL, stroke=OK)
-    s.text(130, 160, "exact x(t) restored", 20, 700, OK)
-    s.arrow(256, 154, 236, 154, color=OK)
-    return s
 
 
 
@@ -441,8 +426,8 @@ def f19():
     return s
 
 
-# F04a, F04c and F13 come from Mermaid sources (figures/src, tools/render_mermaid.py)
-ALL = (f02, f03, f04b, f06, f07, f08, f09, f10, f12, f14, f15, f17, f18, f19)
+# F04a, F04b, F04c and F13 come from Mermaid sources (figures/src, tools/render_mermaid.py)
+ALL = (f02, f03, f06, f07, f08, f09, f10, f12, f14, f15, f17, f18, f19)
 
 
 def main():

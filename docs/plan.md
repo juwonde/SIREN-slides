@@ -1,4 +1,4 @@
-# 작업 계획 (alpha-12, 2026-10-18)
+# 작업 계획 (alpha-13, 2026-10-18)
 
 ## 0. 고정 조건
 
@@ -56,6 +56,11 @@
 51. (alpha-8) 배치·배선 슬라이드 **한 장으로** 합침 (사용자 허용), GOPS 막대·요구조건 표는 Summary로
 52. (alpha-8) 전력 슬라이드: **GOPS vs (x)**, W별 Pareto front. x 추천: FPGA 자원 사용률 (사용자 결정 대기)
 54. (alpha-10) 저장소 이름 **SIREN_2026_Fall_conf** (항공우주학회 발표에도 사용). Thank you의 GitHub 링크는 이 저장소 하나. 코드 공유 저장소는 공개하지 않음, 공개 적합 자료만 이 저장소로 옮김
+61. (alpha-13) **참고문헌**: 각 페이지 왼쪽 아래 작은 글씨(14 px 허용, `.ref`)
+62. (alpha-13) 지표마다 **⇑ 높을수록 좋음 / ⇓ 낮을수록 좋음** 표시
+63. (alpha-13) COMP: 블록·채널마다 **raw · delta · GRU residual** 세 후보 중 BZ2 후 가장 작은 것 (8번 Mermaid 그림, 18번 글머리표)
+64. (alpha-13) **Digital Twin 빌드업**: 4번(학습 데이터는 지금 대리 데이터 → Digital Twin), 모델 슬라이드(대리 데이터 표시), 23번(왜 필요한가)
+65. (alpha-13) 13번 구조도 아래 **박스 설명** 8개 (18 px), SEM은 설명으로만
 57. (alpha-12) 전력 슬라이드 x축 **LUT 사용률** 확정, 제목 "Performance trade-off per model"
 58. (alpha-12) 모델 이름 GRU → **COMP** (네트워크 종류는 GRU 그대로). 제목: "BUS: Housekeeping Anomaly Detection", "COMP: Compression via Prediction", "PD: Particle Risk Detection", "Placement & Routing"
 59. (alpha-12) 구조도(13번)와 9번 그림은 **Mermaid로 렌더** (화살표 자동 배치)
@@ -156,8 +161,9 @@
 | alpha-9 | FM 슬라이드: Safe 상태, 보호 영역 | 10/18 |
 | alpha-10 | 저장소 이름 변경, 연락처 링크 하나 | 10/18 |
 | alpha-11 | 궤도 가정 표시, 자원 여유 표 | 10/18 |
-| **alpha-12** | **COMP 이름, 새 제목, Mermaid 그림, 로고 정렬, LUT 축** | **10/18** |
-| alpha-13 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 공개 전 저장소 정리 | 검토 후 |
+| alpha-12 | COMP 이름, 새 제목, Mermaid 그림, 로고 정렬, LUT 축 | 10/18 |
+| **alpha-13** | **참고문헌, ⇑⇓ 표시, COMP 세 후보, Digital Twin 빌드업, 구조도 설명** | **10/18** |
+| alpha-14 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 공개 전 저장소 정리 | 검토 후 |
 | beta-1 | 전력 측정 반영, 정확도 판 확정 | 측정 후 |
 | v1.0 | 리허설 반영 최종판 | 10/26 이전 |
 

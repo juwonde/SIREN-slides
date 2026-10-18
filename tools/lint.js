@@ -13,6 +13,8 @@
     const sr = sl.getBoundingClientRect();
     const takeEl = sl.querySelector(".take");
     const take = takeEl ? takeEl.getBoundingClientRect() : null;
+    const refEl = sl.querySelector(".ref");
+    const refBox = refEl ? refEl.getBoundingClientRect() : null;
     const walker = document.createTreeWalker(sl, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
       const t = walker.currentNode;
@@ -42,6 +44,8 @@
       }
       if (take && !el.closest(".take") && !inFoot && rects.some(r => hit(r, take)))
         res.outside.push({ slide: i + 1, text: "overlaps key message: " + text.slice(0, 30) });
+      if (refBox && !el.closest(".ref") && !inFoot && rects.some(r => hit(r, refBox)))
+        res.outside.push({ slide: i + 1, text: "overlaps reference line: " + text.slice(0, 30) });
       for (const b of banned) if (b.test(text)) res.banned.push({ slide: i + 1, text: text.slice(0, 40) });
     }
     sl.querySelectorAll(".fig svg, img").forEach(g => {

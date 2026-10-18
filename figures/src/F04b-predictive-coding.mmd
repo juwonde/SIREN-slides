@@ -1,0 +1,15 @@
+%% px=20  COMP coding: three candidates per block and channel, the smallest one is sent
+flowchart LR
+    X["counts x(t)"] --> RAW["raw counts"]
+    X --> DEL["delta<br/>x(t) − x(t−1)"]
+    X --> GRU["GRU predictor"] --> RES["GRU residual<br/>x(t) − x̂(t)"]
+    RAW --> B1["BZ2"]
+    DEL --> B2["zigzag + BZ2"]
+    RES --> B3["zigzag + BZ2"]
+    B1 & B2 & B3 --> SEL{{"smallest"}} --> PKT["packet"]
+    classDef cand fill:#e3ecfa,stroke:#1b2a57,color:#1b2a57
+    classDef io fill:#ffffff,stroke:#9aa3b2,color:#1a1a1a
+    classDef pick fill:#fbe9d7,stroke:#c25e00,color:#1a1a1a
+    class RAW,DEL,RES cand
+    class X,PKT,B1,B2,B3,GRU io
+    class SEL pick
