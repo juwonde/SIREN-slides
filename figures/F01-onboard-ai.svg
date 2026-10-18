@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="470" viewBox="0 0 470 470">
+  <rect x="35" y="0" width="400" height="92" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
+  <text x="235" y="39.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Raw data</text>
+  <text x="235" y="66.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">CREST counts · bus HK</text>
+  <line x1="235" y1="92" x2="235" y2="120" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="235,132 241.6,120.0 228.4,120.0" fill="#4a4f5c"/>
+  <rect x="35" y="132" width="400" height="92" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
+  <text x="235" y="171.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">SIREN onboard inference</text>
+  <text x="235" y="198.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">3 DNNs on one FPGA SoC</text>
+  <line x1="235" y1="224" x2="88.633" y2="261.055" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="77,264 90.3,267.5 87.0,254.7" fill="#4a4f5c"/>
+  <rect x="5" y="264" width="144" height="92" rx="10" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="77" y="303.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Risk</text>
+  <text x="77" y="330.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">score</text>
+  <line x1="235" y1="224" x2="235" y2="252" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="235,264 241.6,252.0 228.4,252.0" fill="#4a4f5c"/>
+  <rect x="163" y="264" width="144" height="92" rx="10" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="235" y="303.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Anomaly</text>
+  <text x="235" y="330.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">flag</text>
+  <line x1="235" y1="224" x2="381.367" y2="261.055" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="393,264 383.0,254.7 379.7,267.5" fill="#4a4f5c"/>
+  <rect x="321" y="264" width="144" height="92" rx="10" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
+  <text x="393" y="303.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Compressed</text>
+  <text x="393" y="330.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">packet</text>
+  <line x1="235" y1="356" x2="235" y2="384" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="235,396 241.6,384.0 228.4,384.0" fill="#4a4f5c"/>
+  <rect x="35" y="396" width="400" height="70" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
+  <text x="235" y="438.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Downlink: information, not raw data</text>
+</svg>

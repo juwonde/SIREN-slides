@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" data-variant="A">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>SIREN · KSS 2026 Fall</title>
+<link rel="stylesheet" href="../slides/style.css">
+</head>
+<body>
+
+<!-- ============ 1. Title ============ -->
+<section class="slide title-slide">
+  <div class="logos">
+    <img src="../assets/logos/khu-university-seal.svg" alt="Kyung Hee University seal">
+    <div class="logo-slot">PADO-SAT<br>logo</div>
+    <img src="../assets/logos/ssw-lab-patch.png" alt="Sun and Space Weather Laboratory">
+  </div>
+  <h1>Onboard AI Payload of PADO-SAT: SIREN</h1>
+  <div class="sub">Space artificial Intelligence with Resource Efficient Network</div>
+  <div class="authors">
+    <span class="au presenter">Woncheol Joo<sup>1</sup></span>,
+    <span class="au">Subin Kim<sup>1</sup></span>,
+    <span class="au">Jeongin Yeo<sup>1</sup></span>,
+    <span class="au">Nayeong Hwang<sup>1</sup></span>,
+    <span class="au">Yangha Ju<sup>1</sup></span>,
+    <span class="au">Jiwon Lee<sup>1</sup></span>,
+    <span class="au">Young-Joo Song<sup>1,2</sup></span>,
+    <span class="au">Yong-Jae Moon<sup>1,2</sup></span>
+  </div>
+  <div class="affil">
+    <sup>1</sup> G-LAMP NEXUS Institute / School of Space Research, Kyung Hee University<br>
+    <sup>2</sup> Department of Astronomy and Space Science, Kyung Hee University
+  </div>
+  <div class="event">KSS 2026 Fall Meeting · Session II-2 · Oct 27, 2026<span class="badge">Preliminary · Alpha</span></div>
+  <aside class="notes">
+    <ul><li>Self-introduction · SIREN = onboard AI payload of PADO-SAT</li><li>Preliminary results · power measurement pending</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 2. Introduction ============ -->
+<section class="slide">
+  <div class="part">Introduction</div>
+  <h2>Why onboard AI on a CubeSat</h2>
+  <div class="cols" style="grid-template-columns: 1fr 470px;">
+    <div class="stack">
+      <ul>
+        <li>LEO charged-particle hazard
+          <ul><li>radiation belts · SAA · SEP events</li></ul></li>
+        <li>Downlink bottleneck
+          <ul><li>CREST science data: up to <b class="k">50 MB/day</b></li></ul></li>
+        <li>Onboard AI: <b class="k">information, not raw data</b></li>
+      </ul>
+      <table>
+        <tr><th>Onboard AI mission</th><th>Processor</th></tr>
+        <tr><td>Φ-Sat-1</td><td>Myriad 2 VPU</td></tr>
+        <tr><td>CogniSAT-6</td><td>Myriad X VPU</td></tr>
+        <tr><td>BlueBON</td><td>Jetson Orin NX</td></tr>
+        <tr><td><b class="k">SIREN</b></td><td><b class="k">Zynq-7000 FPGA SoC · ≤ 5 W</b></td></tr>
+      </table>
+    </div>
+    <div class="fig" data-svg="F01-onboard-ai.svg"></div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>LEO particle hazard → need of timely risk information</li><li>50 MB/day vs short passes → send results, not raw data</li><li>prior missions: VPU / GPU · SIREN: FPGA SoC under 5 W</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 3. Introduction ============ -->
+<section class="slide">
+  <div class="part">Introduction</div>
+  <h2>PADO-SAT and SIREN</h2>
+  <div class="cols" style="grid-template-columns: 1fr 560px;">
+    <ul>
+      <li><b class="k">PADO-SAT</b>: 3U CubeSat, Kyung Hee Univ.
+        <ul><li>PArticle Detector On-board AI</li></ul></li>
+      <li><b>CREST</b>: charged-particle detector
+        <ul><li>e⁻ 100 keV–1 MeV · p⁺ &gt; 1 MeV</li></ul></li>
+      <li><b class="k">SIREN</b>: onboard AI payload
+        <ul><li>PD · BUS · GRU (3 DNNs)</li></ul></li>
+      <li>Success criteria
+        <ul><li>Minimum: ≥ 1 pre-trained result</li>
+            <li>Basic: ≥ 3 fine-tuned results</li>
+            <li>Extended: low-loss compression + detection</li></ul></li>
+    </ul>
+    <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>3U, two payloads: CREST measures, SIREN interprets</li><li>three tasks · success criteria from minimum to extended</li><li>SIREN output: logged and downlinked only, no mode change</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 4. Background: theory I ============ -->
+<section class="slide">
+  <div class="part">Background · Theory</div>
+  <h2>Space radiation environment</h2>
+  <div class="cols" style="grid-template-columns: 1fr 560px;">
+    <ul>
+      <li>Trapped particles
+        <ul><li>inner belt: energetic <b class="k">protons</b></li>
+            <li>outer belt: relativistic <b class="k">electrons</b></li>
+            <li>SAA: inner belt reaches LEO</li></ul></li>
+      <li>Solar energetic particle (SEP) events
+        <ul><li>proton flux rise in minutes to hours</li>
+            <li>NOAA S1: ≥ 10 MeV protons ≥ 10 pfu</li></ul></li>
+      <li>Effects: single-event effects · charging · dose</li>
+      <li>Data: POES/MetOp e⁻ / p⁺ count rates</li>
+    </ul>
+    <div class="fig" data-svg="F03-radiation-environment.svg"></div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>belts + SAA: steady hazard · SEP: sudden hazard</li><li>same physical quantities as CREST → POES/MetOp for training</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 5. Background: theory II ============ -->
+<section class="slide">
+  <div class="part">Background · Theory</div>
+  <h2>Time-series models in SIREN</h2>
+  <div class="cols">
+    <div class="stack">
+      <h3>ModernTCN <span class="note">(Luo &amp; Wang, ICLR 2024)</span></h3>
+      <ul>
+        <li>patch embedding per variable</li>
+        <li>large-kernel <b class="k">depthwise conv</b>: time</li>
+        <li>ConvFFN1 / 2: features / variables</li>
+        <li>convolution only → <b class="k">hardware-friendly</b></li>
+      </ul>
+      <div class="fig" data-svg="F04a-moderntcn-block.svg"></div>
+    </div>
+    <div class="stack">
+      <h3>GRU <span class="note">(Cho et al., 2014)</span></h3>
+      <ul>
+        <li>gates z, r · hidden state h</li>
+        <li>h(t) = (1 − z) ⊙ h(t−1) + z ⊙ h̃(t)</li>
+        <li>residual e = x − x̂ → zigzag → BZ2</li>
+        <li>same predictor on ground → <b class="k">lossless</b></li>
+      </ul>
+      <div class="fig" data-svg="F04b-predictive-coding.svg"></div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>ModernTCN: PD and BUS · pure convolution maps well to FPGA</li><li>GRU: next-step prediction · only the residual is coded</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 6. Background: theory III ============ -->
+<section class="slide">
+  <div class="part">Background · Theory</div>
+  <h2>Integer inference on an FPGA</h2>
+  <div class="cols">
+    <div class="stack">
+      <h3>Quantization</h3>
+      <ul>
+        <li>real value ≈ scale × integer</li>
+        <li><b class="k">QAT</b>: quantizers inside training</li>
+        <li>8-bit weights · 8/16-bit activations
+          <ul><li><b class="k">mixed precision</b> per layer</li></ul></li>
+        <li>exact integer MAC · wide accumulator</li>
+        <li>integer reference = <b class="k">bit-exact oracle</b></li>
+      </ul>
+    </div>
+    <div class="stack">
+      <div class="fig" data-svg="F05-hardware-styles.svg"></div>
+      <div class="panel">GOPS = 2 × MACs per inference / inference time</div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>QAT keeps accuracy at 8 bit · integer model defines correct output</li><li>dataflow (FINN): fast, LUT-hungry · shared engine: reuses one MAC array</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 7. Background: SIREN unit ============ -->
+<section class="slide">
+  <div class="part">Background</div>
+  <h2>SIREN processing unit and requirements</h2>
+  <div class="cols" style="grid-template-columns: 560px 1fr;">
+    <div class="fig" data-svg="F06-siren-unit.svg"></div>
+    <div class="stack">
+      <table>
+        <tr><th>ID</th><th>Requirement</th></tr>
+        <tr><td>SIR00100</td><td>inference power ≤ <b class="k">5 W</b></td></tr>
+        <tr><td>SIR01100</td><td>throughput ≥ <b class="k">50 GOPS</b></td></tr>
+        <tr><td>SIR01000</td><td>ground-model match ≥ <b class="k">99 %</b></td></tr>
+        <tr><td>SIR00900</td><td>weight update, <b class="k">no new bitstream</b></td></tr>
+        <tr><td>SIR01600</td><td>fault management</td></tr>
+      </table>
+      <ul>
+        <li>Modes: Initial → Standby → Mission ↔ Safehold</li>
+        <li>Models run <b>one at a time</b></li>
+        <li>Testbed: TE0715 SoM (same XC7Z030)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>Z7000-P3: ARM + FPGA in one chip · CAN to OBC · RS-422 to S-band</li><li>five requirements drive the design · lab testbed has the same chip</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 8. Background: method ============ -->
+<section class="slide">
+  <div class="part">Background · Method</div>
+  <h2>How SIREN is built</h2>
+  <div class="fig" data-svg="F07-build-flow.svg"></div>
+  <ul style="margin-top: 22px;">
+    <li>Declared bit width of every layer <b class="k">kept</b>, never narrowed</li>
+    <li>Shared engine only where <b class="k">faster</b> than FINN and <b class="k">byte-identical</b></li>
+    <li>All other layers: <b>FINN</b>-generated streaming operators</li>
+  </ul>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>same flow for all three models</li><li>integer reference decides correctness · engine mapping needs speed + identical output</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 9. Results: PD model ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · PD</div>
+  <h2>PD: high-energy particle risk detection</h2>
+  <div class="cols">
+    <ul>
+      <li>Input: previous 24 h
+        <ul><li>5-min mean counts, e⁻ + p⁺ channels</li><li>POES/MetOp (CREST-like)</li></ul></li>
+      <li>ModernTCN → <b class="k">risk score (0–1)</b></li>
+      <li>Target: risk at t + 5 min</li>
+    </ul>
+    <div>
+      <div class="v v-A">
+        <span class="vlabel">Version A · PDR test set</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1</div><div class="val">0.611</div><div class="s">CRATERRE 0.575</div></div>
+          <div class="kpi"><div class="l">CSI</div><div class="val">0.440</div><div class="s">CRATERRE 0.403</div></div>
+        </div>
+        <p class="note">float model</p>
+      </div>
+      <div class="v v-B">
+        <span class="vlabel">Version B · validation set</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1 float</div><div class="val">0.7563</div><div class="s">threshold 0.6</div></div>
+          <div class="kpi"><div class="l">F1 integer</div><div class="val ok">0.7570</div><div class="s">+0.07 %p</div></div>
+          <div class="kpi"><div class="l">outside tolerance</div><div class="val ok">0</div><div class="s">all outputs</div></div>
+          <div class="kpi"><div class="l">max |Δ|</div><div class="val">0.025</div><div class="s">logit</div></div>
+        </div>
+      </div>
+      <div class="v v-C">
+        <span class="vlabel">Version C · PDR + integer change</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1</div><div class="val">0.611</div><div class="s">CRATERRE 0.575</div></div>
+          <div class="kpi"><div class="l">CSI</div><div class="val">0.440</div><div class="s">CRATERRE 0.403</div></div>
+        </div>
+        <div class="panel" style="margin-top: 14px;">Integer model: F1 <b class="ok">+0.07 %p</b> vs float</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>input window and target · score drives risk record</li><li>accuracy vs operational baseline · quantization keeps accuracy</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 10. Results: PD on FPGA ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · PD</div>
+  <h2>PD on the FPGA</h2>
+  <div class="cols" style="grid-template-columns: 600px 1fr;">
+    <div class="fig" data-svg="F08-pd-hybrid.svg"></div>
+    <ul>
+      <li>LayerNorm × 7: <b class="k">FINN</b> streams</li>
+      <li>pw / dw conv · head: <b class="k">shared engine</b></li>
+      <li>FFN pointwise pair
+        <ul><li>FINN 3,822 ms → engine <b class="ok">119.8 ms</b></li></ul></li>
+      <li><b class="ok">16,692 / 16,692</b> outputs byte-identical</li>
+      <li><b class="ok">70.88 GOPS</b> @ 150 MHz</li>
+    </ul>
+  </div>
+  <div class="src">Engine timing: same structure, same board, 133 MHz build</div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>hybrid: FINN for LayerNorm, engine for large convolutions</li><li>engine 32× faster on the same structure, outputs identical</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 11. Results: BUS model ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · BUS</div>
+  <h2>BUS: equipment anomaly detection</h2>
+  <div class="cols">
+    <ul>
+      <li>Input: multichannel bus HK
+        <ul><li>previous 1 h / 3 h windows</li><li>ESA-ADB benchmark data</li></ul></li>
+      <li>ModernTCN → <b class="k">anomaly score</b></li>
+      <li>Alarm on abnormal pattern</li>
+    </ul>
+    <div>
+      <div class="v v-A">
+        <span class="vlabel">Version A · PDR test set</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1</div><div class="val">0.889</div><div class="s">EWMA 0.833</div></div>
+          <div class="kpi"><div class="l">alarms</div><div class="val">12 / 14</div><div class="s">EWMA 10 / 14</div></div>
+          <div class="kpi"><div class="l">false alarms</div><div class="val">1</div><div class="s">EWMA 0</div></div>
+        </div>
+        <p class="note">float model</p>
+      </div>
+      <div class="v v-B">
+        <span class="vlabel">Version B · validation set</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1 smoothed</div><div class="val ok">0.630</div><div class="s">float 0.621</div></div>
+          <div class="kpi"><div class="l">F1 window</div><div class="val">0.520</div><div class="s">float 0.527</div></div>
+          <div class="kpi"><div class="l">decisions changed</div><div class="val">0.87 %</div><div class="s">integer vs float</div></div>
+        </div>
+      </div>
+      <div class="v v-C">
+        <span class="vlabel">Version C · PDR + integer change</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">F1</div><div class="val">0.889</div><div class="s">EWMA 0.833</div></div>
+          <div class="kpi"><div class="l">alarms</div><div class="val">12 / 14</div><div class="s">EWMA 10 / 14</div></div>
+        </div>
+        <div class="panel" style="margin-top: 14px;">Integer model: <b class="k">0.87 %</b> decisions changed</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>HK windows → anomaly score · more alarms than EWMA</li><li>integer model changes few decisions</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 12. Results: BUS on FPGA ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · BUS</div>
+  <h2>BUS on the FPGA</h2>
+  <div class="cols" style="grid-template-columns: 600px 1fr;">
+    <div class="fig" data-svg="F09-bus-dataflow.svg"></div>
+    <ul>
+      <li>Every layer: <b class="k">FINN</b> streaming</li>
+      <li>8-bit weights · 8-bit activations</li>
+      <li>2 multiplications per DSP slice</li>
+      <li><b class="ok">62.58 GOPS</b> in shared bitstream</li>
+      <li><b class="ok">109.62 GOPS</b> BUS-only bitstream</li>
+      <li>Weight reload: A/B outputs <b class="ok">byte-identical</b></li>
+    </ul>
+  </div>
+  <div class="src">BUS-only bitstream: 133 MHz · shared bitstream: 150 MHz</div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>pure FINN dataflow · DSP packing halves DSP use</li><li>new weights without a new bitstream (requirement SIR00900)</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 13. Results: GRU model ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · GRU</div>
+  <h2>GRU: lossless CREST data compression</h2>
+  <div class="cols">
+    <ul>
+      <li>1-layer GRU → linear head</li>
+      <li>Predicts next-step counts</li>
+      <li>Residual → zigzag → BZ2
+        <ul><li>per block: smallest of raw / delta / residual</li></ul></li>
+      <li>Ground: same integer predictor → <b class="k">exact counts</b></li>
+    </ul>
+    <div>
+      <div class="v v-A">
+        <span class="vlabel">Version A · PDR test set</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">compression ratio</div><div class="val">11.841</div><div class="s">NASA log 4</div></div>
+          <div class="kpi"><div class="l">RMSE</div><div class="val">0.58</div><div class="s">count · NASA log 1.89</div></div>
+        </div>
+      </div>
+      <div class="v v-B">
+        <span class="vlabel">Version B · 31 days, 28 channels</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">CR float</div><div class="val">3.2463</div><div class="s">lossless</div></div>
+          <div class="kpi"><div class="l">CR integer</div><div class="val ok">3.2462</div><div class="s">−0.002 %</div></div>
+          <div class="kpi"><div class="l">exact restore</div><div class="val ok">31 / 31</div><div class="s">days</div></div>
+        </div>
+      </div>
+      <div class="v v-C">
+        <span class="vlabel">Version C · PDR + integer change</span>
+        <div class="kpis">
+          <div class="kpi"><div class="l">compression ratio</div><div class="val">11.841</div><div class="s">NASA log 4</div></div>
+          <div class="kpi"><div class="l">RMSE</div><div class="val">0.58</div><div class="s">count · NASA log 1.89</div></div>
+        </div>
+        <div class="panel" style="margin-top: 14px;">Integer predictor: CR <b class="k">−0.002 %</b> · lossless</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>predictor + residual coding · ground restores exactly</li><li>compression vs NASA log baseline</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 14. Results: GRU on FPGA ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · GRU</div>
+  <h2>GRU on the FPGA</h2>
+  <div class="cols" style="grid-template-columns: 600px 1fr;">
+    <div class="fig" data-svg="F10-gru-path.svg"></div>
+    <ul>
+      <li>Gate matrix products: <b class="k">shared engine</b></li>
+      <li>GRU cell + output layer: <b class="k">FINN</b> tail</li>
+      <li>Per step: <b class="ok">33.6 µs</b> median</li>
+      <li>ARM packet = reference, byte for byte</li>
+      <li><b class="ok">63.76 GOPS</b> @ 150 MHz</li>
+    </ul>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>engine shared with PD · FINN finishes the cell</li><li>ARM builds the packet · ground decodes exactly</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 15. Results: system ============ -->
+<section class="slide">
+  <div class="part">Results (Preliminary) · System</div>
+  <h2>One bitstream, three models</h2>
+  <div class="cols" style="grid-template-columns: 470px 1fr;">
+    <div class="fig" data-svg="F11-floorplan-placeholder.svg"></div>
+    <div class="stack">
+      <div class="bars">
+        <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
+        <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
+        <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
+        <div class="note">GOPS @ 150 MHz · dashed line: 50 GOPS requirement</div>
+      </div>
+      <table>
+        <tr><th>Requirement</th><th>Status</th></tr>
+        <tr><td>≥ 50 GOPS</td><td><b class="ok">met · all three</b></td></tr>
+        <tr><td>≥ 99 % output match</td><td><b class="ok">100 % byte-identical</b></td></tr>
+        <tr><td>weight update</td><td><b class="ok">no new bitstream</b></td></tr>
+        <tr><td>fault management</td><td>22 / 23 items on board</td></tr>
+        <tr><td>≤ 5 W</td><td><b class="todo">pending measurement</b></td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="src">LUT 77.6 % · FF 55.8 % · BRAM 68.1 % · DSP 60.5 % (XC7Z030)</div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>all three models in one bitstream, run one at a time</li><li>requirements met except power · power measured next</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 16. Future works ============ -->
+<section class="slide">
+  <div class="part">Future works</div>
+  <h2>Toward the final version</h2>
+  <div class="fig" data-svg="F12-digital-twin.svg"></div>
+  <ul style="margin-top: 20px;">
+    <li><b class="todo">Power</b>: 12 V input measurement → final version</li>
+    <li><b class="k">Flight unit</b>: port to Z7000-P3</li>
+    <li><b class="k">On-orbit update</b>: weight upload rehearsal</li>
+  </ul>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes">
+    <ul><li>Digital Twin I: CREST counts from flux field · Digital Twin II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul>
+  </aside>
+</section>
+
+<!-- ============ 17. Summary ============ -->
+<section class="slide">
+  <div class="part">Summary</div>
+  <h2>SIREN at a glance</h2>
+  <ul>
+    <li><b class="k">3 time-series DNNs</b> on one XC7Z030 bitstream</li>
+    <li>Each model <b class="ok">&gt; 50 GOPS</b> · outputs byte-identical to integer reference</li>
+    <li>Built from QAT integer models: FINN dataflow + shared engine</li>
+    <li>Next: <b class="todo">power</b> · Digital Twin data · flight unit</li>
+  </ul>
+  <div style="margin-top: 70px; text-align: center; font-size: 48px; font-weight: 700; color: var(--navy);">Thank you</div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>three points · thank you · questions</li></ul></aside>
+</section>
+
+<!-- ============ Appendix ============ -->
+<section class="slide">
+  <div class="part">Appendix · Q&amp;A</div>
+  <h2>Abstract</h2>
+  <ul>
+    <li><b>Background</b>: CubeSat limits (power · compute · downlink) vs LEO particle risk</li>
+    <li><b>Payload</b>: SIREN, onboard AI of PADO-SAT (3U)</li>
+    <li><b>Models</b>: ModernTCN risk score · ModernTCN anomaly · GRU compression</li>
+    <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · GRU CR 11.841</li>
+    <li><b>Method</b>: QAT → integer reference → FINN + shared engine → one bitstream</li>
+    <li><b>Testbed</b>: BUS 62.58 · PD 70.88 · GRU 63.76 GOPS @ 150 MHz</li>
+    <li><b>Next</b>: power (≤ 5 W) · Digital Twin I / II data · flight unit</li>
+  </ul>
+  <div class="src">Accuracy: submitted abstract (PDR test set, float models)</div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+</section>
+
+<section class="slide">
+  <div class="part">Appendix · Q&amp;A</div>
+  <h2>Why an FPGA SoC?</h2>
+  <ul>
+    <li>≤ 5 W peak budget of a 3U CubeSat</li>
+    <li>Deterministic latency · bit-exact integer outputs</li>
+    <li>Configuration memory scrubbing (SEM) · watchdogs</li>
+    <li>ARM (Linux) + FPGA fabric in one chip</li>
+    <li>Flight unit: Z7000-P3 with carrier board and shielding</li>
+  </ul>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+</section>
+
+<section class="slide">
+  <div class="part">Appendix · Q&amp;A</div>
+  <h2>How is correctness verified?</h2>
+  <ul>
+    <li>Integer reference model from QAT = oracle</li>
+    <li>Board outputs compared <b class="k">byte by byte</b>
+      <ul><li>PD: 16,692 outputs</li>
+          <li>BUS / PD: 1,391 frames</li>
+          <li>3 h continuous run: 10,260 batches</li></ul></li>
+    <li>Shared engine adopted per structure only after full-corpus match</li>
+  </ul>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+</section>
+
+<section class="slide">
+  <div class="part">Appendix · Q&amp;A</div>
+  <h2>Fault management</h2>
+  <ul>
+    <li>23 items: L0 hardware 13 · L1 software 6 · L2 ground 4</li>
+    <li><b class="ok">22</b> verified on board · 1 in simulation</li>
+    <li>Examples
+      <ul><li>output range / format / timing guards</li>
+          <li>SEM correction · PS and PL watchdogs</li>
+          <li>cache / OCM parity · AXI timeout</li>
+          <li>recovery image after repeated failures</li></ul></li>
+  </ul>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+</section>
+
+<section class="slide">
+  <div class="part">Appendix · Q&amp;A</div>
+  <h2>Resources, timing and weight update</h2>
+  <div class="cols">
+    <table>
+      <tr><th>Resource</th><th class="num">Used</th><th class="num">%</th></tr>
+      <tr><td>LUT</td><td class="num">61,022</td><td class="num">77.6</td></tr>
+      <tr><td>FF</td><td class="num">87,721</td><td class="num">55.8</td></tr>
+      <tr><td>BRAM36</td><td class="num">180.5</td><td class="num">68.1</td></tr>
+      <tr><td>DSP</td><td class="num">242</td><td class="num">60.5</td></tr>
+    </table>
+    <ul>
+      <li>Timing met @ 150 MHz</li>
+      <li>Weight update, no new bitstream
+        <ul><li>PD: engine weights · LayerNorm parameters</li>
+            <li>BUS: MAC weights</li></ul></li>
+      <li>A/B weight sets: <b class="ok">byte-identical</b></li>
+    </ul>
+  </div>
+  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+</section>
+
+</body>
+</html>
