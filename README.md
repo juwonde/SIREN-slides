@@ -1,10 +1,15 @@
 # Onboard AI Payload of PADO-SAT: SIREN
 
-한국우주과학회 2026 가을 학술대회 발표 자료 (구두 II-2-7) 저장소입니다.
+SIREN 2026 가을 학회 발표 자료 저장소입니다.
+
+- 한국우주과학회 2026 가을 학술대회 (구두 II-2-7): `slides/deck.html`
+- 항공우주학회 가을 학술대회: 같은 저장소에 추가 예정
+
+아래는 한국우주과학회 발표 기준입니다.
 
 - 발표: 10분 목표 (배정 15분, 질의응답 포함), 영어 슬라이드
 - 구성: Introduction – Background – Results (Preliminary) – Future works
-- 현재 판: **alpha-9** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
+- 현재 판: **alpha-10** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
 
 ## 폴더
 
@@ -24,7 +29,7 @@
 Python 3 (표준 라이브러리만)과 Chrome 또는 Edge가 필요합니다. 브라우저는 `CHROME_PATH`, `PATH`, 표준 설치 위치 순서로 찾습니다.
 
 ```bash
-python tools/build.py --label alpha-9
+python tools/build.py --label alpha-10
 ```
 
 - 검사가 먼저 돌고, 문제가 있으면 PDF를 만들지 않습니다.
