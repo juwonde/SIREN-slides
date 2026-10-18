@@ -28,7 +28,7 @@
 | PD 전 corpus 일치 | 보드 출력 16,692개 digest 모두 정수 기준과 일치 | 같은 receipt 문서, 150 MHz 판 재확인 (10/17) | 10, A3 |
 | BUS/PD 프레임 일치 | 1,391 / 1,391 프레임 byte 일치, 결함 0 | shared: `docs/results/te0715-one-bitstream-50gops-2026-10-11.md` | A3 |
 | 상시 운용 soak | 3시간 10,260 batch byte 일치 | shared: `docs/results/p1-summary-draft-2026-10-17.md` §3 | A4 |
-| 가중치 재적재 | BUS 3,368 words + PD LN 10,773 words, A/B 모두 byte 일치 | shared: `docs/results/te0715-weight-swap-2026-10-11.md` | 12, A6 |
+| 가중치 재적재 | BUS 3,368 words + PD LN 10,773 words, A/B 모두 byte 일치. COMP도 새 비트스트림 없이 교체 확인 (사용자 확인 10/18, 발표 "verified on all 3 models") | shared: `docs/results/te0715-weight-swap-2026-10-11.md` | 12, A6 |
 | GRU 정수화 | 압축률 변화 −0.002 % (31일 합계 3.2463× → 3.2462×), 31일 모두 완전 복원 | shared: `docs/results/gru-model3-integer-2026-10-12.md` §2 | 13 |
 | GRU 보드 step | 중앙값 33.6 µs | shared: `docs/results/gru-lossless-encoder-2026-10-17.md` | 14 |
 | GRU 인코더 | ARM C 인코더 출력이 기준과 byte 일치, PC에서 정확히 복원 | 같은 문서 | 14 |
