@@ -1,4 +1,4 @@
-# 작업 계획 (alpha-4, 2026-10-18)
+# 작업 계획 (alpha-5, 2026-10-18)
 
 ## 0. 고정 조건
 
@@ -32,6 +32,8 @@
 27. (alpha-4) Vivado 배선 화면 앞에 **깔끔한 배치도** 한 장: 화살표·그림 속 라벨 없음, 그리드, 흰 칸 = 빈 칸, 범례는 오른쪽
 28. (alpha-4) 바닥글 왼쪽 문구 **PADO/SIREN**
 29. SVG 관련 작업은 묻지 않고 진행
+30. (alpha-5) 모든 모델: **Baseline 모델과 성능을 표로** 비교
+31. (alpha-5) **Thank you 슬라이드 별도**
 
 ## 1. 발표 정보 (초록집 기준)
 
@@ -39,7 +41,7 @@
 - II-2-7, 10월 27일(화) 17:25 (날짜는 초록집 순서로 추정)
 - 저자: **Woncheol Joo**¹ (발표자, 확인됨), Subin Kim¹, Jeongin Yeo¹, Nayeong Hwang¹, Yangha Ju¹, Jiwon Lee¹, Young-Joo Song¹ ², Yong-Jae Moon¹ ²
 
-## 2. 발표 흐름 (본편 21장)
+## 2. 발표 흐름 (본편 22장, 마지막 장은 Thank you)
 
 | # | 구간 | 제목 (EN) | 시간 |
 |---|---|---|---|
@@ -63,7 +65,8 @@
 | 18 | Results · Placement | Where each block sits on the chip (그리드 배치도) | 0:25 |
 | 19 | Results · System | One bitstream, three models (배선도) | 0:30 |
 | 20 | Future works | Toward the final version (Digital Twin I/II) | 0:30 |
-| 21 | Summary | SIREN at a glance · Thank you | 0:10 |
+| 21 | Summary | SIREN at a glance | 0:10 |
+| 22 | Closing | Thank you (로고, 발표자) | — |
 
 - 합계 약 10:15. 배정 15분 안에서 질의응답 약 4–5분
 - 시간 초과 시 감축 순서: 4번을 19번 상태표에 합침 → 6·7번을 한 장으로 → 15번을 14번에 합침(DNN 5장)
@@ -80,9 +83,10 @@
 
 | 판 | 내용 | 근거 |
 |---|---|---|
-| A | PDR 시험셋 float 모델 vs 기준선 (제출 초록과 같은 수치) | PDR p.45–48, 초록 |
-| B | 검증셋 float vs 정수 모델 (양자화 영향) | 공유 저장소 결과 문서 |
-| C | A의 기준선 비교 + B의 정수화 변화량 한 줄 | 둘 다 |
+| 공통 | Baseline vs SIREN 표 (PDR 시험셋, float): PD CRATERRE · BUS EWMA with robust threshold · GRU NASA 8-bit log | PDR p.48, 초록 |
+| A | 공통 표만 | — |
+| B | 공통 표 + 검증셋 float vs 정수 표 | 공유 저장소 결과 문서 |
+| C | 공통 표 + 정수화 변화량 한 줄 | 같은 문서 |
 
 ## 5. 그림과 이미지
 
@@ -118,8 +122,9 @@
 | alpha-1 | First Draft 17장, 정확도 A/B/C | 10/18 |
 | alpha-2 | 이론 보강(본편 20장), 구조도·배선도·모델 GIF, 진행 표시, Cambria | 10/18 |
 | alpha-3 | 아래쪽 정리 박스 제거, 발표자 확인 | 10/18 |
-| **alpha-4** | **그리드 배치도 슬라이드, 바닥글 PADO/SIREN** | **10/18** |
-| alpha-5 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성 | 검토 후 |
+| alpha-4 | 그리드 배치도 슬라이드, 바닥글 PADO/SIREN | 10/18 |
+| **alpha-5** | **모델별 Baseline 표, Thank you 분리** | **10/18** |
+| alpha-6 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성 | 검토 후 |
 | beta-1 | 전력 측정 반영, 정확도 판 확정 | 측정 후 |
 | v1.0 | 리허설 반영 최종판 | 10/26 이전 |
 

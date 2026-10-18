@@ -134,3 +134,14 @@ body { counter-reset: slide; }
 .legend { font-size: 20px; }
 .legend div { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 .legend i { display: inline-block; width: 26px; height: 20px; border-radius: 4px; }
+
+/* Baseline comparison tables */
+table.cmp { font-size: 22px; }
+table.cmp th, table.cmp td { padding: 5px 10px; }
+table.cmp .num { white-space: nowrap; }
+
+/* Thank you slide */
+.thanks { margin-top: 120px; text-align: center; font-size: 72px; font-weight: 700; color: var(--navy); }
+.thanks-sub { margin-top: 24px; text-align: center; font-size: 28px; color: var(--muted); }
+.thanks-name { margin-top: 10px; text-align: center; font-size: 26px; }
+.thanks-name .presenter { font-weight: 700; text-decoration: underline; text-underline-offset: 4px; color: var(--k); }
