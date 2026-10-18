@@ -1,0 +1,24 @@
+# Build output (PDF, PPTX, PNG renders); attach PDFs to GitHub releases instead
+dist/
+build/
+
+# Dependencies and environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+
+# Local state and secrets
+.env
+.env.*
+*.local.json
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Office lock files
+~$*
