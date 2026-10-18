@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="390" viewBox="0 0 600 390">
   <rect x="0" y="0" width="600" height="70" rx="10" fill="#e6f2ea" stroke="#1a7f43" stroke-width="2"/>
-  <text x="300" y="42.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">ARM (PS): input window, anomaly score</text>
+  <text x="300" y="42.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">ARM (PS): input window, anomaly score</text>
   <rect x="0" y="160" width="135" height="90" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="67.5" y="200.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 1</text>
-  <text x="67.5" y="224.6" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
+  <text x="67.5" y="200.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 1</text>
+  <text x="67.5" y="224.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
   <line x1="135" y1="205" x2="143" y2="205" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="155,205 143.0,198.4 143.0,211.6" fill="#4a4f5c"/>
   <rect x="155" y="160" width="135" height="90" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="222.5" y="200.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 2</text>
-  <text x="222.5" y="224.6" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
+  <text x="222.5" y="200.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 2</text>
+  <text x="222.5" y="224.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
   <line x1="290" y1="205" x2="298" y2="205" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="310,205 298.0,198.4 298.0,211.6" fill="#4a4f5c"/>
   <rect x="310" y="160" width="135" height="90" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="377.5" y="200.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 3</text>
-  <text x="377.5" y="224.6" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
+  <text x="377.5" y="200.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Block 3</text>
+  <text x="377.5" y="224.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
   <line x1="445" y1="205" x2="453" y2="205" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="465,205 453.0,198.4 453.0,211.6" fill="#4a4f5c"/>
   <rect x="465" y="160" width="135" height="90" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="532.5" y="200.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Head</text>
-  <text x="532.5" y="224.6" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
+  <text x="532.5" y="200.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Head</text>
+  <text x="532.5" y="224.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">FINN</text>
   <line x1="30" y1="72" x2="30" y2="146" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="30,158 36.6,146.0 23.4,146.0" fill="#4a4f5c"/>
   <line x1="570" y1="158" x2="570" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="570,72 563.4,84.0 576.6,84.0" fill="#4a4f5c"/>
-  <text x="40" y="104" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">DMA in</text>
-  <text x="560" y="104" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="end">DMA out</text>
-  <text x="300" y="140" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">streaming · 2 MACs per DSP slice</text>
+  <text x="40" y="104" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">DMA in</text>
+  <text x="560" y="104" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="end">DMA out</text>
+  <text x="300" y="140" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">streaming · 2 MACs per DSP slice</text>
   <line x1="67" y1="314" x2="67" y2="264" stroke="#1f5fbf" stroke-width="3" stroke-dasharray="8 6"/>
   <polygon points="67,252 60.4,264.0 73.6,264.0" fill="#1f5fbf"/>
   <line x1="222" y1="314" x2="222" y2="264" stroke="#1f5fbf" stroke-width="3" stroke-dasharray="8 6"/>
@@ -33,6 +33,6 @@
   <line x1="377" y1="314" x2="377" y2="264" stroke="#1f5fbf" stroke-width="3" stroke-dasharray="8 6"/>
   <polygon points="377,252 370.4,264.0 383.6,264.0" fill="#1f5fbf"/>
   <rect x="0" y="314" width="445" height="74" rx="10" fill="#ffffff" stroke="#1f5fbf" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="222.5" y="346.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">MAC weights reload from ARM</text>
-  <text x="222.5" y="370.6" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">AXI-Lite · no new bitstream</text>
+  <text x="222.5" y="346.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">MAC weights reload from ARM</text>
+  <text x="222.5" y="370.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">AXI-Lite · no new bitstream</text>
 </svg>

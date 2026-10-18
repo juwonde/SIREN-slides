@@ -5,11 +5,14 @@
   const FOOT_TOP = 720 - 48;  // footer band
   const banned = [new RegExp("F[- ]?" + "ASTRA", "i"), new RegExp("f_" + "astra", "i"),
                   new RegExp("Direct" + "RTL", "i"), /\bbpg-r\d/i, /\brun\d{2}\b/i];
-  const res = { slides: 0, small: [], outside: [], banned: [] };
+  const res = { slides: 0, small: [], outside: [], banned: [], raster: [] };
+  const hit = (a, b) => a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
   const slides = [...document.querySelectorAll(".slide")];
   res.slides = slides.length;
   slides.forEach((sl, i) => {
     const sr = sl.getBoundingClientRect();
+    const takeEl = sl.querySelector(".take");
+    const take = takeEl ? takeEl.getBoundingClientRect() : null;
     const walker = document.createTreeWalker(sl, NodeFilter.SHOW_TEXT);
     while (walker.nextNode()) {
       const t = walker.currentNode;
@@ -35,10 +38,16 @@
           break;
         }
       }
+      if (take && !el.closest(".take") && !inFoot && rects.some(r => hit(r, take)))
+        res.outside.push({ slide: i + 1, text: "overlaps key message: " + text.slice(0, 30) });
       for (const b of banned) if (b.test(text)) res.banned.push({ slide: i + 1, text: text.slice(0, 40) });
     }
     sl.querySelectorAll(".fig svg, img").forEach(g => {
       const r = g.getBoundingClientRect();
+      if (g.tagName === "IMG" && !/logos\//.test(g.getAttribute("src") || ""))
+        res.raster.push({ slide: i + 1, src: (g.getAttribute("src") || "").split("/").pop() });
+      if (take && r.width && hit(r, take))
+        res.outside.push({ slide: i + 1, text: "figure overlaps key message: " + (g.getAttribute("data-name") || g.getAttribute("src") || "") });
       if (r.width && (r.right > sr.right + 0.5 || r.bottom > sr.top + FOOT_TOP + 0.5))
         res.outside.push({ slide: i + 1, text: "figure " + (g.getAttribute("data-name") || g.getAttribute("src") || ""), right: Math.round(r.right - sr.left), bottom: Math.round(r.bottom - sr.top) });
     });

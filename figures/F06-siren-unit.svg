@@ -1,44 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="560" height="430" viewBox="0 0 560 430">
   <rect x="130" y="0" width="300" height="300" rx="10" fill="#ffffff" stroke="#1b2a57" stroke-width="3"/>
-  <text x="280" y="32" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Zynq-7000 XC7Z030</text>
+  <text x="280" y="32" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">Zynq-7000 XC7Z030</text>
   <rect x="150" y="50" width="260" height="90" rx="10" fill="#e6f2ea" stroke="#1a7f43" stroke-width="2"/>
-  <text x="280" y="88.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PS: 2x Cortex-A9</text>
-  <text x="280" y="115.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">Linux · FM services</text>
+  <text x="280" y="88.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PS: 2x Cortex-A9</text>
+  <text x="280" y="115.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">Linux · FM services</text>
   <line x1="250" y1="140" x2="250" y2="156" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="250,168 256.6,156.0 243.4,156.0" fill="#4a4f5c"/>
   <line x1="310" y1="168" x2="310" y2="152" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="310,140 303.4,152.0 316.6,152.0" fill="#4a4f5c"/>
-  <text x="370" y="160" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">AXI</text>
+  <text x="370" y="160" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">AXI</text>
   <rect x="150" y="168" width="260" height="112" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="280" y="204.64" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PL: FPGA fabric</text>
-  <text x="280" y="231.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">PD · BUS · GRU</text>
-  <text x="280" y="257.44" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">accelerators + guards</text>
+  <text x="280" y="204.64" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PL: FPGA fabric</text>
+  <text x="280" y="231.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">PD · BUS · GRU</text>
+  <text x="280" y="257.44" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">accelerators + guards</text>
   <rect x="0" y="320" width="170" height="100" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="85" y="363.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">DDR3L</text>
-  <text x="85" y="390.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">1 GiB</text>
+  <text x="85" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">DDR3L</text>
+  <text x="85" y="390.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">1 GiB</text>
   <rect x="195" y="320" width="170" height="100" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="280" y="363.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">eMMC</text>
-  <text x="280" y="390.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">64 GiB</text>
+  <text x="280" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">eMMC</text>
+  <text x="280" y="390.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">64 GiB</text>
   <rect x="390" y="320" width="170" height="100" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="475" y="363.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PDU (P60)</text>
-  <text x="475" y="390.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">5 V supply</text>
+  <text x="475" y="363.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PDU (P60)</text>
+  <text x="475" y="390.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">5 V supply</text>
   <line x1="85" y1="320" x2="85" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="85" y1="300" x2="130" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="280" y1="320" x2="280" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="475" y1="320" x2="475" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <line x1="475" y1="300" x2="430" y2="300" stroke="#4a4f5c" stroke-width="2"/>
   <rect x="0" y="40" width="110" height="90" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="55" y="78.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">OBC</text>
-  <text x="55" y="105.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">A3200</text>
+  <text x="55" y="78.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">OBC</text>
+  <text x="55" y="105.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">A3200</text>
   <line x1="110" y1="85" x2="136" y2="85" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="148,85 136.0,78.4 136.0,91.6" fill="#4a4f5c"/>
   <line x1="148" y1="100" x2="122" y2="100" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="110,100 122.0,106.6 122.0,93.4" fill="#4a4f5c"/>
-  <text x="55" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">CAN</text>
+  <text x="55" y="156" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">CAN</text>
   <rect x="450" y="40" width="110" height="90" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="505" y="78.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">S-band</text>
-  <text x="505" y="105.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">SRS-4</text>
+  <text x="505" y="78.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">S-band</text>
+  <text x="505" y="105.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">SRS-4</text>
   <line x1="412" y1="85" x2="436" y2="85" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="448,85 436.0,78.4 436.0,91.6" fill="#4a4f5c"/>
-  <text x="505" y="156" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">RS-422</text>
+  <text x="505" y="156" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#4a4f5c" text-anchor="middle">RS-422</text>
 </svg>

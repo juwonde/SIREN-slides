@@ -1,35 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1168" height="270" viewBox="0 0 1168 270">
-  <text x="0" y="26" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1b2a57" text-anchor="start">Digital Twin I · CREST data</text>
+  <text x="0" y="26" font-family="Cambria, Georgia, Times New Roman, serif" font-size="24" font-weight="700" fill="#1b2a57" text-anchor="start">Digital Twin I · CREST data</text>
   <rect x="0" y="42" width="200" height="84" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="100" y="77.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">VERB-3D-style</text>
-  <text x="100" y="104.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">flux field</text>
+  <text x="100" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">VERB-3D-style</text>
+  <text x="100" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">flux field</text>
   <line x1="200" y1="84" x2="222" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="234,84 222.0,77.4 222.0,90.6" fill="#4a4f5c"/>
   <rect x="236" y="42" width="200" height="84" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="336" y="77.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PADO-SAT orbit</text>
-  <text x="336" y="104.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">sampling</text>
+  <text x="336" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PADO-SAT orbit</text>
+  <text x="336" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">sampling</text>
   <line x1="436" y1="84" x2="458" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="470,84 458.0,77.4 458.0,90.6" fill="#4a4f5c"/>
   <rect x="472" y="42" width="200" height="84" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="572" y="77.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">CREST</text>
-  <text x="572" y="104.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">response</text>
+  <text x="572" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">CREST</text>
+  <text x="572" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">response</text>
   <line x1="672" y1="84" x2="694" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="706,84 694.0,77.4 694.0,90.6" fill="#4a4f5c"/>
   <rect x="708" y="42" width="200" height="84" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="808" y="77.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Count</text>
-  <text x="808" y="104.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">time series</text>
+  <text x="808" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Count</text>
+  <text x="808" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">time series</text>
   <line x1="908" y1="84" x2="930" y2="84" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="942,84 930.0,77.4 930.0,90.6" fill="#4a4f5c"/>
   <rect x="944" y="42" width="200" height="84" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="1044" y="77.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PD · GRU</text>
-  <text x="1044" y="104.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">retrain · fine-tune</text>
-  <text x="0" y="176" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#1b2a57" text-anchor="start">Digital Twin II · bus HK data</text>
+  <text x="1044" y="77.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PD · GRU</text>
+  <text x="1044" y="104.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">retrain · fine-tune</text>
+  <text x="0" y="176" font-family="Cambria, Georgia, Times New Roman, serif" font-size="24" font-weight="700" fill="#1b2a57" text-anchor="start">Digital Twin II · bus HK data</text>
   <rect x="0" y="192" width="436" height="72" rx="10" fill="#f3f5f9" stroke="#c25e00" stroke-width="2" stroke-dasharray="8 6"/>
-  <text x="218" y="221.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Bus HK generation</text>
-  <text x="218" y="248.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#c25e00" text-anchor="middle">method under study</text>
+  <text x="218" y="221.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">Bus HK generation</text>
+  <text x="218" y="248.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#c25e00" text-anchor="middle">method under study</text>
   <line x1="436" y1="228" x2="458" y2="228" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="470,228 458.0,221.4 458.0,234.6" fill="#4a4f5c"/>
   <rect x="472" y="192" width="200" height="72" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="572" y="221.84" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">BUS</text>
-  <text x="572" y="248.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">retrain · fine-tune</text>
+  <text x="572" y="221.84" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">BUS</text>
+  <text x="572" y="248.24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="400" fill="#1a1a1a" text-anchor="middle">retrain · fine-tune</text>
 </svg>

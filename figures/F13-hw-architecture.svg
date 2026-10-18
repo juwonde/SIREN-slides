@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1168" height="460" viewBox="0 0 1168 460">
+  <rect x="0" y="0" width="220" height="150" rx="10" fill="#e6f2ea" stroke="#1a7f43" stroke-width="2"/>
+  <text x="110" y="58.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">PS · ARM x 2</text>
+  <text x="110" y="82.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">Linux runner</text>
+  <text x="110" y="106.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">FM service</text>
+  <rect x="0" y="280" width="220" height="120" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
+  <text x="110" y="323.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">DDR3</text>
+  <text x="110" y="347.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">inputs · weights</text>
+  <text x="110" y="371.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">intermediate data</text>
+  <line x1="110" y1="150" x2="110" y2="280" stroke="#4a4f5c" stroke-width="3"/>
+  <rect x="250" y="0" width="918" height="460" rx="12" fill="none" stroke="#1b2a57" stroke-width="2" stroke-dasharray="10 6"/>
+  <text x="1150" y="30" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="end">PL · XC7Z030 @ 150 MHz</text>
+  <line x1="220" y1="50" x2="306" y2="50" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="318,50 306.0,43.4 306.0,56.6" fill="#4a4f5c"/>
+  <text x="232" y="40" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">control</text>
+  <rect x="275" y="70" width="26" height="340" rx="4" fill="#5f6b7a"/>
+  <text x="262" y="444" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#5f6b7a" text-anchor="start">DDR ports</text>
+  <line x1="220" y1="340" x2="261" y2="340" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="273,340 261.0,333.4 261.0,346.6" fill="#4a4f5c"/>
+  <line x1="273" y1="356" x2="232" y2="356" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="220,356 232.0,362.6 232.0,349.4" fill="#4a4f5c"/>
+  <line x1="301" y1="100" x2="306" y2="100" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="318,100 306.0,93.4 306.0,106.6" fill="#4a4f5c"/>
+  <rect x="320" y="72" width="90" height="56" rx="10" fill="#5f6b7a" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="365" y="106.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">DMA</text>
+  <line x1="410" y1="100" x2="416" y2="100" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="428,100 416.0,93.4 416.0,106.6" fill="#4a4f5c"/>
+  <rect x="430" y="72" width="100" height="56" rx="10" fill="#c0392b" stroke="#c0392b" stroke-width="2"/>
+  <text x="480" y="106.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">guard</text>
+  <line x1="530" y1="100" x2="541" y2="100" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="553,100 541.0,93.4 541.0,106.6" fill="#4a4f5c"/>
+  <line x1="301" y1="215" x2="306" y2="215" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="318,215 306.0,208.4 306.0,221.6" fill="#4a4f5c"/>
+  <rect x="320" y="187" width="90" height="56" rx="10" fill="#5f6b7a" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="365" y="221.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">DMA</text>
+  <line x1="410" y1="215" x2="416" y2="215" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="428,215 416.0,208.4 416.0,221.6" fill="#4a4f5c"/>
+  <rect x="430" y="187" width="100" height="56" rx="10" fill="#c0392b" stroke="#c0392b" stroke-width="2"/>
+  <text x="480" y="221.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">guard</text>
+  <line x1="530" y1="215" x2="541" y2="215" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="553,215 541.0,208.4 541.0,221.6" fill="#4a4f5c"/>
+  <line x1="301" y1="330" x2="306" y2="330" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="318,330 306.0,323.4 306.0,336.6" fill="#4a4f5c"/>
+  <rect x="320" y="302" width="90" height="56" rx="10" fill="#5f6b7a" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="365" y="336.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">DMA</text>
+  <line x1="410" y1="330" x2="416" y2="330" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="428,330 416.0,323.4 416.0,336.6" fill="#4a4f5c"/>
+  <rect x="430" y="302" width="100" height="56" rx="10" fill="#c0392b" stroke="#c0392b" stroke-width="2"/>
+  <text x="480" y="336.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">guard</text>
+  <line x1="530" y1="330" x2="541" y2="330" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="553,330 541.0,323.4 541.0,336.6" fill="#4a4f5c"/>
+  <rect x="555" y="68" width="330" height="64" rx="10" fill="#2f6fbf" stroke="#2f6fbf" stroke-width="2"/>
+  <text x="720" y="95.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">BUS · FINN accelerator</text>
+  <text x="720" y="119.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">8-bit streaming</text>
+  <rect x="905" y="68" width="245" height="64" rx="10" fill="#c0392b" stroke="#c0392b" stroke-width="2"/>
+  <text x="1027.5" y="95.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">SEM</text>
+  <text x="1027.5" y="119.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">config. scrubbing</text>
+  <rect x="555" y="183" width="200" height="64" rx="10" fill="#3fa34d" stroke="#3fa34d" stroke-width="2"/>
+  <text x="655" y="210.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">PD · FINN</text>
+  <text x="655" y="234.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">LayerNorm</text>
+  <rect x="900" y="160" width="250" height="210" rx="10" fill="#d9822b" stroke="#d9822b" stroke-width="2"/>
+  <text x="1025" y="212.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Shared engine</text>
+  <text x="1025" y="236.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">256 MAC lanes</text>
+  <text x="1025" y="260.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">2x clock</text>
+  <text x="1025" y="284.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">conv · GELU</text>
+  <text x="1025" y="308.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">residual add</text>
+  <text x="1025" y="332.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">GRU gate sums</text>
+  <line x1="757" y1="222" x2="886" y2="222" stroke="#d9822b" stroke-width="3" stroke-dasharray="8 6"/>
+  <polygon points="898,222 886.0,215.4 886.0,228.6" fill="#d9822b"/>
+  <line x1="898" y1="208" x2="769" y2="208" stroke="#d9822b" stroke-width="3" stroke-dasharray="8 6"/>
+  <polygon points="757,208 769.0,214.6 769.0,201.4" fill="#d9822b"/>
+  <text x="828" y="196" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">via DDR</text>
+  <rect x="555" y="298" width="130" height="64" rx="10" fill="#8e5bb5" stroke="#8e5bb5" stroke-width="2"/>
+  <text x="620" y="337.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">Aligner</text>
+  <line x1="685" y1="330" x2="691" y2="330" stroke="#4a4f5c" stroke-width="3"/>
+  <polygon points="703,330 691.0,323.4 691.0,336.6" fill="#4a4f5c"/>
+  <rect x="705" y="298" width="175" height="64" rx="10" fill="#8e5bb5" stroke="#8e5bb5" stroke-width="2"/>
+  <text x="792.5" y="325.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">GRU tail</text>
+  <text x="792.5" y="349.6" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">FINN</text>
+  <line x1="960" y1="370" x2="960" y2="400" stroke="#d9822b" stroke-width="3"/>
+  <line x1="960" y1="400" x2="620" y2="400" stroke="#d9822b" stroke-width="3"/>
+  <line x1="620" y1="400" x2="620" y2="376" stroke="#d9822b" stroke-width="3"/>
+  <polygon points="620,364 613.4,376.0 626.6,376.0" fill="#d9822b"/>
+  <text x="790" y="428" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="middle">gate sums</text>
+</svg>

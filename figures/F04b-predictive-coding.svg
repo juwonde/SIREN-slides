@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="548" height="190" viewBox="0 0 548 190">
-  <text x="0" y="24" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="start">Predictive coding (lossless)</text>
+  <text x="0" y="24" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="start">Predictive coding (lossless)</text>
   <rect x="0" y="40" width="92" height="56" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="46" y="75.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">x(t)</text>
+  <text x="46" y="75.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">x(t)</text>
   <line x1="92" y1="68" x2="104" y2="68" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="116,68 104.0,61.4 104.0,74.6" fill="#4a4f5c"/>
   <rect x="116" y="40" width="92" height="56" rx="10" fill="#e3ecfa" stroke="#1b2a57" stroke-width="2"/>
-  <text x="162" y="75.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">GRU</text>
+  <text x="162" y="75.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">GRU</text>
   <line x1="208" y1="68" x2="220" y2="68" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="232,68 220.0,61.4 220.0,74.6" fill="#4a4f5c"/>
   <rect x="232" y="40" width="120" height="56" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>
-  <text x="292" y="75.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">x - x̂</text>
+  <text x="292" y="75.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">x - x̂</text>
   <line x1="352" y1="68" x2="364" y2="68" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="376,68 364.0,61.4 364.0,74.6" fill="#4a4f5c"/>
   <rect x="376" y="40" width="172" height="56" rx="10" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="462" y="75.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">zigzag · BZ2</text>
+  <text x="462" y="75.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">zigzag · BZ2</text>
   <line x1="462" y1="96" x2="462" y2="114" stroke="#4a4f5c" stroke-width="3"/>
   <polygon points="462,126 468.6,114.0 455.4,114.0" fill="#4a4f5c"/>
   <rect x="260" y="126" width="288" height="56" rx="10" fill="#e6f2ea" stroke="#1a7f43" stroke-width="2"/>
-  <text x="404" y="161.04" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">ground: same GRU</text>
-  <text x="130" y="160" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a7f43" text-anchor="middle">exact x(t) restored</text>
+  <text x="404" y="161.04" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">ground: same GRU</text>
+  <text x="130" y="160" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a7f43" text-anchor="middle">exact x(t) restored</text>
   <line x1="256" y1="154" x2="248" y2="154" stroke="#1a7f43" stroke-width="3"/>
   <polygon points="236,154 248.0,160.6 248.0,147.4" fill="#1a7f43"/>
 </svg>

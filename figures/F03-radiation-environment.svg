@@ -5,20 +5,20 @@
   <ellipse cx="404" cy="220" rx="20" ry="44" fill="#d6e2f5" stroke="#1f5fbf" stroke-width="2"/>
   <circle cx="340" cy="220" r="34" fill="#7fa7d9" stroke="#1b2a57" stroke-width="2"/>
   <circle cx="340" cy="220" r="41" fill="none" stroke="#9c1b1f" stroke-width="3" stroke-dasharray="6 5"/>
-  <text x="340" y="227" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Earth</text>
-  <text x="470" y="70" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#c25e00" text-anchor="middle">Outer belt</text>
-  <text x="470" y="94" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">electrons</text>
+  <text x="340" y="227" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Earth</text>
+  <text x="470" y="70" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#c25e00" text-anchor="middle">Outer belt</text>
+  <text x="470" y="94" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">electrons</text>
   <line x1="270" y1="250" x2="190" y2="372" stroke="#1f5fbf" stroke-width="2"/>
-  <text x="190" y="396" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Inner belt</text>
-  <text x="190" y="420" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">protons</text>
+  <text x="190" y="396" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="middle">Inner belt</text>
+  <text x="190" y="420" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">protons</text>
   <line x1="370" y1="250" x2="410" y2="372" stroke="#9c1b1f" stroke-width="2"/>
-  <text x="410" y="396" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#9c1b1f" text-anchor="middle">LEO orbit</text>
-  <text x="410" y="420" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">CubeSat</text>
+  <text x="410" y="396" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#9c1b1f" text-anchor="middle">LEO orbit</text>
+  <text x="410" y="420" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">CubeSat</text>
   <circle cx="40" cy="40" r="26" fill="#f7c948" stroke="#c25e00" stroke-width="2"/>
-  <text x="40" y="92" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">Sun</text>
+  <text x="40" y="92" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a1a1a" text-anchor="middle">Sun</text>
   <line x1="72" y1="46" x2="175.615" y2="105.988" stroke="#c25e00" stroke-width="3"/>
   <polygon points="186,112 178.9,100.3 172.3,111.7" fill="#c25e00"/>
-  <text x="8" y="136" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="start">SEP protons</text>
-  <text x="8" y="160" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">minutes</text>
-  <text x="8" y="184" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">to hours</text>
+  <text x="8" y="136" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="start">SEP protons</text>
+  <text x="8" y="160" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">minutes</text>
+  <text x="8" y="184" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">to hours</text>
 </svg>

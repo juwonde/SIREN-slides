@@ -64,15 +64,36 @@ def inline_figures(html):
     return re.sub(r'<div class="fig" data-svg="([^"]+)"></div>', repl, html)
 
 
-def render(variant, lint):
+SECTIONS = (("intro", "Introduction"), ("bg", "Background"), ("res", "Results"), ("fut", "Future works"))
+
+
+def add_progress(html):
+    def repl(m):
+        sec = m.group(1)
+        if sec not in dict(SECTIONS):
+            return m.group(0)
+        pills = "".join(f'<span class="on">{name}</span>' if key == sec else f"<span>{name}</span>"
+                        for key, name in SECTIONS)
+        return f'{m.group(0)}\n  <nav class="prog">{pills}</nav>'
+    return re.sub(r'<section class="slide" data-sec="(\w+)">', repl, html)
+
+
+def use_stills(html):
+    # PDF pages show one representative frame of each animated GIF
+    return re.sub(r'src="([^"]+\.gif)" data-still="([^"]+)"', r'src="\2" data-anim="\1"', html)
+
+
+def render(variant, lint, still=True):
     html = (ROOT / "slides" / "deck.html").read_text(encoding="utf-8")
     html = re.sub(r'<html lang="en" data-variant="[A-Z]">', f'<html lang="en" data-variant="{variant}">', html, count=1)
-    html = inline_figures(html)
+    html = add_progress(inline_figures(html))
+    if still:
+        html = use_stills(html)
     if lint:
         js = (ROOT / "tools" / "lint.js").read_text(encoding="utf-8")
         html = html.replace("</body>", f"<script>{js}</script>\n</body>")
     BUILD.mkdir(exist_ok=True)
-    out = BUILD / f"{'lint' if lint else 'deck'}-{variant}.html"
+    out = BUILD / f"{'lint' if lint else 'deck' if still else 'present'}-{variant}.html"
     out.write_text(html, encoding="utf-8", newline="\n")
     return out
 
@@ -92,6 +113,8 @@ def lint_variant(variant, profile):
         sys.exit(f"lint {variant}: no result from Chrome")
     res = json.loads(found[-1].replace("&quot;", '"').replace("&amp;", "&").replace("&lt;", "<").replace("&gt;", ">"))
     problems = 0
+    for item in res.get("raster", []):
+        print(f"  [{variant}] note: raster image, text size not checked: slide {item['slide']} {item['src']}")
     for key in ("small", "outside", "banned"):
         for item in res[key]:
             print(f"  [{variant}] {key}: {item}")
@@ -151,6 +174,7 @@ def main():
         if not a.lint_only:
             for v in variants:
                 pdf_variant(v, a.label, profile)
+                print(f"present {v}: {render(v, lint=False, still=False).relative_to(ROOT)} (animated GIFs, open in a browser)")
     finally:
         shutil.rmtree(profile, ignore_errors=True)
 
