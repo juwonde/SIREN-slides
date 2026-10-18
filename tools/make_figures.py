@@ -143,7 +143,7 @@ def f03():
     s.text(540, 406, "Magnetotail", 20, 700, NAVY, "end")
     s.line(cx + 10, cy + 17, 300, 392, color=RED, width=2)
     s.text(300, 414, "PADO-SAT orbit", 20, 700, RED)
-    s.text(300, 438, "500 km SSO", 20, 400, RED)
+    s.text(300, 438, "500 km SSO (assumed)", 20, 400, RED)
     s.text(8, 438, "not to scale", 20, 400, MUTED, "start")
     return s
 

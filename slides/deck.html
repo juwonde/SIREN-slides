@@ -166,7 +166,10 @@
       </ul>
       <div class="gloss">pfu: particles cm⁻² s⁻¹ sr⁻¹ · CME: coronal mass ejection</div>
     </div>
-    <div class="fig" data-svg="F03-radiation-environment.svg"></div>
+    <div class="stack">
+      <div class="fig" data-svg="F03-radiation-environment.svg"></div>
+      <div class="cap">Orbit assumed from recent Nuri launches · rideshare: final orbit set by the primary payload</div>
+    </div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
@@ -523,21 +526,24 @@
       <img src="../assets/hw/routing-150mhz.png" width="330" height="405" alt="Routed design on the XC7Z030">
     </div>
     <div class="stack">
-      <div class="legend">
+      <div class="legend legend2">
         <div><i style="background:#2f6fbf"></i>BUS (FINN)</div>
-        <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
-        <div><i style="background:#d9822b"></i>Shared engine</div>
-        <div><i style="background:#8e5bb5"></i>GRU tail</div>
         <div><i style="background:#5f6b7a"></i>DMA · buses</div>
+        <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
         <div><i style="background:#c0392b"></i>Guards · SEM</div>
+        <div><i style="background:#d9822b"></i>Shared engine</div>
         <div><i style="background:#ffffff; border: 1.5px solid #b4bcc8"></i>Empty</div>
+        <div><i style="background:#8e5bb5"></i>GRU tail</div>
         <div><i style="background:#e9ecf1"></i>ARM processor</div>
       </div>
-      <ul class="side">
-        <li>Placement: <b class="k">98 %</b> of sites hold logic</li>
-        <li>Routing: every coloured line is a wire</li>
-      </ul>
-      <div class="cap">Grid cell: 2 site columns × 5 rows · white: at least half empty</div>
+      <table class="cmp">
+        <tr><th>Resource</th><th class="num">Used</th><th class="num">Free</th></tr>
+        <tr><td>LUT</td><td class="num">77.6 %</td><td class="num"><b class="ok">22.4 %</b></td></tr>
+        <tr><td>FF</td><td class="num">55.8 %</td><td class="num"><b class="ok">44.2 %</b></td></tr>
+        <tr><td>BRAM36</td><td class="num">68.1 %</td><td class="num"><b class="ok">31.9 %</b></td></tr>
+        <tr><td>DSP</td><td class="num">60.5 %</td><td class="num"><b class="ok">39.5 %</b></td></tr>
+      </table>
+      <div class="cap">Logic spread over 98 % of sites, yet every resource keeps over 20 % free · grid cell: 2 site columns × 5 rows</div>
     </div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>

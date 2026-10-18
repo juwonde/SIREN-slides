@@ -156,3 +156,7 @@ table.cmp .num { white-space: nowrap; }
         align-items: center; justify-content: center; text-align: center; color: var(--muted); font-size: 22px; }
 .slot b { font-size: 28px; color: var(--navy); margin-bottom: 8px; }
 
+
+/* Two-column legend */
+.legend2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; }
+.legend2 div { margin-bottom: 6px; }

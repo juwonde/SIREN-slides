@@ -28,6 +28,6 @@
   <text x="540" y="406" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1b2a57" text-anchor="end">Magnetotail</text>
   <line x1="330" y1="232" x2="300" y2="392" stroke="#9c1b1f" stroke-width="2"/>
   <text x="300" y="414" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#9c1b1f" text-anchor="middle">PADO-SAT orbit</text>
-  <text x="300" y="438" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#9c1b1f" text-anchor="middle">500 km SSO</text>
+  <text x="300" y="438" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#9c1b1f" text-anchor="middle">500 km SSO (assumed)</text>
   <text x="8" y="438" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#4a4f5c" text-anchor="start">not to scale</text>
 </svg>
