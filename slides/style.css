@@ -8,7 +8,7 @@
   --panel: #f3f5f9;
   --k: #1f5fbf;      /* key word */
   --ok: #1a7f43;     /* achieved */
-  --todo: #c25e00;   /* pending or limitation */
+  --todo: #9c1b1f;   /* pending or limitation (crimson; no orange) */
   --font: Cambria, "Cambria Math", Georgia, "Times New Roman", serif;
 }
 @page { size: 1280px 720px; margin: 0; }

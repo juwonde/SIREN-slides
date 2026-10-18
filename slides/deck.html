@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=1280">
-<title>SIREN · KSS 2026 Fall</title>
+<title>SIREN · KSSS 2026 Fall Conference</title>
 <link rel="stylesheet" href="../slides/style.css">
 </head>
 <body>
@@ -39,7 +39,7 @@
     <sup>1</sup> G-LAMP NEXUS Institute / School of Space Research, Kyung Hee University<br>
     <sup>2</sup> Department of Astronomy and Space Science, Kyung Hee University
   </div>
-  <div class="event">KSS 2026 Fall Meeting · Session II-2 · Oct 27, 2026<span class="badge">Preliminary · Alpha</span></div>
+  <div class="event">KSSS 2026 Fall Conference · Session II-2 · Oct 27, 2026<span class="badge">Preliminary · Alpha</span></div>
   <div class="qr-slot">QR code</div>
   <aside class="notes"><ul><li>SIREN = onboard AI payload of PADO-SAT</li><li>preliminary results · power measurement pending</li></ul></aside>
 </section>
@@ -107,10 +107,11 @@
   <div class="part">Introduction · Approach</div>
   <h2>PADO-SAT and SIREN</h2>
   <div class="cols" style="grid-template-columns: 1fr 560px;">
-    <ul>
+    <ul class="side">
       <li><b class="k">PADO-SAT</b>: 3U CubeSat (Kyung Hee Univ.), CREST + SIREN</li>
       <li><b class="k">SIREN</b>: 3 DNNs, <b>in-situ</b> on board
         <ul><li><b>PD</b> particle risk · <b>BUS</b> anomaly · <b>COMP</b> compression</li></ul></li>
+      <li><b>Design</b>: real-time capable · <b>Operation</b>: once a week, stored data in one batch (experimental)</li>
       <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
       <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
       <li>Forecasting: <b class="todo">under study</b> (performance)</li>
@@ -138,7 +139,7 @@
         <tr><td>fault management</td><td>detect · recover · report</td></tr>
       </table>
       <ul>
-        <li>Models run <b>one at a time</b></li>
+        <li>Models run <b>one at a time</b>, weekly batch (not the full duty cycle)</li>
         <li><b class="k">Testbed</b>: TE0715 SoM + TE0705 carrier board (same XC7Z030)</li>
       </ul>
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>

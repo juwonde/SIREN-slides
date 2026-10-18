@@ -306,7 +306,7 @@ def f17():
         if i < 2:
             s.arrow(x + 96, 292, x + 114, 292)
     s.arrow(0, 354, 324, 354, color=OK)
-    s.text(324, 384, "risk known in minutes", 20, 700, OK, "end")
+    s.text(324, 384, "minutes by design", 20, 700, OK, "end")
     return s
 
 

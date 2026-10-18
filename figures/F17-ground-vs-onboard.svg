@@ -39,5 +39,5 @@
   <text x="280" y="310.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">results</text>
   <line x1="0" y1="354" x2="312" y2="354" stroke="#1a7f43" stroke-width="3"/>
   <polygon points="324,354 312.0,347.4 312.0,360.6" fill="#1a7f43"/>
-  <text x="324" y="384" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a7f43" text-anchor="end">risk known in minutes</text>
+  <text x="324" y="384" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1a7f43" text-anchor="end">minutes by design</text>
 </svg>
