@@ -509,87 +509,51 @@
   <aside class="notes"><ul><li>aligner joins gate sums and hidden state</li><li>packet bytes identical to the reference encoder</li></ul></aside>
 </section>
 
-<!-- ============ 18. Placement map ============ -->
+<!-- ============ 18. Placement and routing ============ -->
 <section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Placement</div>
-  <h2>Placement: where each block sits</h2>
-  <div class="cols" style="grid-template-columns: 350px 250px 1fr; gap: 28px;">
-    <div class="fig" data-svg="F16-chip-map.svg"></div>
-    <div class="legend">
-      <div><i style="background:#2f6fbf"></i>BUS (FINN)</div>
-      <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
-      <div><i style="background:#d9822b"></i>Shared engine</div>
-      <div><i style="background:#8e5bb5"></i>GRU tail</div>
-      <div><i style="background:#5f6b7a"></i>DMA · buses</div>
-      <div><i style="background:#c0392b"></i>Guards · SEM</div>
-      <div><i style="background:#ffffff; border: 1.5px solid #b4bcc8"></i>Empty</div>
-      <div><i style="background:#e9ecf1"></i>ARM processor</div>
+  <div class="part">Results (Preliminary) · Chip</div>
+  <h2>Placement and routing: where blocks sit, how they are wired</h2>
+  <div class="cols" style="grid-template-columns: 290px 330px 1fr; gap: 24px;">
+    <div>
+      <div class="cap" style="margin: 0 0 6px;"><b>Placement</b> (grid)</div>
+      <div class="fig" data-svg="F16-chip-map.svg"></div>
     </div>
-    <div class="stack">
-      <ul>
-        <li>Vivado placement, 150 MHz build</li>
-        <li><b class="k">BUS</b>: upper half of the chip</li>
-        <li><b class="k">Shared engine</b>: lower left</li>
-        <li><b class="k">GRU tail</b>: lower right</li>
-        <li><b class="k">PD LayerNorm</b>: small, centre</li>
-        <li>DMA and buses: next to the ARM (PS)</li>
-        <li>Few white cells: <b class="k">98 %</b> of sites hold logic</li>
-      </ul>
-      <div class="cap">One grid cell: 2 site columns × 5 rows · white: at least half empty</div>
-    </div>
-  </div>
-  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>same colours as the architecture slide</li><li>next: the real routing of this placement</li></ul></aside>
-</section>
-
-<!-- ============ 19. One bitstream ============ -->
-<section class="slide" data-sec="res">
-  <div class="part">Results (Preliminary) · Routing</div>
-  <h2>Routing: the real wires of one bitstream</h2>
-  <div class="cols" style="grid-template-columns: 370px 210px 1fr; gap: 20px;">
     <div class="media">
-      <img src="../assets/hw/routing-150mhz.png" width="370" height="455" alt="Routed design on the XC7Z030">
-    </div>
-    <div class="legend">
-      <div><i style="background:#2f6fbf"></i>BUS</div>
-      <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
-      <div><i style="background:#d9822b"></i>Shared engine</div>
-      <div><i style="background:#8e5bb5"></i>GRU tail</div>
-      <div><i style="background:#5f6b7a"></i>DMA · buses</div>
-      <div><i style="background:#c0392b"></i>Guards · control</div>
-      <div class="cap">Every coloured line: a routed wire</div>
+      <div class="cap" style="margin: 0 0 6px;"><b>Routing</b> (Vivado)</div>
+      <img src="../assets/hw/routing-150mhz.png" width="330" height="405" alt="Routed design on the XC7Z030">
     </div>
     <div class="stack">
-      <div class="bars">
-        <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
-        <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
-        <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
-        <div class="cap">GOPS @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
+      <div class="legend">
+        <div><i style="background:#2f6fbf"></i>BUS (FINN)</div>
+        <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
+        <div><i style="background:#d9822b"></i>Shared engine</div>
+        <div><i style="background:#8e5bb5"></i>GRU tail</div>
+        <div><i style="background:#5f6b7a"></i>DMA · buses</div>
+        <div><i style="background:#c0392b"></i>Guards · SEM</div>
+        <div><i style="background:#ffffff; border: 1.5px solid #b4bcc8"></i>Empty</div>
+        <div><i style="background:#e9ecf1"></i>ARM processor</div>
       </div>
-      <table>
-        <tr><th>Requirement</th><th>Status</th></tr>
-        <tr><td>≥ 50 GOPS</td><td><b class="ok">met</b></td></tr>
-        <tr><td>≥ 99 % match</td><td><b class="ok">100 %</b></td></tr>
-        <tr><td>weight update</td><td><b class="ok">met</b></td></tr>
-        <tr><td>fault mgmt.</td><td>22 / 23</td></tr>
-        <tr><td>≤ 5 W</td><td><b class="todo">pending</b></td></tr>
-      </table>
+      <ul class="side">
+        <li>Placement: <b class="k">98 %</b> of sites hold logic</li>
+        <li>Routing: every coloured line is a wire</li>
+      </ul>
+      <div class="cap">Grid cell: 2 site columns × 5 rows · white: at least half empty</div>
     </div>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>real routing: colours = blocks of the architecture slide</li><li>LUT 77.6 % · DSP 60.5 % · fault management 22 of 23 items on board</li></ul></aside>
+  <aside class="notes"><ul><li>left: where each block was placed · right: the real wires between them</li><li>same colours as the architecture slide</li></ul></aside>
 </section>
 
 <!-- ============ Power trade-off (placeholder) ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · Power</div>
-  <h2>Power vs performance per model</h2>
+  <h2>Power budget: GOPS vs resource use per model</h2>
   <div class="slot3">
-    <div class="slot"><b>PD</b>power vs GOPS<br>after measurement</div>
-    <div class="slot"><b>BUS</b>power vs GOPS<br>after measurement</div>
-    <div class="slot"><b>GRU</b>power vs GOPS<br>after measurement</div>
+    <div class="slot"><b>PD</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
+    <div class="slot"><b>BUS</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
+    <div class="slot"><b>GRU</b>GOPS vs resource use<br>Pareto front per W<br>after measurement</div>
   </div>
-  <div class="cap" style="margin-top: 12px;">Board input power (12 V) during inference · placeholder for the measured trade-off</div>
+  <div class="cap" style="margin-top: 12px;">One Pareto front per power budget (W) · board input power at 12 V · placeholder until measured</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>short slide: one trade-off curve per model</li></ul></aside>
 </section>
@@ -623,7 +587,7 @@
   <ul style="margin-top: 16px;">
     <li><b class="todo">Power check</b>: board input power during inference vs 5 W limit</li>
     <li><b class="k">Flight hardware</b>: lab board → flight AI Processing Unit (same chip)</li>
-    <li><b class="k">Weight upload test</b>: new weights over S-band, no new bitstream</li>
+    <li><b class="k">Weight upload</b> after fine-tuning: selected layers only, <b class="k">≤ 1 MB</b> for all 3 models</li>
   </ul>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit · II: bus HK, method open</li><li>power measurement completes the requirement table</li></ul></aside>
@@ -633,15 +597,33 @@
 <section class="slide" data-sec="sum">
   <div class="part">Summary</div>
   <h2>SIREN at a glance</h2>
-  <ul>
-    <li><b class="k">3 time-series DNNs</b> on one XC7Z030 bitstream</li>
-    <li>Each model above its baseline (PDR test set)</li>
-    <li>Each model <b class="ok">&gt; 50 GOPS</b>, outputs = integer reference</li>
-    <li>Built from QAT integer models: FINN dataflow + shared engine</li>
-    <li>Next: <b class="todo">power check</b> · Digital Twin data · flight hardware</li>
-  </ul>
+  <div class="cols">
+    <ul>
+      <li><b class="k">3 time-series DNNs</b> on one XC7Z030 bitstream</li>
+      <li>Each model above its baseline (PDR test set)</li>
+      <li>Outputs = integer reference, bit for bit</li>
+      <li>FINN dataflow + shared engine</li>
+      <li>Next: <b class="todo">power check</b> · Digital Twin data · flight hardware</li>
+    </ul>
+    <div class="stack">
+      <div class="bars">
+        <div class="bar"><span>BUS</span><span class="track"><span class="fill" style="width: 78.2%"></span><span class="req" style="left: 62.5%"></span></span><b>62.58</b></div>
+        <div class="bar"><span>PD</span><span class="track"><span class="fill" style="width: 88.6%"></span><span class="req" style="left: 62.5%"></span></span><b>70.88</b></div>
+        <div class="bar"><span>GRU</span><span class="track"><span class="fill" style="width: 79.7%"></span><span class="req" style="left: 62.5%"></span></span><b>63.76</b></div>
+        <div class="cap">GOPS @ 150 MHz, TE0715 SoM · dashed: 50 GOPS</div>
+      </div>
+      <table>
+        <tr><th>Requirement</th><th>Status</th></tr>
+        <tr><td>≥ 50 GOPS</td><td><b class="ok">met</b></td></tr>
+        <tr><td>≥ 99 % match</td><td><b class="ok">100 %</b></td></tr>
+        <tr><td>weight update</td><td><b class="ok">met</b></td></tr>
+        <tr><td>fault management</td><td>22 / 23 on board</td></tr>
+        <tr><td>≤ 5 W</td><td><b class="todo">pending</b></td></tr>
+      </table>
+    </div>
+  </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
-  <aside class="notes"><ul><li>three points to remember</li></ul></aside>
+  <aside class="notes"><ul><li>three models, one chip, all above 50 GOPS · power measurement next</li></ul></aside>
 </section>
 
 <!-- ============ 21. Thank you ============ -->
@@ -722,6 +704,7 @@
         <ul><li>PD: engine weights · LayerNorm parameters</li>
             <li>BUS: MAC weights</li></ul></li>
       <li>A/B weight sets: outputs = reference</li>
+      <li>After fine-tuning: partial upload, 3 models ≤ 1 MB (target)</li>
     </ul>
   </div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>

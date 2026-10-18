@@ -1,4 +1,4 @@
-# 작업 계획 (alpha-7, 2026-10-18)
+# 작업 계획 (alpha-8, 2026-10-18)
 
 ## 0. 고정 조건
 
@@ -52,6 +52,9 @@
 47. (alpha-7) 빌드업: **in-situ 탐지** → 다음 단계 위성 전체 운용 변경·유인 임무, **Forecasting은 성능 문제로 검토 중**
 48. (alpha-7) FM 슬라이드: **현재 구현 기준** 항목 요약, Appendix Abstract에도 한 줄
 49. 작업 완료 후 저장소 정리, 공개 전환 예정 (사용자)
+50. (alpha-8) 가중치 업로드: fine-tuning 후 **일부 계층만**, 세 모델 합 **≤ 1 MB** (목표)
+51. (alpha-8) 배치·배선 슬라이드 **한 장으로** 합침 (사용자 허용), GOPS 막대·요구조건 표는 Summary로
+52. (alpha-8) 전력 슬라이드: **GOPS vs (x)**, W별 Pareto front. x 추천: FPGA 자원 사용률 (사용자 결정 대기)
 
 ## 1. 발표 정보 (초록집 기준)
 
@@ -59,7 +62,7 @@
 - II-2-7, 10월 27일(화) 17:25 (날짜는 초록집 순서로 추정)
 - 저자: **Woncheol Joo**¹ (발표자, 확인됨), Subin Kim¹, Jeongin Yeo¹, Nayeong Hwang¹, Yangha Ju¹, Jiwon Lee¹, Young-Joo Song¹ ², Yong-Jae Moon¹ ²
 
-## 2. 발표 흐름 (본편 26장: 제목 + 내용 24장 + Thank you)
+## 2. 발표 흐름 (본편 25장: 제목 + 내용 23장 + Thank you)
 
 | # | 구간 | 제목 (EN) |
 |---|---|---|
@@ -77,16 +80,15 @@
 | 12 | Background · Method | How SIREN is built |
 | 13 | Results · Architecture | SIREN hardware on one chip |
 | 14–19 | Results · PD / BUS / GRU | 모델 + Baseline 표 / FPGA 구현 (DNN 6장) |
-| 20 | Results · Placement | Placement: where each block sits |
-| 21 | Results · Routing | Routing: the real wires of one bitstream |
-| 22 | Results · Power | Power vs performance per model (그래프 자리) |
-| 23 | Results · Reliability | Fault management as implemented |
-| 24 | Future works | Toward the final version |
-| 25 | Summary | SIREN at a glance |
-| 26 | Closing | Thank you (연락처, QR 자리) |
+| 20 | Results · Chip | Placement and routing: where blocks sit, how they are wired |
+| 21 | Results · Power | Power budget: GOPS vs resource use per model (그래프 자리) |
+| 22 | Results · Reliability | Fault management as implemented |
+| 23 | Future works | Toward the final version |
+| 24 | Summary | SIREN at a glance (GOPS 막대, 요구조건 표) |
+| 25 | Closing | Thank you (연락처, QR 자리) |
 
-- 예상 시간 약 11분 (내용 24장, 전력 자리 슬라이드는 짧게). 10분 목표보다 약 1분 김
-- 줄이는 후보: 7·8번 합치기(−30초), 20·21번 합치기(−25초), 10번을 11·12번에 흡수(−30초)
+- 예상 시간 약 10분 40초 (내용 23장, 전력 슬라이드는 짧게)
+- 더 줄이는 후보: 7·8번 합치기(−30초), 10번을 11·12번에 흡수(−30초)
 - Appendix: Abstract · Why an FPGA SoC · Correctness · Resources/weight update · Abbreviations
 
 ## 3. 친절도 장치
@@ -141,8 +143,9 @@
 | alpha-4 | 그리드 배치도 슬라이드, 바닥글 PADO/SIREN | 10/18 |
 | alpha-5 | 모델별 Baseline 표, Thank you 분리 | 10/18 |
 | alpha-6 | Introduction 빌드업, FINN·양자화 슬라이드, FM 본문, 자기권 그림, 제품명 제거, 공식 소속명 | 10/18 |
-| **alpha-7** | **진행 표시 삭제, 가로 구조도, 전력 그래프 자리, QR·연락처, downlink·in-situ 빌드업, 구현 기준 FM** | **10/18** |
-| alpha-8 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 시간 맞추기, 공개 전 저장소 정리 | 검토 후 |
+| alpha-7 | 진행 표시 삭제, 가로 구조도, 전력 그래프 자리, QR·연락처, downlink·in-situ 빌드업, 구현 기준 FM | 10/18 |
+| **alpha-8** | **가중치 업로드 ≤ 1 MB 목표, 배치·배선 합침, Summary 상태표, 전력 슬라이드 축** | **10/18** |
+| alpha-9 | 지도교수 검토 반영, 모델 그림 큰 글꼴 재생성, 공개 전 저장소 정리 | 검토 후 |
 | beta-1 | 전력 측정 반영, 정확도 판 확정 | 측정 후 |
 | v1.0 | 리허설 반영 최종판 | 10/26 이전 |
 

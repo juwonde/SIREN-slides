@@ -6,7 +6,9 @@ rows per cell); a cell takes the colour of the function that owns most of its si
 least half of its sites are empty. Areas without sites (the ARM processor corner, the clock spine) have no grid.
 The legend lives on the slide, not in the picture.
 
-    python tools/chip_map.py SITES_CSV figures/F16-chip-map.svg
+    python tools/chip_map.py SITES_CSV figures/F16-chip-map.svg [SCALE]
+
+SCALE (default 1) shrinks the cells, e.g. 0.85 for the combined placement/routing slide.
 """
 import collections
 import csv
@@ -31,6 +33,8 @@ PAD = 2
 
 def main():
     src, out = sys.argv[1], Path(sys.argv[2])
+    scale = float(sys.argv[3]) if len(sys.argv) > 3 else 1.0
+    cell_w, cell_h = CELL_W * scale, CELL_H * scale
     sites = [s for s in csv.DictReader(open(src, encoding="utf-8")) if not s["site_type"].startswith("IOB")]
     colour = {o: c for c, owners in GROUPS for o in owners}
     cols = {x: k for k, x in enumerate(sorted({int(s["grid_x"]) for s in sites}))}
@@ -41,13 +45,13 @@ def main():
         cells[key].append(colour.get(s["owner"], EMPTY) if s["owner"] else EMPTY)
     nx = max(k[0] for k in cells) + 1
     ny = max(k[1] for k in cells) + 1
-    width, height = nx * CELL_W + 2 * PAD, ny * CELL_H + 2 * PAD
+    width, height = nx * cell_w + 2 * PAD, ny * cell_h + 2 * PAD
     parts, empty_cells = [], 0
     # the ARM processor (PS) corner: rows above the first site of the leftmost cell column, columns left of the
     # first cell that has sites in those rows
     first_row = min(r for (c, r) in cells if c == 0)
     first_col = min(c for (c, r) in cells if r < first_row)
-    parts.append(f'<rect x="{PAD}" y="{PAD}" width="{first_col * CELL_W:.1f}" height="{first_row * CELL_H:.1f}" '
+    parts.append(f'<rect x="{PAD}" y="{PAD}" width="{first_col * cell_w:.1f}" height="{first_row * cell_h:.1f}" '
                  f'fill="{PS_FILL}"/>')
     for (cx, cy), owners in sorted(cells.items()):
         used = [o for o in owners if o != EMPTY]
@@ -56,8 +60,8 @@ def main():
             empty_cells += 1
         else:
             fill = collections.Counter(used).most_common(1)[0][0]
-        parts.append(f'<rect x="{PAD + cx * CELL_W:.1f}" y="{PAD + cy * CELL_H:.1f}" width="{CELL_W:.1f}" '
-                     f'height="{CELL_H:.1f}" fill="{fill}" stroke="{GRID}" stroke-width="0.8"/>')
+        parts.append(f'<rect x="{PAD + cx * cell_w:.1f}" y="{PAD + cy * cell_h:.1f}" width="{cell_w:.1f}" '
+                     f'height="{cell_h:.1f}" fill="{fill}" stroke="{GRID}" stroke-width="0.8"/>')
     out.write_text(f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:.1f}" height="{height:.1f}" '
                    f'viewBox="0 0 {width:.1f} {height:.1f}">\n  ' + "\n  ".join(parts) + "\n</svg>\n",
                    encoding="utf-8", newline="\n")
