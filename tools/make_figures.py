@@ -94,7 +94,7 @@ def f02():
     s.arrow(280, 80, 280, 138)
     s.box(190, 260, 370, 196, [], fill=FINN_FILL, stroke=NAVY, stroke_w=3)
     s.text(375, 290, "SIREN AI Processing Unit", 22, 700, NAVY)
-    for i, (t, c) in enumerate([("PD", "risk detection"), ("BUS", "anomaly detection"), ("COMP", "compression")]):
+    for i, (t, c) in enumerate([("PD", "hazard detection"), ("BUS", "anomaly detection"), ("COMP", "compression")]):
         y = 306 + i * 48
         s.box(206, y, 338, 40, [], fill="#ffffff", stroke=K, rx=6)
         s.text(222, y + 28, t, 20, 700, K, "start")
@@ -295,7 +295,7 @@ def f17():
         if i < 4:
             s.arrow(x + 96, 78, x + 114, 78)
     s.arrow(0, 140, 556, 140, color=TODO)
-    s.text(556, 170, "risk known hours later", 20, 700, TODO, "end")
+    s.text(556, 170, "hazards known hours later", 20, 700, TODO, "end")
     s.line(0, 200, 560, 200, color=LINE, width=2)
     s.text(0, 238, "Onboard AI (SIREN)", 22, 700, K, "start")
     steps2 = ["Observe", "Infer on board", "Send results"]

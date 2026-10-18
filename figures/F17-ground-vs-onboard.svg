@@ -22,7 +22,7 @@
   <text x="512" y="84.4" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="middle">Analyse</text>
   <line x1="0" y1="140" x2="544" y2="140" stroke="#c25e00" stroke-width="3"/>
   <polygon points="556,140 544.0,133.4 544.0,146.6" fill="#c25e00"/>
-  <text x="556" y="170" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="end">risk known hours later</text>
+  <text x="556" y="170" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#c25e00" text-anchor="end">hazards known hours later</text>
   <line x1="0" y1="200" x2="560" y2="200" stroke="#c9cfdb" stroke-width="2"/>
   <text x="0" y="238" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1f5fbf" text-anchor="start">Onboard AI (SIREN)</text>
   <rect x="0" y="254" width="96" height="76" rx="10" fill="#f3f5f9" stroke="#c9cfdb" stroke-width="2"/>

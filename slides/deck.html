@@ -55,7 +55,7 @@
           <ul><li>all payloads share one downlink</li></ul></li>
         <li>In operation: link too small for all raw data
           <ul><li>data wait for ground passes</li>
-              <li>particle risk, equipment faults seen <b class="todo">hours later</b></li></ul></li>
+              <li>particle hazards, equipment faults seen <b class="todo">hours later</b></li></ul></li>
         <li><b class="k">PADO-SAT</b>: S-band margin for CREST + SIREN
           <ul><li>raw data <b>and</b> AI results downlinked</li>
               <li>→ <b class="k">verify onboard AI</b> against the ground</li></ul></li>
@@ -110,7 +110,8 @@
     <ul class="side">
       <li><b class="k">PADO-SAT</b>: 3U CubeSat (Kyung Hee Univ.), CREST + SIREN</li>
       <li><b class="k">SIREN</b>: 3 DNNs, <b>in-situ</b> on board
-        <ul><li><b>PD</b> particle risk · <b>BUS</b> anomaly · <b>COMP</b> compression</li></ul></li>
+        <ul><li><b>PD</b> high-energy charged particle hazard detection</li>
+            <li><b>BUS</b> housekeeping anomaly detection · <b>COMP</b> compression via prediction</li></ul></li>
       <li><b>Design</b>: real-time capable · <b>Operation</b>: once a week, stored data in one batch (experimental)</li>
       <li><b>Now</b>: results logged, downlinked, checked vs raw data</li>
       <li><b class="k">Next</b>: whole-satellite operation changes · crewed missions</li>
@@ -349,7 +350,7 @@
 <!-- ============ 12. PD model ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · PD</div>
-  <h2>PD: Particle Risk Detection</h2>
+  <h2>PD: High-Energy Charged Particle Hazard Detection</h2>
   <div class="cols" style="grid-template-columns: 700px 1fr;">
     <div class="media">
       <img src="../assets/models/pd-risk-score.gif" data-still="../assets/models/pd-risk-score-still.png" width="700" height="400" alt="PD risk score during an SEP event">
@@ -674,7 +675,7 @@
   <div class="part">Appendix · Q&amp;A</div>
   <h2>Abstract</h2>
   <ul>
-    <li><b>Background</b>: CubeSat limits (power · compute · downlink) vs LEO particle risk</li>
+    <li><b>Background</b>: CubeSat limits (power · compute · downlink) vs high-energy charged particle hazards in LEO</li>
     <li><b>Payload</b>: SIREN, onboard AI of PADO-SAT (3U)</li>
     <li><b>Models</b>: PD and BUS (ModernTCN) · COMP (GRU predictor)</li>
     <li><b>Accuracy</b>: PD F1 0.611 / CSI 0.440 · BUS F1 0.889 · COMP CR 11.841</li>

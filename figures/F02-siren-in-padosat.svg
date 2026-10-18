@@ -18,7 +18,7 @@
   <text x="375" y="290" font-family="Cambria, Georgia, Times New Roman, serif" font-size="22" font-weight="700" fill="#1b2a57" text-anchor="middle">SIREN AI Processing Unit</text>
   <rect x="206" y="306" width="338" height="40" rx="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
   <text x="222" y="334" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="start">PD</text>
-  <text x="290" y="334" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">risk detection</text>
+  <text x="290" y="334" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">hazard detection</text>
   <rect x="206" y="354" width="338" height="40" rx="6" fill="#ffffff" stroke="#1f5fbf" stroke-width="2"/>
   <text x="222" y="382" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="700" fill="#1f5fbf" text-anchor="start">BUS</text>
   <text x="290" y="382" font-family="Cambria, Georgia, Times New Roman, serif" font-size="20" font-weight="400" fill="#1a1a1a" text-anchor="start">anomaly detection</text>

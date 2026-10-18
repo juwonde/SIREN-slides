@@ -66,11 +66,12 @@
 64. (alpha-13) **Digital Twin 빌드업**: 4번(학습 데이터는 지금 대리 데이터 → Digital Twin), 모델 슬라이드(대리 데이터 표시), 23번(왜 필요한가)
 65. (alpha-13) 13번 구조도 아래 **박스 설명** 8개 (18 px), SEM은 설명으로만
 57. (alpha-12) 전력 슬라이드 x축 **LUT 사용률** 확정, 제목 "Performance trade-off per model"
-58. (alpha-12) 모델 이름 GRU → **COMP** (네트워크 종류는 GRU 그대로). 제목: "BUS: Housekeeping Anomaly Detection", "COMP: Compression via Prediction", "PD: Particle Risk Detection", "Placement & Routing"
+58. (alpha-12) 모델 이름 GRU → **COMP** (네트워크 종류는 GRU 그대로). 제목: "BUS: Housekeeping Anomaly Detection", "COMP: Compression via Prediction", "PD: High-Energy Charged Particle Hazard Detection", "Placement & Routing"
 59. (alpha-12) 구조도(13번)와 9번 그림은 **Mermaid로 렌더** (화살표 자동 배치)
 60. (alpha-12) 로고 세 개 **오른쪽 위 정렬, 보이는 크기 같게**. 휘장은 공식 AI 원본의 숨김 레이어가 SVG 변환에 섞여 잘려 보였음 → 투명 PNG
 55. (alpha-11) 궤도 500 km SSO는 **가정** (최근 누리호 발사 궤도 기준, rideshare라 주탑재체에 따름)
 56. (alpha-11) 20번에 **자원 여유 표** (LUT 22.4 %, FF 44.2 %, BRAM 31.9 %, DSP 39.5 % 남음)
+70. (alpha-15) PD 과제명은 제안서 표기 **High-Energy Charged Particle Hazard Detection** (고에너지 대전입자 위험 탐지)으로 통일. 모델 출력은 "risk score" 그대로
 53. (alpha-9) FM 슬라이드에 Safe 상태(Safe Output → Safehold)와 보호 영역(TrustZone T1 non-secure, golden 읽기 전용 + CRC), 페이지 추가 없음
 
 ## 1. 발표 정보 (초록집 기준)
