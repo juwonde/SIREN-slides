@@ -36,6 +36,7 @@ ENGINE, GUARD = "#b3202a", "#2e7d7a"
 # make_figures palette -> Figma palette (lower-case hex)
 COLOURS = {
     "#1a1a1a": "#16181d",  # ink
+    "#4a4f5c": "#353b47",  # secondary text and arrows (11.2:1)
     "#1b2a57": "#20386e",  # navy (headings)
     "#1f5fbf": "#4a64a0",  # key blue -> navy 500
     "#9c1b1f": "#84161a",  # crimson
