@@ -31,6 +31,7 @@
 | GRU 정수화 | 압축률 변화 −0.002 % (31일 합계 3.2463× → 3.2462×), 31일 모두 완전 복원 | shared: `docs/results/gru-model3-integer-2026-10-12.md` §2 | 13 |
 | GRU 보드 step | 중앙값 33.6 µs | shared: `docs/results/gru-lossless-encoder-2026-10-17.md` | 14 |
 | GRU 인코더 | ARM C 인코더 출력이 기준과 byte 일치, PC에서 정확히 복원 | 같은 문서 | 14 |
+| 배치 사용률 (150 MHz 판, 배치도) | 논리 사이트(SLICE·BRAM·DSP) 20,315개 중 빈 사이트 368개 → 98 %에 논리 배치. 격자 1,326칸(2열 × 5행) 중 절반 이상 빈 칸 25개 | 배치 export `sites.csv` (`tools/chip_map.py` 출력) | 18 |
 | FM 검증 범위 | 설계 23개 항목 중 22개 보드 증거, 1개 시뮬레이션 | shared: `docs/results/p1-summary-draft-2026-10-17.md` §3 | 15, A4 |
 | 온도 (방열판, 150 MHz) | 최고 74.7 °C | 보드 세션 기록 (10/17) | A5 |
 

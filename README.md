@@ -4,7 +4,7 @@
 
 - 발표: 10분 목표 (배정 15분, 질의응답 포함), 영어 슬라이드
 - 구성: Introduction – Background – Results (Preliminary) – Future works
-- 현재 판: **alpha-3** (본편 20장 + Appendix 6장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
+- 현재 판: **alpha-4** (본편 21장 + Appendix 6장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
 
 ## 폴더
 
@@ -16,7 +16,7 @@
 | `figures/` | 그림 SVG. Figma에서 편집하고 같은 이름으로 다시 저장 |
 | `assets/logos/` | 경희대 대학휘장(SVG), 연구실 패치 |
 | `assets/models/`, `assets/hw/` | 모델 시각화(GIF, 이미지, PDF용 대표 프레임), 배선도 |
-| `tools/` | 빌드·검사 (`build.py`, `lint.js`), 초안 그림 생성 (`make_figures.py`), 로고 정리 (`prep_svg_logo.py`) |
+| `tools/` | 빌드·검사 (`build.py`, `lint.js`), 초안 그림 생성 (`make_figures.py`), 배치도 생성 (`chip_map.py`), 로고 정리 (`prep_svg_logo.py`) |
 | `build/`, `dist/` | 빌드 결과 (git 제외). PDF는 GitHub release에 첨부 |
 
 ## 빌드
@@ -24,7 +24,7 @@
 Python 3 (표준 라이브러리만)과 Chrome 또는 Edge가 필요합니다. 브라우저는 `CHROME_PATH`, `PATH`, 표준 설치 위치 순서로 찾습니다.
 
 ```bash
-python tools/build.py --label alpha-3
+python tools/build.py --label alpha-4
 ```
 
 - 검사가 먼저 돌고, 문제가 있으면 PDF를 만들지 않습니다.

@@ -67,7 +67,7 @@
     </div>
     <div class="fig" data-svg="F01-onboard-ai.svg"></div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>particle hazard changes fast · ground contact short</li><li>prior missions: VPU / GPU · SIREN: FPGA SoC under 5 W</li></ul></aside>
 </section>
 
@@ -89,7 +89,7 @@
     </ul>
     <div class="fig" data-svg="F02-siren-in-padosat.svg"></div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>two payloads · three AI tasks</li><li>SIREN output: logged and downlinked, never changes satellite mode</li></ul></aside>
 </section>
 
@@ -115,7 +115,7 @@
       <div class="gloss">PS: processing system (ARM) · PL: programmable logic (FPGA) · GOPS: 10⁹ operations / s</div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Z7000-P3: ARM + FPGA in one chip · CAN to OBC · RS-422 to S-band</li><li>requirements SIR00100, 01100, 01000, 00900, 01600</li></ul></aside>
 </section>
 
@@ -140,7 +140,7 @@
     </div>
     <div class="fig" data-svg="F03-radiation-environment.svg"></div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>steady hazard: belts, SAA · sudden hazard: SEP</li><li>POES/MetOp measures the same quantities as CREST → training data</li></ul></aside>
 </section>
 
@@ -167,7 +167,7 @@
       <div class="cap">Illustration: each channel inside its limits, joint pattern abnormal</div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>limits catch single-channel outliers only</li><li>learned score catches joint patterns · ESA-ADB as public benchmark</li></ul></aside>
 </section>
 
@@ -194,7 +194,7 @@
       <div class="fig" data-svg="F04b-predictive-coding.svg"></div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>residuals cluster near zero → entropy coder works well</li><li>same predictor on ground → reconstruction</li></ul></aside>
 </section>
 
@@ -222,7 +222,7 @@
       <div class="fig" data-svg="F04c-gru-cell.svg"></div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ModernTCN: separate time, feature, variable mixing</li><li>GRU: small recurrent cell, predicts next count</li></ul></aside>
 </section>
 
@@ -248,7 +248,7 @@
       <div class="panel">GOPS = 2 × MACs per inference / inference time</div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>QAT keeps accuracy at 8 bit</li><li>dataflow: fast, many LUTs · shared engine: one MAC array reused</li></ul></aside>
 </section>
 
@@ -262,7 +262,7 @@
     <li>Shared engine only if <b class="k">faster</b> than FINN and outputs <b class="k">identical</b></li>
     <li>All other layers: FINN-generated streaming operators</li>
   </ul>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>same six steps for all three models</li><li>engine mapping needs both speed and identical output</li></ul></aside>
 </section>
 
@@ -271,7 +271,7 @@
   <div class="part">Results (Preliminary) · Architecture</div>
   <h2>SIREN hardware on one chip</h2>
   <div class="fig" data-svg="F13-hw-architecture.svg"></div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM runs the schedule and fault management</li><li>guards check range, timing, order · SEM scrubs configuration memory</li></ul></aside>
 </section>
 
@@ -315,7 +315,7 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>top: GOES flux, NOAA event · bottom: SIREN risk score and warning band</li><li>accuracy vs CRATERRE baseline</li></ul></aside>
 </section>
 
@@ -337,7 +337,7 @@
       <div class="cap">Engine vs FINN: same structure, same board (133 MHz build)</div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>ARM alternates FINN LayerNorm and engine segments through DDR</li><li>every output checked against the integer reference</li></ul></aside>
 </section>
 
@@ -381,7 +381,7 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>red band: expert label · blue bar: SIREN alarm</li><li>more events found than EWMA baseline</li></ul></aside>
 </section>
 
@@ -403,7 +403,7 @@
       <div class="cap">BUS-only bitstream: 133 MHz · shared bitstream: 150 MHz</div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>DSP packing halves DSP use</li><li>weight reload over AXI-Lite meets the update requirement</li></ul></aside>
 </section>
 
@@ -446,7 +446,7 @@
       </div>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>black: original · red: reconstructed on ground</li><li>compression vs NASA log baseline</li></ul></aside>
 </section>
 
@@ -464,11 +464,44 @@
       <li><b class="ok">63.76 GOPS</b> @ 150 MHz</li>
     </ul>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>aligner joins gate sums and hidden state</li><li>packet bytes identical to the reference encoder</li></ul></aside>
 </section>
 
-<!-- ============ 18. One bitstream ============ -->
+<!-- ============ 18. Placement map ============ -->
+<section class="slide" data-sec="res">
+  <div class="part">Results (Preliminary) · Placement</div>
+  <h2>Where each block sits on the chip</h2>
+  <div class="cols" style="grid-template-columns: 350px 250px 1fr; gap: 28px;">
+    <div class="fig" data-svg="F16-chip-map.svg"></div>
+    <div class="legend">
+      <div><i style="background:#2f6fbf"></i>BUS (FINN)</div>
+      <div><i style="background:#3fa34d"></i>PD LayerNorm</div>
+      <div><i style="background:#d9822b"></i>Shared engine</div>
+      <div><i style="background:#8e5bb5"></i>GRU tail</div>
+      <div><i style="background:#5f6b7a"></i>DMA · buses</div>
+      <div><i style="background:#c0392b"></i>Guards · SEM</div>
+      <div><i style="background:#ffffff; border: 1.5px solid #b4bcc8"></i>Empty</div>
+      <div><i style="background:#e9ecf1"></i>ARM processor</div>
+    </div>
+    <div class="stack">
+      <ul>
+        <li>Vivado placement, 150 MHz build</li>
+        <li><b class="k">BUS</b>: upper half of the chip</li>
+        <li><b class="k">Shared engine</b>: lower left</li>
+        <li><b class="k">GRU tail</b>: lower right</li>
+        <li><b class="k">PD LayerNorm</b>: small, centre</li>
+        <li>DMA and buses: next to the ARM (PS)</li>
+        <li>Few white cells: <b class="k">98 %</b> of sites hold logic</li>
+      </ul>
+      <div class="cap">One grid cell: 2 site columns × 5 rows · white: at least half empty</div>
+    </div>
+  </div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <aside class="notes"><ul><li>same colours as the architecture slide</li><li>next: the real routing of this placement</li></ul></aside>
+</section>
+
+<!-- ============ 19. One bitstream ============ -->
 <section class="slide" data-sec="res">
   <div class="part">Results (Preliminary) · System</div>
   <h2>One bitstream, three models</h2>
@@ -502,7 +535,7 @@
       </table>
     </div>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>real routing: colours = blocks of the architecture slide</li><li>LUT 77.6 % · DSP 60.5 % · fault management 22 of 23 items on board</li></ul></aside>
 </section>
 
@@ -515,7 +548,7 @@
     <li><b class="todo">Power</b>: 12 V input measurement → final version</li>
     <li><b class="k">Flight unit</b>: port to Z7000-P3 · on-orbit weight upload rehearsal</li>
   </ul>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>Digital Twin I: CREST counts from a flux field along the orbit</li><li>Digital Twin II: bus HK, method open</li></ul></aside>
 </section>
 
@@ -530,7 +563,7 @@
     <li>Next: <b class="todo">power</b> · Digital Twin data · flight unit</li>
   </ul>
   <div style="margin-top: 70px; text-align: center; font-size: 48px; font-weight: 700; color: var(--navy);">Thank you</div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Preliminary</span><span class="pg"></span></div>
   <aside class="notes"><ul><li>three points · thank you · questions</li></ul></aside>
 </section>
 
@@ -548,7 +581,7 @@
     <li><b>Next</b>: power (≤ 5 W) · Digital Twin I / II data · flight unit</li>
   </ul>
   <div class="cap" style="margin-top: 16px;">Accuracy: submitted abstract (PDR test set, float models)</div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 <section class="slide" data-sec="app">
@@ -561,7 +594,7 @@
     <li>ARM (Linux) + FPGA fabric in one chip</li>
     <li>Flight unit: Z7000-P3 with carrier board and shielding</li>
   </ul>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 <section class="slide" data-sec="app">
@@ -575,7 +608,7 @@
           <li>3 h continuous run: 10,260 batches</li></ul></li>
     <li>Shared engine adopted per structure only after full-corpus match</li>
   </ul>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 <section class="slide" data-sec="app">
@@ -590,7 +623,7 @@
           <li>cache / OCM parity · AXI timeout</li>
           <li>recovery image after repeated failures</li></ul></li>
   </ul>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 <section class="slide" data-sec="app">
@@ -612,7 +645,7 @@
       <li>A/B weight sets: outputs = reference</li>
     </ul>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 <section class="slide" data-sec="app">
@@ -638,7 +671,7 @@
       <li><b>OBC</b>: on-board computer</li>
     </ul>
   </div>
-  <div class="foot"><span>PADO-SAT · SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
+  <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
 </section>
 
 </body>
