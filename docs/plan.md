@@ -79,6 +79,8 @@
 75. (alpha-17) **미션 전체 소개** 슬라이드를 맨 앞에: 위성 렌더(PDR) + 두 미션(I CREST, II SIREN) 화살표, 큐브위성 경연대회 **부탑재체 선정, 2028 발사 예정, 설계 진행 중**
 76. (alpha-17) 수식은 **LaTeX 렌더러**(MathJax, `tools/render_tex.py`, `figures/src/equations.json`)로 그림 생성 (Figma 발표본)
 77. 참고문헌 형식 통일: `Ref. 라벨: 저자, 학술지/학회 연도 · …` (구분 ` · `, 괄호·권호 없음, 일반 문헌은 라벨 생략). FINN 슬라이드에 FINN-R (Blott et al., ACM TRETS 2018) 추가
+78. (10/19) **전력 요구조건 상향**: 처리 중 평균 ≤ 3.5 W, 최대 ≤ 6.5 W (이전 ≤ 5 W). 7쪽 표, 선행 사례, 요약 표, 부록, 노트 모두 통일
+79. (10/19) 이상 탐지 배경 쪽은 일반론(정의·유형·접근법·어려운 점) 중심, Ref. Chandola et al., ACM CSUR 2009 · Hundman et al., KDD 2018
 53. (alpha-9) FM 슬라이드에 Safe 상태(Safe Output → Safehold)와 보호 영역(TrustZone T1 non-secure, golden 읽기 전용 + CRC), 페이지 추가 없음
 
 ## 1. 발표 정보 (초록집 기준)

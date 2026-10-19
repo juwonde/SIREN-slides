@@ -115,7 +115,7 @@
         <li>Mostly <b>images</b> on VPU / GPU</li>
         <li>Few <b class="k">time-series</b> models
           <ul><li>space environment · spacecraft health</li></ul></li>
-        <li>Few <b class="k">≤ 5 W FPGA</b> designs with outputs checked <b class="k">bit for bit</b></li>
+        <li>Few <b class="k">≤ 6.5 W FPGA</b> designs with outputs checked <b class="k">bit for bit</b></li>
       </ul>
       <h3 style="margin-top: 18px;">SIREN</h3>
       <ul>
@@ -159,7 +159,8 @@
     <div class="stack">
       <table>
         <tr><th>Requirement</th><th>Target</th></tr>
-        <tr><td>inference power</td><td>≤ <b class="k">5 W</b></td></tr>
+        <tr><td>average power (processing)</td><td>≤ <b class="k">3.5 W</b></td></tr>
+        <tr><td>peak power</td><td>≤ <b class="k">6.5 W</b></td></tr>
         <tr><td>throughput</td><td>≥ <b class="k">50 GOPS</b></td></tr>
         <tr><td>match with ground model</td><td>≥ <b class="k">99 %</b></td></tr>
         <tr><td>weight update</td><td><b class="k">no new bitstream</b></td></tr>
@@ -637,7 +638,7 @@
   <ul class="side" style="margin-bottom: 10px;"><li>Why: no CREST or PADO-SAT HK data before launch · proxies differ in channels, orbit, spacecraft</li></ul>
   <div class="fig" data-svg="F12-digital-twin.svg"></div>
   <ul style="margin-top: 16px;">
-    <li><b class="todo">Power check</b>: board input power during inference vs 5 W limit</li>
+    <li><b class="todo">Power check</b>: board input power vs ≤ 3.5 W average, ≤ 6.5 W peak</li>
     <li><b class="k">Flight hardware</b>: lab board → flight AI Processing Unit (same chip)</li>
     <li><b class="k">Weight upload</b> after fine-tuning: selected layers only, <b class="k">≤ 1 MB</b> for all 3 models
       <ul><li>verified on all 3 models: new weights, outputs = reference, <b class="ok">no new bitstream</b></li></ul></li>
@@ -672,7 +673,7 @@
         <tr><td>≥ 99 % match</td><td><b class="ok">100 %</b></td></tr>
         <tr><td>weight update</td><td><b class="ok">met</b></td></tr>
         <tr><td>fault management</td><td>22 / 23 on board</td></tr>
-        <tr><td>≤ 5 W</td><td><b class="todo">pending</b></td></tr>
+        <tr><td>≤ 3.5 W avg, ≤ 6.5 W peak</td><td><b class="todo">pending</b></td></tr>
       </table>
     </div>
   </div>
@@ -708,7 +709,7 @@
     <li><b>Method</b>: QAT → integer reference → FINN + shared engine → one bitstream</li>
     <li><b>Testbed</b>: BUS 62.58 · PD 70.88 · COMP 63.76 GOPS @ 150 MHz</li>
     <li><b>Fault management</b>: 23 items (L0 · L1 · L2), 22 shown on the board</li>
-    <li><b>Next</b>: power (≤ 5 W) · Digital Twin I / II data · flight unit</li>
+    <li><b>Next</b>: power (≤ 3.5 W average, ≤ 6.5 W peak) · Digital Twin I / II data · flight unit</li>
   </ul>
   <div class="cap" style="margin-top: 16px;">Accuracy: submitted abstract (PDR test set, float models)</div>
   <div class="foot"><span>PADO/SIREN</span><span class="tag">Appendix</span><span class="pg"></span></div>
@@ -718,7 +719,7 @@
   <div class="part">Appendix · Q&amp;A</div>
   <h2>Why an FPGA SoC?</h2>
   <ul>
-    <li>≤ 5 W peak budget of a 3U CubeSat</li>
+    <li>Power budget of a 3U CubeSat: ≤ 3.5 W average, ≤ 6.5 W peak</li>
     <li>Deterministic latency · bit-exact integer outputs</li>
     <li>Configuration memory scrubbing (SEM) · watchdogs</li>
     <li>ARM (Linux) + FPGA fabric in one chip</li>
