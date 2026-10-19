@@ -38,25 +38,34 @@ dur = (e0 - s0).total_seconds() / 60
 pad = pd.Timedelta(minutes=max(pad_min, 2.5 * dur, 90))
 w0, w1 = s0 - pad, e0 + pad
 n = len(chs)
-PH, GAP = (128, 26) if n >= 3 else (100, 20)
-L, Rm, T = 120, 20, 10
-W, H = 820, T + n * PH + (n - 1) * GAP + 110
-NAVY, CRIM, INK, GRID = "#20386E", "#B3202A", "#16181D", "#7C8594"
+NAVY, CRIM, INK = "#20386E", "#B3202A", "#16181D"
 font = "font-family:'Source Serif 4';"
+grid = n == 4  # 2 x 2 small multiples, no bracket (the slide title carries event and date)
+if grid:
+    W, H, CW, PH = 820, 326, 390, 90
+else:
+    PH, GAP = (128, 26) if n >= 3 else (100, 20)
+    L, Rm, T = 120, 20, 10
+    W, H = 820, T + n * PH + (n - 1) * GAP + 110
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">', f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>']
-X = lambda t: L + (t - w0).total_seconds() / (w1 - w0).total_seconds() * (W - L - Rm)
-for i, ch in enumerate(chs):
+
+
+def tick_step(x0, x1, most):
+    for h in (1, 2, 3, 4, 6, 8, 12, 24):
+        if (w1 - w0) / pd.Timedelta(hours=h) <= most:
+            return pd.Timedelta(hours=h)
+    return pd.Timedelta(hours=24)
+
+
+def curve(ch, x0, x1, y0, ph):
+    """Draw one channel into the box [x0, x1] x [y0, y0 + ph]; returns the time-to-x map."""
+    X = lambda t: x0 + (t - w0).total_seconds() / (w1 - w0).total_seconds() * (x1 - x0)
     df = load(ch)
     seg = df[(df.index >= w0) & (df.index <= w1)]
-    ref = df[(df.index >= w0 - pd.Timedelta(days=7)) & (df.index < w0)]
-    lo, hi = float(ref.quantile(0.005)), float(ref.quantile(0.995))
-    vmin, vmax = min(lo, float(seg.min())), max(hi, float(seg.max()))
+    vmin, vmax = float(seg.min()), float(seg.max())
     span = (vmax - vmin) or 1.0; vmin -= 0.08 * span; vmax += 0.08 * span
-    y0 = T + i * (PH + GAP)
-    Y = lambda v: y0 + PH - (v - vmin) / (vmax - vmin) * PH
-    for v in ():  # range lines off
-        svg.append(f'<line x1="{L}" x2="{W-Rm}" y1="{Y(v):.1f}" y2="{Y(v):.1f}" stroke="{GRID}" stroke-width="2" stroke-dasharray="8 6"/>')
-    svg.append(f'<line x1="{L}" x2="{L}" y1="{y0}" y2="{y0+PH}" stroke="{INK}" stroke-width="2"/>')
+    Y = lambda v: y0 + ph - (v - vmin) / (vmax - vmin) * ph
+    svg.append(f'<line x1="{x0}" x2="{x0}" y1="{y0}" y2="{y0+ph}" stroke="{INK}" stroke-width="2"/>')
     lab = [(ts(r["StartTime"]), ts(r["EndTime"])) for r in rows if r["Channel"] == ch]
     inlab = lambda t: any(a <= t <= b for a, b in lab)
     raw = [(X(t), Y(float(v)), inlab(t)) for t, v in seg.items()]
@@ -75,18 +84,41 @@ for i, ch in enumerate(chs):
     for r in runs:
         d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y, _ in r)
         svg.append(f'<path d="{d}" fill="none" stroke="{CRIM if r[-1][2] else NAVY}" stroke-width="{3.5 if r[-1][2] else 2.5}" stroke-linejoin="round"/>')
-    svg.append(f'<text x="{L-16}" y="{y0+PH/2+10}" text-anchor="end" style="{font}font-size:30px;font-weight:700" fill="{INK}">ch {ch.split("_")[1]}</text>')
-ya = T + n * PH + (n - 1) * GAP
-svg.append(f'<line x1="{L}" x2="{W-Rm}" y1="{ya}" y2="{ya}" stroke="{INK}" stroke-width="2"/>')
-step = pd.Timedelta(hours=1) if (w1 - w0) <= pd.Timedelta(hours=8) else pd.Timedelta(hours=2)
-t = w0.ceil("h")
-while t <= w1:
-    x = X(t); svg.append(f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{ya}" y2="{ya+8}" stroke="{INK}" stroke-width="2"/>')
-    svg.append(f'<text x="{x:.1f}" y="{ya+38}" text-anchor="middle" style="{font}font-size:28px" fill="{INK}">{t:%H:%M}</text>'); t += step
-xs, xe = X(s0), X(e0)
-svg.append(f'<path d="M{xs:.1f},{ya+50} L{xs:.1f},{ya+62} L{xe:.1f},{ya+62} L{xe:.1f},{ya+50}" fill="none" stroke="{CRIM}" stroke-width="3"/>')
-svg.append(f'<text x="{(xs+xe)/2:.1f}" y="{ya+96}" text-anchor="middle" style="{font}font-size:28px;font-weight:700" fill="{CRIM}">expert label</text>')
-svg.append(f'<text x="{W-Rm}" y="{ya+96}" text-anchor="end" style="{font}font-size:28px" fill="{INK}">{s0:%Y-%m-%d} UTC</text>')
+    return X
+
+
+def axis(X, x0, x1, ya, most):
+    svg.append(f'<line x1="{x0}" x2="{x1}" y1="{ya}" y2="{ya}" stroke="{INK}" stroke-width="2"/>')
+    step, t = tick_step(x0, x1, most), w0.ceil("h")
+    while t.hour % (step.total_seconds() // 3600):
+        t += pd.Timedelta(hours=1)
+    while t <= w1:
+        x = X(t)
+        if not x0 + 36 <= x <= x1 - 36:  # keep tick labels inside the box
+            t += step; continue
+        svg.append(f'<line x1="{x:.1f}" x2="{x:.1f}" y1="{ya}" y2="{ya+8}" stroke="{INK}" stroke-width="2"/>')
+        svg.append(f'<text x="{x:.1f}" y="{ya+38}" text-anchor="middle" style="{font}font-size:28px" fill="{INK}">{t:%H:%M}</text>'); t += step
+
+
+if grid:
+    for i, ch in enumerate(chs):
+        r, c = divmod(i, 2)
+        x0, y0 = 10 + c * (CW + 30), r * 140 + 40
+        svg.append(f'<text x="{x0}" y="{y0-12}" style="{font}font-size:28px;font-weight:700" fill="{INK}">ch {ch.split("_")[1]}</text>')
+        X = curve(ch, x0, x0 + CW, y0, PH)
+        if r == 1:
+            axis(X, x0, x0 + CW, y0 + PH, 3)
+else:
+    for i, ch in enumerate(chs):
+        y0 = T + i * (PH + GAP)
+        X = curve(ch, L, W - Rm, y0, PH)
+        svg.append(f'<text x="{L-16}" y="{y0+PH/2+10}" text-anchor="end" style="{font}font-size:30px;font-weight:700" fill="{INK}">ch {ch.split("_")[1]}</text>')
+    ya = T + n * PH + (n - 1) * GAP
+    axis(X, L, W - Rm, ya, 7)
+    xs, xe = X(s0), X(e0)
+    svg.append(f'<path d="M{xs:.1f},{ya+50} L{xs:.1f},{ya+62} L{xe:.1f},{ya+62} L{xe:.1f},{ya+50}" fill="none" stroke="{CRIM}" stroke-width="3"/>')
+    svg.append(f'<text x="{(xs+xe)/2:.1f}" y="{ya+96}" text-anchor="middle" style="{font}font-size:28px;font-weight:700" fill="{CRIM}">expert label</text>')
+    svg.append(f'<text x="{W-Rm}" y="{ya+96}" text-anchor="end" style="{font}font-size:28px" fill="{INK}">{s0:%Y-%m-%d} UTC</text>')
 svg.append("</svg>")
 pathlib.Path(out).write_text("\n".join(svg) + "\n", encoding="utf-8", newline="\n")
 print(ev_id, chs, f"{dur:.0f} min", s0, "window", w0, w1)
