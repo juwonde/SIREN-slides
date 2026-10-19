@@ -1,10 +1,12 @@
 """Real ESA-ADB telemetry window for the anomaly-detection slide, as an editable SVG.
 
-    python tools/esa_telemetry.py ESA_ADB_ROOT [EVENT_ID] [OUT]
+    python tools/esa_telemetry.py ESA_ADB_ROOT [EVENT_ID] [OUT] [MISSION] [CHANNELS]
 
-ESA_ADB_ROOT holds metadata/Mission1/labels.csv and raw/Mission1/channels/channel_N.zip (ESA Anomaly Dataset,
-Zenodo 10.5281/zenodo.15237121, CC BY 3.0 IGO). Needs pandas. Defaults: event id_127, assets/models/esa-m1-id127.svg.
-Navy = normal telemetry, crimson = the expert-labelled part; first three labelled channels, no y values (anonymised).
+ESA_ADB_ROOT holds metadata/<MISSION>/labels.csv and raw/<MISSION>/channels/channel_N.zip (ESA Anomaly Dataset,
+Zenodo 10.5281/zenodo.15237121, CC BY 3.0 IGO). Needs pandas. Defaults: Mission2 event id_637, channels 73,74,81
+(three signals freeze for 75 min while staying in range), out assets/models/esa-m2-id637.svg.
+Navy = normal telemetry, crimson = the expert-labelled part; no y values (anonymised). Curves keep the min and max
+of every 2 px column so the SVG stays small.
 """
 import csv
 import pathlib
@@ -15,25 +17,30 @@ import pandas as pd
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 data = pathlib.Path(sys.argv[1])
-meta = str(data / "metadata" / "Mission1")
-ev_id = sys.argv[2] if len(sys.argv) > 2 else "id_127"
-out = sys.argv[3] if len(sys.argv) > 3 else str(ROOT / "assets" / "models" / "esa-m1-id127.svg")
+ev_id = sys.argv[2] if len(sys.argv) > 2 else "id_637"
+out = sys.argv[3] if len(sys.argv) > 3 else str(ROOT / "assets" / "models" / "esa-m2-id637.svg")
+mission = sys.argv[4] if len(sys.argv) > 4 else "Mission2"
+meta = str(data / "metadata" / mission)
+pick = (sys.argv[5] if len(sys.argv) > 5 else ("73,74,81" if ev_id == "id_637" else "")).split(",")
 pad_min = 0
 
 
 def load(ch):
-    with zipfile.ZipFile(data / "raw" / "Mission1" / "channels" / f"{ch}.zip") as z, z.open(ch) as f:
+    with zipfile.ZipFile(data / "raw" / mission / "channels" / f"{ch}.zip") as z, z.open(ch) as f:
         return pd.read_pickle(f)[ch]
 
+
 rows = [r for r in csv.DictReader(open(meta + "/labels.csv")) if r["ID"] == ev_id]
-chs = sorted({r["Channel"] for r in rows}, key=lambda c: int(c.split("_")[1]))[:3]
+chs = [f"channel_{c}" for c in pick if c] or sorted({r["Channel"] for r in rows}, key=lambda c: int(c.split("_")[1]))[:3]
 ts = lambda t: pd.Timestamp(t.replace("Z", "")).tz_localize(None)
 s0 = min(ts(r["StartTime"]) for r in rows); e0 = max(ts(r["EndTime"]) for r in rows)
 dur = (e0 - s0).total_seconds() / 60
 pad = pd.Timedelta(minutes=max(pad_min, 2.5 * dur, 90))
 w0, w1 = s0 - pad, e0 + pad
-W, H = 820, 560
-L, Rm, T, PH, GAP = 120, 20, 10, 128, 26
+n = len(chs)
+PH, GAP = (128, 26) if n >= 3 else (100, 20)
+L, Rm, T = 120, 20, 10
+W, H = 820, T + n * PH + (n - 1) * GAP + 110
 NAVY, CRIM, INK, GRID = "#20386E", "#B3202A", "#16181D", "#7C8594"
 font = "font-family:'Source Serif 4';"
 svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">', f'<rect width="{W}" height="{H}" fill="#FFFFFF"/>']
@@ -52,7 +59,14 @@ for i, ch in enumerate(chs):
     svg.append(f'<line x1="{L}" x2="{L}" y1="{y0}" y2="{y0+PH}" stroke="{INK}" stroke-width="2"/>')
     lab = [(ts(r["StartTime"]), ts(r["EndTime"])) for r in rows if r["Channel"] == ch]
     inlab = lambda t: any(a <= t <= b for a, b in lab)
-    pts = [(X(t), Y(float(v)), inlab(t)) for t, v in seg.items()]
+    raw = [(X(t), Y(float(v)), inlab(t)) for t, v in seg.items()]
+    pts, col = [], []
+    for p in raw:  # keep first, min, max of every 2 px column (order kept), split at label edges
+        if col and (int(p[0] // 2) != int(col[0][0] // 2) or p[2] != col[0][2]):
+            keep = {id(col[0]), id(min(col, key=lambda q: q[1])), id(max(col, key=lambda q: q[1])), id(col[-1])}
+            pts += [q for q in col if id(q) in keep]; col = []
+        col.append(p)
+    pts += col
     runs, cur = [], [pts[0]]
     for p in pts[1:]:
         if p[2] != cur[-1][2]: runs.append(cur); cur = [cur[-1], p]
@@ -62,7 +76,7 @@ for i, ch in enumerate(chs):
         d = "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y, _ in r)
         svg.append(f'<path d="{d}" fill="none" stroke="{CRIM if r[-1][2] else NAVY}" stroke-width="{3.5 if r[-1][2] else 2.5}" stroke-linejoin="round"/>')
     svg.append(f'<text x="{L-16}" y="{y0+PH/2+10}" text-anchor="end" style="{font}font-size:30px;font-weight:700" fill="{INK}">ch {ch.split("_")[1]}</text>')
-ya = T + 3 * PH + 2 * GAP
+ya = T + n * PH + (n - 1) * GAP
 svg.append(f'<line x1="{L}" x2="{W-Rm}" y1="{ya}" y2="{ya}" stroke="{INK}" stroke-width="2"/>')
 step = pd.Timedelta(hours=1) if (w1 - w0) <= pd.Timedelta(hours=8) else pd.Timedelta(hours=2)
 t = w0.ceil("h")
