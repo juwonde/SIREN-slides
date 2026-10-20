@@ -7,22 +7,22 @@
   - `shared:`: 공유 저장소 `juwonde/pd-bus-moderntcn-fpga`의 파일
 - 시험 보드: TE0715-05-71I33-L SoM + TE0705-04 carrier (XC7Z030, 비행 모델 Z7000-P3와 같은 칩). 모든 보드 결과는 이 시험 보드 기준
 
-## 0. 채택 비트스트림 기준 (10/20, 슬라이드의 성능 수치는 모두 이것)
+## 0. 채택 비트스트림 기준 (10/21 갱신, 슬라이드의 성능 수치는 모두 이것)
 
-- 기준: 세 모델 모두 50 GOPS 이상·출력 byte 일치인 판 가운데 전력이 가장 낮은 판 (사용자 10/20). 아래 1절의 150 MHz 판 수치는 이 기준으로 대체됨. 전력은 모두 100 Hz 최대(peak) 기준으로 통일
-- 판: `bpg-r27e`, 번들 `e27` (F-ASTRA 6.131.0, 엔진 클럭을 가속기 MMCM에서 받음, MMCM 1개). 대표 측정: 10/20 05:14 UTC 세션 `bpg-r27e-e27-e27-r13` (e26b와 연달아 잰 것). 발표에는 클럭 주파수를 적지 않음
+- 기준: 세 모델 모두 50 GOPS 이상·출력 byte 일치·FM 캠페인 통과인 판 가운데 평균 전력이 가장 낮은 판. 10/20 저녁 전력 감축(6.132.0–6.135.0)으로 평균은 모든 모델에서 내려갔지만 100 Hz 최대(한 샘플)는 PD/COMP에서 bpg-r27e보다 높게 나옴 → 10/21부터 채택 근거는 평균 전력, 그림과 표의 전력은 계속 100 Hz 최대로 표시 (발표 24번 캡션과 노트에 "lowest average power"로 밝힘)
+- 판: `bpg-r29e`, 번들 `e33` (F-ASTRA 6.135.0: 엔진 클럭 섬, 단계별 클럭 게이트, 모델 인프라 섬, 이미지 r14 + PL 깊은 대기). 대표 측정: 10/20 14:42 UTC 세션 `bpg-r29e-e33-r14c` (UART 로그 재실행, 첫 시도는 세션 끝 무렵 USB 네트워크 끊김으로 데이터 없음). 이전 채택판 bpg-r27e 수치는 git 기록(7305e99) 참고. 발표에는 클럭 주파수를 적지 않음
 
 | 항목 | 값 | 출처 | 슬라이드 |
 |---|---|---|---|
-| GOPS | BUS 62.57 (발표 표기 62.58) / PD 53.04 / COMP 50.82, byte 일치, FM 캠페인 모두 통과 | 세션 `board-models-e2e.json` (F-ASTRA runtime) | 14, 18, 24, 부록 |
-| 자원 (배선 후) | LUT 58,372 (74.3 %) · FF 86,309 (54.9 %) · BRAM36 179 (67.5 %) · DSP 244 (61.0 %), WNS +0.092 ns | `bpg-r27e/route-utilization.rpt`, CHANGELOG 6.131.0 | 20, 부록 |
-| 자원 여유 | LUT 25.7 · FF 45.1 · BRAM36 32.5 · DSP 39.0 % | 위 행에서 계산 | 20 |
-| 추론 전력 (12 V 입력, 평균 / 100 Hz 최대) | BUS 5.02 / 5.46 · PD 5.26 / 5.79 · COMP 4.55 / 5.99 · FM 4.93 / 5.83 W. 같은 판 다른 두 세션의 100 Hz 최대: PD 5.97–6.00, COMP 5.91–6.10 | `runtime/power-tests/pareto-20261019/dnn-e27-r13.out`, CHANGELOG 6.131.0 | 21, 24 |
-| 추론 전력량 (대표 세션) | BUS 0.0653 Wh (46.8 s, 1,395,900창) · PD 0.2562 Wh (175.3 s, 1,100회, 1회 0.233 mWh) · COMP 0.0047 Wh (3.7 s, 110블록 × 6,144 step) · 합 0.33 Wh | 같은 `.out`의 phases (seconds × mean_w) + 세션 frame 수 | 21 |
-| 전처리 전력 (CAN 수신 + 전처리, PL 리셋, 이미지 r13) | 평균 3.12 W (최대 3.31) | `pareto-20261019/prep-r13.out` | 21 |
-| PD 시간-전력 그림 | PD 구간(175.3 s, 17,534 샘플)의 최대 5.79 W 샘플(+137.6 s) 앞뒤 1 s. 계산 수준 ≈ 5.4 W(5.3 W 넘는 샘플 평균 5.41), LayerNorm 구간 ≈ 4.5 W | guard11 `power.csv` 구간만 읽음: `tools/pd_peak_trace.py` → `assets/hw/pd-tpower-e27.{svg,csv}` | 21 |
-| trade-off 산점도 | 10/19–10/20 전력 측정 36세션 모두 (모두 byte 일치, COMP 100 Hz 최대는 10/19 오후부터 25세션). 세션별 PD/BUS/COMP 100 Hz 최대와 GOPS | `pareto-20261019/results.jsonl` (`phases.*.max_w`, `models.*.gops`) | 21 |
-| PD FFN 엔진 근거 | FINN FFN 3,397 ms (150 MHz xsim 환산) > 보드 PD 한 프레임 전체 158.9 ms의 20배 → "FFN > 20× faster vs FINN" | 엔진 매핑 receipt 문서 §5 + 세션 `mean_frame_ns` | 18 |
+| GOPS | BUS 62.58 / PD 52.54 / COMP 50.74, byte 일치, FM 캠페인과 상시 스케줄 90 batch 모두 통과 | 세션 `board-models-e2e.json` (F-ASTRA runtime `bpg-r29e-e33-r14c`) | 15, 20, 21, 27, 29 |
+| 자원 (배선 후) | LUT 59,107 (75.2 %) · FF 86,243 (54.9 %) · BRAM36 179 (67.5 %) · DSP 244 (61.0 %), WNS +0.184 ns | `bpg-r29e/route-utilization.rpt`, `route-summary.json` | 23, 31 |
+| 자원 여유 | LUT 24.8 · FF 45.1 · BRAM36 32.5 · DSP 39.0 % | 위 행에서 계산 | 23 |
+| 추론 전력 (12 V 입력, 평균 / 100 Hz 최대) | BUS 4.48 / 5.10 · PD 4.98 / 6.03 · COMP 4.38 / 6.28 · FM 구간 3.80 / 6.06 · FM 상시 스케줄(3 s 입력) 3.31 W 평균 | `runtime/power-tests/pareto-20261019/results.jsonl` (bundle `bpg-r29e-e33`, state `DNN+CAN r14c`), shared `docs/results/te0715-power-stages-2026-10-20.md` §8 | 15, 24 |
+| 추론 전력량 (대표 세션) | BUS 0.0583 Wh (46.9 s, 1,395,900창) · PD 0.2453 Wh (177.4 s, 1,100회, 1회 0.223 mWh) · COMP 0.0054 Wh (4.4 s) · 합 0.31 Wh | 같은 기록의 phases (seconds × mean_w) + 세션 frame 수 | 24 |
+| 전처리 전력 (CAN 수신 + 전처리, PL 리셋 + 깊은 대기, 이미지 r14) | 평균 3.00 W (3.004 W, 37 °C) | shared `docs/results/te0715-power-stages-2026-10-20.md` §4 | 15, 24 |
+| PD 시간-전력 그림 | PD 구간(177.4 s, 17,743 샘플)의 최대 6.03 W 샘플 앞뒤 1 s. 계산 수준 ≈ 5.2 W(4.9 W 넘는 샘플 평균 5.18), LayerNorm 구간 ≈ 3.6 W(단계별 게이트로 엔진 클럭이 LN 동안 멈춤; 4 W 아래 샘플 평균 3.55) | guard13 `power.csv` 구간만 읽음: `tools/pd_peak_trace.py ... 5.2 3.6` → `assets/hw/pd-tpower-e33.{svg,csv}` (Figma 그림은 같은 데이터로 제자리 갱신, y축 2.5–7 W) | 24 |
+| trade-off 산점도 | 10/19–10/20 전력 측정 45세션 모두 (모두 byte 일치, COMP 100 Hz 최대는 10/19 오후부터 34세션). 세션별 PD/BUS/COMP 100 Hz 최대와 GOPS, x축 4.75–7.75 W. 데이터 없는 시도 5회(연결 끊김·중단)는 점 없음 | `pareto-20261019/results.jsonl` (`phases.*.max_w`, `models.*.gops`) | 24 |
+| PD FFN 엔진 근거 | FINN FFN 3,397 ms (150 MHz xsim 환산) > 보드 PD 한 프레임 전체 160.4 ms(bpg-r29e)의 20배 → "FFN > 20× faster vs FINN" | 엔진 매핑 receipt 문서 §5 + 세션 `mean_frame_ns` | 18 |
 | COMP 게이트 엔진 근거 | FINN LUT 20,978 vs 엔진 몫 1,069 (약 20배). 엔진 클럭을 낮춰 속도 이점은 없음 → "8 % faster" 삭제 | 엔진 매핑 receipt 문서 §3 | 18 |
 
 ## 1. 확정 수치
