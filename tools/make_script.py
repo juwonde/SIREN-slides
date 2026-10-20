@@ -3,7 +3,7 @@
     python tools/make_script.py [--label alpha-N]
 
 Reads docs/script-ko.json and the slide pictures in build/figma/slides/NN.png (exported from the Figma deck).
-Writes build/script-ko.html and dist/SIREN-KSS2026-script-ko[-label].pdf (Chrome print, A4 portrait, two slides per page).
+Writes build/script-ko.html and dist/SIREN-KSS2026-script-ko[-label].pdf (Chrome print, A4 portrait, script text 17 pt).
 """
 import html
 import json
@@ -19,14 +19,14 @@ CSS = """
 @page { size: A4 portrait; margin: 12mm 14mm; }
 body { font-family: "Noto Serif KR", "Malgun Gothic", serif; color: #16181d; margin: 0; }
 h1 { font-size: 15pt; color: #20386e; margin: 0 0 2mm; }
-.target { font-size: 10pt; color: #4a4f5c; margin: 0 0 4mm; }
+.target { font-size: 12pt; color: #353b47; margin: 0 0 4mm; }
 .slide { break-inside: avoid; margin: 0 0 6mm; }
 .slide img { width: 100%; border: 1px solid #7c8594; display: block; }
-table { width: 100%; border-collapse: collapse; margin-top: 2mm; font-size: 10.5pt; line-height: 1.45; }
-td { padding: 1.2mm 1.5mm; vertical-align: top; border-bottom: 1px solid #c4c9d2; }
-td.t { width: 13mm; font-family: Consolas, monospace; font-weight: 700; color: #84161a; white-space: nowrap; }
-td.n { width: 9mm; color: #4a4f5c; }
-.skip td { color: #4a4f5c; font-style: italic; }
+table { width: 100%; border-collapse: collapse; margin-top: 3mm; font-size: 17pt; line-height: 1.5; }
+td { padding: 2mm 2mm; vertical-align: top; border-bottom: 1px solid #c4c9d2; }
+td.t { width: 22mm; font-family: Consolas, monospace; font-weight: 700; color: #84161a; white-space: nowrap; }
+td.n { width: 22mm; color: #353b47; font-size: 13pt; }
+.skip td { color: #353b47; font-style: italic; }
 """
 
 
