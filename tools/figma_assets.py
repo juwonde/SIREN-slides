@@ -6,7 +6,7 @@ Writes build/figma/ (ignored by git):
 - svg/<name>.svg       every SVG figure, inline attributes only, ready for figma.createNodeFromSvg
                        (Mermaid figures: computed styles inlined, arrowheads as polygons instead of markers)
 - F16-chip-map@3x.png  placement grid at 3x (too many cells for a vector import)
-- routing-150mhz.png   Vivado routing picture with the block colours of the deck
+- routing-r26e.png     Vivado routing picture (adopted bitstream bpg-r26e) with the block colours of the deck
 - preview/<name>.png   with --preview: each SVG rendered by Chrome, for a quick visual check
 
 Block colours (chip map, architecture, routing, legend) are chosen to read on white and on the black
@@ -275,9 +275,12 @@ def write_png(path, w, h, bpp, rows):
                      + chunk(b"IEND", b""))
 
 
+ROUTING = "routing-r26e.png"  # Vivado routing capture of the adopted bitstream (bpg-r26e)
+
+
 def routing():
     """Vivado routing picture: orange engine -> ENGINE, red guards -> GUARD (pixels within a small distance)."""
-    src = ROOT / "assets" / "hw" / "routing-150mhz.png"
+    src = ROOT / "assets" / "hw" / ROUTING
     w, h, bpp, rows = read_png(src)
     swaps = [(tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)), tuple(int(n[i:i + 2], 16) for i in (1, 3, 5)))
              for c, n in (("#d9822b", ENGINE), ("#c0392b", GUARD))]
@@ -298,7 +301,7 @@ def routing():
                     k = val / (max(engine) / 255)
                     line[x:x + 3] = bytes(min(255, int(c * k)) for c in engine)
                     changed += 1
-    write_png(OUT / "routing-150mhz.png", w, h, bpp, rows)
+    write_png(OUT / ROUTING, w, h, bpp, rows)
     print(f"routing: {changed} pixels recoloured")
 
 

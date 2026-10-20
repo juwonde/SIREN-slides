@@ -21,7 +21,10 @@ GROUPS = [  # colour, owners
     ("#d9822b", ["engine2", "rebase2_0"]),
     ("#8e5bb5", ["accelerator3", "zip3"]),
     ("#5f6b7a", ["dma0", "dma1", "dma3", "memory_interconnect", "memory_interconnect_hp1", "memory_interconnect_hp2",
-                 "control_interconnect", "control_interconnect_1"]),
+                 "control_interconnect", "control_interconnect_1",
+                 # engine on its own clock (bpg-r24e and later): clock converters and resets around the engine
+                 "engine2_control_cc", "engine2_memory_cc", "engine2_memoryb_cc", "feed3_cc", "feed3_reset",
+                 "engine_reset", "clock_gate_control"]),
     ("#c0392b", ["guard0", "guard1", "guard3", "sem", "sem_clock_converter", "sem_reset", "control0", "control1",
                  "control3", "accel_reset"]),
 ]
