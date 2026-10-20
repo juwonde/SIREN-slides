@@ -24,7 +24,7 @@ GROUPS = [  # colour, owners
                  "control_interconnect", "control_interconnect_1",
                  # engine on its own clock (bpg-r24e and later): clock converters and resets around the engine
                  "engine2_control_cc", "engine2_memory_cc", "engine2_memoryb_cc", "feed3_cc", "feed3_reset",
-                 "engine_reset", "clock_gate_control"]),
+                 "engine_reset", "clock_gate_control", "clock_gates"]),
     ("#c0392b", ["guard0", "guard1", "guard3", "sem", "sem_clock_converter", "sem_reset", "control0", "control1",
                  "control3", "accel_reset"]),
 ]

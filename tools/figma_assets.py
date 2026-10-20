@@ -6,7 +6,7 @@ Writes build/figma/ (ignored by git):
 - svg/<name>.svg       every SVG figure, inline attributes only, ready for figma.createNodeFromSvg
                        (Mermaid figures: computed styles inlined, arrowheads as polygons instead of markers)
 - F16-chip-map@3x.png  placement grid at 3x (too many cells for a vector import)
-- routing-r26e.png     Vivado routing picture (adopted bitstream bpg-r26e) with the block colours of the deck
+- routing-r27e.png     Vivado routing picture (adopted bitstream bpg-r27e) with the block colours of the deck
 - preview/<name>.png   with --preview: each SVG rendered by Chrome, for a quick visual check
 
 Block colours (chip map, architecture, routing, legend) are chosen to read on white and on the black
@@ -275,7 +275,7 @@ def write_png(path, w, h, bpp, rows):
                      + chunk(b"IEND", b""))
 
 
-ROUTING = "routing-r26e.png"  # Vivado routing capture of the adopted bitstream (bpg-r26e)
+ROUTING = "routing-r27e.png"  # Vivado routing capture of the adopted bitstream (bpg-r27e)
 
 
 def routing():
