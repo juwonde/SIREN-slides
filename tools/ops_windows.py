@@ -1,14 +1,16 @@
-"""Daily window and weekly NN window power on the board, as two editable SVGs (operation slide).
+"""Orbit download window and weekly NN window power on the board, as two editable SVGs (operation slide).
 
-    python tools/ops_windows.py MISSION_JSON MISSION_TRACE DAILY_JSON DAILY_TRACE OUT_DIR
+    python tools/ops_windows.py MISSION_JSON MISSION_TRACE ORBIT_JSON ORBIT_TRACE OUT_DIR
 
 MISSION_* is the stitched weekly NN window (cold boot, PL load to the end of the NN window, shutdown; t from power on)
-and DAILY_* one daily window run (download over CAN, preprocessing, encoder pre stage), both from the F-ASTRA weekly
-measurements (INA228 guard, 12 V board input, 100 Hz single samples; JSON phases with begin_s/end_s, trace CSV
-t_s,power_w). Both panels share one power axis, the trace is coloured by phase, every 2 px column keeps its lowest and
-highest sample. Writes daily-window.svg/.csv and weekly-window.svg/.csv (the plotted samples).
-- 10/21 (F-ASTRA 6.140.1, bpg-r30e, >1000 pfu week): mission-gt1000-mission.{json,-trace.csv},
-  daily-gt1000-v1.{json,-trace.csv} (first day 2013-05-21, PL deep idle)
+from the F-ASTRA weekly measurements, ORBIT_* one power-off orbit cycle (cold boot, download over CAN, preprocessing,
+store, shutdown) from tools/orbit_cycle.py. Both are INA228 guard samples (12 V board input, 100 Hz) with JSON phases
+(kind, begin_s, end_s) and a trace CSV (t_s,power_w). Both panels share one power axis, the trace is coloured by phase,
+every 2 px column keeps its lowest and highest sample. Writes orbit-window.svg/.csv and weekly-window.svg/.csv (the
+plotted samples).
+- 10/22 (F-ASTRA 6.144.0-6.145.0, bpg-r31e final configuration, >1000 pfu week): mission-gt1000-r3boot.{json,
+  -trace.csv}; orbit cycle oc3 via tools/orbit_cycle.py
+- 10/21 (6.140.1, bpg-r30e): mission-gt1000-mission and the daily window daily-gt1000-v1 (replaced by the orbit window)
 """
 import json
 import pathlib
@@ -18,7 +20,7 @@ W, H, L, R, T, B = 800, 520, 88, 20, 50, 400
 P0, P1 = 1.5, 6.0
 INK, INK6 = "#16181D", "#353B47"
 COL = {"boot": INK6, "idle": INK6, "shutdown": INK6, "plload": "#2F6FBF", "prep": "#2F6FBF", "model": "#2F6FBF",
-       "hybrid": "#B3202A", "gruseq": "#8E5BB5", "encode": "#8E5BB5", "download": "#20386E", "pre": "#1F6F6B",
+       "hybrid": "#B3202A", "gruseq": "#8E5BB5", "grubatch": "#8E5BB5", "encode": "#8E5BB5", "store": "#1F6F6B", "download": "#20386E", "pre": "#1F6F6B",
        "dprep": "#1F6F6B"}
 F = "font-family:'Source Serif 4';"
 
@@ -60,42 +62,41 @@ def trace(path, a, b, t0=0.0):
 
 
 def main():
-    mj, mt, dj, dt, out = sys.argv[1:6]
+    mj, mt, oj, ot, out = sys.argv[1:6]
     out = pathlib.Path(out); out.mkdir(parents=True, exist_ok=True)
     m = json.load(open(mj, encoding="utf-8"))
     ph = m["phases"]; end = max(p["end_s"] for p in ph)
     get = lambda k: [p for p in ph if p["kind"] == k]
     boot, pd, off = get("boot")[0], get("hybrid")[0], get("shutdown")[0]
-    comp0 = min(p["begin_s"] for p in ph if p["kind"] in ("gruseq", "encode")); comp1 = off["begin_s"]
-    rows = trace(mt, 0.0, end)
+    comp0 = min(p["begin_s"] for p in ph if p["kind"] in ("gruseq", "grubatch", "encode")); comp1 = off["begin_s"]
+    rows = trace(mt, 0.05, end)  # from 50 ms after power on (inrush sample excluded, as in F-ASTRA)
     labels = [(f"boot · {boot['seconds']:.1f} s", 1.0, 5.85, "start", INK6),
               (f"AI #2 · {get('model')[0]['seconds']:.1f} s", 1.0, 5.45, "start", COL["model"]),
               (f"AI #1 · {pd['seconds']:.1f} s", (pd["begin_s"] + pd["end_s"]) / 2 + 6, 5.85, "middle", COL["hybrid"]),
               (f"AI #3 · {comp1 - comp0:.1f} s", (comp0 + comp1) / 2, 5.85, "middle", COL["gruseq"]),
               (f"off · {off['seconds']:.1f} s", (off["begin_s"] + off["end_s"]) / 2, 5.45, "middle", INK6),
               ("spare", (end + 180) / 2, 3.3, "middle", INK6), (f"{180 - end:.1f} s", (end + 180) / 2, 2.9, "middle", INK6)]
-    svg, (tp, wp) = panel(rows, ph, 180.0, (0, 30, 60, 90, 120, 150, 180), labels, 16)
+    svg, (tp, wp) = panel(rows, ph, 180.0, (0, 30, 60, 90, 120, 150, 180), labels, -16)
     ai2 = get("model")[0]["begin_s"]
     svg = svg.replace("</svg>", f'<line x1="{L + ai2 / 180 * (W - L - R):.1f}" x2="{L + ai2 / 180 * (W - L - R):.1f}" y1="{B - (5.45 - P0) / (P1 - P0) * (B - T) + 8:.1f}" y2="{B - (4.85 - P0) / (P1 - P0) * (B - T) - 4:.1f}" stroke="{COL["model"]}" stroke-width="3"/>\n</svg>')
     (out / "weekly-window.svg").write_text(svg, encoding="utf-8", newline="\n")
     (out / "weekly-window.csv").write_text("t_s,power_W\n" + "\n".join(f"{t:.3f},{w:.4f}" for t, w in rows) + "\n", encoding="utf-8", newline="\n")
     print(f"weekly: {len(rows)} samples, power on to off {end:.1f} s, peak {wp:.4f} W at {tp:.1f} s")
 
-    d = json.load(open(dj, encoding="utf-8"))
-    day = d["days"][0]["name"]; per = d["per_day"][day]
-    dph = [dict(p, kind="dprep" if p["kind"] == "prep" else p["kind"]) for p in d["phases"] if p["name"] == day]
-    t0 = min(p["begin_s"] for p in dph); dph = [dict(p, begin_s=p["begin_s"] - t0, end_s=p["end_s"] - t0) for p in dph]
-    rows = trace(dt, 0.0, 330.0, t0)
-    dl = next(p for p in dph if p["kind"] == "download")
-    pre0 = min(p["begin_s"] for p in dph if p["kind"] in ("dprep", "pre")); pre1 = max(p["end_s"] for p in dph if p["kind"] == "pre")
-    labels = [("idle", 1.5, 3.75, "start", INK6),
-              (f"download (CAN) · {dl['seconds']:.0f} s", (dl["begin_s"] + dl["end_s"]) / 2, 4.4, "middle", COL["download"]),
-              (f"preprocessing · {pre1 - pre0:.1f} s", 330.0, 5.0, "end", COL["pre"])]
-    svg, (tp, wp) = panel(rows, dph, 330.0, (0, 60, 120, 180, 240, 300), labels, -16)
-    (out / "daily-window.svg").write_text(svg, encoding="utf-8", newline="\n")
-    (out / "daily-window.csv").write_text("t_s,power_W\n" + "\n".join(f"{t:.3f},{w:.4f}" for t, w in rows) + "\n", encoding="utf-8", newline="\n")
-    print(f"daily {day}: {len(rows)} samples, active {per['active_s']:.1f} s mean {per['active_mean_w']:.4f} W, "
-          f"10-min mean {per['window_10min_mean_w']:.4f} W, idle {per['idle_w']:.4f} W, highest sample {wp:.4f} W at {tp:.1f} s")
+    o = json.load(open(oj, encoding="utf-8"))
+    oph, end = o["phases"], o["mission_s"]
+    rows = trace(ot, 0.0, end)
+    got = lambda k: [p for p in oph if p["kind"] == k]
+    boot, off = got("boot")[0], got("shutdown")[0]
+    dl = sum(p["seconds"] for p in got("download")); pre = sum(p["seconds"] for p in got("dprep") + got("store"))
+    labels = [(f"boot · {boot['seconds']:.1f} s", 3.0, 4.75, "start", INK6),
+              (f"download over CAN · {dl:.0f} s", 310.0, 4.35, "middle", COL["download"]),
+              (f"preprocess + store · {pre:.1f} s", 630.0, 5.45, "end", COL["pre"]),
+              (f"off · {off['seconds']:.1f} s", 630.0, 5.0, "end", INK6)]
+    svg, (tp, wp) = panel(rows, oph, 630.0, (0, 100, 200, 300, 400, 500, 600), labels, 16)
+    (out / "orbit-window.svg").write_text(svg, encoding="utf-8", newline="\n")
+    (out / "orbit-window.csv").write_text("t_s,power_W\n" + "\n".join(f"{t:.3f},{w:.4f}" for t, w in rows) + "\n", encoding="utf-8", newline="\n")
+    print(f"orbit: {len(rows)} samples, power on to off {end:.1f} s, mean {o['mean_w']:.4f} W, peak {wp:.4f} W at {tp:.1f} s")
 
 
 if __name__ == "__main__":

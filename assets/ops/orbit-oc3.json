@@ -1,0 +1,57 @@
+{
+ "state": "orbit cycle oc3",
+ "phases": [
+  {
+   "kind": "boot",
+   "begin_s": 0.0,
+   "end_s": 20.544,
+   "seconds": 20.544
+  },
+  {
+   "kind": "idle",
+   "begin_s": 20.544,
+   "end_s": 21.044,
+   "seconds": 0.5
+  },
+  {
+   "kind": "download",
+   "begin_s": 21.044,
+   "end_s": 598.062,
+   "seconds": 577.018
+  },
+  {
+   "kind": "download",
+   "begin_s": 598.062,
+   "end_s": 601.625,
+   "seconds": 3.563
+  },
+  {
+   "kind": "dprep",
+   "begin_s": 601.625,
+   "end_s": 602.646,
+   "seconds": 1.021
+  },
+  {
+   "kind": "store",
+   "begin_s": 602.646,
+   "end_s": 606.1999999999999,
+   "seconds": 3.554
+  },
+  {
+   "kind": "idle",
+   "begin_s": 606.1999999999999,
+   "end_s": 606.7119999999999,
+   "seconds": 0.512
+  },
+  {
+   "kind": "shutdown",
+   "begin_s": 606.7119999999999,
+   "end_s": 616.0169999999998,
+   "seconds": 9.305
+  }
+ ],
+ "mission_s": 616.02,
+ "energy_j": 1786.0,
+ "mean_w": 2.8996,
+ "max_w": 3.8442227050781255
+}

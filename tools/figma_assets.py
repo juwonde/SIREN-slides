@@ -275,7 +275,7 @@ def write_png(path, w, h, bpp, rows):
                      + chunk(b"IEND", b""))
 
 
-ROUTING = "routing-r30e.png"  # Vivado routing capture of the adopted bitstream (bpg-r30e)
+ROUTING = "routing-r31e.png"  # Vivado routing capture of the adopted bitstream (bpg-r31e)
 
 
 def routing():
