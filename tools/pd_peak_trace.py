@@ -16,7 +16,8 @@ import pathlib
 import sys
 
 
-def cut(path, w0, w1):
+def read_window(path, a, b):
+    """(host_utc_ns, power_W) rows with a <= t <= b; seek-based binary search, the log is time-sorted."""
     f = open(path, "rb")
     size = os.path.getsize(path)
 
@@ -26,14 +27,19 @@ def cut(path, w0, w1):
     lo, hi = 0, size
     while hi - lo > 4096:
         mid = (lo + hi) // 2; t = ts_at(mid)
-        if t is None or t >= w0 - 2_000_000_000: hi = mid
+        if t is None or t >= a: hi = mid
         else: lo = mid
     f.seek(lo); f.readline(); rows = []
     for line in f:
         p = line.split(b","); t = int(p[0])
-        if t < w0 - 2_000_000_000: continue
-        if t > w1 + 2_000_000_000: break
+        if t < a: continue
+        if t > b: break
         rows.append((t, float(p[7])))
+    return rows
+
+
+def cut(path, w0, w1):
+    rows = read_window(path, w0 - 2_000_000_000, w1 + 2_000_000_000)
     inside = [r for r in rows if w0 <= r[0] <= w1]
     tp, wp = max(inside, key=lambda r: r[1])
     win = [((t - (tp - 1_000_000_000)) / 1e9, w) for t, w in rows if tp - 1_000_000_000 <= t <= tp + 1_000_000_000]

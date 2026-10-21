@@ -21,7 +21,7 @@
 | 추론 전력량 (대표 세션) | BUS 0.0504 Wh (40.0 s, 1,395,900창) · PD 0.2312 Wh (184.4 s, 1,100회, 1회 0.210 mWh) · COMP 0.0411 Wh (34.3 s, 260프레임 × 43,008 step) · 합 0.32 Wh | 같은 기록의 phases (seconds × mean_w) + 세션 frame 수 | 24 |
 | 전처리 전력 (CAN 수신 + 전처리, PL 리셋 + 깊은 대기, 이미지 r14) | 평균 3.00 W (≤ 3.3 W) | shared `docs/results/te0715-power-stages-2026-10-20.md` §4 | 15, 24 |
 | 궤도당 에너지 (전력 예산 슬라이드) | 수신·전처리 10 % × 3.3 W + 추론 2 % × 5.5 W, 궤도 98.8분 → 0.7245 Wh ≈ 0.72 Wh, 발전량 24.80 Wh의 2.9 % | PDR p.20, 별첨 pp.43–44 가정 + 새 요구조건 | 5 |
-| PD 시간-전력 그림 | PD 구간(184.4 s)의 최대 5.13 W 샘플 앞뒤 1 s. 계산 수준 ≈ 4.7 W(히스토그램 4.6–4.7 W), LayerNorm 구간 ≈ 4.0 W | guard13 `power.csv` 구간만 읽음: `tools/pd_peak_trace.py ... 4.7 4.0` → `assets/hw/pd-tpower-e74.{svg,csv}` | 24 |
+| PD 시간-전력 그림 | PD 실행 전체 184.4 s (1,100회, 18,437 샘플): 위는 2 px 칸마다 최소·최대 전력(최대 5.13 W, 평균 4.51 W), 아래는 누적 전력량(사다리꼴 적분) 0.231 Wh, 1회 0.21 mWh. 이전의 피크 앞뒤 2 s 그림(계산 ≈ 4.7 W, LayerNorm ≈ 4.0 W)은 `assets/hw/pd-tpower-e74.*`에 남김 | guard13 `power.csv` 구간만 읽음: `tools/pd_run_energy.py` → `assets/hw/pd-run-energy-e74.{svg,csv}` | 24 |
 | trade-off 산점도 | 10/19–10/21 전력 측정 94세션 모두 (모두 byte 일치, COMP 100 Hz peak는 75세션). 50 GOPS 아래 점은 진단 세션(페이싱·디더 시험). COMP 4.78 W 점은 e74 뒤 시험 e75z(세션 미통과) | 같은 `results.jsonl` (`phases.*.max_w`, `models.*.gops`) | 24 |
 | PD FFN 엔진 근거 | FINN FFN 3,397 ms (150 MHz xsim 환산) > 보드 PD 한 프레임 전체 165.2 ms(e74)의 20배 → "FFN > 20× faster vs FINN" | 엔진 매핑 receipt 문서 §5 + 세션 `mean_frame_ns` | 21 |
 | COMP 게이트 엔진 근거 | FINN LUT 20,978 vs 엔진 몫 1,069 (약 20배) | 엔진 매핑 receipt 문서 §3 | 21 |
