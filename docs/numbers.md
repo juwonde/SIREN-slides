@@ -14,8 +14,8 @@
 
 | 항목 | 값 | 출처 | 슬라이드 |
 |---|---|---|---|
-| GOPS | BUS 62.57 (발표 표기 62.58) / PD 51.01 / COMP 50.71, byte 일치(COMP는 매 반복 비교), FM 캠페인 4개와 FM 스케줄 통과 | 세션 `board-models-e2e.json` (F-ASTRA runtime) | 15, 20, 21, 27, 29 |
-| 자원 (배선 후) | LUT 57,791 (73.5 %) · FF 79,842 (50.8 %) · BRAM36 179 (67.5 %) · DSP 372 (93.0 %) | `bpg-r30e/route-utilization.rpt`, CHANGELOG 6.137.0 | 23, 31 |
+| GOPS | BUS 62.57 (발표 표기 62.58) / PD 51.01 / COMP 50.71, byte 일치(COMP는 매 반복 비교), FM 캠페인 4개와 FM 스케줄 통과 | 세션 `board-models-e2e.json` (F-ASTRA runtime) | 15, 20, 21, 28, 30 |
+| 자원 (배선 후) | LUT 57,791 (73.5 %) · FF 79,842 (50.8 %) · BRAM36 179 (67.5 %) · DSP 372 (93.0 %) | `bpg-r30e/route-utilization.rpt`, CHANGELOG 6.137.0 | 23, 32 |
 | 자원 여유 | LUT 26.5 · FF 49.2 · BRAM36 32.5 · **DSP 7.0 %** | 위 행에서 계산 | 23 |
 | 추론 전력 (12 V 입력, 평균 / 100 Hz peak) | BUS 4.54 / 4.99 · PD 4.51 / 5.13 · COMP 4.31 / 5.38 · FM 3.64 / 5.27 · FM 스케줄 3.25 / 5.27 W | `runtime/power-tests/pareto-20261019/results.jsonl` (e74 02:26 UTC), CHANGELOG 6.139.0 | 15, 24 |
 | 추론 전력량 (대표 세션) | BUS 0.0504 Wh (40.0 s, 1,395,900창) · PD 0.2312 Wh (184.4 s, 1,100회, 1회 0.210 mWh) · COMP 0.0411 Wh (34.3 s, 260프레임 × 43,008 step) · 합 0.32 Wh | 같은 기록의 phases (seconds × mean_w) + 세션 frame 수 | 24 |
@@ -25,6 +25,8 @@
 | trade-off 산점도 | 10/19–10/21 전력 측정 94세션 모두 (모두 byte 일치, COMP 100 Hz peak는 75세션). 50 GOPS 아래 점은 진단 세션(페이싱·디더 시험). COMP 4.78 W 점은 e74 뒤 시험 e75z(세션 미통과) | 같은 `results.jsonl` (`phases.*.max_w`, `models.*.gops`) | 24 |
 | PD FFN 엔진 근거 | FINN FFN 3,397 ms (150 MHz xsim 환산) > 보드 PD 한 프레임 전체 165.2 ms(e74)의 20배 → "FFN > 20× faster vs FINN" | 엔진 매핑 receipt 문서 §5 + 세션 `mean_frame_ns` | 21 |
 | COMP 게이트 엔진 근거 | FINN LUT 20,978 vs 엔진 몫 1,069 (약 20배) | 엔진 매핑 receipt 문서 §3 | 21 |
+| 일일 창 (운용형, 10/21) | 2013-05-21 하루: 대기 20 s → CAN 다운로드 284 s → 전처리 0.79 s + 인코더 사전 단계 18.65 s(합 19.4 s) → PL 딥 아이들 3.005 W. 활성 303.8 s 평균 3.027 W, **10분 창 평균 3.017 W (≤ 3.3 W)**, 창 안 최고 샘플 3.50 W(다운로드→전처리 전환, 구간 규칙으로는 3.47 W) | F-ASTRA runtime `power-tests/weekly-20261021/daily-gt1000-v1.{json,-trace.csv}` → `tools/ops_windows.py` → `assets/ops/daily-window.{svg,csv}`; shared `docs/results/te0715-weekly-mission-2026-10-21.md` §5 | 25 |
+| 주간 NN 창 (임무 모드, 10/21) | 전원 ON → 정상 종료 **153.2 s (180 s 기준, 여유 26.8 s)**: 냉부팅 20.55 s, PL 적재·주간 전처리·AI #2 753창(0.09 s), AI #1 504창 86.5 s, AI #3 7일 35.0 s, 정상 종료 9.28 s. 전체 최고 샘플 **5.048 W** (AI #1 구간). 저장소에서 주간 데이터 읽기 약 4.2 s 미포함(포함 시 약 158 s). >1000 pfu 주(2013-05-21–27, 1,660 pfu) | F-ASTRA 6.140.1, `power-tests/weekly-20261021/mission-gt1000-mission.{json,-trace.csv}` (실측 구간을 이어 붙인 트레이스) → `assets/ops/weekly-window.{svg,csv}`; shared 문서 §3a | 25 |
 
 ## 1. 확정 수치
 
