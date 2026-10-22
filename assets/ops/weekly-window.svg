@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
-<rect width="800" height="520" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540">
+<rect width="800" height="540" fill="#FFFFFF"/>
 <text x="74" y="371.1" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px" fill="#16181D">2</text>
 <text x="74" y="293.3" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px" fill="#16181D">3</text>
 <text x="74" y="215.6" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px" fill="#16181D">4</text>
@@ -35,5 +35,6 @@
 <text x="494.2" y="121.8" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px;font-weight:700" fill="#B3202A">peak 4.92 W</text>
 <text x="74" y="30" text-anchor="end" style="font-family:'Source Serif 4';font-size:26px" fill="#353B47">W</text>
 <text x="780" y="490" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px" fill="#353B47">time (s)</text>
+<text x="28" y="530" style="font-family:'Source Serif 4';font-size:26px" fill="#353B47">energy (mWh) boot 18 · AI #2 0.1 · AI #1 105 · AI #3 34 · off 10</text>
 <line x1="169.5" x2="169.5" y1="100.8" y2="135.4" stroke="#2F6FBF" stroke-width="3"/>
 </svg>

@@ -16,7 +16,7 @@ import json
 import pathlib
 import sys
 
-W, H, L, R, T, B = 800, 520, 88, 20, 50, 400
+W, H, L, R, T, B = 800, 540, 88, 20, 50, 400
 P0, P1 = 1.5, 6.0
 INK, INK6 = "#16181D", "#353B47"
 COL = {"boot": INK6, "idle": INK6, "shutdown": INK6, "plload": "#2F6FBF", "prep": "#2F6FBF", "model": "#2F6FBF",
@@ -25,7 +25,13 @@ COL = {"boot": INK6, "idle": INK6, "shutdown": INK6, "plload": "#2F6FBF", "prep"
 F = "font-family:'Source Serif 4';"
 
 
-def panel(rows, phases, x1, ticks, labels, peak_dx):
+def energy(rows, a, b):
+    """Trapezoid integral of the samples with a <= t <= b, in J."""
+    seg = [r for r in rows if a <= r[0] <= b]
+    return sum((t2 - t1) * (w1 + w2) / 2 for (t1, w1), (t2, w2) in zip(seg, seg[1:]))
+
+
+def panel(rows, phases, x1, ticks, labels, peak_dx, footer=""):
     px = lambda t: L + t / x1 * (W - L - R)
     py = lambda w: B - (w - P0) / (P1 - P0) * (B - T)
     kind = lambda t: next((COL[p["kind"]] for p in phases if p["begin_s"] <= t <= p["end_s"]), INK6)
@@ -53,6 +59,8 @@ def panel(rows, phases, x1, ticks, labels, peak_dx):
     s.append(f'<text x="{px(tp)+peak_dx:.1f}" y="{py(wp)-12:.1f}" text-anchor="{"start" if peak_dx > 0 else "end"}" style="{F}font-size:28px;font-weight:700" fill="#B3202A">peak {wp:.2f} W</text>')
     s.append(f'<text x="{L-14}" y="{T-20}" text-anchor="end" style="{F}font-size:26px" fill="{INK6}">W</text>')
     s.append(f'<text x="{W-R}" y="{B+90}" text-anchor="end" style="{F}font-size:28px" fill="{INK6}">time (s)</text>')
+    if footer:  # energy per phase, integrated from the same samples
+        s.append(f'<text x="{L-60}" y="{H-10}" style="{F}font-size:26px" fill="{INK6}">energy (mWh) {footer}</text>')  # Figma: label bold
     return "\n".join(s + ["</svg>"]) + "\n", (tp, wp)
 
 
@@ -76,7 +84,11 @@ def main():
               (f"AI #3 · {comp1 - comp0:.1f} s", (comp0 + comp1) / 2, 5.85, "middle", COL["gruseq"]),
               (f"off · {off['seconds']:.1f} s", (off["begin_s"] + off["end_s"]) / 2, 5.45, "middle", INK6),
               ("spare", (end + 180) / 2, 3.3, "middle", INK6), (f"{180 - end:.1f} s", (end + 180) / 2, 2.9, "middle", INK6)]
-    svg, (tp, wp) = panel(rows, ph, 180.0, (0, 30, 60, 90, 120, 150, 180), labels, -16)
+    mwh = lambda a, b: energy(rows, a, b) / 3.6
+    ai2 = get("model")[0]
+    foot = (f"boot {mwh(0, boot['end_s']):.0f} · AI #2 {mwh(ai2['begin_s'], ai2['end_s']):.1f} · AI #1 {mwh(pd['begin_s'], pd['end_s']):.0f}"
+            f" · AI #3 {mwh(comp0, comp1):.0f} · off {mwh(off['begin_s'], off['end_s']):.0f}")
+    svg, (tp, wp) = panel(rows, ph, 180.0, (0, 30, 60, 90, 120, 150, 180), labels, -16, foot)
     ai2 = get("model")[0]["begin_s"]
     svg = svg.replace("</svg>", f'<line x1="{L + ai2 / 180 * (W - L - R):.1f}" x2="{L + ai2 / 180 * (W - L - R):.1f}" y1="{B - (5.45 - P0) / (P1 - P0) * (B - T) + 8:.1f}" y2="{B - (4.85 - P0) / (P1 - P0) * (B - T) - 4:.1f}" stroke="{COL["model"]}" stroke-width="3"/>\n</svg>')
     (out / "weekly-window.svg").write_text(svg, encoding="utf-8", newline="\n")
@@ -93,7 +105,11 @@ def main():
               (f"download over CAN · {dl:.0f} s", 310.0, 4.35, "middle", COL["download"]),
               (f"preprocess + store · {pre:.1f} s", 630.0, 5.45, "end", COL["pre"]),
               (f"off · {off['seconds']:.1f} s", 630.0, 5.0, "end", INK6)]
-    svg, (tp, wp) = panel(rows, oph, 630.0, (0, 100, 200, 300, 400, 500, 600), labels, 16)
+    mwh = lambda a, b: energy(rows, a, b) / 3.6
+    span = lambda ps: sum(mwh(p["begin_s"], p["end_s"]) for p in ps)
+    foot = (f"boot {mwh(0, boot['end_s']):.0f} · download {span(got('download')):.0f} · preprocess + store {span(got('dprep') + got('store')):.0f}"
+            f" · off {mwh(off['begin_s'], off['end_s']):.0f}")
+    svg, (tp, wp) = panel(rows, oph, 630.0, (0, 100, 200, 300, 400, 500, 600), labels, 16, foot)
     (out / "orbit-window.svg").write_text(svg, encoding="utf-8", newline="\n")
     (out / "orbit-window.csv").write_text("t_s,power_W\n" + "\n".join(f"{t:.3f},{w:.4f}" for t, w in rows) + "\n", encoding="utf-8", newline="\n")
     print(f"orbit: {len(rows)} samples, power on to off {end:.1f} s, mean {o['mean_w']:.4f} W, peak {wp:.4f} W at {tp:.1f} s")
