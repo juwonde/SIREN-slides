@@ -7,23 +7,23 @@
   - `shared:`: 공유 저장소 `juwonde/pd-bus-moderntcn-fpga`의 파일
 - 시험 보드: TE0715-05-71I33-L SoM + TE0705-04 carrier (XC7Z030, 비행 모델 Z7000-P3와 같은 칩). 모든 보드 결과는 이 시험 보드 기준
 
-## 0. 채택 비트스트림 기준 (10/22 r31e, 슬라이드의 성능 수치는 모두 이것; 슬라이드 번호는 10/22 정리 뒤 본편 22장·부록 10장 기준)
+## 0. 채택 비트스트림 기준 (10/22 r31e, 슬라이드의 성능 수치는 모두 이것; 슬라이드 번호는 10/22 정리 뒤 본편 21장·부록 11장 기준)
 
 - 요구조건 (사용자 10/21): **전처리 평균 ≤ 3.3 W, DNN(추론) peak ≤ 5.5 W** (12 V 보드 입력, peak = INA228 100 Hz 단일 샘플 최대, 전원 ON 뒤 50 ms의 돌입 샘플 제외), 모델마다 ≥ 50 GOPS
 - 채택 (10/22): `bpg-r31e` (엔진 섬 PWM, F-ASTRA 6.142.0–6.145.0) 최종 구성 = CHANGELOG 6.145.0 r3 (PD PWM 램프, BUS → PD → Comp → 인코더). 모델 변형: PD FFN ReLU (검증셋 F1 0.7569 → 0.7615), Comp Δ 입력 + 7단계 세그먼트 일괄 실행. 대표 실행: >1000 pfu 주(2013-05-21–27) 전원 ON → 종료 사이클 `gt1000-r3boot` (10/22 02:5x UTC, guard60–62). 슬라이드 8·12의 정확도는 실수형 모델 테스트셋 값 그대로이며, 탑재형 변형(ReLU, Δ)의 테스트셋 지표는 아직 계산하지 않음
 
 | 항목 | 값 | 출처 | 슬라이드 |
 |---|---|---|---|
-| GOPS | AI #2 62.51 / AI #1 51.00 / AI #3 50.92 (7회 엔진 실행 중 최소, 50.92–51.05), byte 일치, 패킷 무손실 | `runtime/power-tests/weekly-20261021/weekly-gt1000-r3boot.json` (F-ASTRA runtime) | 13, 15, 26, 21, 23 |
-| 자원 (배선 후, bpg-r31e) | LUT 58,578 (74.5 %) · FF 79,886 (50.8 %) · BRAM36 179 (67.5 %) · DSP 372 (93.0 %); 여유 25.5 / 49.2 / 32.5 / **7.0 %** | `harness/bpg-r31e/route-utilization.rpt` | 29, 28 |
+| GOPS | AI #2 62.51 / AI #1 51.00 / AI #3 50.92 (7회 엔진 실행 중 최소, 50.92–51.05), byte 일치, 패킷 무손실 | `runtime/power-tests/weekly-20261021/weekly-gt1000-r3boot.json` (F-ASTRA runtime) | 13, 15, 25, 20, 22 |
+| 자원 (배선 후, bpg-r31e) | LUT 58,578 (74.5 %) · FF 79,886 (50.8 %) · BRAM36 179 (67.5 %) · DSP 372 (93.0 %); 여유 25.5 / 49.2 / 32.5 / **7.0 %** | `harness/bpg-r31e/route-utilization.rpt` | 28, 27 |
 | 모델별 peak (대표 실행) | AI #2 4.61 · AI #1 4.89 · AI #3 4.92 W; 전원 ON → 종료 전체 4.92 W | 같은 기록 phases.max_w | 13, 17 |
 | 전원 ON → 종료 (주간 NN 창) | 147.33 s (냉부팅 20.49 + 작업 117.57 + 종료 9.27), 608 J = 0.169 Wh, 평균 4.13 W; 저장소 읽기 약 4 s 미포함 | `mission-gt1000-r3boot.{json,-trace.csv}` → `tools/ops_windows.py` → `assets/ops/weekly-window.*` | 18 |
 | 추론 전력량 (주간 NN 창 1회) | AI #2 0.1 mWh (0.08 s) · AI #1 105 mWh (86.23 s, 504회, 1회 0.21 mWh) · AI #3 34 mWh (29.67 s, GRU 4.34 s + 인코더) · NN 창 전체 505 J = 140 mWh (117.27 s) | weekly 기록 summary | 17 |
 | AI #1 시간-전력 그림 | 86.2 s, 8,624 샘플, 최대 4.89 W, 평균 4.39 W, 누적 0.105 Wh | `boot-gt1000-r3boot-trace.csv` 115.076–201.306 s → `tools/pd_run_energy.py` → `assets/hw/pd-run-energy-r31e.*` | 17 |
 | trade-off 산점도 | 전력 기록이 있는 비트스트림 13개(r21tzb–r32e)의 보드 실행 124회, 406점(모델별 byte 일치만). 진단 실험(가중치·입력을 0으로 둔 inv/ext/zd)은 제외. 10/19 이전 비트스트림(r04–r21tz)은 100 Hz 전력 기록이 없어 빠짐. 50 GOPS 아래 점은 페이싱·디더 진단 | `pareto-20261019/results.jsonl` + `weekly-20261021/weekly-*.json` + `harness/*/bundle.json`(bitstream_record_sha256) → `tools/tradeoff_data.py` → `assets/hw/tradeoff-points.json` → `tools/tradeoff_scatter.py` | 17 |
-| 전처리 = 궤도 수신 창 (6.144.0) | 전원 차단 궤도 사이클 oc3: 냉부팅 20.54 s → CAN 수신 3.82 MB 580.6 s (6.68 KB/s) → 전처리 1.0 s + 저장 3.6 s → 종료 9.31 s = 616.0 s, 1,786 J, **평균 2.90 W (≤ 3.3 W)**, 최대 3.84 W(부팅); 궤도(100분) 평균 0.30 W | alpha-5 `runtime/power-stages/orbit/{oc3.out,orbit-results.jsonl}` + guard37 → `tools/orbit_cycle.py` → `assets/ops/orbit-oc3.*`, `orbit-window.*` | 13, 17, 18, 23 |
+| 전처리 = 궤도 수신 창 (6.144.0) | 전원 차단 궤도 사이클 oc3: 냉부팅 20.54 s → CAN 수신 3.82 MB 580.6 s (6.68 KB/s) → 전처리 1.0 s + 저장 3.6 s → 종료 9.31 s = 616.0 s, 1,786 J, **평균 2.90 W (≤ 3.3 W)**, 최대 3.84 W(부팅); 궤도(100분) 평균 0.30 W | alpha-5 `runtime/power-stages/orbit/{oc3.out,orbit-results.jsonl}` + guard37 → `tools/orbit_cycle.py` → `assets/ops/orbit-oc3.*`, `orbit-window.*` | 13, 17, 18, 22 |
 | 궤도당 에너지 (전력 예산 슬라이드) | 수신·전처리 10 % × 3.3 W + 추론 2 % × 5.5 W, 궤도 98.8분 → 약 0.72 Wh, 발전량 24.80 Wh의 2.9 % (계획 가정, 측정 아님) | 설계 단계 예산 가정 + 새 요구조건 | 5 |
-| COMP 게이트 엔진 근거 | FINN LUT 20,978 vs 엔진 몫 1,069 (약 20배) | 엔진 매핑 receipt 문서 §3 | 26 |
+| COMP 게이트 엔진 근거 | FINN LUT 20,978 vs 엔진 몫 1,069 (약 20배) | 엔진 매핑 receipt 문서 §3 | 25 |
 
 이전 채택(10/21 e74, bpg-r30e): GOPS 62.57/51.01/50.71, peak 4.99/5.13/5.38 W, LUT 73.5 % — 아래 기록과 git 이력에 남김.
 
