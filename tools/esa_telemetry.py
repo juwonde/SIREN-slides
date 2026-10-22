@@ -1,12 +1,14 @@
 """Real ESA-ADB telemetry window for the anomaly-detection slide, as an editable SVG.
 
-    python tools/esa_telemetry.py ESA_ADB_ROOT [EVENT_ID] [OUT] [MISSION] [CHANNELS]
+    python tools/esa_telemetry.py ESA_ADB_ROOT [EVENT_ID] [OUT] [MISSION] [CHANNELS] [PAD] [WIDE]
 
 ESA_ADB_ROOT holds metadata/<MISSION>/labels.csv and raw/<MISSION>/channels/channel_N.zip (ESA Anomaly Dataset,
 Zenodo 10.5281/zenodo.15237121, CC BY 3.0 IGO). Needs pandas. Defaults: Mission2 event id_637, channels 73,74,81
 (three signals freeze for 75 min while staying in range), out assets/models/esa-m2-id637.svg.
 Navy = normal telemetry, crimson = the expert-labelled part; no y values (anonymised). Curves keep the min and max
-of every 2 px column so the SVG stays small.
+of every 2 px column so the SVG stays small. PAD is the context on each side in event durations (default 2.5, at
+least 90 min). WIDE = "WxH" draws one channel in a wide panel of that size (mission slide: 856x300).
+- mission slide: id_8 Mission1 channel 29 (2003-01-12 anomaly, a dip then a new level), PAD 1.5, 856x300
 """
 import csv
 import pathlib
@@ -22,6 +24,8 @@ out = sys.argv[3] if len(sys.argv) > 3 else str(ROOT / "assets" / "models" / "es
 mission = sys.argv[4] if len(sys.argv) > 4 else "Mission2"
 meta = str(data / "metadata" / mission)
 pick = (sys.argv[5] if len(sys.argv) > 5 else ("73,74,81" if ev_id == "id_637" else "")).split(",")
+pad_factor = float(sys.argv[6]) if len(sys.argv) > 6 else 2.5
+wide = tuple(int(v) for v in sys.argv[7].split("x")) if len(sys.argv) > 7 else None
 pad_min = 0
 
 
@@ -35,7 +39,7 @@ chs = [f"channel_{c}" for c in pick if c] or sorted({r["Channel"] for r in rows}
 ts = lambda t: pd.Timestamp(t.replace("Z", "")).tz_localize(None)
 s0 = min(ts(r["StartTime"]) for r in rows); e0 = max(ts(r["EndTime"]) for r in rows)
 dur = (e0 - s0).total_seconds() / 60
-pad = pd.Timedelta(minutes=max(pad_min, 2.5 * dur, 90))
+pad = pd.Timedelta(minutes=max(pad_min, pad_factor * dur, 90))
 w0, w1 = s0 - pad, e0 + pad
 n = len(chs)
 NAVY, CRIM, INK = "#20386E", "#B3202A", "#16181D"
@@ -43,6 +47,8 @@ font = "font-family:'Source Serif 4';"
 grid = n == 4  # 2 x 2 small multiples, no bracket (the slide title carries event and date)
 if grid:
     W, H, CW, PH = 820, 326, 390, 90
+elif wide and n == 1:
+    W, H = wide; L, Rm, T = 100, 8, 12; PH, GAP = H - 108 - T, 0
 else:
     PH, GAP = (128, 26) if n >= 3 else (100, 20)
     L, Rm, T = 120, 20, 10
