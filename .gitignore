@@ -16,7 +16,6 @@
 !/research/bus/
 !/research/compression/
 !/research/preprocessing/
-!/research/README.md
 !/research/__init__.py
 !/research/_validation.py
 !/research/bus/__init__.py
