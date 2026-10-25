@@ -1,4 +1,4 @@
-# Only public slides and their publishing tools are tracked.
+# Public slides, research source and publishing tools only.
 *
 !/.gitignore
 !/README.md
@@ -10,3 +10,31 @@
 !/tools/
 !/tools/publish_slides.py
 !/tools/check-repository-policy.ps1
+
+!/research/
+!/research/pd/
+!/research/bus/
+!/research/compression/
+!/research/preprocessing/
+!/research/README.md
+!/research/__init__.py
+!/research/_validation.py
+!/research/bus/__init__.py
+!/research/bus/alarm.py
+!/research/bus/features.py
+!/research/bus/model.py
+!/research/check.py
+!/research/compression/__init__.py
+!/research/compression/f_astra_gru_encode.c
+!/research/compression/gru_codec.py
+!/research/compression/gru_evaluation.py
+!/research/compression/gru_predictor.py
+!/research/pd/__init__.py
+!/research/pd/model.py
+!/research/pd/preprocessing.py
+!/research/preprocessing/__init__.py
+!/research/preprocessing/f_astra_weekly_prep.c
+!/research/preprocessing/poes-sem-preprocess.c
+!/research/preprocessing/poes_sem2_counts.h
+!/research/preprocessing/poes_sem_packets.py
+!/research/requirements.txt
