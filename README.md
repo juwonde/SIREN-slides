@@ -2,7 +2,7 @@
 
 PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
-[PDF](https://github.com/juwonde/SIREN-slides/releases/latest/download/SIREN-slides.pdf) · [Figma](https://www.figma.com/slides/TYaGwNEZ2GewJvkSowhTiQ/SIREN) · [본편](#main-slides) · [부록](#appendix)
+[PDF](https://github.com/juwonde/SIREN-slides/releases/latest/download/SIREN-slides.pdf) · [Figma](https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1) · [본편](#main-slides) · [부록](#appendix)
 
 ## Main slides
 
