@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-24",
+  "run": "ina-final-20261024T075800Z",
+  "boundary": "One fixed600s CAN RX + preprocessing + encoder pre-stage + five SD-cache files and sync + CAN-enabled idle. NN inference not executed.",
+  "job_seconds": 117.69999069999903,
+  "window_seconds": 600.0011395,
+  "mean_w": 2.8502512207819826,
+  "observed_max_w": 3.76568603515625,
+  "sample_rate_hz": 1424.1492533256398,
+  "hardware_energy_Wh": 0.4749921332465278,
+  "plotted_integral_Wh": 0.4747779001159801,
+  "input_bytes": 1124165,
+  "active_work_seconds": 117.69999069999903,
+  "active_work_integral_J": 337.95158609710995,
+  "active_work_integral_Wh": 0.09387544058253054,
+  "can_bitrate": 500000,
+  "target_data_Bps": 12000,
+  "effective_data_Bps": 11894.930326553389,
+  "can_requests": 6000,
+  "can_responses": 6000,
+  "input_and_outputs_verified": true,
+  "NN_executed": false,
+  "comparison": {
+    "sampled_max_W": -0.92974853515625,
+    "sampled_max_reduction_fraction": 0.19801117899389054,
+    "hardware_energy_mean_delta_W": -0.005025336884072029,
+    "hardware_energy_mean_reduction_fraction": 0.0017600175613741165,
+    "sample_mean_delta_W": -0.005025334295770012
+  },
+  "full_session_max_w": 5.04705810546875,
+  "limitations": [
+    "One observed A/B pair, no statistical repeat; small mean-power differences can include drift.",
+    "Sampled maxima do not bound shorter electrical spikes; occasional acquisition gaps can exceed1ms.",
+    "Boot/programming/shutdown are outside fixed600s; full-session maximum reported separately.",
+    "2.5W idle target and physical minimum not established; NN and TX power reductions not tested by this final experiment.",
+    "Frozen experimental bundle measured; no new FINN architecture acceptance or GOPS/W certification."
+  ]
+}

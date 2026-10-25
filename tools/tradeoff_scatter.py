@@ -5,7 +5,7 @@
 POINTS_JSON comes from tools/tradeoff_data.py (one row per run and model: model, gops, peak_w, bitstream, run).
 ADOPTED_RUN is the run label whose three points are drawn large with a black outline. AI #1 circles, AI #2 squares,
 AI #3 diamonds; each model's Pareto front (highest GOPS reached at or below each power) is a line in its colour.
-Dashed crimson lines mark 50 GOPS and 5.5 W. The legend sits in the top 30 px, so the plot keeps the slide's old
+Dashed crimson lines mark 50 GOPS and 5 W. The legend sits in the top 30 px, so the plot keeps the slide's old
 geometry when the SVG is placed 30 px higher. No grid lines.
 """
 import json
@@ -43,9 +43,9 @@ def main():
         s.append(f'<text x="{px(w):.1f}" y="{B + 40}" text-anchor="middle" style="{F}font-size:28px" fill="{INK}">{w:.1f}</text>')
     s.append(f'<line x1="{L}" x2="{L}" y1="{py(75):.1f}" y2="{B}" stroke="{INK}" stroke-width="2"/><line x1="{L}" x2="{R}" y1="{B}" y2="{B}" stroke="{INK}" stroke-width="2"/>')
     s.append(f'<line x1="{L}" x2="{R}" y1="{py(50):.1f}" y2="{py(50):.1f}" stroke="{RED}" stroke-width="2.5" stroke-dasharray="10 7"/>')
-    s.append(f'<line x1="{px(5.5):.1f}" x2="{px(5.5):.1f}" y1="{py(75):.1f}" y2="{B}" stroke="{RED}" stroke-width="2.5" stroke-dasharray="10 7"/>')
+    s.append(f'<line x1="{px(5.0):.1f}" x2="{px(5.0):.1f}" y1="{py(75):.1f}" y2="{B}" stroke="{RED}" stroke-width="2.5" stroke-dasharray="10 7"/>')
     s.append(f'<text x="{R}" y="{py(50) + 34:.1f}" text-anchor="end" style="{F}font-size:26px;font-weight:700" fill="{RED}">≥ 50 GOPS</text>')
-    s.append(f'<text x="{px(5.5) + 10:.1f}" y="{B - 14}" style="{F}font-size:26px;font-weight:700" fill="{RED}">≤ 5.5 W</text>')
+    s.append(f'<text x="{px(5.0) + 10:.1f}" y="{B - 14}" style="{F}font-size:26px;font-weight:700" fill="{RED}">≤ 5 W</text>')
     for model in ("AI #2", "AI #3", "AI #1"):
         for r in rows:
             if r["model"] == model:
@@ -65,7 +65,7 @@ def main():
         s.append(marker(model, lx - 14, 20))
         s.append(f'<text x="{lx}" y="30" style="{F}font-size:28px;font-weight:700" fill="{COL[model]}">{model}</text>')
         lx += 122
-    s.append(f'<circle cx="{lx - 10}" cy="20" r="10" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/><text x="{lx + 8}" y="30" style="{F}font-size:28px" fill="{INK}">adopted</text>')
+    s.append(f'<circle cx="{lx - 10}" cy="20" r="10" fill="#FFFFFF" stroke="{INK}" stroke-width="3"/><text x="{lx + 8}" y="30" style="{F}font-size:28px" fill="{INK}">selected</text>')
     s.append(f'<text x="6" y="30" style="{F}font-size:26px" fill="{INK6}">GOPS</text>')
     s.append(f'<text x="{(L + R) / 2:.0f}" y="{B + 82}" text-anchor="middle" style="{F}font-size:28px" fill="{INK6}">peak power (W): highest 100 Hz sample of each run</text>')
     open(out, "w", encoding="utf-8", newline="\n").write("\n".join(s + ["</svg>"]) + "\n")

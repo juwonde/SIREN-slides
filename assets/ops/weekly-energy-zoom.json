@@ -1,0 +1,11 @@
+{
+  "source_run": "quiet-r32boot2",
+  "start_s": 20.454,
+  "end_s": 40.56400000000001,
+  "ai1_start_s": 30.564000000000007,
+  "ai1_seconds_shown": 10,
+  "cumulative_start_Wh": 0.018089529027777777,
+  "cumulative_end_Wh": 0.04095705018055559,
+  "energy_origin": "power on, same stitched intervals as the full weekly figure",
+  "measurement": "12 V board input, INA228 100 Hz"
+}

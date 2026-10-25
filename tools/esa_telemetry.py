@@ -5,7 +5,7 @@
 ESA_ADB_ROOT holds metadata/<MISSION>/labels.csv and raw/<MISSION>/channels/channel_N.zip (ESA Anomaly Dataset,
 Zenodo 10.5281/zenodo.15237121, CC BY 3.0 IGO). Needs pandas. Defaults: Mission2 event id_637, channels 73,74,81
 (three signals freeze for 75 min while staying in range), out assets/models/esa-m2-id637.svg.
-Navy = normal telemetry, crimson = the expert-labelled part; no y values (anonymised). Curves keep the min and max
+Navy = normal telemetry, crimson = the labeled anomaly interval; no y values (anonymised). Curves keep the min and max
 of every 2 px column so the SVG stays small. PAD is the context on each side in event durations (default 2.5, at
 least 90 min). WIDE = "WxH" draws one channel in a wide panel of that size (mission slide: 856x300).
 - mission slide: id_8 Mission1 channel 29 (2003-01-12 anomaly, a dip then a new level), PAD 1.5, 856x300
@@ -123,7 +123,7 @@ else:
     axis(X, L, W - Rm, ya, 7)
     xs, xe = X(s0), X(e0)
     svg.append(f'<path d="M{xs:.1f},{ya+50} L{xs:.1f},{ya+62} L{xe:.1f},{ya+62} L{xe:.1f},{ya+50}" fill="none" stroke="{CRIM}" stroke-width="3"/>')
-    svg.append(f'<text x="{(xs+xe)/2:.1f}" y="{ya+96}" text-anchor="middle" style="{font}font-size:28px;font-weight:700" fill="{CRIM}">expert label</text>')
+    svg.append(f'<text x="{(xs+xe)/2:.1f}" y="{ya+96}" text-anchor="middle" style="{font}font-size:28px;font-weight:700" fill="{CRIM}">anomaly label</text>')
     svg.append(f'<text x="{W-Rm}" y="{ya+96}" text-anchor="end" style="{font}font-size:28px" fill="{INK}">{s0:%Y-%m-%d} UTC</text>')
 svg.append("</svg>")
 pathlib.Path(out).write_text("\n".join(svg) + "\n", encoding="utf-8", newline="\n")

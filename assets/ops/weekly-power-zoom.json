@@ -1,0 +1,14 @@
+{
+  "source_run": "quiet-r32boot2",
+  "start_s": 20.454,
+  "end_s": 40.56400000000001,
+  "ai1_start_s": 30.564000000000007,
+  "ai1_seconds_shown": 10,
+  "display_power_min_W": 3,
+  "display_power_max_W": 5,
+  "sample_min_W": 2.976,
+  "sample_max_W": 4.8888,
+  "samples": 2011,
+  "measurement": "12 V board input, INA228 100 Hz",
+  "scope": "Same measured power trace as the full weekly panel; time and power axes zoomed."
+}

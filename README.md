@@ -1,72 +1,190 @@
 # Onboard AI Payload of PADO-SAT: SIREN
 
-SIREN 2026 가을 학회 발표 자료 저장소입니다.
+한국우주과학회 2026 가을 학술대회 발표 자료입니다. PADO-SAT의 온보드 AI 탑재체 SIREN이 수행하는 고에너지 대전입자 위험 탐지, BUS HK 이상 탐지, 과학데이터 압축과 초기 구현 결과를 소개합니다.
 
-- KSSS 2026 Fall Conference (한국우주과학회, 구두 II-2-7): `slides/deck.html`
-- 항공우주학회 가을 학술대회: 같은 저장소에 추가 예정
+**2026-10-25 공개본: 본편 20장 + 부록 17장.** 아래에서 전체 슬라이드를 볼 수 있습니다.
 
-아래는 한국우주과학회 발표 기준입니다.
+- [전체 슬라이드 PDF (37장)](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/download/slides-2026-10-25/SIREN-KSS2026-slides-20261025.pdf)
+- [현재 릴리스](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/tag/slides-2026-10-25)
+- [Figma Slides 원본](https://www.figma.com/slides/TYaGwNEZ2GewJvkSowhTiQ/SIREN)
+- [본편](#main-slides) · [부록](#appendix) · [자료 구성](#source-and-data)
 
-- 발표: 10분 목표 (배정 15분, 질의응답 포함), 영어 슬라이드
-- 구성: Introduction – Background – Results (Preliminary) – Future works
-- 현재 판: **alpha-14** (본편 25장 + Appendix 5장, 정확도 수치 A/B/C 3종). 전력 측정 결과가 들어간 뒤 최종판을 만듭니다.
+PDF와 슬라이드 이미지는 발표자 노트를 포함하지 않습니다. Figma의 숨김 슬라이드는 이 공개본에서 제외했습니다.
 
-## 폴더
+## Main slides
 
-| 폴더 | 내용 |
+### 01. Onboard AI Payload of PADO-SAT: SIREN
+
+![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png)
+
+### 02. Mission overview
+
+![Slide 02: Mission overview](assets/slides/02.png)
+
+### 03. PADO-SAT: mission overview
+
+![Slide 03: PADO-SAT: mission overview](assets/slides/03.png)
+
+### 04. Goal of SIREN
+
+![Slide 04: Goal of SIREN](assets/slides/04.png)
+
+### 05. System budget from SIREN’s perspective
+
+![Slide 05: System budget from SIREN’s perspective](assets/slides/05.png)
+
+### 06. FPGA COTS platform: Z7000-P3
+
+![Slide 06: FPGA COTS platform: Z7000-P3](assets/slides/06.png)
+
+### 07. SIREN-PADO SAT Interfaces
+
+![Slide 07: SIREN-PADO SAT Interfaces](assets/slides/07.png)
+
+### 08. Payload design
+
+![Slide 08: Payload design](assets/slides/08.png)
+
+### 09. Effects of High Energy Charged Particles
+
+![Slide 09: Effects of High Energy Charged Particles](assets/slides/09.png)
+
+### 10. AI #1: Particle hazard detection
+
+![Slide 10: AI #1: Particle hazard detection](assets/slides/10.png)
+
+### 11. Anomalies in Satellite Housekeeping Data
+
+![Slide 11: Anomalies in Satellite Housekeeping Data](assets/slides/11.png)
+
+### 12. AI #2: HK anomaly detection
+
+![Slide 12: AI #2: HK anomaly detection](assets/slides/12.png)
+
+### 13. Satellite Downlink Constraints
+
+![Slide 13: Satellite Downlink Constraints](assets/slides/13.png)
+
+### 14. AI #3: Science data compression
+
+![Slide 14: AI #3: Science data compression](assets/slides/14.png)
+
+### 15. Three AIs on one FPGA SoC
+
+![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png)
+
+### 16. Performance trade-off per model
+
+![Slide 16: Performance trade-off per model](assets/slides/16.png)
+
+### 17. Download and weekly NN tests
+
+![Slide 17: Download and weekly NN tests](assets/slides/17.png)
+
+### 18. Future Works and Summary
+
+![Slide 18: Future Works and Summary](assets/slides/18.png)
+
+### 19. Summary
+
+![Slide 19: Summary](assets/slides/19.png)
+
+### 20. Thank you
+
+![Slide 20: Thank you](assets/slides/20.png)
+
+## Appendix
+
+### 21. Appendix
+
+![Slide 21: Appendix](assets/slides/21.png)
+
+### 22. Abstract
+
+![Slide 22: Abstract](assets/slides/22.png)
+
+### 23. Onboard AI in Previous Missions
+
+![Slide 23: Onboard AI in Previous Missions](assets/slides/23.png)
+
+### 24. AI Networks in SIREN: ModernTCN and GRU
+
+![Slide 24: AI Networks in SIREN: ModernTCN and GRU](assets/slides/24.png)
+
+### 25. How SIREN is built
+
+![Slide 25: How SIREN is built](assets/slides/25.png)
+
+### 26. Three models on the FPGA
+
+![Slide 26: Three models on the FPGA](assets/slides/26.png)
+
+### 27. How is correctness verified?
+
+![Slide 27: How is correctness verified?](assets/slides/27.png)
+
+### 28. Resources, timing and weight update
+
+![Slide 28: Resources, timing and weight update](assets/slides/28.png)
+
+### 29. Placement, Routing
+
+![Slide 29: Placement, Routing](assets/slides/29.png)
+
+### 30. One orbit, one operating window
+
+![Slide 30: One orbit, one operating window](assets/slides/30.png)
+
+### 31. AI inference, result transfer and shutdown
+
+![Slide 31: AI inference, result transfer and shutdown](assets/slides/31.png)
+
+### 32. Weekly batch versus orbit integration
+
+![Slide 32: Weekly batch versus orbit integration](assets/slides/32.png)
+
+### 33. Fault management as implemented
+
+![Slide 33: Fault management as implemented](assets/slides/33.png)
+
+### 34. Fault management items (1/2): hardware
+
+![Slide 34: Fault management items (1/2): hardware](assets/slides/34.png)
+
+### 35. Fault management items (2/2): service and system
+
+![Slide 35: Fault management items (2/2): service and system](assets/slides/35.png)
+
+### 36. Digital Twin data and retraining
+
+![Slide 36: Digital Twin data and retraining](assets/slides/36.png)
+
+### 37. Abbreviations
+
+![Slide 37: Abbreviations](assets/slides/37.png)
+
+## Source and data
+
+| 경로 | 내용 |
 |---|---|
-| `docs/plan.md` | 작업 계획: 조건, 슬라이드 구성, 그림 목록, 일정 |
-| `docs/numbers.md` | 슬라이드에 들어가는 모든 수치와 출처 |
-| `slides/deck.html`, `slides/style.css` | 슬라이드 원본 (1280×720 CSS px, 16:9) |
-| `figures/` | 그림 SVG. Figma에서 편집하고 같은 이름으로 다시 저장 |
-| `assets/logos/` | 경희대 대학휘장(공식 AI 원본에서 만든 투명 PNG), 연구실 패치 |
-| `assets/models/`, `assets/hw/` | 모델 시각화(GIF, 이미지, PDF용 대표 프레임), 배선도 |
-| `figures/src/` | Mermaid 원본 (`*.mmd`): 구조도(F13), ModernTCN 블록(F04a), GRU 셀(F04c) |
-| `tools/` | 빌드·검사 (`build.py`, `lint.js`), 초안 그림 생성 (`make_figures.py`), 배치도 생성 (`chip_map.py`), Mermaid 렌더 (`render_mermaid.py`) |
-| `build/`, `dist/` | 빌드 결과 (git 제외). PDF는 GitHub release에 첨부 |
+| [docs/slide-index.json](docs/slide-index.json) | 공개 순서, 제목, 이미지 크기와 SHA-256 |
+| [assets/slides/](assets/slides/) | README와 PDF에 사용한 전체 슬라이드 이미지 |
+| [docs/numbers.md](docs/numbers.md) | 발표 수치와 근거. 상단 갱신 기록을 우선 |
+| [docs/power-selection-20261024.md](docs/power-selection-20261024.md) | 대표 전력·운용 시험의 선택과 측정 범위 |
+| [docs/mode-integration-appendix-20261024.md](docs/mode-integration-appendix-20261024.md) | 부록 운용모드 통합 검토의 조건과 한계 |
+| [assets/](assets/) · [figures/](figures/) | 관측 자료 기반 그림, 모델 시각화, 축약 측정 결과 |
+| [tools/](tools/) | 그림 생성과 공개본 검사 도구 |
+| [docs/legacy-html-workflow.md](docs/legacy-html-workflow.md) | 이전 HTML 초안의 생성 방법과 이력 |
 
-## 빌드
+현행 발표본은 위 Figma 스냅샷과 PDF입니다. 기존 slides/deck.html과 과거 릴리스는 이전 초안으로 보존합니다.
 
-Python 3 (표준 라이브러리만)과 Chrome 또는 Edge가 필요합니다. 브라우저는 `CHROME_PATH`, `PATH`, 표준 설치 위치 순서로 찾습니다.
+### Rebuild the public snapshot
 
-```bash
-python tools/build.py --label alpha-14
-```
-
-- 검사가 먼저 돌고, 문제가 있으면 PDF를 만들지 않습니다.
-  - 렌더된 모든 글자 20 px(15 pt) 이상
-  - 글자가 슬라이드 밖이나 바닥글로 넘치지 않음
-  - 금지어(내부 도구 이름 등), 절대 경로
-- 결과: `dist/SIREN-KSS2026-<label>-A.pdf`, `-B.pdf`, `-C.pdf` (정확도 판 3종)
-- 발표용 HTML: `build/present-A.html` 등 (GIF 재생). PDF에는 GIF 대표 프레임이 들어갑니다
-- 검사만: `python tools/build.py --lint-only`
-
-### Figma 발표본용 그림
-
-발표는 Figma Slides로 하고, HTML은 내부 검토용입니다. Figma에 올릴 그림은 아래 두 스크립트로 만듭니다 (결과는 `build/figma/`, git 제외).
+Python 3와 Pillow가 필요하며 PDF 생성에는 ReportLab이 추가로 필요합니다.
 
 ```bash
-python tools/figma_assets.py --preview   # 팔레트·글꼴 바꾼 SVG, Mermaid 평탄화, 배치도 PNG, 배선도 재색칠
-curl -o build/vendor/mathjax-tex-svg.js https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js
-python tools/render_tex.py               # figures/src/equations.json의 LaTeX 수식 → SVG
+python tools/publish_slides.py --check
+python tools/publish_slides.py --pdf
 ```
 
-### Mermaid 그림
-
-```bash
-curl -o build/vendor/mermaid.min.js https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js
-python tools/render_mermaid.py
-```
-
-- `figures/src/*.mmd`를 headless Chrome에서 렌더해 `figures/*.svg`로 저장합니다. 글자는 SVG text(Figma 편집 가능)입니다.
-- 첫 줄 `%% px=18`이 글자 크기입니다. 구조도(F13)만 18 px(13.5 pt)를 허용하고 슬라이드에 `data-min-px="18"`로 표시합니다.
-
-## 규칙
-
-- 모든 글자 15 pt 이상 (본문, 그림). 글꼴 Cambria. 예외: 참고문헌 줄(14 px), 구조도와 그 설명(18 px)
-- 래스터 이미지(모델 GIF, 배선도) 속 글자는 자동 검사 대상이 아님
-- 모든 글은 개조식
-- 강조: `<b class="k">` 핵심(파랑), `<b class="ok">` 달성(초록), `<b class="todo">` 미완(주황). SVG는 `font-weight="700"`과 `fill` 인라인 속성
-- 내부 도구 이름은 쓰지 않고, SIREN을 만든 방법으로 설명
-- 모든 수치는 `docs/numbers.md`에 출처와 함께 적은 뒤 슬라이드에 넣음
-- 판 이름: `alpha-N` → `beta-N` → `v1.0`(최종), 판마다 tag
+PDF 결과는 dist/SIREN-KSS2026-slides-20261025.pdf이며 GitHub 릴리스에 첨부합니다. 원고, 발표자 노트, 인쇄 연습본과 임시 빌드 결과는 공개본에 넣지 않습니다.

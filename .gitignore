@@ -22,3 +22,9 @@ desktop.ini
 
 # Office lock files
 ~$*
+
+# Private presentation scripts and print copies
+docs/script-ko*.json
+docs/figma-script-ko-*
+output/
+tmp/

@@ -17,6 +17,6 @@
 <line x1="688.6" x2="688.6" y1="192" y2="200" stroke="#16181D" stroke-width="2"/>
 <text x="688.6" y="230" text-anchor="middle" style="font-family:'Source Serif 4';font-size:28px" fill="#16181D">00:00</text>
 <path d="M380.5,242 L380.5,254 L567.5,254 L567.5,242" fill="none" stroke="#B3202A" stroke-width="3"/>
-<text x="474.0" y="288" text-anchor="middle" style="font-family:'Source Serif 4';font-size:28px;font-weight:700" fill="#B3202A">expert label</text>
+<text x="474.0" y="288" text-anchor="middle" style="font-family:'Source Serif 4';font-size:28px;font-weight:700" fill="#B3202A">anomaly label</text>
 <text x="848" y="288" text-anchor="end" style="font-family:'Source Serif 4';font-size:28px" fill="#16181D">2003-01-12 UTC</text>
 </svg>

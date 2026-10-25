@@ -1,0 +1,54 @@
+{
+  "as_of": "2026-10-24",
+  "design": "bpg-r32e",
+  "target_part": "xc7z030sbg485-1",
+  "bitstream_sha256": "5d5f807148b6a3837273ce909001df48a8bd785dab7d1ba0833863687c4b63de",
+  "routed_checkpoint_sha256": "5cb150fe4228bf5745aa60df8538241ab21e207bbed50fe5fe3b2faeaab79e24",
+  "tool_version": "2020.2",
+  "main_clock_MHz": 150,
+  "engine_clock_MHz": 121.875,
+  "WNS_ns": 0.072,
+  "WHS_ns": 0.035,
+  "routing_errors": 0,
+  "unrouted_nets": 0,
+  "resources": {
+    "LUT": {
+      "used": 60285,
+      "available": 78600,
+      "used_percent": 76.7,
+      "free_percent": 23.3
+    },
+    "FF": {
+      "used": 82077,
+      "available": 157200,
+      "used_percent": 52.21,
+      "free_percent": 47.79
+    },
+    "BRAM36": {
+      "used": 177,
+      "available": 265,
+      "used_percent": 66.79,
+      "free_percent": 33.21
+    },
+    "DSP": {
+      "used": 356,
+      "available": 400,
+      "used_percent": 89.0,
+      "free_percent": 11.0
+    }
+  },
+  "placement": {
+    "sha256": "7933338f1b963fd465ed94f27c46f77b72411df999025b9178f0d4b338c5f526",
+    "sites": 20050,
+    "empty_sites": 57,
+    "cells": 1159,
+    "empty_cells": 2,
+    "grid": [
+      33,
+      42
+    ],
+    "method": "sites.csv from the same session; grid of 2 site columns x 5 tile rows a cell, the majority function's colour, white when half or more of the sites are empty"
+  },
+  "source_routing_sha256": "1438c1ee1fdfa4b8603ebab0059b0875b8e2f5f304c8591f63852c424e46cf96",
+  "scope": "Post-route figures and resource counts of the same design as the selected standalone weekly run. Resource usage is not placement-cell occupancy. No new synthesis, route or hardware run."
+}
