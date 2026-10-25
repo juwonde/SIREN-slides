@@ -1,30 +1,12 @@
-# Build output (PDF, PPTX, PNG renders); attach PDFs to GitHub releases instead
-dist/
-build/
-
-# Dependencies and environments
-node_modules/
-.venv/
-venv/
-__pycache__/
-
-# Local state and secrets
-.env
-.env.*
-*.local.json
-
-# Editor and OS files
-.vscode/
-.idea/
-Thumbs.db
-desktop.ini
-.DS_Store
-
-# Office lock files
-~$*
-
-# Private presentation scripts and print copies
-docs/script-ko*.json
-docs/figma-script-ko-*
-output/
-tmp/
+# Only public slides and their publishing tools are tracked.
+*
+!/.gitignore
+!/README.md
+!/assets/
+!/assets/slides/
+!/assets/slides/[0-9][0-9].png
+!/docs/
+!/docs/slide-index.json
+!/tools/
+!/tools/publish_slides.py
+!/tools/check-repository-policy.ps1

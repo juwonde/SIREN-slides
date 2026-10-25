@@ -1,15 +1,8 @@
-# Onboard AI Payload of PADO-SAT: SIREN
+# SIREN
 
-한국우주과학회 2026 가을 학술대회 발표 자료입니다. PADO-SAT의 온보드 AI 탑재체 SIREN이 수행하는 고에너지 대전입자 위험 탐지, BUS HK 이상 탐지, 과학데이터 압축과 초기 구현 결과를 소개합니다.
+PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
-**2026-10-25 공개본: 본편 20장 + 부록 17장.** 아래에서 전체 슬라이드를 볼 수 있습니다.
-
-- [전체 슬라이드 PDF (37장)](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/download/slides-2026-10-25-r2/SIREN-KSS2026-slides-20261025.pdf)
-- [현재 릴리스](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/tag/slides-2026-10-25-r2)
-- [Figma Slides 원본](https://www.figma.com/slides/TYaGwNEZ2GewJvkSowhTiQ/SIREN)
-- [본편](#main-slides) · [부록](#appendix) · [자료 구성](#source-and-data)
-
-PDF와 슬라이드 이미지는 발표자 노트를 포함하지 않습니다. Figma의 숨김 슬라이드는 이 공개본에서 제외했습니다.
+[PDF](https://github.com/juwonde/SIREN-slides/releases/latest/download/SIREN-slides.pdf) · [Figma](https://www.figma.com/slides/TYaGwNEZ2GewJvkSowhTiQ/SIREN) · [본편](#main-slides) · [부록](#appendix)
 
 ## Main slides
 
@@ -162,29 +155,3 @@ PDF와 슬라이드 이미지는 발표자 노트를 포함하지 않습니다. 
 ### 37. Abbreviations
 
 ![Slide 37: Abbreviations](assets/slides/37.png)
-
-## Source and data
-
-| 경로 | 내용 |
-|---|---|
-| [docs/slide-index.json](docs/slide-index.json) | 공개 순서, 제목, 이미지 크기와 SHA-256 |
-| [assets/slides/](assets/slides/) | README와 PDF에 사용한 전체 슬라이드 이미지 |
-| [docs/numbers.md](docs/numbers.md) | 발표 수치와 근거. 상단 갱신 기록을 우선 |
-| [docs/power-selection-20261024.md](docs/power-selection-20261024.md) | 대표 전력·운용 시험의 선택과 측정 범위 |
-| [docs/mode-integration-appendix-20261024.md](docs/mode-integration-appendix-20261024.md) | 부록 운용모드 통합 검토의 조건과 한계 |
-| [assets/](assets/) · [figures/](figures/) | 관측 자료 기반 그림, 모델 시각화, 축약 측정 결과 |
-| [tools/](tools/) | 그림 생성과 공개본 검사 도구 |
-| [docs/legacy-html-workflow.md](docs/legacy-html-workflow.md) | 이전 HTML 초안의 생성 방법과 이력 |
-
-현행 발표본은 위 Figma 스냅샷과 PDF입니다. 기존 slides/deck.html과 과거 릴리스는 이전 초안으로 보존합니다.
-
-### Rebuild the public snapshot
-
-Python 3와 Pillow가 필요하며 PDF 생성에는 ReportLab이 추가로 필요합니다.
-
-```bash
-python tools/publish_slides.py --check
-python tools/publish_slides.py --pdf
-```
-
-PDF 결과는 dist/SIREN-KSS2026-slides-20261025.pdf이며 GitHub 릴리스에 첨부합니다. 원고, 발표자 노트, 인쇄 연습본과 임시 빌드 결과는 공개본에 넣지 않습니다.

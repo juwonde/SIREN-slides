@@ -1,7 +1,0 @@
-[
-  {"name": "eq-cr", "px": 36, "tex": "\\mathrm{CR}=\\dfrac{\\text{original size}}{\\text{compressed size}}"},
-  {"name": "eq-residual", "px": 36, "tex": "e_t = x_t-\\hat{x}_t"},
-  {"name": "eq-gru", "px": 36, "tex": "h_t=(1-z_t)\\odot h_{t-1}+z_t\\odot\\tilde{h}_t"},
-  {"name": "eq-quant", "px": 36, "tex": "x\\approx s\\,q,\\qquad q\\in\\{-2^{b-1},\\,\\dots,\\,2^{b-1}-1\\}"},
-  {"name": "eq-gops", "px": 38, "tex": "\\mathrm{GOPS}=\\dfrac{2\\,N_{\\mathrm{MAC}}}{t_{\\mathrm{inf}}}\\times 10^{-9}"}
-]
