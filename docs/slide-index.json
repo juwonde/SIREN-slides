@@ -2,7 +2,7 @@
   "as_of": "2026-10-25",
   "source": "https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1",
   "main_slides": 20,
-  "appendix_slides": 17,
+  "appendix_slides": 18,
   "speaker_notes_included": false,
   "hidden_slides_included": false,
   "slides": [
@@ -13,9 +13,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 278185,
+      "bytes": 279918,
       "preview": "assets/slides/01.png",
-      "sha256": "2a0004c7ee97681e95ccfc81fd8b04cd407c209cf7cbc152ba03b93abcfd531f"
+      "sha256": "adc41bdde31896d77bf25c0a76ac07843f096d27b2dd77abbe1acbb3b8231003"
     },
     {
       "id": "5:18",
@@ -57,9 +57,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 257458,
+      "bytes": 251380,
       "preview": "assets/slides/05.png",
-      "sha256": "0b939cc647a0d2ff7346181fb8704e81e46b1c548a8aa5c69b4418937dcb6911"
+      "sha256": "9160247f8cff7e19d3c655961abf90f0f888b1ed0acc5955e8131fe532bf48d6"
     },
     {
       "id": "365:6",
@@ -79,9 +79,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 178560,
+      "bytes": 174499,
       "preview": "assets/slides/07.png",
-      "sha256": "0b18b85af708cd9d9980fa45bf1c988a13a398370a0ce9c15be0f3e5f6a8699d"
+      "sha256": "e8f158ef2090f309c48d61aa83db95048625d301cf36f2068a8b291fdce82e74"
     },
     {
       "id": "9:126",
@@ -112,9 +112,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 349301,
+      "bytes": 342614,
       "preview": "assets/slides/10.png",
-      "sha256": "0e12402eddb586374c3242e5c5ca384b0c632b318e076e8676e532d5db964115"
+      "sha256": "7feb1a6919fd63f3684b160568e7c368887610e39d5519f4150bfc4922fe9835"
     },
     {
       "id": "7:65",
@@ -134,9 +134,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 270249,
+      "bytes": 265585,
       "preview": "assets/slides/12.png",
-      "sha256": "2a00af53ac3691430a083065ca347b8ee3b2c8ce3ed16984a320454dcfbd79d6"
+      "sha256": "9a1572ce5deca52665d27f4b3f180989129b678b2ee1b21ed57f8e4b7bd96921"
     },
     {
       "id": "5:29",
@@ -156,9 +156,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 308068,
+      "bytes": 305479,
       "preview": "assets/slides/14.png",
-      "sha256": "8267af258e9f9caff0743f4e4214e6c1b74c028d05821d872b925af587454227"
+      "sha256": "2eaf6b398bd8ed78c056a37377e78c026fc4e86d76ee217f82b4d2e82b4ece00"
     },
     {
       "id": "365:518",
@@ -172,37 +172,37 @@
       "sha256": "fb0bc823d037befbed1756b7e9719cd51e27be92ea65e27760d79ce327dafeb7"
     },
     {
-      "id": "13:100",
-      "n": 16,
-      "title": "Performance trade-off per model",
-      "section": "main",
-      "width": 1920,
-      "height": 1080,
-      "bytes": 235311,
-      "preview": "assets/slides/16.png",
-      "sha256": "d632745a3a677e545f7786e0431302142043745f19364486a999f7e9c1b21ba9"
-    },
-    {
       "id": "245:4",
-      "n": 17,
+      "n": 16,
       "title": "Download and weekly NN tests",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 265691,
-      "preview": "assets/slides/17.png",
-      "sha256": "c68b635614890293294f1758f61bbc0369d6fdbfc36b6c2eb74358366157164c"
+      "bytes": 265933,
+      "preview": "assets/slides/16.png",
+      "sha256": "dc69ceed675ae9dea296a362440f7cbdc2a172b25826820c8fd55072031cea0b"
     },
     {
       "id": "13:179",
-      "n": 18,
-      "title": "Future Works and Summary",
+      "n": 17,
+      "title": "Future Work and Summary",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 133338,
+      "bytes": 130480,
+      "preview": "assets/slides/17.png",
+      "sha256": "846666af58d5d4a537735414890db5f40e4f699f1043cd1faeabf189e896dc55"
+    },
+    {
+      "id": "454:8",
+      "n": 18,
+      "title": "Future Work",
+      "section": "main",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 187082,
       "preview": "assets/slides/18.png",
-      "sha256": "1c7ff41a64fe60dfb0934705c8c85dbca2f48d24169ae5435e72290a3b8252e8"
+      "sha256": "9dfac6a2f239b4d7a31a546377d295c7269d06d1f2c8350351af38ae097e8e5b"
     },
     {
       "id": "14:33",
@@ -211,9 +211,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 219784,
+      "bytes": 205668,
       "preview": "assets/slides/19.png",
-      "sha256": "3f971c4ec7c874521b0aaeb9c0a130f4c590c13ca0dca6c38a869a55a6532703"
+      "sha256": "d6e11949c7712ca220a3fb88188f84be9372995cf59b21be29b87797a1560f3c"
     },
     {
       "id": "14:101",
@@ -222,9 +222,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 234179,
+      "bytes": 238849,
       "preview": "assets/slides/20.png",
-      "sha256": "00a96b488bc153148f71774d5d9d9a299d43f7ab08b0883595f4d5d8ec23469a"
+      "sha256": "ae9d35468f77b6409fd03f7244370cb19c2c79c3643bdd88019850173457868c"
     },
     {
       "id": "349:24",
@@ -326,92 +326,103 @@
       "sha256": "7b7462aacf5b9e764955a36dc64efd11fe38f64f4a29aec526db95bacf05173f"
     },
     {
-      "id": "411:10",
+      "id": "13:100",
       "n": 30,
+      "title": "Performance trade-off per model",
+      "section": "appendix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 235826,
+      "preview": "assets/slides/30.png",
+      "sha256": "a7fd997ff18a7f4241617de3da6ce3084b81ef2efae0b4fb7200db9f14b5d2ae"
+    },
+    {
+      "id": "411:10",
+      "n": 31,
       "title": "One orbit, one operating window",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 277863,
-      "preview": "assets/slides/30.png",
-      "sha256": "6c452f6ed1c0500ff6754c11f9d6e5c486fa89c73041820161a5d5f9f0c71db8"
+      "bytes": 277588,
+      "preview": "assets/slides/31.png",
+      "sha256": "304712e3dfbb29a58b9f91a9e4f9bb9cd96cddc4970495b87834fa8cfad51c5e"
     },
     {
       "id": "411:462",
-      "n": 31,
+      "n": 32,
       "title": "AI inference, result transfer and shutdown",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 315842,
-      "preview": "assets/slides/31.png",
-      "sha256": "4e1d744f16f2c5a9ebed2c7078bbe04684d7457fc2ec9ba5a7ce5ad9d3753c86"
+      "bytes": 316111,
+      "preview": "assets/slides/32.png",
+      "sha256": "75415b2abe67062f8cbf830ba671437c7bc44b8db6f00aa40b703f63fec12dc6"
     },
     {
       "id": "411:931",
-      "n": 32,
+      "n": 33,
       "title": "Weekly batch versus orbit integration",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 238923,
-      "preview": "assets/slides/32.png",
-      "sha256": "653e8bd0a96b53daaaf6ceec32abfbe2b28da43eff0150debb080dde9f514937"
+      "bytes": 239052,
+      "preview": "assets/slides/33.png",
+      "sha256": "c6445cf4ec31cd02e486fb85459805b888bade8d9778d2d062e774da99608b68"
     },
     {
       "id": "13:124",
-      "n": 33,
+      "n": 34,
       "title": "Fault management as implemented",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 248218,
-      "preview": "assets/slides/33.png",
-      "sha256": "300a8da3f06ab2cde694ac9549e4a9b701664913742a33c21599292f13eabf8c"
+      "bytes": 247990,
+      "preview": "assets/slides/34.png",
+      "sha256": "78cb9342dbda6522f4dda2215c8aa39a9c44b8e89277f07a59b7c4a1d7c874b5"
     },
     {
       "id": "54:4",
-      "n": 34,
+      "n": 35,
       "title": "Fault management items (1/2): hardware",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 271285,
-      "preview": "assets/slides/34.png",
-      "sha256": "228cf8b90f35585e5e4b338dc2d276ab83d6fac6f20b4d96783515426ab7d9c8"
+      "bytes": 271279,
+      "preview": "assets/slides/35.png",
+      "sha256": "e781b1d1581451d31157c6f66019b07b7f82c3f74a4d025e499f5998c964c74b"
     },
     {
       "id": "54:82",
-      "n": 35,
+      "n": 36,
       "title": "Fault management items (2/2): service and system",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 244071,
-      "preview": "assets/slides/35.png",
-      "sha256": "59895410d825e95ad7730b53c68d64fdb8f0861bc112e6bf5e5d3f92cce27e40"
+      "bytes": 244259,
+      "preview": "assets/slides/36.png",
+      "sha256": "4f6eefa2828c0170b72c27bc1bd6edb28fb769a585ea31f7406d6d4234b72fca"
     },
     {
       "id": "14:2",
-      "n": 36,
+      "n": 37,
       "title": "Digital Twin data and retraining",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 245199,
-      "preview": "assets/slides/36.png",
-      "sha256": "76911dae1263db2c3df2fa3719681a6872b1ea7454d281e4935d88856896128d"
+      "bytes": 244808,
+      "preview": "assets/slides/37.png",
+      "sha256": "bc08830d3a224d3c38503feb67570e2d294de8c9d6609a7adaf78e9c8ec5bc1d"
     },
     {
       "id": "14:291",
-      "n": 37,
+      "n": 38,
       "title": "Abbreviations",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 190998,
-      "preview": "assets/slides/37.png",
-      "sha256": "0fdcee8107e63e59a72ede3f93e977a9c981d825d2dd663bd91668d8c4df968f"
+      "bytes": 191521,
+      "preview": "assets/slides/38.png",
+      "sha256": "166659384a1e4460dc68815ef8f3f10c94d035bf85c76177aa40ce150f72c46c"
     }
   ]
 }
