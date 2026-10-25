@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / "docs" / "slide-index.json"
-TAG = "slides-2026-10-25"
+TAG = "slides-2026-10-25-r2"
 PDF_NAME = "SIREN-KSS2026-slides-20261025.pdf"
 REPO = "https://github.com/juwonde/SIREN_2026_Fall_conf"
 

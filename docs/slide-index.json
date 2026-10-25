@@ -112,9 +112,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 349211,
+      "bytes": 349301,
       "preview": "assets/slides/10.png",
-      "sha256": "cb735529479eee680656d01554a04c708c5765eb6188b42ba165fd263a2119bc"
+      "sha256": "0e12402eddb586374c3242e5c5ca384b0c632b318e076e8676e532d5db964115"
     },
     {
       "id": "7:65",
@@ -145,9 +145,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 235784,
+      "bytes": 238900,
       "preview": "assets/slides/13.png",
-      "sha256": "620e3c88ceed9e984e2857a1f62f20ec80010dd162a48796da73c7e094e5c9e8"
+      "sha256": "4f69344679086ca14130f1ee8a6cba2ec817e7988ea15745660a6527f4220354"
     },
     {
       "id": "10:159",
@@ -156,9 +156,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 307760,
+      "bytes": 308068,
       "preview": "assets/slides/14.png",
-      "sha256": "a5d765853d43472b0fd39eada776a0dfdd60f1af31c45203404df754c6c0825f"
+      "sha256": "8267af258e9f9caff0743f4e4214e6c1b74c028d05821d872b925af587454227"
     },
     {
       "id": "365:518",
@@ -167,9 +167,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 225324,
+      "bytes": 224002,
       "preview": "assets/slides/15.png",
-      "sha256": "76f5df75a23015e7bf4529a3b0b523f4ef3dfc30458cc091bf7d75f268d467d1"
+      "sha256": "fb0bc823d037befbed1756b7e9719cd51e27be92ea65e27760d79ce327dafeb7"
     },
     {
       "id": "13:100",
@@ -178,9 +178,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 236159,
+      "bytes": 235311,
       "preview": "assets/slides/16.png",
-      "sha256": "b4182cf38a60274ebe2cf76d03df71169e8e5d8b5821d73d0df3770c6b84621b"
+      "sha256": "d632745a3a677e545f7786e0431302142043745f19364486a999f7e9c1b21ba9"
     },
     {
       "id": "245:4",
@@ -211,9 +211,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 236603,
+      "bytes": 219784,
       "preview": "assets/slides/19.png",
-      "sha256": "84a79c01ad6bebe14a2da854ac72c2c064a79de13e6eab99c7a32abf7cd9baba"
+      "sha256": "3f971c4ec7c874521b0aaeb9c0a130f4c590c13ca0dca6c38a869a55a6532703"
     },
     {
       "id": "14:101",

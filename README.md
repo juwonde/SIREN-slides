@@ -4,8 +4,8 @@
 
 **2026-10-25 공개본: 본편 20장 + 부록 17장.** 아래에서 전체 슬라이드를 볼 수 있습니다.
 
-- [전체 슬라이드 PDF (37장)](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/download/slides-2026-10-25/SIREN-KSS2026-slides-20261025.pdf)
-- [현재 릴리스](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/tag/slides-2026-10-25)
+- [전체 슬라이드 PDF (37장)](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/download/slides-2026-10-25-r2/SIREN-KSS2026-slides-20261025.pdf)
+- [현재 릴리스](https://github.com/juwonde/SIREN_2026_Fall_conf/releases/tag/slides-2026-10-25-r2)
 - [Figma Slides 원본](https://www.figma.com/slides/TYaGwNEZ2GewJvkSowhTiQ/SIREN)
 - [본편](#main-slides) · [부록](#appendix) · [자료 구성](#source-and-data)
 
