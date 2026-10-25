@@ -1,0 +1,12 @@
+# Only public slides and their publishing tools are tracked.
+*
+!/.gitignore
+!/README.md
+!/assets/
+!/assets/slides/
+!/assets/slides/[0-9][0-9].png
+!/docs/
+!/docs/slide-index.json
+!/tools/
+!/tools/publish_slides.py
+!/tools/check-repository-policy.ps1
