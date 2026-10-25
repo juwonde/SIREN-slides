@@ -66,17 +66,17 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png)
 
-### 16. Performance trade-off per model
+### 16. Download and weekly NN tests
 
-![Slide 16: Performance trade-off per model](assets/slides/16.png)
+![Slide 16: Download and weekly NN tests](assets/slides/16.png)
 
-### 17. Download and weekly NN tests
+### 17. Future Work and Summary
 
-![Slide 17: Download and weekly NN tests](assets/slides/17.png)
+![Slide 17: Future Work and Summary](assets/slides/17.png)
 
-### 18. Future Works and Summary
+### 18. Future Work
 
-![Slide 18: Future Works and Summary](assets/slides/18.png)
+![Slide 18: Future Work](assets/slides/18.png)
 
 ### 19. Summary
 
@@ -124,34 +124,38 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ![Slide 29: Placement, Routing](assets/slides/29.png)
 
-### 30. One orbit, one operating window
+### 30. Performance trade-off per model
 
-![Slide 30: One orbit, one operating window](assets/slides/30.png)
+![Slide 30: Performance trade-off per model](assets/slides/30.png)
 
-### 31. AI inference, result transfer and shutdown
+### 31. One orbit, one operating window
 
-![Slide 31: AI inference, result transfer and shutdown](assets/slides/31.png)
+![Slide 31: One orbit, one operating window](assets/slides/31.png)
 
-### 32. Weekly batch versus orbit integration
+### 32. AI inference, result transfer and shutdown
 
-![Slide 32: Weekly batch versus orbit integration](assets/slides/32.png)
+![Slide 32: AI inference, result transfer and shutdown](assets/slides/32.png)
 
-### 33. Fault management as implemented
+### 33. Weekly batch versus orbit integration
 
-![Slide 33: Fault management as implemented](assets/slides/33.png)
+![Slide 33: Weekly batch versus orbit integration](assets/slides/33.png)
 
-### 34. Fault management items (1/2): hardware
+### 34. Fault management as implemented
 
-![Slide 34: Fault management items (1/2): hardware](assets/slides/34.png)
+![Slide 34: Fault management as implemented](assets/slides/34.png)
 
-### 35. Fault management items (2/2): service and system
+### 35. Fault management items (1/2): hardware
 
-![Slide 35: Fault management items (2/2): service and system](assets/slides/35.png)
+![Slide 35: Fault management items (1/2): hardware](assets/slides/35.png)
 
-### 36. Digital Twin data and retraining
+### 36. Fault management items (2/2): service and system
 
-![Slide 36: Digital Twin data and retraining](assets/slides/36.png)
+![Slide 36: Fault management items (2/2): service and system](assets/slides/36.png)
 
-### 37. Abbreviations
+### 37. Digital Twin data and retraining
 
-![Slide 37: Abbreviations](assets/slides/37.png)
+![Slide 37: Digital Twin data and retraining](assets/slides/37.png)
+
+### 38. Abbreviations
+
+![Slide 38: Abbreviations](assets/slides/38.png)
