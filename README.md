@@ -64,11 +64,11 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 15. Three AIs on one FPGA SoC
 
-![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png?v=fb0bc823d037)
+![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png?v=09f90a6d395f)
 
 ### 16. Download and weekly NN tests
 
-![Slide 16: Download and weekly NN tests](assets/slides/16.png?v=dc69ceed675a)
+![Slide 16: Download and weekly NN tests](assets/slides/16.png?v=6c7acb1bb1d1)
 
 ### 17. Future Work and Summary
 
@@ -80,7 +80,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 19. Summary
 
-![Slide 19: Summary](assets/slides/19.png?v=d6e11949c771)
+![Slide 19: Summary](assets/slides/19.png?v=233e1e5e69c4)
 
 ### 20. Thank you
 
