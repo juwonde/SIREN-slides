@@ -54,7 +54,7 @@ def readme(data):
         "# SIREN", "",
         "PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.", "",
         f"[PDF]({REPO}/releases/latest/download/{PDF_NAME}) · "
-        f"[Figma]({data['source']}) · [본편](#main-slides) · [부록](#appendix)", "",
+        f"[Figma]({data['source']}) · [코드](research) · [본편](#main-slides) · [부록](#appendix)", "",
         "## Main slides", "",
     ]
     for slide in data["slides"]:
