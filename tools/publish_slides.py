@@ -61,8 +61,9 @@ def readme(data):
         if slide["n"] == data["main_slides"] + 1:
             lines += ["## Appendix", ""]
         n, title = slide["n"], slide["title"]
+        version = slide["sha256"][:12]
         lines += [f"### {n:02d}. {title}", "",
-                  f"![Slide {n:02d}: {title}]({slide['preview']})", ""]
+                  f"![Slide {n:02d}: {title}]({slide['preview']}?v={version})", ""]
     return "\n".join(lines)
 
 def pdf(data):
