@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-25",
+  "as_of": "2026-10-26",
   "source": "https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1",
   "main_slides": 20,
   "appendix_slides": 18,
@@ -13,9 +13,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 279922,
+      "bytes": 375777,
       "preview": "assets/slides/01.png",
-      "sha256": "6e8f21be2cc4dc82984499b667ae5d46df7c4069cd175e2922360742ae6bc794"
+      "sha256": "350e665cefc2c26f73b9b58e59266adc3f68f9ed9c933c38114963b53fa63444"
     },
     {
       "id": "5:18",
@@ -79,20 +79,20 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 174499,
+      "bytes": 182470,
       "preview": "assets/slides/07.png",
-      "sha256": "e8f158ef2090f309c48d61aa83db95048625d301cf36f2068a8b291fdce82e74"
+      "sha256": "b1a138ed8838f7419d657c31b08dc4e1ae12d445829762439fcab0202a5d52b1"
     },
     {
       "id": "9:126",
       "n": 8,
-      "title": "Payload design",
+      "title": "Development & Validation of AI",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 119563,
+      "bytes": 125999,
       "preview": "assets/slides/08.png",
-      "sha256": "4519ef42e33dbceefcb8c612d209b17ae4ad061d1ca8aba8d9315c2a7b9c2489"
+      "sha256": "04ce7c0f71f19586f4169b4328fa2d66a68a250f9237b9b43c8f52448d8ac23a"
     },
     {
       "id": "7:13",
@@ -101,9 +101,9 @@
       "section": "main",
       "width": 1440,
       "height": 810,
-      "bytes": 546774,
+      "bytes": 614108,
       "preview": "assets/slides/09.png",
-      "sha256": "340ce3ae5e0efde54a84c28204e3693301730c38091e172d2ee0a9f22fed1149"
+      "sha256": "f8b2f92613ac54c7f30edccdd416a9c6d98e21d5983d358be86b4df0d6d9ecfa"
     },
     {
       "id": "10:2",
@@ -174,13 +174,13 @@
     {
       "id": "245:4",
       "n": 16,
-      "title": "Download and weekly NN tests",
+      "title": "Implementation & Performance",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 265941,
+      "bytes": 265213,
       "preview": "assets/slides/16.png",
-      "sha256": "6c7acb1bb1d187aae5bd81fe794b880c456311e85885764b17b15bc72f17e327"
+      "sha256": "328c78554aead83814c7744ad5d79cfa471b3ee8ef75265d77f874d364b50bf6"
     },
     {
       "id": "13:179",
@@ -200,9 +200,9 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 187082,
+      "bytes": 187424,
       "preview": "assets/slides/18.png",
-      "sha256": "9dfac6a2f239b4d7a31a546377d295c7269d06d1f2c8350351af38ae097e8e5b"
+      "sha256": "590b0f5752187b984c9d23bc983cd98e8b11afed550d2f2630823475d84371ae"
     },
     {
       "id": "14:33",
