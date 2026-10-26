@@ -8,7 +8,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 01. Onboard AI Payload of PADO-SAT: SIREN
 
-![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=6e8f21be2cc4)
+![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=350e665cefc2)
 
 ### 02. Mission overview
 
@@ -32,15 +32,15 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 07. SIREN-PADO SAT Interfaces
 
-![Slide 07: SIREN-PADO SAT Interfaces](assets/slides/07.png?v=e8f158ef2090)
+![Slide 07: SIREN-PADO SAT Interfaces](assets/slides/07.png?v=b1a138ed8838)
 
-### 08. Payload design
+### 08. Development & Validation of AI
 
-![Slide 08: Payload design](assets/slides/08.png?v=4519ef42e33d)
+![Slide 08: Development & Validation of AI](assets/slides/08.png?v=04ce7c0f71f1)
 
 ### 09. Effects of High Energy Charged Particles
 
-![Slide 09: Effects of High Energy Charged Particles](assets/slides/09.png?v=340ce3ae5e0e)
+![Slide 09: Effects of High Energy Charged Particles](assets/slides/09.png?v=f8b2f92613ac)
 
 ### 10. AI #1: Particle hazard detection
 
@@ -66,9 +66,9 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png?v=09f90a6d395f)
 
-### 16. Download and weekly NN tests
+### 16. Implementation & Performance
 
-![Slide 16: Download and weekly NN tests](assets/slides/16.png?v=6c7acb1bb1d1)
+![Slide 16: Implementation & Performance](assets/slides/16.png?v=328c78554aea)
 
 ### 17. Future Work and Summary
 
@@ -76,7 +76,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 18. Future Work
 
-![Slide 18: Future Work](assets/slides/18.png?v=9dfac6a2f239)
+![Slide 18: Future Work](assets/slides/18.png?v=590b0f575218)
 
 ### 19. Summary
 
