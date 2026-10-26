@@ -16,7 +16,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 03. PADO-SAT: mission overview
 
-![Slide 03: PADO-SAT: mission overview](assets/slides/03.png?v=72b4337052f0)
+![Slide 03: PADO-SAT: mission overview](assets/slides/03.png?v=af4f61f14f05)
 
 ### 04. Goal of SIREN
 
@@ -24,7 +24,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 05. System budget from SIREN’s perspective
 
-![Slide 05: System budget from SIREN’s perspective](assets/slides/05.png?v=9160247f8cff)
+![Slide 05: System budget from SIREN’s perspective](assets/slides/05.png?v=5d90f12e81ca)
 
 ### 06. FPGA COTS platform: Z7000-P3
 
@@ -44,7 +44,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 10. AI #1: Particle hazard detection
 
-![Slide 10: AI #1: Particle hazard detection](assets/slides/10.png?v=7feb1a6919fd)
+![Slide 10: AI #1: Particle hazard detection](assets/slides/10.png?v=62d9df59404e)
 
 ### 11. Anomalies in Satellite Housekeeping Data
 
@@ -52,7 +52,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 12. AI #2: HK anomaly detection
 
-![Slide 12: AI #2: HK anomaly detection](assets/slides/12.png?v=9a1572ce5dec)
+![Slide 12: AI #2: HK anomaly detection](assets/slides/12.png?v=d20f1d39b221)
 
 ### 13. Satellite Downlink Constraints
 
@@ -68,7 +68,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 16. Implementation & Performance
 
-![Slide 16: Implementation & Performance](assets/slides/16.png?v=328c78554aea)
+![Slide 16: Implementation & Performance](assets/slides/16.png?v=68de86c51850)
 
 ### 17. Future Work and Summary
 
@@ -76,7 +76,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 18. Future Work
 
-![Slide 18: Future Work](assets/slides/18.png?v=590b0f575218)
+![Slide 18: Future Work](assets/slides/18.png?v=dc8d08227f1a)
 
 ### 19. Summary
 
