@@ -8,154 +8,158 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 01. Onboard AI Payload of PADO-SAT: SIREN
 
-![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=350e665cefc2)
+![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=c1bc85fadaa1)
 
-### 02. Mission overview
+### 02. Outline
 
-![Slide 02: Mission overview](assets/slides/02.png?v=1c6b11f8d6b3)
+![Slide 02: Outline](assets/slides/02.png?v=6b064489d2dd)
 
-### 03. PADO-SAT: mission overview
+### 03. Mission overview
 
-![Slide 03: PADO-SAT: mission overview](assets/slides/03.png?v=af4f61f14f05)
+![Slide 03: Mission overview](assets/slides/03.png?v=ba4dbe16127b)
 
-### 04. Goal of SIREN
+### 04. Mission overview of PADO-SAT
 
-![Slide 04: Goal of SIREN](assets/slides/04.png?v=9b21688abc86)
+![Slide 04: Mission overview of PADO-SAT](assets/slides/04.png?v=e2824b004f75)
 
-### 05. System budget from SIREN’s perspective
+### 05. Goal of SIREN
 
-![Slide 05: System budget from SIREN’s perspective](assets/slides/05.png?v=5d90f12e81ca)
+![Slide 05: Goal of SIREN](assets/slides/05.png?v=42fbc87a6846)
 
-### 06. FPGA COTS platform: Z7000-P3
+### 06. System budget from SIREN’s perspective
 
-![Slide 06: FPGA COTS platform: Z7000-P3](assets/slides/06.png?v=7bc9981791e7)
+![Slide 06: System budget from SIREN’s perspective](assets/slides/06.png?v=5cc75a9995ac)
 
-### 07. SIREN-PADO SAT Interfaces
+### 07. FPGA COTS platform: Z7000-P3
 
-![Slide 07: SIREN-PADO SAT Interfaces](assets/slides/07.png?v=b1a138ed8838)
+![Slide 07: FPGA COTS platform: Z7000-P3](assets/slides/07.png?v=e5d4694ef58e)
 
-### 08. Development & Validation of AI
+### 08. SIREN-PADO SAT Interfaces
 
-![Slide 08: Development & Validation of AI](assets/slides/08.png?v=04ce7c0f71f1)
+![Slide 08: SIREN-PADO SAT Interfaces](assets/slides/08.png?v=63248f135bd6)
 
-### 09. Effects of High Energy Charged Particles
+### 09. Development & Validation of AI
 
-![Slide 09: Effects of High Energy Charged Particles](assets/slides/09.png?v=f8b2f92613ac)
+![Slide 09: Development & Validation of AI](assets/slides/09.png?v=4d554c3ee654)
 
-### 10. AI #1: Particle hazard detection
+### 10. Effects of High Energy Charged Particles
 
-![Slide 10: AI #1: Particle hazard detection](assets/slides/10.png?v=62d9df59404e)
+![Slide 10: Effects of High Energy Charged Particles](assets/slides/10.png?v=3c4cc8206689)
 
-### 11. Anomalies in Satellite Housekeeping Data
+### 11. AI #1: Particle hazard detection
 
-![Slide 11: Anomalies in Satellite Housekeeping Data](assets/slides/11.png?v=516dcc742d79)
+![Slide 11: AI #1: Particle hazard detection](assets/slides/11.png?v=318fb508341f)
 
-### 12. AI #2: HK anomaly detection
+### 12. Anomalies in Satellite Housekeeping Data
 
-![Slide 12: AI #2: HK anomaly detection](assets/slides/12.png?v=d20f1d39b221)
+![Slide 12: Anomalies in Satellite Housekeeping Data](assets/slides/12.png?v=84ae84a95a4c)
 
-### 13. Satellite Downlink Constraints
+### 13. AI #2: HK anomaly detection
 
-![Slide 13: Satellite Downlink Constraints](assets/slides/13.png?v=4f6934467908)
+![Slide 13: AI #2: HK anomaly detection](assets/slides/13.png?v=06f278125a1e)
 
-### 14. AI #3: Science data compression
+### 14. Satellite Downlink Constraints
 
-![Slide 14: AI #3: Science data compression](assets/slides/14.png?v=2eaf6b398bd8)
+![Slide 14: Satellite Downlink Constraints](assets/slides/14.png?v=0f1c523742f8)
 
-### 15. Three AIs on one FPGA SoC
+### 15. AI #3: Science data compression
 
-![Slide 15: Three AIs on one FPGA SoC](assets/slides/15.png?v=09f90a6d395f)
+![Slide 15: AI #3: Science data compression](assets/slides/15.png?v=0e5ad5ebd062)
 
-### 16. Implementation & Performance
+### 16. Three AIs on one FPGA SoC
 
-![Slide 16: Implementation & Performance](assets/slides/16.png?v=68de86c51850)
+![Slide 16: Three AIs on one FPGA SoC](assets/slides/16.png?v=cc6407d4f326)
 
-### 17. Future Work and Summary
+### 17. FPGA Placement and Routing
 
-![Slide 17: Future Work and Summary](assets/slides/17.png?v=846666af58d5)
+![Slide 17: FPGA Placement and Routing](assets/slides/17.png?v=7b9c866be133)
 
-### 18. Future Work
+### 18. Implementation & Performance
 
-![Slide 18: Future Work](assets/slides/18.png?v=dc8d08227f1a)
+![Slide 18: Implementation & Performance](assets/slides/18.png?v=8cd09d229c00)
 
-### 19. Summary
+### 19. Future Work and Summary
 
-![Slide 19: Summary](assets/slides/19.png?v=233e1e5e69c4)
+![Slide 19: Future Work and Summary](assets/slides/19.png?v=98198e576bba)
 
-### 20. Thank you
+### 20. Future Work
 
-![Slide 20: Thank you](assets/slides/20.png?v=ae9d35468f77)
+![Slide 20: Future Work](assets/slides/20.png?v=c11c85129f2f)
+
+### 21. Summary
+
+![Slide 21: Summary](assets/slides/21.png?v=6d23f2465319)
+
+### 22. Thank you
+
+![Slide 22: Thank you](assets/slides/22.png?v=eebdf1ca336a)
 
 ## Appendix
 
-### 21. Appendix
+### 23. Appendix
 
-![Slide 21: Appendix](assets/slides/21.png?v=72b78fa0d2ec)
+![Slide 23: Appendix](assets/slides/23.png?v=0384b5b32722)
 
-### 22. Abstract
+### 24. Abstract
 
-![Slide 22: Abstract](assets/slides/22.png?v=73a58fa6c444)
+![Slide 24: Abstract](assets/slides/24.png?v=f7ba14f41bca)
 
-### 23. Onboard AI in Previous Missions
+### 25. Onboard AI in Previous Missions
 
-![Slide 23: Onboard AI in Previous Missions](assets/slides/23.png?v=11604f545746)
+![Slide 25: Onboard AI in Previous Missions](assets/slides/25.png?v=7a00910655ad)
 
-### 24. AI Networks in SIREN: ModernTCN and GRU
+### 26. AI Networks in SIREN: ModernTCN and GRU
 
-![Slide 24: AI Networks in SIREN: ModernTCN and GRU](assets/slides/24.png?v=f9731feb5bc7)
+![Slide 26: AI Networks in SIREN: ModernTCN and GRU](assets/slides/26.png?v=b10620f2282a)
 
-### 25. How SIREN is built
+### 27. How SIREN is built
 
-![Slide 25: How SIREN is built](assets/slides/25.png?v=39e542ec7a57)
+![Slide 27: How SIREN is built](assets/slides/27.png?v=f8ac22c6e723)
 
-### 26. Three models on the FPGA
+### 28. Three models on the FPGA
 
-![Slide 26: Three models on the FPGA](assets/slides/26.png?v=ab93a3581fc0)
+![Slide 28: Three models on the FPGA](assets/slides/28.png?v=a686dd3c2e69)
 
-### 27. How is correctness verified?
+### 29. How is correctness verified?
 
-![Slide 27: How is correctness verified?](assets/slides/27.png?v=ed45a480f969)
+![Slide 29: How is correctness verified?](assets/slides/29.png?v=37b3df5c610a)
 
-### 28. Resources, timing and weight update
+### 30. Resources, timing and weight update
 
-![Slide 28: Resources, timing and weight update](assets/slides/28.png?v=015c3f29a948)
+![Slide 30: Resources, timing and weight update](assets/slides/30.png?v=44500a57b693)
 
-### 29. Placement, Routing
+### 31. Performance trade-off per model
 
-![Slide 29: Placement, Routing](assets/slides/29.png?v=7b7462aacf5b)
+![Slide 31: Performance trade-off per model](assets/slides/31.png?v=da8990401cf2)
 
-### 30. Performance trade-off per model
+### 32. Two modes versus one orbit mode
 
-![Slide 30: Performance trade-off per model](assets/slides/30.png?v=a7fd997ff18a)
+![Slide 32: Two modes versus one orbit mode](assets/slides/32.png?v=b8fd8678e995)
 
-### 31. One orbit, one operating window
+### 33. Fault management as implemented
 
-![Slide 31: One orbit, one operating window](assets/slides/31.png?v=304712e3dfbb)
+![Slide 33: Fault management as implemented](assets/slides/33.png?v=0b853d4d7231)
 
-### 32. AI inference, result transfer and shutdown
+### 34. Fault management items (1/2): hardware
 
-![Slide 32: AI inference, result transfer and shutdown](assets/slides/32.png?v=75415b2abe67)
+![Slide 34: Fault management items (1/2): hardware](assets/slides/34.png?v=73ffe3f85bbd)
 
-### 33. Weekly batch versus orbit integration
+### 35. Fault management items (2/2): service and system
 
-![Slide 33: Weekly batch versus orbit integration](assets/slides/33.png?v=c6445cf4ec31)
+![Slide 35: Fault management items (2/2): service and system](assets/slides/35.png?v=d2341c346125)
 
-### 34. Fault management as implemented
+### 36. Digital Twin data and retraining
 
-![Slide 34: Fault management as implemented](assets/slides/34.png?v=78cb9342dbda)
+![Slide 36: Digital Twin data and retraining](assets/slides/36.png?v=f72c36d91095)
 
-### 35. Fault management items (1/2): hardware
+### 37. Abbreviations
 
-![Slide 35: Fault management items (1/2): hardware](assets/slides/35.png?v=e781b1d15814)
+![Slide 37: Abbreviations](assets/slides/37.png?v=fea492f75960)
 
-### 36. Fault management items (2/2): service and system
+### 38. COMP on POES/MetOp data
 
-![Slide 36: Fault management items (2/2): service and system](assets/slides/36.png?v=4f6eefa2828c)
+![Slide 38: COMP on POES/MetOp data](assets/slides/38.png?v=38471bd2bd17)
 
-### 37. Digital Twin data and retraining
+### 39. COMP on POES by the AI #1 event criterion
 
-![Slide 37: Digital Twin data and retraining](assets/slides/37.png?v=bc08830d3a22)
-
-### 38. Abbreviations
-
-![Slide 38: Abbreviations](assets/slides/38.png?v=166659384a1e)
+![Slide 39: COMP on POES by the AI #1 event criterion](assets/slides/39.png?v=f8a41ffd0950)

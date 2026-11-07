@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-10-26",
+  "as_of": "2026-11-08",
   "source": "https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1",
-  "main_slides": 20,
-  "appendix_slides": 18,
+  "main_slides": 22,
+  "appendix_slides": 17,
   "speaker_notes_included": false,
   "hidden_slides_included": false,
   "slides": [
@@ -13,416 +13,427 @@
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 375777,
+      "bytes": 374491,
       "preview": "assets/slides/01.png",
-      "sha256": "350e665cefc2c26f73b9b58e59266adc3f68f9ed9c933c38114963b53fa63444"
+      "sha256": "c1bc85fadaa1a7fe413ee2e6c00a23b1f9bd46f7c0780ef307845efe693f5f6e"
+    },
+    {
+      "id": "534:12",
+      "n": 2,
+      "title": "Outline",
+      "section": "main",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 165679,
+      "preview": "assets/slides/02.png",
+      "sha256": "6b064489d2ddd4013dbb5fa369e5109646049ce2264f5bf7ed63b77577d45679"
     },
     {
       "id": "5:18",
-      "n": 2,
+      "n": 3,
       "title": "Mission overview",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 121470,
-      "preview": "assets/slides/02.png",
-      "sha256": "1c6b11f8d6b3000f870821716ebdf95f125a78c46ad1b08ba0d76a4be0749e6e"
+      "bytes": 120989,
+      "preview": "assets/slides/03.png",
+      "sha256": "ba4dbe16127b69bdf391962e2004b951c7a6833eeb9df3e0836e7e2204f714a6"
     },
     {
       "id": "12:2",
-      "n": 3,
-      "title": "PADO-SAT: mission overview",
+      "n": 4,
+      "title": "Mission overview of PADO-SAT",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 612748,
-      "preview": "assets/slides/03.png",
-      "sha256": "af4f61f14f055b73bdb115eb41a3bdff97271bee1e892ea14ea26d6814a326f9"
+      "bytes": 611398,
+      "preview": "assets/slides/04.png",
+      "sha256": "e2824b004f757fc9c5194954d8435c05e9b546075ff59578af33495045591afa"
     },
     {
       "id": "198:4",
-      "n": 4,
+      "n": 5,
       "title": "Goal of SIREN",
       "section": "main",
-      "width": 1440,
-      "height": 810,
-      "bytes": 445793,
-      "preview": "assets/slides/04.png",
-      "sha256": "9b21688abc867a6bc6ebc73c4c0a12eab0e3c21d77f26965f5b18c4a29e15b4b"
+      "width": 1920,
+      "height": 1080,
+      "bytes": 722872,
+      "preview": "assets/slides/05.png",
+      "sha256": "42fbc87a6846ceb40caf6c2f50ddc33451915fba76fc0185fc0a7c43ff141014"
     },
     {
       "id": "206:19",
-      "n": 5,
+      "n": 6,
       "title": "System budget from SIREN’s perspective",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 251074,
-      "preview": "assets/slides/05.png",
-      "sha256": "5d90f12e81cab77cb821b8be2f3a88ce0638fd373083a96ce6b12afc88fdde94"
+      "bytes": 263153,
+      "preview": "assets/slides/06.png",
+      "sha256": "5cc75a9995acc5d247f91d62b44e4f66256632acb61521e9a20c051b0504c152"
     },
     {
       "id": "365:6",
-      "n": 6,
+      "n": 7,
       "title": "FPGA COTS platform: Z7000-P3",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 277250,
-      "preview": "assets/slides/06.png",
-      "sha256": "7bc9981791e7f1ee9d686377d7c818c344ec993f959b49d4fe10db1e5700dd76"
+      "bytes": 275865,
+      "preview": "assets/slides/07.png",
+      "sha256": "e5d4694ef58e2679c2052be48fcf6254b92c34b0ea03a064be3d27ced7b91599"
     },
     {
       "id": "407:6",
-      "n": 7,
+      "n": 8,
       "title": "SIREN-PADO SAT Interfaces",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 182470,
-      "preview": "assets/slides/07.png",
-      "sha256": "b1a138ed8838f7419d657c31b08dc4e1ae12d445829762439fcab0202a5d52b1"
+      "bytes": 186077,
+      "preview": "assets/slides/08.png",
+      "sha256": "63248f135bd6db7c7f1f87f1572693159789dfac49dee049bbb67e075e38b83b"
     },
     {
       "id": "9:126",
-      "n": 8,
+      "n": 9,
       "title": "Development & Validation of AI",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 125999,
-      "preview": "assets/slides/08.png",
-      "sha256": "04ce7c0f71f19586f4169b4328fa2d66a68a250f9237b9b43c8f52448d8ac23a"
+      "bytes": 125625,
+      "preview": "assets/slides/09.png",
+      "sha256": "4d554c3ee65490f0802866976748df9a29148027b68252ea2e4c9f5db75ea66a"
     },
     {
       "id": "7:13",
-      "n": 9,
+      "n": 10,
       "title": "Effects of High Energy Charged Particles",
       "section": "main",
-      "width": 1440,
-      "height": 810,
-      "bytes": 614108,
-      "preview": "assets/slides/09.png",
-      "sha256": "f8b2f92613ac54c7f30edccdd416a9c6d98e21d5983d358be86b4df0d6d9ecfa"
+      "width": 1920,
+      "height": 1080,
+      "bytes": 971862,
+      "preview": "assets/slides/10.png",
+      "sha256": "3c4cc82066898db4496a1fbb4db0034ecf7cc313595b1ecb04b19954db6c8d27"
     },
     {
       "id": "10:2",
-      "n": 10,
+      "n": 11,
       "title": "AI #1: Particle hazard detection",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 345022,
-      "preview": "assets/slides/10.png",
-      "sha256": "62d9df59404ec04b41ecacf9fa18236a1bd0bba5e8c40d298fcbc8df5e59fd28"
+      "bytes": 341428,
+      "preview": "assets/slides/11.png",
+      "sha256": "318fb508341fd4e2e53c5d6f1fd1a53f41b21d1b0413fe974cd1aceba9497135"
     },
     {
       "id": "7:65",
-      "n": 11,
+      "n": 12,
       "title": "Anomalies in Satellite Housekeeping Data",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 255266,
-      "preview": "assets/slides/11.png",
-      "sha256": "516dcc742d79db9bce38c670856d5858fdd267fa4e5288a711c147f1ed67a568"
+      "bytes": 256615,
+      "preview": "assets/slides/12.png",
+      "sha256": "84ae84a95a4c2c8c3433c228f49bf0dbfb985092a0f44c7c92feab6b4b1fd179"
     },
     {
       "id": "10:78",
-      "n": 12,
+      "n": 13,
       "title": "AI #2: HK anomaly detection",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 270108,
-      "preview": "assets/slides/12.png",
-      "sha256": "d20f1d39b2218e15895a6473926f6f5fc4661f3c5f570a1b8d3b21a1bc189fe1"
+      "bytes": 269325,
+      "preview": "assets/slides/13.png",
+      "sha256": "06f278125a1ebc153ed0675693965dedc5eddc966f46534fe1f5270d079b8abe"
     },
     {
       "id": "5:29",
-      "n": 13,
+      "n": 14,
       "title": "Satellite Downlink Constraints",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 238900,
-      "preview": "assets/slides/13.png",
-      "sha256": "4f69344679086ca14130f1ee8a6cba2ec817e7988ea15745660a6527f4220354"
+      "bytes": 236459,
+      "preview": "assets/slides/14.png",
+      "sha256": "0f1c523742f8986d7dc50dd4f48ba030da49b1e4d48b78525afa11548ef907c2"
     },
     {
       "id": "10:159",
-      "n": 14,
+      "n": 15,
       "title": "AI #3: Science data compression",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 305479,
-      "preview": "assets/slides/14.png",
-      "sha256": "2eaf6b398bd8ed78c056a37377e78c026fc4e86d76ee217f82b4d2e82b4ece00"
+      "bytes": 304407,
+      "preview": "assets/slides/15.png",
+      "sha256": "0e5ad5ebd06293c0640be2922fd6671ef7d18f3f6de4e77d31af105046acc8e1"
     },
     {
       "id": "365:518",
-      "n": 15,
+      "n": 16,
       "title": "Three AIs on one FPGA SoC",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 223999,
-      "preview": "assets/slides/15.png",
-      "sha256": "09f90a6d395f1b931877bccc1a6342ee353e15055aecf69c536b1a396c531814"
+      "bytes": 227113,
+      "preview": "assets/slides/16.png",
+      "sha256": "cc6407d4f326cb77925b9ec6714b65fa8778fc14148886510e649da077f05bb1"
+    },
+    {
+      "id": "13:36",
+      "n": 17,
+      "title": "FPGA Placement and Routing",
+      "section": "main",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 421150,
+      "preview": "assets/slides/17.png",
+      "sha256": "7b9c866be13349c8fc6d2b7ea55fd154342ffe3bb9d4c317cc035828b3be6548"
     },
     {
       "id": "245:4",
-      "n": 16,
+      "n": 18,
       "title": "Implementation & Performance",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 265227,
-      "preview": "assets/slides/16.png",
-      "sha256": "68de86c518504669af785900afed07e7c4469e7635ed447950dd08d8b0dbf479"
+      "bytes": 250687,
+      "preview": "assets/slides/18.png",
+      "sha256": "8cd09d229c001b10f102040f4bc8b6adc128382934dbb1bbaf79aaf638e135bd"
     },
     {
       "id": "13:179",
-      "n": 17,
+      "n": 19,
       "title": "Future Work and Summary",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 130480,
-      "preview": "assets/slides/17.png",
-      "sha256": "846666af58d5d4a537735414890db5f40e4f699f1043cd1faeabf189e896dc55"
+      "bytes": 130671,
+      "preview": "assets/slides/19.png",
+      "sha256": "98198e576bba20a8781ae0551935254cb1d8f7d3aaed5ee3b96244b3de134b6f"
     },
     {
       "id": "454:8",
-      "n": 18,
+      "n": 20,
       "title": "Future Work",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 193249,
-      "preview": "assets/slides/18.png",
-      "sha256": "dc8d08227f1a245464f6cc026b3ecd43f7ba3a10c74fbd9891798e8befe5f472"
+      "bytes": 190383,
+      "preview": "assets/slides/20.png",
+      "sha256": "c11c85129f2f57e1df3651fe1017e2c0b70578eee622b3281883566a692fb145"
     },
     {
       "id": "14:33",
-      "n": 19,
+      "n": 21,
       "title": "Summary",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 198569,
-      "preview": "assets/slides/19.png",
-      "sha256": "233e1e5e69c4b025133e4ef0a8bd6be6603d0463c7fbf1efdeec1736841fedd0"
+      "bytes": 198670,
+      "preview": "assets/slides/21.png",
+      "sha256": "6d23f2465319795cfe3617278e354e186937812e0cbf8d483bb57728f4a37ef3"
     },
     {
       "id": "14:101",
-      "n": 20,
+      "n": 22,
       "title": "Thank you",
       "section": "main",
       "width": 1920,
       "height": 1080,
-      "bytes": 238849,
-      "preview": "assets/slides/20.png",
-      "sha256": "ae9d35468f77b6409fd03f7244370cb19c2c79c3643bdd88019850173457868c"
+      "bytes": 237736,
+      "preview": "assets/slides/22.png",
+      "sha256": "eebdf1ca336a8dce718ab56b0e26b9cbcbe2c8cb1a412a309a230a5fd068a989"
     },
     {
       "id": "349:24",
-      "n": 21,
+      "n": 23,
       "title": "Appendix",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 101482,
-      "preview": "assets/slides/21.png",
-      "sha256": "72b78fa0d2ec3538ee5c0cd1dcd0d528496eaf1a0f5e448131a4c1623ae193c7"
+      "bytes": 100908,
+      "preview": "assets/slides/23.png",
+      "sha256": "0384b5b327222f851fcfbb7c8474f74ab484bfa4d1935e687df37bcc66522219"
     },
     {
       "id": "14:113",
-      "n": 22,
+      "n": 24,
       "title": "Abstract",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 217985,
-      "preview": "assets/slides/22.png",
-      "sha256": "73a58fa6c4444f11e12809f967156766061a5f3e0e1b2a92a00a1723636c0b9c"
+      "bytes": 211634,
+      "preview": "assets/slides/24.png",
+      "sha256": "f7ba14f41bca32eb4d9e004a29e625a3241ec4d3d3a8687dd00058a9541a945e"
     },
     {
       "id": "334:20592",
-      "n": 23,
+      "n": 25,
       "title": "Onboard AI in Previous Missions",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 222284,
-      "preview": "assets/slides/23.png",
-      "sha256": "11604f545746e60f1b7fbc6b4c6706ebea3c26db392e1fb59515ff6dca3750d1"
+      "bytes": 219443,
+      "preview": "assets/slides/25.png",
+      "sha256": "7a00910655ad23773517eb040c9787c816ba423e3bb5c0dd85827d1193423585"
     },
     {
       "id": "47:4",
-      "n": 24,
+      "n": 26,
       "title": "AI Networks in SIREN: ModernTCN and GRU",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 247495,
-      "preview": "assets/slides/24.png",
-      "sha256": "f9731feb5bc742de33a74a27adc5fa67404a0b5f20372e7731386dd2994ef6f7"
+      "bytes": 248326,
+      "preview": "assets/slides/26.png",
+      "sha256": "b10620f2282acc37aecb6559d76a36d3d2232e387a9d8e8f39cad974a8330270"
     },
     {
       "id": "117:4",
-      "n": 25,
+      "n": 27,
       "title": "How SIREN is built",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 223954,
-      "preview": "assets/slides/25.png",
-      "sha256": "39e542ec7a57e32b02c625c5bbe9325c6a01bd54cd863dbb2109cad7f2773ab7"
+      "bytes": 222393,
+      "preview": "assets/slides/27.png",
+      "sha256": "f8ac22c6e723bca4c0e8496f9e92e6544ac446b6b69561394972062c577dae03"
     },
     {
       "id": "117:123",
-      "n": 26,
+      "n": 28,
       "title": "Three models on the FPGA",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 215189,
-      "preview": "assets/slides/26.png",
-      "sha256": "ab93a3581fc0290c9c10ed5d9a0d8a8adeedd58e1e19c98a3ea061c6efb232ce"
+      "bytes": 214308,
+      "preview": "assets/slides/28.png",
+      "sha256": "a686dd3c2e698b8e059094ba4d73bab58cbd5ece770d87246b3779afda6c3fae"
     },
     {
       "id": "14:197",
-      "n": 27,
+      "n": 29,
       "title": "How is correctness verified?",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 165166,
-      "preview": "assets/slides/27.png",
-      "sha256": "ed45a480f969bd96f359fe654f517f7702bc0d820effd657111b86e7f3d0629b"
+      "bytes": 163613,
+      "preview": "assets/slides/29.png",
+      "sha256": "37b3df5c610a467df3ba7308ec103b1bce5ed7b279ff3e6e27c5d380a426989e"
     },
     {
       "id": "14:233",
-      "n": 28,
+      "n": 30,
       "title": "Resources, timing and weight update",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 186624,
-      "preview": "assets/slides/28.png",
-      "sha256": "015c3f29a9486ff168fc041a07c1610d5292407e854167c38eb758be98cc6596"
-    },
-    {
-      "id": "13:36",
-      "n": 29,
-      "title": "Placement, Routing",
-      "section": "appendix",
-      "width": 1920,
-      "height": 1080,
-      "bytes": 344004,
-      "preview": "assets/slides/29.png",
-      "sha256": "7b7462aacf5b9e764955a36dc64efd11fe38f64f4a29aec526db95bacf05173f"
+      "bytes": 183636,
+      "preview": "assets/slides/30.png",
+      "sha256": "44500a57b693ce680de62331695c52e86a1c82117827d9beb8b475c024682c4c"
     },
     {
       "id": "13:100",
-      "n": 30,
+      "n": 31,
       "title": "Performance trade-off per model",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 235826,
-      "preview": "assets/slides/30.png",
-      "sha256": "a7fd997ff18a7f4241617de3da6ce3084b81ef2efae0b4fb7200db9f14b5d2ae"
-    },
-    {
-      "id": "411:10",
-      "n": 31,
-      "title": "One orbit, one operating window",
-      "section": "appendix",
-      "width": 1920,
-      "height": 1080,
-      "bytes": 277588,
+      "bytes": 252129,
       "preview": "assets/slides/31.png",
-      "sha256": "304712e3dfbb29a58b9f91a9e4f9bb9cd96cddc4970495b87834fa8cfad51c5e"
-    },
-    {
-      "id": "411:462",
-      "n": 32,
-      "title": "AI inference, result transfer and shutdown",
-      "section": "appendix",
-      "width": 1920,
-      "height": 1080,
-      "bytes": 316111,
-      "preview": "assets/slides/32.png",
-      "sha256": "75415b2abe67062f8cbf830ba671437c7bc44b8db6f00aa40b703f63fec12dc6"
+      "sha256": "da8990401cf26bbcfdd213386f0c4c9a5140dd13c682128eabc373e90bd49c72"
     },
     {
       "id": "411:931",
-      "n": 33,
-      "title": "Weekly batch versus orbit integration",
+      "n": 32,
+      "title": "Two modes versus one orbit mode",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 239052,
-      "preview": "assets/slides/33.png",
-      "sha256": "c6445cf4ec31cd02e486fb85459805b888bade8d9778d2d062e774da99608b68"
+      "bytes": 242620,
+      "preview": "assets/slides/32.png",
+      "sha256": "b8fd8678e995516d514472ae4422ea955957be9a5b5dc58f4551ff1e5ba2b467"
     },
     {
       "id": "13:124",
-      "n": 34,
+      "n": 33,
       "title": "Fault management as implemented",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 247990,
-      "preview": "assets/slides/34.png",
-      "sha256": "78cb9342dbda6522f4dda2215c8aa39a9c44b8e89277f07a59b7c4a1d7c874b5"
+      "bytes": 244956,
+      "preview": "assets/slides/33.png",
+      "sha256": "0b853d4d72312ce9bff676188de74c4c9d99ed886366aab7c724326c01251a39"
     },
     {
       "id": "54:4",
-      "n": 35,
+      "n": 34,
       "title": "Fault management items (1/2): hardware",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 271279,
-      "preview": "assets/slides/35.png",
-      "sha256": "e781b1d1581451d31157c6f66019b07b7f82c3f74a4d025e499f5998c964c74b"
+      "bytes": 268241,
+      "preview": "assets/slides/34.png",
+      "sha256": "73ffe3f85bbd946e8237aa198143faef9854b4c348edf039d5e556c29120824f"
     },
     {
       "id": "54:82",
-      "n": 36,
+      "n": 35,
       "title": "Fault management items (2/2): service and system",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 244259,
-      "preview": "assets/slides/36.png",
-      "sha256": "4f6eefa2828c0170b72c27bc1bd6edb28fb769a585ea31f7406d6d4234b72fca"
+      "bytes": 241873,
+      "preview": "assets/slides/35.png",
+      "sha256": "d2341c346125dc4a2ff308563254509af0fe33e5ca61595917772a781646f15d"
     },
     {
       "id": "14:2",
-      "n": 37,
+      "n": 36,
       "title": "Digital Twin data and retraining",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 244808,
-      "preview": "assets/slides/37.png",
-      "sha256": "bc08830d3a224d3c38503feb67570e2d294de8c9d6609a7adaf78e9c8ec5bc1d"
+      "bytes": 244038,
+      "preview": "assets/slides/36.png",
+      "sha256": "f72c36d910957d3cfdae1c1ce0c46e942c5f21b8f085250d063ed813f8a28d5c"
     },
     {
       "id": "14:291",
-      "n": 38,
+      "n": 37,
       "title": "Abbreviations",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
-      "bytes": 191521,
+      "bytes": 188865,
+      "preview": "assets/slides/37.png",
+      "sha256": "fea492f75960c6be02410423c410c9b7703ff50e41aca46ac2772c980d93f655"
+    },
+    {
+      "id": "580:12",
+      "n": 38,
+      "title": "COMP on POES/MetOp data",
+      "section": "appendix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 236377,
       "preview": "assets/slides/38.png",
-      "sha256": "166659384a1e4460dc68815ef8f3f10c94d035bf85c76177aa40ce150f72c46c"
+      "sha256": "38471bd2bd1708fcd4709ce286320dcad888bceaf1bf98e907fb0003fedab068"
+    },
+    {
+      "id": "580:483",
+      "n": 39,
+      "title": "COMP on POES by the AI #1 event criterion",
+      "section": "appendix",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 242391,
+      "preview": "assets/slides/39.png",
+      "sha256": "f8a41ffd0950c357742378734831e18ed0a986e6ee1adf371eea8050ad860f4e"
     }
   ]
 }
