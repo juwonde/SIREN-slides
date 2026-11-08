@@ -8,7 +8,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 01. Onboard AI Payload of PADO-SAT: SIREN
 
-![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=c1bc85fadaa1)
+![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=5581afd84ce7)
 
 ### 02. Outline
 
