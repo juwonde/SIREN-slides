@@ -80,11 +80,11 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 19. FPGA Placement and Routing
 
-![Slide 19: FPGA Placement and Routing](assets/slides/19.png?v=aefae818f520)
+![Slide 19: FPGA Placement and Routing](assets/slides/19.png?v=ee68712fd17f)
 
 ### 20. Implementation & Performance
 
-![Slide 20: Implementation & Performance](assets/slides/20.png?v=e407f835f924)
+![Slide 20: Implementation & Performance](assets/slides/20.png?v=4fcffa3cc9ca)
 
 ### 21. Future Work and Summary
 
@@ -92,11 +92,11 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 22. Future Work
 
-![Slide 22: Future Work](assets/slides/22.png?v=2b2b73234981)
+![Slide 22: Future Work](assets/slides/22.png?v=e6bd636d73b6)
 
 ### 23. Summary
 
-![Slide 23: Summary](assets/slides/23.png?v=574914026bcc)
+![Slide 23: Summary](assets/slides/23.png?v=4cb10270c0c6)
 
 ### 24. Thank you
 
@@ -110,7 +110,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 26. Abstract
 
-![Slide 26: Abstract](assets/slides/26.png?v=77190e74061f)
+![Slide 26: Abstract](assets/slides/26.png?v=8fb8bd7662ac)
 
 ### 27. Onboard AI in Previous Missions
 
@@ -142,15 +142,15 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 34. Performance trade-off per model
 
-![Slide 34: Performance trade-off per model](assets/slides/34.png?v=5750c1d27776)
+![Slide 34: Performance trade-off per model](assets/slides/34.png?v=34ef8cd07874)
 
 ### 35. Two modes versus one orbit mode
 
-![Slide 35: Two modes versus one orbit mode](assets/slides/35.png?v=02e69026e2e8)
+![Slide 35: Two modes versus one orbit mode](assets/slides/35.png?v=99dd6acb6239)
 
 ### 36. Fault management as implemented
 
-![Slide 36: Fault management as implemented](assets/slides/36.png?v=63f38ecbad7f)
+![Slide 36: Fault management as implemented](assets/slides/36.png?v=a573f5ea8c63)
 
 ### 37. Fault management items (1/2): hardware
 
