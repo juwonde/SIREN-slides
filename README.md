@@ -84,7 +84,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 20. Implementation & Performance
 
-![Slide 20: Implementation & Performance](assets/slides/20.png?v=87ca4bf5568a)
+![Slide 20: Implementation & Performance](assets/slides/20.png?v=32aa7e9c98e1)
 
 ### 21. Future Work and Summary
 
@@ -96,7 +96,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 23. Summary
 
-![Slide 23: Summary](assets/slides/23.png?v=4ca186679ec5)
+![Slide 23: Summary](assets/slides/23.png?v=aa6ac5a9ca03)
 
 ### 24. Thank you
 
@@ -110,7 +110,7 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 26. Abstract
 
-![Slide 26: Abstract](assets/slides/26.png?v=f2d9ba45e3ca)
+![Slide 26: Abstract](assets/slides/26.png?v=353af89b632e)
 
 ### 27. Onboard AI in Previous Missions
 
