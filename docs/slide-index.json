@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-10",
   "source": "https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1",
   "main_slides": 24,
   "appendix_slides": 18,
@@ -14,8 +14,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/01.png",
-      "sha256": "7e2cdd7dafe34e97d70ff2309a4d9e6b36468c701d84983e6595f9688f13c7e9",
-      "bytes": 364349
+      "sha256": "5527379ef73c5468b187c3583fb8bbfa751f573833861574b81b66586a2ccbb7",
+      "bytes": 408004
     },
     {
       "id": "534:12",
@@ -25,8 +25,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/02.png",
-      "sha256": "8b5fe82e2221a4cebfeffd82e6fb4b233cf8a0fd5ca6ebf47e0e7d4d76d709d4",
-      "bytes": 156864
+      "sha256": "232609b014de6dd202dbec324552284569fb8d3b5337387354053773b25f0928",
+      "bytes": 129051
     },
     {
       "id": "5:18",
@@ -36,8 +36,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/03.png",
-      "sha256": "e0e3402f8e8f651c82c25d5738f57577b1705e44e5e65fa3c92aa668ea93140b",
-      "bytes": 119174
+      "sha256": "31d4ad2bb1d4d8931b0e5f54db014ce050573a30634b4208e5278929dae718f9",
+      "bytes": 91111
     },
     {
       "id": "12:2",
@@ -47,8 +47,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/04.png",
-      "sha256": "ade27755b59f08e0408b89d91230201b384dadb0e99ec5077bddb231b47ed19a",
-      "bytes": 601481
+      "sha256": "44c233ef1df3cb7e185592b3685b85c4ba74c1b83d7d22680b7858df0806ab0b",
+      "bytes": 570433
     },
     {
       "id": "198:4",
@@ -58,8 +58,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/05.png",
-      "sha256": "f52f0866ae4a71ccd82771988d278aa066a84bb4eff6b6394b4851530cda53c0",
-      "bytes": 713201
+      "sha256": "13b84bc8983705dd0a1e42c60dccb7f338519afd538030cdc342a4593f2f6523",
+      "bytes": 685300
     },
     {
       "id": "206:19",
@@ -69,8 +69,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/06.png",
-      "sha256": "a1554478db46054a1ed48c012eff28c3870c8f4ce01164f0c59d0f12e13ee63d",
-      "bytes": 200864
+      "sha256": "397ab1311702447b202918ebc90e9bc46b81c5fd77f4dd7bec562b7b774f4d40",
+      "bytes": 180106
     },
     {
       "id": "365:6",
@@ -80,8 +80,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/07.png",
-      "sha256": "db65af3e8585cbb4f5385b5e23d1b6f945e2010e4e9d9fc5ef1a1907afbc4be9",
-      "bytes": 261925
+      "sha256": "3bf8dbeef6689650eee155ccceca15260e6e29e79caa304e048eede3b388dd75",
+      "bytes": 234985
     },
     {
       "id": "407:6",
@@ -91,8 +91,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/08.png",
-      "sha256": "a202e0840760c598bdc11ba0ba662bb7437aa039c059cf94d1d7b706df45854f",
-      "bytes": 176193
+      "sha256": "21f59d8b4a027d1fd7a19ac4ce8357e3aafe0e71ffd88c11200a669d6cd6634f",
+      "bytes": 149206
     },
     {
       "id": "9:126",
@@ -102,8 +102,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/09.png",
-      "sha256": "93d562bc2feb8e994f2e6516c9649fd0b04a7c96345c2ffa73290c39cacd34bd",
-      "bytes": 121784
+      "sha256": "3721a02cc8ac4844363d2c1f5c30100e9857f5e410ebbb49b8bcad86010b229f",
+      "bytes": 93872
     },
     {
       "id": "7:13",
@@ -113,8 +113,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/10.png",
-      "sha256": "83e5920fb5ffd611272b8ff8e4e7f0d3a21cf7009852aaf137025d3ff76762ff",
-      "bytes": 964713
+      "sha256": "9e6f7016bda2ab986f2c78f56deef5d1028bb8fb7848d768ca310538608d541e",
+      "bytes": 937450
     },
     {
       "id": "10:2",
@@ -124,8 +124,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/11.png",
-      "sha256": "b126e851490a743697e55ce1eef057b04ead52edc5f192d876c77965fa3f5660",
-      "bytes": 340956
+      "sha256": "00f078302aac3044d0bc161a56f0d36244d1e981b93ed5709aa6a808396e2c9b",
+      "bytes": 313871
     },
     {
       "id": "7:65",
@@ -135,8 +135,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/12.png",
-      "sha256": "0a493e9f28e15a8fd15627a6cc17c41a2976343983eb393dfcf2d6be568d385b",
-      "bytes": 247728
+      "sha256": "68753f57d435dcb6f7e1ce32d2ba13fc01a532b5ccca5ee24cb8e910dba855e8",
+      "bytes": 220898
     },
     {
       "id": "10:78",
@@ -146,8 +146,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/13.png",
-      "sha256": "7a53a020209a5565004fb5cdca8bd53d86fb60c462bedfb9d5aae3617178d615",
-      "bytes": 255639
+      "sha256": "b4313457263581da4cb578fb44329aa30d094b2459ce471da893c31dea8b48ec",
+      "bytes": 228166
     },
     {
       "id": "5:29",
@@ -157,8 +157,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/14.png",
-      "sha256": "5aa2a4f87930700b607d67e0edb813177aa52d21c3f4232c2f6e0ad677e00377",
-      "bytes": 216846
+      "sha256": "59306f772adce44be4bc0c318407947d3e2831fee2d977bc0f364dc37c7556d1",
+      "bytes": 189836
     },
     {
       "id": "608:73",
@@ -168,8 +168,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/15.png",
-      "sha256": "e9063977d972cfa0c8dbeb3bc1900612cacf989fa1b0f17d6ff0af168191f3cc",
-      "bytes": 746627
+      "sha256": "247d87ae0271ed3bb832b3bfcca49c9aaaca21c0115dfe5d7ffcf79671cd617f",
+      "bytes": 718879
     },
     {
       "id": "10:159",
@@ -179,8 +179,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/16.png",
-      "sha256": "73f74acee6c8b0d8a497e36ee4e4a3499d3e51deb384a6f4ac0bc6c7aef451d1",
-      "bytes": 291330
+      "sha256": "18e4c95da863f9c155aac1f11fc9dcba60fcb5df2c1cc2260c407cdf381b30cd",
+      "bytes": 263895
     },
     {
       "id": "365:518",
@@ -190,8 +190,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/17.png",
-      "sha256": "5af92516730e384aa79f057a18e9c294692a1fc175bfe4e80c8ffabc23a44857",
-      "bytes": 210227
+      "sha256": "65dfd54758d05c36283e074d6e7b3b2c50a5d944daec5d5d30865b836f5fcf9c",
+      "bytes": 188966
     },
     {
       "id": "602:16",
@@ -201,8 +201,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/18.png",
-      "sha256": "5d86d5c367e147749d090575c6e6783131d5a8de07b5a8cd8aa4e5d4950f46da",
-      "bytes": 263137
+      "sha256": "0da8bf3467bd9ee85affcbf8f226927cdefbb2373ebf55ce1f2f14909001d65d",
+      "bytes": 236340
     },
     {
       "id": "13:36",
@@ -212,8 +212,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/19.png",
-      "sha256": "da78b0ded7453c2f3aed1c853267e25ff10f2be8fc1841a9a95aa670f937b544",
-      "bytes": 372899
+      "sha256": "0c8fb6ca9961cd45bf32c6b93059e577200586d864c07e3858fa31918c47b3e5",
+      "bytes": 345943
     },
     {
       "id": "245:4",
@@ -223,8 +223,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/20.png",
-      "sha256": "32aa7e9c98e1313ae70cb5f349c68496d9693e2ba385bb81b87d073039a7c223",
-      "bytes": 253036
+      "sha256": "8bf9583c6a4f0853b782069283d1c78720b4dac9233d03686f03b97b089ad6c3",
+      "bytes": 226531
     },
     {
       "id": "13:179",
@@ -234,8 +234,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/21.png",
-      "sha256": "60ed7fe8ef6d7260935ece255e0fc1dbb337b96ca763436084f48e93b87e5289",
-      "bytes": 125941
+      "sha256": "a5dc072a96a29e2833e6eeba2d7dac58b70ee3b8ca1aee83ba7d995f78061913",
+      "bytes": 97384
     },
     {
       "id": "454:8",
@@ -245,8 +245,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/22.png",
-      "sha256": "411f3cbebc8cbcf802b86c26ec0ccdb4da44165160a7e860029440d75e42a104",
-      "bytes": 176476
+      "sha256": "9c54e7e64db125970d5af81fee2b1ee8ea81b00f29715f721eefb4cc936ea13f",
+      "bytes": 161720
     },
     {
       "id": "14:33",
@@ -256,8 +256,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/23.png",
-      "sha256": "aa6ac5a9ca03ef42d49b88619986838a775ff12505611914e4d507d69900bd69",
-      "bytes": 187473
+      "sha256": "954bebf1e14765e8ec7052dea528e52d1db1d9603eb338122d9f02d3cf0c6c6f",
+      "bytes": 109068
     },
     {
       "id": "14:101",

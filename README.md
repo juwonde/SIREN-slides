@@ -8,95 +8,95 @@ PADO-SAT의 온보드 AI 탑재체 SIREN 발표 자료입니다.
 
 ### 01. Onboard AI Payload of PADO-SAT: SIREN
 
-![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=7e2cdd7dafe3)
+![Slide 01: Onboard AI Payload of PADO-SAT: SIREN](assets/slides/01.png?v=5527379ef73c)
 
 ### 02. Outline
 
-![Slide 02: Outline](assets/slides/02.png?v=8b5fe82e2221)
+![Slide 02: Outline](assets/slides/02.png?v=232609b014de)
 
 ### 03. Mission overview
 
-![Slide 03: Mission overview](assets/slides/03.png?v=e0e3402f8e8f)
+![Slide 03: Mission overview](assets/slides/03.png?v=31d4ad2bb1d4)
 
 ### 04. Mission overview of PADO-SAT
 
-![Slide 04: Mission overview of PADO-SAT](assets/slides/04.png?v=ade27755b59f)
+![Slide 04: Mission overview of PADO-SAT](assets/slides/04.png?v=44c233ef1df3)
 
 ### 05. Goal of SIREN
 
-![Slide 05: Goal of SIREN](assets/slides/05.png?v=f52f0866ae4a)
+![Slide 05: Goal of SIREN](assets/slides/05.png?v=13b84bc89837)
 
 ### 06. SIREN’s Budget
 
-![Slide 06: SIREN’s Budget](assets/slides/06.png?v=a1554478db46)
+![Slide 06: SIREN’s Budget](assets/slides/06.png?v=397ab1311702)
 
 ### 07. FPGA COTS platform: Z7000-P3
 
-![Slide 07: FPGA COTS platform: Z7000-P3](assets/slides/07.png?v=db65af3e8585)
+![Slide 07: FPGA COTS platform: Z7000-P3](assets/slides/07.png?v=3bf8dbeef668)
 
 ### 08. SIREN-PADO SAT Interfaces
 
-![Slide 08: SIREN-PADO SAT Interfaces](assets/slides/08.png?v=a202e0840760)
+![Slide 08: SIREN-PADO SAT Interfaces](assets/slides/08.png?v=21f59d8b4a02)
 
 ### 09. Development & Validation of AI
 
-![Slide 09: Development & Validation of AI](assets/slides/09.png?v=93d562bc2feb)
+![Slide 09: Development & Validation of AI](assets/slides/09.png?v=3721a02cc8ac)
 
 ### 10. Effects of High Energy Charged Particles
 
-![Slide 10: Effects of High Energy Charged Particles](assets/slides/10.png?v=83e5920fb5ff)
+![Slide 10: Effects of High Energy Charged Particles](assets/slides/10.png?v=9e6f7016bda2)
 
 ### 11. AI #1: Particle hazard detection
 
-![Slide 11: AI #1: Particle hazard detection](assets/slides/11.png?v=b126e851490a)
+![Slide 11: AI #1: Particle hazard detection](assets/slides/11.png?v=00f078302aac)
 
 ### 12. Anomalies in Satellite Housekeeping Data
 
-![Slide 12: Anomalies in Satellite Housekeeping Data](assets/slides/12.png?v=0a493e9f28e1)
+![Slide 12: Anomalies in Satellite Housekeeping Data](assets/slides/12.png?v=68753f57d435)
 
 ### 13. AI #2: HK anomaly detection
 
-![Slide 13: AI #2: HK anomaly detection](assets/slides/13.png?v=7a53a020209a)
+![Slide 13: AI #2: HK anomaly detection](assets/slides/13.png?v=b43134572635)
 
 ### 14. Satellite Downlink Constraints
 
-![Slide 14: Satellite Downlink Constraints](assets/slides/14.png?v=5aa2a4f87930)
+![Slide 14: Satellite Downlink Constraints](assets/slides/14.png?v=59306f772adc)
 
 ### 15. Why Compression?
 
-![Slide 15: Why Compression?](assets/slides/15.png?v=e9063977d972)
+![Slide 15: Why Compression?](assets/slides/15.png?v=247d87ae0271)
 
 ### 16. AI #3: Science data compression
 
-![Slide 16: AI #3: Science data compression](assets/slides/16.png?v=73f74acee6c8)
+![Slide 16: AI #3: Science data compression](assets/slides/16.png?v=18e4c95da863)
 
 ### 17. Three AIs on one FPGA SoC
 
-![Slide 17: Three AIs on one FPGA SoC](assets/slides/17.png?v=5af92516730e)
+![Slide 17: Three AIs on one FPGA SoC](assets/slides/17.png?v=65dfd54758d0)
 
 ### 18. Inference Optimization
 
-![Slide 18: Inference Optimization](assets/slides/18.png?v=5d86d5c367e1)
+![Slide 18: Inference Optimization](assets/slides/18.png?v=0da8bf3467bd)
 
 ### 19. FPGA Placement and Routing
 
-![Slide 19: FPGA Placement and Routing](assets/slides/19.png?v=da78b0ded745)
+![Slide 19: FPGA Placement and Routing](assets/slides/19.png?v=0c8fb6ca9961)
 
 ### 20. Implementation & Performance
 
-![Slide 20: Implementation & Performance](assets/slides/20.png?v=32aa7e9c98e1)
+![Slide 20: Implementation & Performance](assets/slides/20.png?v=8bf9583c6a4f)
 
 ### 21. Future Work and Summary
 
-![Slide 21: Future Work and Summary](assets/slides/21.png?v=60ed7fe8ef6d)
+![Slide 21: Future Work and Summary](assets/slides/21.png?v=a5dc072a96a2)
 
 ### 22. Future Work
 
-![Slide 22: Future Work](assets/slides/22.png?v=411f3cbebc8c)
+![Slide 22: Future Work](assets/slides/22.png?v=9c54e7e64db1)
 
 ### 23. Summary
 
-![Slide 23: Summary](assets/slides/23.png?v=aa6ac5a9ca03)
+![Slide 23: Summary](assets/slides/23.png?v=954bebf1e147)
 
 ### 24. Thank you
 
