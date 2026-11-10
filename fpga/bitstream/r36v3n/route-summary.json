@@ -1,0 +1,30 @@
+{
+  "target_part": "xc7z030sbg485-1",
+  "clock_period_ns": 8.0,
+  "wns_ns": 0.057,
+  "whs_ns": 0.033,
+  "routed": true,
+  "routing_errors": 0,
+  "unrouted_nets": 0,
+  "unconstrained_paths": 0,
+  "check_timing": {
+    "no_clock": 0,
+    "constant_clock": 0,
+    "pulse_width_clock": 0,
+    "unconstrained_internal_endpoints": 0,
+    "no_input_delay": 0,
+    "no_output_delay": 0,
+    "multiple_clock": 0,
+    "generated_clocks": 0,
+    "loops": 0,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "latch_loops": 0
+  },
+  "tool_version": "2020.2",
+  "power": {
+    "vectorless_total_w": 3.238,
+    "confidence": "Medium",
+    "basis": "Vivado vectorless estimate of the routed harness, not a measurement"
+  }
+}

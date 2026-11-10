@@ -1,0 +1,206 @@
+{
+  "schema": "f-astra/directrtl-connected-rtl/v1",
+  "status": "passed",
+  "generated_manifest_sha256": "5c0b72d173bbfc87e835b51a094dbe4a90957271b7f58ae07802d2e30ff54fc3",
+  "input_graph_sha256": "a1fe9130d9d35f99d967bc257875e64418350d48e0f790c38b0631d3a1e42789",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 125,
+  "source_inventory": {
+    "path": "proof/source-inventory.json",
+    "sha256": "f5c7f19b0dcf98ba3458038488ba89842cb489a0bd219c19a1ddac4e163c3f0a"
+  },
+  "connected_nodes": [
+    {
+      "name": "GTFFR0",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTISR0",
+      "op_type": "IntStreamSplit_rtl"
+    },
+    {
+      "name": "GTFFR1",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR2",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR3",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTIGR0",
+      "op_type": "IntGRUCell_rtl"
+    },
+    {
+      "name": "GTFFR4",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR0",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR5",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDPH0",
+      "op_type": "DuplicateStreams_hls"
+    },
+    {
+      "name": "GTFFR6",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR7",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTMVH0",
+      "op_type": "MVAU_hls"
+    },
+    {
+      "name": "GTFFR8",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR1",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR9",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTTHR0",
+      "op_type": "Thresholding_rtl"
+    },
+    {
+      "name": "GTFFR10",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR2",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR11",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTISR1",
+      "op_type": "IntStreamConcat_rtl"
+    },
+    {
+      "name": "GTFFR12",
+      "op_type": "StreamingFIFO_rtl"
+    }
+  ],
+  "core_sources": {
+    "GTFFR0": [
+      "build/code_gen_ipgen_GTFFR0_ej1bvypy/GTFFR0.v"
+    ],
+    "GTISR0": [
+      "build/code_gen_ipgen_GTISR0_w7y02wxk/f_astra_stream_split.sv",
+      "build/code_gen_ipgen_GTISR0_w7y02wxk/GTISR0.v"
+    ],
+    "GTFFR1": [
+      "build/code_gen_ipgen_GTFFR1_0pfa6dls/GTFFR1.v"
+    ],
+    "GTFFR2": [
+      "build/code_gen_ipgen_GTFFR2_4eoyn3nd/GTFFR2.v"
+    ],
+    "GTFFR3": [
+      "build/code_gen_ipgen_GTFFR3_tdiridqt/GTFFR3.v"
+    ],
+    "GTIGR0": [
+      "build/code_gen_ipgen_GTIGR0_v7_tt_nt/f_astra_int_gru_cell.sv",
+      "build/code_gen_ipgen_GTIGR0_v7_tt_nt/GTIGR0.v"
+    ],
+    "GTFFR4": [
+      "build/code_gen_ipgen_GTFFR4_z73ze2tl/GTFFR4.v"
+    ],
+    "GTDWR0": [
+      "build/code_gen_ipgen_GTDWR0_du7tzn4i/dwc_axi.sv",
+      "build/code_gen_ipgen_GTDWR0_du7tzn4i/dwc.sv",
+      "build/code_gen_ipgen_GTDWR0_du7tzn4i/GTDWR0.v"
+    ],
+    "GTFFR5": [
+      "build/code_gen_ipgen_GTFFR5_q6al71gn/GTFFR5.v"
+    ],
+    "GTDPH0": [
+      "build/code_gen_ipgen_GTDPH0_izqwxwa9/project_GTDPH0/sol1/impl/ip/hdl/verilog/GTDPH0.v",
+      "build/code_gen_ipgen_GTDPH0_izqwxwa9/project_GTDPH0/sol1/impl/ip/hdl/verilog/GTDPH0_regslice_both.v",
+      "build/code_gen_ipgen_GTDPH0_izqwxwa9/project_GTDPH0/sol1/impl/ip/hdl/verilog/GTDPH0_StreamingDup_vector_vector_ap_int_12_4ul_vector_ap_int_12_4ul_s.v"
+    ],
+    "GTFFR6": [
+      "build/code_gen_ipgen_GTFFR6_lqsa1rp6/GTFFR6.v"
+    ],
+    "GTFFR7": [
+      "build/code_gen_ipgen_GTFFR7_8ku0oh_8/GTFFR7.v"
+    ],
+    "GTMVH0": [
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTMVH0/GTMVH0_memstream_wrapper.v",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTMVH0/axilite.sv",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTMVH0/memstream_axi.sv",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTMVH0/memstream.sv",
+      "build/code_gen_ipgen_GTMVH0_q51mscq9/project_GTMVH0/sol1/impl/ip/hdl/verilog/GTMVH0.v",
+      "build/code_gen_ipgen_GTMVH0_q51mscq9/project_GTMVH0/sol1/impl/ip/hdl/verilog/GTMVH0_Matrix_Vector_Activate_Stream_Batch.v",
+      "build/code_gen_ipgen_GTMVH0_q51mscq9/project_GTMVH0/sol1/impl/ip/hdl/verilog/GTMVH0_mul_12s_8s_20_1_1.v",
+      "build/code_gen_ipgen_GTMVH0_q51mscq9/project_GTMVH0/sol1/impl/ip/hdl/verilog/GTMVH0_mux_164_48_1_1.v",
+      "build/code_gen_ipgen_GTMVH0_q51mscq9/project_GTMVH0/sol1/impl/ip/hdl/verilog/GTMVH0_regslice_both.v"
+    ],
+    "GTFFR8": [
+      "build/code_gen_ipgen_GTFFR8_mrscxsla/GTFFR8.v"
+    ],
+    "GTDWR1": [
+      "build/code_gen_ipgen_GTDWR1_7lkcnpp7/dwc_axi.sv",
+      "build/code_gen_ipgen_GTDWR1_7lkcnpp7/dwc.sv",
+      "build/code_gen_ipgen_GTDWR1_7lkcnpp7/GTDWR1.v"
+    ],
+    "GTFFR9": [
+      "build/code_gen_ipgen_GTFFR9_sn8h9lhk/GTFFR9.v"
+    ],
+    "GTTHR0": [
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTTHR0/axilite.sv",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTTHR0/thresholding.sv",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTTHR0/thresholding_axi.sv",
+      "build/vivado_stitch_proj_2uq4nuot/ip/verilog/rtl_ops/GTTHR0/GTTHR0.v"
+    ],
+    "GTFFR10": [
+      "build/code_gen_ipgen_GTFFR10_nvybwjqq/GTFFR10.v"
+    ],
+    "GTDWR2": [
+      "build/code_gen_ipgen_GTDWR2_2wt0o5g4/dwc_axi.sv",
+      "build/code_gen_ipgen_GTDWR2_2wt0o5g4/dwc.sv",
+      "build/code_gen_ipgen_GTDWR2_2wt0o5g4/GTDWR2.v"
+    ],
+    "GTFFR11": [
+      "build/code_gen_ipgen_GTFFR11_85hjybp4/GTFFR11.v"
+    ],
+    "GTISR1": [
+      "build/code_gen_ipgen_GTISR1_srs2e5x4/f_astra_stream_concat.sv",
+      "build/code_gen_ipgen_GTISR1_srs2e5x4/GTISR1.v"
+    ],
+    "GTFFR12": [
+      "build/code_gen_ipgen_GTFFR12_8fxo81_0/GTFFR12.v"
+    ]
+  },
+  "reference_output": {
+    "path": "proof/finn-reference.i64",
+    "sha256": "6d3c0b711a24aae71248cbc3d7fa25e1a72b3ea36fde96c369fe6b99b122f5af"
+  },
+  "actual_output": {
+    "path": "proof/rtl-output.i64",
+    "sha256": "6d3c0b711a24aae71248cbc3d7fa25e1a72b3ea36fde96c369fe6b99b122f5af"
+  },
+  "integer_mismatches": 0,
+  "samples": 6144,
+  "simulation_record_sha256": "aa02241e2d70dcacf556f10d9ce8cb55773da7142ede6c9cb8caaf06ec767f70",
+  "frontend_manifest_sha256": "5be0f642237dc487b43fa977d9e0a8843042accf685b066ae3eb10cd97970ff5",
+  "reference_kind": "integer_contract_int64",
+  "boundary": "behavioural xsim of the FINN stitched IP"
+}

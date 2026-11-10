@@ -37,3 +37,8 @@
 !/research/preprocessing/poes_sem2_counts.h
 !/research/preprocessing/poes_sem_packets.py
 !/research/requirements.txt
+
+!/board/
+!/board/**
+!/fpga/
+!/fpga/**

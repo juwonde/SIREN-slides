@@ -1,0 +1,59 @@
+{
+  "schema": "f-astra/directrtl-connected-rtl/v1",
+  "status": "passed",
+  "generated_manifest_sha256": "4025eaf9b7264bb3cf6651a15c233b71df2911b42f1fb654b6fbfd367bd1aa2d",
+  "input_graph_sha256": "2a831e433174a7487b479c39578af8171341503304fef405867462cf56923818",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 150,
+  "source_inventory": {
+    "path": "proof/source-inventory.json",
+    "sha256": "720258abb049d7538e7071f73473d18ebbf97c6d0a4915e77c6973cb98e38051"
+  },
+  "connected_nodes": [
+    {
+      "name": "PLFFR0",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "PLFFR1",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "PLLNR0",
+      "op_type": "IntLayerNorm_rtl"
+    },
+    {
+      "name": "PLFFR2",
+      "op_type": "StreamingFIFO_rtl"
+    }
+  ],
+  "core_sources": {
+    "PLFFR0": [
+      "build/code_gen_ipgen_PLFFR0_kjhdhbkc/PLFFR0.v"
+    ],
+    "PLFFR1": [
+      "build/code_gen_ipgen_PLFFR1_yuxvv3tr/PLFFR1.v"
+    ],
+    "PLLNR0": [
+      "build/code_gen_ipgen_PLLNR0_nudzlkql/f_astra_int_layer_norm.sv",
+      "build/code_gen_ipgen_PLLNR0_nudzlkql/PLLNR0.v"
+    ],
+    "PLFFR2": [
+      "build/code_gen_ipgen_PLFFR2_trfb2__1/PLFFR2.v"
+    ]
+  },
+  "reference_output": {
+    "path": "proof/finn-reference.i64",
+    "sha256": "257907efd0298edf0cf1e8662d8aef5e53363407906aa64a7580c216f0a99a6b"
+  },
+  "actual_output": {
+    "path": "proof/rtl-output.i64",
+    "sha256": "257907efd0298edf0cf1e8662d8aef5e53363407906aa64a7580c216f0a99a6b"
+  },
+  "integer_mismatches": 0,
+  "samples": 21,
+  "simulation_record_sha256": "1e9385c74230599d32eedc020a154b14e1c56ed228293ed632cc9df6336f94db",
+  "frontend_manifest_sha256": "9bd604eab6c517dde861c50d44bf44d40fd3802c51fe512bb53d6f945a2b2874",
+  "reference_kind": "integer_contract_int64",
+  "boundary": "behavioural xsim of the FINN stitched IP"
+}

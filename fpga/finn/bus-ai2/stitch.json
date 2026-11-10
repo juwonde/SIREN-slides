@@ -1,0 +1,1364 @@
+{
+  "project": "build/vivado_stitch_proj_r4x3n0k7",
+  "recipe": "build/vivado_stitch_proj_r4x3n0k7/make_project.tcl",
+  "recipe_original_sha256": "04342ff3890ab36d822bc2c3b705a37cfb2fb3dbe423e36090c4b03e9576e842",
+  "recipe_sha256": "38cf673a31f42efc6eb683422d84f355eb290df1b95b037f440ff2da35310c26",
+  "block": "finn_design",
+  "recipe_adapters": {
+    "drive_paths_forward_slashes": true,
+    "finn_root_resolved": true,
+    "run_from_project_dir": true,
+    "hdl_files_with_forward_slash_paths": 0,
+    "vivado2020_2_without_ipi_drc": true,
+    "vitis2020_2_hls_stream_port_names": {
+      "MVH0": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH0": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "DPH0": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V",
+        "out1_V": "out1_V_V"
+      },
+      "MLH0": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "ADH0": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH1": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "DPH1": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V",
+        "out1_V": "out1_V_V"
+      },
+      "MLH1": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "ADH1": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH2": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "DPH2": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V",
+        "out1_V": "out1_V_V"
+      },
+      "MLH2": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "MVH1": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "ADH2": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH3": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "EBH0": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH4": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "EBH1": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "VVH5": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "EBH2": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V"
+      },
+      "external_ports": {
+        "out0_V_0": "out0_V_V_0"
+      }
+    }
+  },
+  "interfaces": {
+    "clk": [
+      "ap_clk"
+    ],
+    "rst": [
+      "ap_rst_n"
+    ],
+    "s_axis": [
+      [
+        "s_axis_0",
+        16
+      ]
+    ],
+    "m_axis": [
+      [
+        "m_axis_0",
+        32
+      ]
+    ],
+    "aximm": [],
+    "axilite": [
+      "s_axilite_0",
+      "s_axilite_1",
+      "s_axilite_2",
+      "s_axilite_3",
+      "s_axilite_4",
+      "s_axilite_5",
+      "s_axilite_6",
+      "s_axilite_7",
+      "s_axilite_8",
+      "s_axilite_9",
+      "s_axilite_10",
+      "s_axilite_11",
+      "s_axilite_12",
+      "s_axilite_13",
+      "s_axilite_14",
+      "s_axilite_15",
+      "s_axilite_16",
+      "s_axilite_17",
+      "s_axilite_18",
+      "s_axilite_19",
+      "s_axilite_20",
+      "s_axilite_21",
+      "s_axilite_22",
+      "s_axilite_23",
+      "s_axilite_24"
+    ],
+    "ap_none": []
+  },
+  "nodes": [
+    {
+      "name": "FFR0",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVH0",
+      "op_type": "MVAU_hls"
+    },
+    {
+      "name": "FFR1",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR0",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR0",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "PDR0",
+      "op_type": "FMPadding_rtl"
+    },
+    {
+      "name": "DWR1",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR2",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR0",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR3",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH0",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR4",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR2",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR1",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DPH0",
+      "op_type": "DuplicateStreams_hls"
+    },
+    {
+      "name": "DWR3",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "MLH0",
+      "op_type": "ElementwiseMul_hls"
+    },
+    {
+      "name": "FFR5",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "FFR6",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR0",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR7",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR4",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR2",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DWR5",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR8",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR1",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR9",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR6",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR3",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "ADH0",
+      "op_type": "ElementwiseAdd_hls"
+    },
+    {
+      "name": "RQR4",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "PDR1",
+      "op_type": "FMPadding_rtl"
+    },
+    {
+      "name": "DWR7",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR10",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR1",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR11",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH1",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR12",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR8",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR5",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DPH1",
+      "op_type": "DuplicateStreams_hls"
+    },
+    {
+      "name": "DWR9",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "MLH1",
+      "op_type": "ElementwiseMul_hls"
+    },
+    {
+      "name": "FFR13",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "FFR14",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR2",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR15",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR10",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR6",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DWR11",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR16",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR3",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR17",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR12",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR7",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "ADH1",
+      "op_type": "ElementwiseAdd_hls"
+    },
+    {
+      "name": "RQR8",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "PDR2",
+      "op_type": "FMPadding_rtl"
+    },
+    {
+      "name": "DWR13",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR18",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR2",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR19",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH2",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR20",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR14",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR9",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DPH2",
+      "op_type": "DuplicateStreams_hls"
+    },
+    {
+      "name": "DWR15",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "MLH2",
+      "op_type": "ElementwiseMul_hls"
+    },
+    {
+      "name": "FFR21",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "FFR22",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR4",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR23",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "DWR16",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "RQR10",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "DWR17",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "FFR24",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVH1",
+      "op_type": "MVAU_hls"
+    },
+    {
+      "name": "FFR25",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "RQR11",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "ADH2",
+      "op_type": "ElementwiseAdd_hls"
+    },
+    {
+      "name": "RQR12",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "FFR26",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "MVR5",
+      "op_type": "MVAU_rtl"
+    },
+    {
+      "name": "FFR27",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "RQR13",
+      "op_type": "IntRequant_rtl"
+    },
+    {
+      "name": "FFR28",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR3",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR29",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH3",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR30",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "EBH0",
+      "op_type": "ElementwiseBitShift_hls"
+    },
+    {
+      "name": "FFR31",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR4",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR32",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH4",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR33",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "EBH1",
+      "op_type": "ElementwiseBitShift_hls"
+    },
+    {
+      "name": "FFR34",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "SWR5",
+      "op_type": "ConvolutionInputGenerator_rtl"
+    },
+    {
+      "name": "FFR35",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "VVH5",
+      "op_type": "VVAU_hls"
+    },
+    {
+      "name": "FFR36",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "EBH2",
+      "op_type": "ElementwiseBitShift_hls"
+    }
+  ],
+  "first_node": "FFR0",
+  "last_node": "EBH2",
+  "structure": null,
+  "external_weights": [],
+  "axilite": [
+    {
+      "port": "s_axilite_0",
+      "node": "MVH0",
+      "op_type": "MVAU_hls",
+      "address_bits": 9
+    },
+    {
+      "port": "s_axilite_1",
+      "node": "RQR0",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_2",
+      "node": "VVH0",
+      "op_type": "VVAU_hls",
+      "address_bits": 8
+    },
+    {
+      "port": "s_axilite_3",
+      "node": "RQR1",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_4",
+      "node": "MVR0",
+      "op_type": "MVAU_rtl",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_5",
+      "node": "RQR2",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_6",
+      "node": "MVR1",
+      "op_type": "MVAU_rtl",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_7",
+      "node": "RQR3",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_8",
+      "node": "RQR4",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_9",
+      "node": "VVH1",
+      "op_type": "VVAU_hls",
+      "address_bits": 8
+    },
+    {
+      "port": "s_axilite_10",
+      "node": "RQR5",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_11",
+      "node": "MVR2",
+      "op_type": "MVAU_rtl",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_12",
+      "node": "RQR6",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_13",
+      "node": "MVR3",
+      "op_type": "MVAU_rtl",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_14",
+      "node": "RQR7",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_15",
+      "node": "RQR8",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_16",
+      "node": "VVH2",
+      "op_type": "VVAU_hls",
+      "address_bits": 8
+    },
+    {
+      "port": "s_axilite_17",
+      "node": "RQR9",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_18",
+      "node": "MVR4",
+      "op_type": "MVAU_rtl",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_19",
+      "node": "RQR10",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_20",
+      "node": "MVH1",
+      "op_type": "MVAU_hls",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_21",
+      "node": "RQR11",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_22",
+      "node": "RQR12",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    },
+    {
+      "port": "s_axilite_23",
+      "node": "MVR5",
+      "op_type": "MVAU_rtl",
+      "address_bits": 7
+    },
+    {
+      "port": "s_axilite_24",
+      "node": "RQR13",
+      "op_type": "IntRequant_rtl",
+      "address_bits": 13
+    }
+  ],
+  "runtime_weights": [
+    {
+      "port": "s_axilite_0",
+      "node": "MVH0",
+      "op_type": "MVAU_hls",
+      "mac": "MVAU",
+      "PE": 8,
+      "SIMD": 1,
+      "MW": 12,
+      "MH": 32,
+      "depth": 48,
+      "line_bits": 64,
+      "memory_bits": 64,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT12",
+      "accumulator_dtype": "INT22",
+      "memblock": "build/code_gen_ipgen_MVH0_dmef9gfa/memblock.dat",
+      "memblock_sha256": "575009960b9c4c718440c29d6371e47d10f802e7298d0880c594cf26f9555da2",
+      "words_per_line": 2,
+      "address_bits": 9,
+      "window_bytes": 512
+    },
+    {
+      "port": "s_axilite_2",
+      "node": "VVH0",
+      "op_type": "VVAU_hls",
+      "mac": "VVAU",
+      "PE": 4,
+      "SIMD": 1,
+      "channels": 32,
+      "kernel": [
+        7,
+        1
+      ],
+      "depth": 56,
+      "line_bits": 32,
+      "memory_bits": 32,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT18",
+      "memblock": "build/code_gen_ipgen_VVH0_iazebteg/memblock.dat",
+      "memblock_sha256": "bb29b9a6b96579ecb92e9cd344851b9ad59775ca9482b447f9610a99c235f8cf",
+      "words_per_line": 1,
+      "address_bits": 8,
+      "window_bytes": 256
+    },
+    {
+      "port": "s_axilite_4",
+      "node": "MVR0",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 2,
+      "SIMD": 16,
+      "MW": 32,
+      "MH": 64,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT19",
+      "memblock": "build/code_gen_ipgen_MVR0_v9_tmklq/memblock.dat",
+      "memblock_sha256": "07d04a47bfa50fd00425df7e8060cb64db6e57af9d7e51e1f77eb2bf33231459",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_6",
+      "node": "MVR1",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 2,
+      "SIMD": 16,
+      "MW": 64,
+      "MH": 32,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT20",
+      "memblock": "build/code_gen_ipgen_MVR1_zgubnqix/memblock.dat",
+      "memblock_sha256": "c46fc030ffe64311abc9f6a2860010b17f27346c063859c6af0667dcc37d3955",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_9",
+      "node": "VVH1",
+      "op_type": "VVAU_hls",
+      "mac": "VVAU",
+      "PE": 4,
+      "SIMD": 1,
+      "channels": 32,
+      "kernel": [
+        7,
+        1
+      ],
+      "depth": 56,
+      "line_bits": 32,
+      "memory_bits": 32,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT18",
+      "memblock": "build/code_gen_ipgen_VVH1_i_n9pdxe/memblock.dat",
+      "memblock_sha256": "942eda07f780c626666dc900cf2146504c419968805fd4c414dbba85bdb9b0fc",
+      "words_per_line": 1,
+      "address_bits": 8,
+      "window_bytes": 256
+    },
+    {
+      "port": "s_axilite_11",
+      "node": "MVR2",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 2,
+      "SIMD": 16,
+      "MW": 32,
+      "MH": 64,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT19",
+      "memblock": "build/code_gen_ipgen_MVR2_kex54rrl/memblock.dat",
+      "memblock_sha256": "4fdf64cd351f885612c1c498a0296711d2f8e652e16eb7961cfdf632af64f34b",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_13",
+      "node": "MVR3",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 2,
+      "SIMD": 16,
+      "MW": 64,
+      "MH": 32,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT20",
+      "memblock": "build/code_gen_ipgen_MVR3__0lr9jm3/memblock.dat",
+      "memblock_sha256": "7dce6efd8ece0e57ec2e1e2bce057d89ababd542fa02ddadf3d0f3d28f7acd55",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_16",
+      "node": "VVH2",
+      "op_type": "VVAU_hls",
+      "mac": "VVAU",
+      "PE": 4,
+      "SIMD": 1,
+      "channels": 32,
+      "kernel": [
+        7,
+        1
+      ],
+      "depth": 56,
+      "line_bits": 32,
+      "memory_bits": 32,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT17",
+      "memblock": "build/code_gen_ipgen_VVH2_murohdv5/memblock.dat",
+      "memblock_sha256": "7e73b8477a1cd4f1f0cb85a400e72a4aeb6b318def2035af9bd2c78e98a57e67",
+      "words_per_line": 1,
+      "address_bits": 8,
+      "window_bytes": 256
+    },
+    {
+      "port": "s_axilite_18",
+      "node": "MVR4",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 2,
+      "SIMD": 16,
+      "MW": 32,
+      "MH": 64,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT19",
+      "memblock": "build/code_gen_ipgen_MVR4_ep_1lrbk/memblock.dat",
+      "memblock_sha256": "ec81641aba658c6078fbf6287d3476ed7770c00e58ae8616abffec1554e72af0",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_20",
+      "node": "MVH1",
+      "op_type": "MVAU_hls",
+      "mac": "MVAU",
+      "PE": 1,
+      "SIMD": 32,
+      "MW": 64,
+      "MH": 32,
+      "depth": 64,
+      "line_bits": 256,
+      "memory_bits": 256,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT20",
+      "memblock": "build/code_gen_ipgen_MVH1_dx4qs6ci/memblock.dat",
+      "memblock_sha256": "27f2002b5da1998902552cb5a079857e6b07d11840c232042d6d54a3d2467e7f",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    },
+    {
+      "port": "s_axilite_23",
+      "node": "MVR5",
+      "op_type": "MVAU_rtl",
+      "mac": "MVAU",
+      "PE": 1,
+      "SIMD": 1,
+      "MW": 32,
+      "MH": 1,
+      "depth": 32,
+      "line_bits": 8,
+      "memory_bits": 8,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT8",
+      "accumulator_dtype": "INT19",
+      "memblock": "build/code_gen_ipgen_MVR5_bjnidiji/memblock.dat",
+      "memblock_sha256": "ad8b583010c350ce0f81ec817939d20b7e33b7c88bc05870ed085530598833af",
+      "words_per_line": 1,
+      "address_bits": 7,
+      "window_bytes": 128
+    }
+  ],
+  "fifo_storage": {
+    "ramb36_budget": 30.0,
+    "candidates": 34,
+    "fifos": {
+      "FFR1": {
+        "name": "FFR1",
+        "width": 176,
+        "raw_width": 176,
+        "data_type": "INT22",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 186,
+        "shift_ff": 184,
+        "block_lut": 59,
+        "block_ff": 28,
+        "ramb18": 5,
+        "lut_saved": 127,
+        "ff_saved": 156,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR1_tbhdnlwb/FFR1.v",
+        "wrapper_generated_sha256": "71d879cc9f24f1d5bc9f5cec0cb31bb25239a574bb2737b1b97a1024a249339d",
+        "wrapper_sha256": "113bd5500abdb4ba6b94a26d83c3205365e311859c897b2ceda7692499443ce2"
+      },
+      "FFR4": {
+        "name": "FFR4",
+        "width": 72,
+        "raw_width": 72,
+        "data_type": "INT18",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 83,
+        "shift_ff": 80,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": 26,
+        "ff_saved": 52,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR4_zlb7xnd5/FFR4.v",
+        "wrapper_generated_sha256": "3f5af8cec336da07cafc7a42d3662033cb8498458cd952794b22681bfb15ff96",
+        "wrapper_sha256": "bbe93db664ffc1508b3956b4fb2ef2d29085d8414c93f953c4e2f4b0fbc79146"
+      },
+      "FFR5": {
+        "name": "FFR5",
+        "width": 128,
+        "raw_width": 128,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 138,
+        "shift_ff": 136,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 4,
+        "lut_saved": 80,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR5_rkd6_3zd/FFR5.v",
+        "wrapper_generated_sha256": "949cf770bff0b8ff94e3f79e8b8496a69f733cb4b190f0207485eb25f44ded13",
+        "wrapper_sha256": "a4e7ba5bdaba0e2a292de59a8dda8c449019458dc1c247b7354f238622603453"
+      },
+      "FFR7": {
+        "name": "FFR7",
+        "width": 40,
+        "raw_width": 38,
+        "data_type": "INT19",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 49,
+        "shift_ff": 46,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": -8,
+        "ff_saved": 18,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR7_f1murv1w/FFR7.v",
+        "wrapper_generated_sha256": "51f6d300c1afacf860d413547f7e2e72421d275253b2de0a7c56ad8db2886a11",
+        "wrapper_sha256": "360e0b3d7b3419e019a61270a9a5015b6677b7131da2e0f9f94744e69c8c15f6"
+      },
+      "FFR8": {
+        "name": "FFR8",
+        "width": 128,
+        "raw_width": 128,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 138,
+        "shift_ff": 136,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 4,
+        "lut_saved": 80,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR8_j2lh4w13/FFR8.v",
+        "wrapper_generated_sha256": "dbf3b5fbf82c11043bdbbbad0769a0d01970b6ef5ccd35d757383431757faf7e",
+        "wrapper_sha256": "2ad0f12b3ab0c42f35a9916084b91d0451f1af89ed5bed98cd9c213981fc05f4"
+      },
+      "FFR9": {
+        "name": "FFR9",
+        "width": 40,
+        "raw_width": 40,
+        "data_type": "INT20",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 51,
+        "shift_ff": 48,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": -6,
+        "ff_saved": 20,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR9_k24vuc7u/FFR9.v",
+        "wrapper_generated_sha256": "d7beb0858ce8aa573e66c200058e267f85341289f3fbdea845bd38debe67c86a",
+        "wrapper_sha256": "cb6ac8677c3fe7215bb407be37a9b5757b71c37bdba81014bb7c412c7748d4fc"
+      },
+      "FFR12": {
+        "name": "FFR12",
+        "width": 72,
+        "raw_width": 72,
+        "data_type": "INT18",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 83,
+        "shift_ff": 80,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": 26,
+        "ff_saved": 52,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR12_mu1mfbcx/FFR12.v",
+        "wrapper_generated_sha256": "6dee4a58652852bc7192375993cc383d5d02282291e41a583f7a6bcbead9642e",
+        "wrapper_sha256": "caa317afa6967d0754aa96b2b1feee047a08dc15563e562fb25bb3a5efbee0ae"
+      },
+      "FFR13": {
+        "name": "FFR13",
+        "width": 128,
+        "raw_width": 128,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 138,
+        "shift_ff": 136,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 4,
+        "lut_saved": 80,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR13_uf7sdvad/FFR13.v",
+        "wrapper_generated_sha256": "7a8c15ee76891288157ef228bf4da655394ef7499ca394069d9db87672c6bf66",
+        "wrapper_sha256": "3e5b4ad37184ad26b9a9023fc618884d29fe43846e489a7b49152123b5552a6b"
+      },
+      "FFR15": {
+        "name": "FFR15",
+        "width": 40,
+        "raw_width": 38,
+        "data_type": "INT19",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 49,
+        "shift_ff": 46,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": -8,
+        "ff_saved": 18,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR15_03y38kii/FFR15.v",
+        "wrapper_generated_sha256": "c15bb5e84cd5b48df7fe1d75a9c8b525e949c6500778fd8021f1a6f0eab8b96e",
+        "wrapper_sha256": "bbdb1c5977cb1dfd716415a0a96b50e395942a23d6ad6780e458b3e4fd1c591c"
+      },
+      "FFR16": {
+        "name": "FFR16",
+        "width": 128,
+        "raw_width": 128,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 138,
+        "shift_ff": 136,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 4,
+        "lut_saved": 80,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR16_w0nnxm0g/FFR16.v",
+        "wrapper_generated_sha256": "17654ec618b2927619c44b562d20dcaca74aebcf20dfae354628ca75ee6f0069",
+        "wrapper_sha256": "b1750f9339d4dbbe71311203490baad00f3ca44712a4ba702f1cf22ec729a8b3"
+      },
+      "FFR17": {
+        "name": "FFR17",
+        "width": 40,
+        "raw_width": 40,
+        "data_type": "INT20",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 51,
+        "shift_ff": 48,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": -6,
+        "ff_saved": 20,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR17_jbst2m7l/FFR17.v",
+        "wrapper_generated_sha256": "806f6665b0c753e95da20d2dbaa67bf670555cb78d753d8200471d80d8e9ce85",
+        "wrapper_sha256": "5b44a4a765a4b399ea49b63f58c9289e715694548cb2b5c682fabb661c41f68c"
+      },
+      "FFR20": {
+        "name": "FFR20",
+        "width": 72,
+        "raw_width": 68,
+        "data_type": "INT17",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 79,
+        "shift_ff": 76,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": 22,
+        "ff_saved": 48,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR20_syic70k_/FFR20.v",
+        "wrapper_generated_sha256": "784f1a77dee2cd87fbdd13ad888d6b34e1e082e54cf496de1c281360ba85d0e9",
+        "wrapper_sha256": "d4c59e426f6a5aa5183d13a47e54d842f49a8a19c634af7a017ab07b1ed46656"
+      },
+      "FFR21": {
+        "name": "FFR21",
+        "width": 128,
+        "raw_width": 128,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 134,
+        "shift_ff": 136,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 4,
+        "lut_saved": 76,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR21_hsahdorl/FFR21.v",
+        "wrapper_generated_sha256": "66f78ada4d8b805a6f5e6e72f25fd29771b53b308f1a202ea01c53cc30a12e20",
+        "wrapper_sha256": "c74b0e2cd4d4ab964f8e0e2eac3580a143d96265062b13b4d2306ee8fb1b0393"
+      },
+      "FFR23": {
+        "name": "FFR23",
+        "width": 40,
+        "raw_width": 38,
+        "data_type": "INT19",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 49,
+        "shift_ff": 46,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": -8,
+        "ff_saved": 18,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR23_jy5bc9xe/FFR23.v",
+        "wrapper_generated_sha256": "ba2786c1d7c890d6bef922bd8e4456cd63dd03651b4113e24d690b5d25115606",
+        "wrapper_sha256": "d006e8831f37c4c1d93dd1934f8eeca7678d2dbf2b8a900bd011fee3ad034b76"
+      },
+      "FFR24": {
+        "name": "FFR24",
+        "width": 256,
+        "raw_width": 256,
+        "data_type": "INT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 138,
+        "shift_ff": 136,
+        "block_lut": 60,
+        "block_ff": 28,
+        "ramb18": 8,
+        "lut_saved": 78,
+        "ff_saved": 108,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR24_wcceipzq/FFR24.v",
+        "wrapper_generated_sha256": "ec0505dfcc336682d86259e1e486ffdb98319b284952342bed50021293f2e664",
+        "wrapper_sha256": "6cec1df1e145aa014658bf8798fa110f90b52d593ef0450d5a2e73cf665dd247"
+      },
+      "FFR25": {
+        "name": "FFR25",
+        "width": 24,
+        "raw_width": 20,
+        "data_type": "INT20",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 51,
+        "shift_ff": 48,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 1,
+        "lut_saved": -6,
+        "ff_saved": 20,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_FFR25_oofy5jao/FFR25.v",
+        "wrapper_generated_sha256": "2ab00600769978645bf0617e9fd37567476193723536b1b2f3669e6e097e0bfe",
+        "wrapper_sha256": "75dc6fe898a3b4e2386ceeeb3b1100fc0d80b6167290dfac33c3fdd9483ff4fc"
+      }
+    },
+    "ramb36_estimate": 25.0,
+    "lut_saved_estimate": 633,
+    "ff_saved_estimate": 1070,
+    "utilization": {
+      "path": "<local>/utilization-hier.rpt",
+      "sha256": "a4e314bdf3635ff16aee6ca83629db020a14bfb65746e66883d3d6fd6154f60f",
+      "fifo_cells": 34
+    },
+    "basis": "block RAM tiles and block RAM FIFO LUTs: FINN fifo.sv cost model (StreamingFIFO.get_fifo_cost); flip-flops: fifo.sv registers; shift-register FIFOs: the utilization report where given; estimates, not results of this stitch"
+  },
+  "axilite_ranges": {
+    "s_axilite_0": 4096,
+    "s_axilite_1": 8192,
+    "s_axilite_2": 4096,
+    "s_axilite_3": 8192,
+    "s_axilite_4": 4096,
+    "s_axilite_5": 8192,
+    "s_axilite_6": 4096,
+    "s_axilite_7": 8192,
+    "s_axilite_8": 8192,
+    "s_axilite_9": 4096,
+    "s_axilite_10": 8192,
+    "s_axilite_11": 4096,
+    "s_axilite_12": 8192,
+    "s_axilite_13": 4096,
+    "s_axilite_14": 8192,
+    "s_axilite_15": 8192,
+    "s_axilite_16": 4096,
+    "s_axilite_17": 8192,
+    "s_axilite_18": 4096,
+    "s_axilite_19": 8192,
+    "s_axilite_20": 4096,
+    "s_axilite_21": 8192,
+    "s_axilite_22": 8192,
+    "s_axilite_23": 4096,
+    "s_axilite_24": 8192
+  },
+  "schema": "f-astra/directrtl-stitch/v1",
+  "directrtl_manifest_sha256": "515c97a833edd600de1ded11aab3e0a71e35cfaca071281aaa08afccbcb5fc7f",
+  "hls_record_sha256": "6df39062f901f34173c1d64c2998582c01f30b0c895fd742e4fb26857220be30",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 150,
+  "run_id": "5f1b251921d12c04a7aae5ba",
+  "wrapper": "build/vivado_stitch_proj_r4x3n0k7/finn_vivado_stitch_proj.gen/sources_1/bd/finn_design/hdl/finn_design_wrapper.v",
+  "directrtl_manifest": "<local>/directrtl.json"
+}

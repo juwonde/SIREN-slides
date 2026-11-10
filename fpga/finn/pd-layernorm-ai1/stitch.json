@@ -1,0 +1,86 @@
+{
+  "project": "build/vivado_stitch_proj_v3ql60sx",
+  "recipe": "build/vivado_stitch_proj_v3ql60sx/make_project.tcl",
+  "recipe_original_sha256": "beedfa65f422f2f203413ef3cd1c89ec7fc80858ae731dc3434d4eb60102501c",
+  "recipe_sha256": "1f85fe242b28c66151161250aaa95dcc611ac36c119e566ff03e69bf48532f59",
+  "block": "finn_pdln",
+  "recipe_adapters": {
+    "drive_paths_forward_slashes": true,
+    "finn_root_resolved": true,
+    "run_from_project_dir": true,
+    "hdl_files_with_forward_slash_paths": 0,
+    "vivado2020_2_without_ipi_drc": true,
+    "vitis2020_2_hls_stream_port_names": {}
+  },
+  "interfaces": {
+    "clk": [
+      "ap_clk"
+    ],
+    "rst": [
+      "ap_rst_n"
+    ],
+    "s_axis": [
+      [
+        "s_axis_0",
+        16
+      ],
+      [
+        "s_axis_1",
+        8
+      ]
+    ],
+    "m_axis": [
+      [
+        "m_axis_0",
+        16
+      ]
+    ],
+    "aximm": [],
+    "axilite": [
+      "s_axilite_0"
+    ],
+    "ap_none": []
+  },
+  "nodes": [
+    {
+      "name": "PLFFR0",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "PLFFR1",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "PLLNR0",
+      "op_type": "IntLayerNorm_rtl"
+    },
+    {
+      "name": "PLFFR2",
+      "op_type": "StreamingFIFO_rtl"
+    }
+  ],
+  "first_node": "PLFFR0",
+  "last_node": "PLFFR2",
+  "structure": null,
+  "external_weights": [],
+  "axilite": [
+    {
+      "port": "s_axilite_0",
+      "node": "PLLNR0",
+      "op_type": "IntLayerNorm_rtl",
+      "address_bits": 16
+    }
+  ],
+  "runtime_weights": [],
+  "axilite_ranges": {
+    "s_axilite_0": 65536
+  },
+  "schema": "f-astra/directrtl-stitch/v1",
+  "directrtl_manifest_sha256": "4025eaf9b7264bb3cf6651a15c233b71df2911b42f1fb654b6fbfd367bd1aa2d",
+  "hls_record_sha256": "f172b50b7569a34c42c3a536d7c83b332f6ffe6c01d9323917a9f14bb57bf080",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 150,
+  "run_id": "8340feff2ae5ad96ae86fc2b",
+  "wrapper": "build/vivado_stitch_proj_v3ql60sx/finn_vivado_stitch_proj.gen/sources_1/bd/finn_pdln/hdl/finn_pdln_wrapper.v",
+  "directrtl_manifest": "<local>/directrtl.json"
+}

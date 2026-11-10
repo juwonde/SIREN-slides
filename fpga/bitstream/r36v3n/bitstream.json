@@ -1,0 +1,20 @@
+{
+  "schema": "f-astra/directrtl-bitstream/v1",
+  "run_id": "cc332a835205d2b39f9dfe00",
+  "harness_record_sha256": "5d9932e466ae8639e235ae961e161140f9e7d500eb565cd6e58e7e544d192c96",
+  "routed_checkpoint_sha256": "1e1b066a7867cd53668cbd6906bd4bfef1f0992859b4629d025339f2b39e1d43",
+  "target_part": "xc7z030sbg485-1",
+  "compress": true,
+  "bit": {
+    "path": "accelerator.bit",
+    "sha256": "2f52c895612699c96066eba0b3028cc280024811586cdd9b3cdd8793eff02441",
+    "bytes": 4302520
+  },
+  "bin": {
+    "path": "accelerator.bin",
+    "sha256": "24eb70402bcefc6c0531a431e1d62201e86d9726892a3c109bfad38cd0b056b5",
+    "bytes": 4302396
+  },
+  "board_program_allowed": false,
+  "evidence_level_cap": "L6 until a board self-test passes"
+}

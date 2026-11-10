@@ -1,0 +1,365 @@
+{
+  "project": "build/vivado_stitch_proj_2uq4nuot",
+  "recipe": "build/vivado_stitch_proj_2uq4nuot/make_project.tcl",
+  "recipe_original_sha256": "c33d3ec89bc46a50de34b569657bd0f109220e5e4795cd0c1d488e724af930b6",
+  "recipe_sha256": "7e2a72cd1c832fe680762d702831a64900055f7a8e6b496a172e3a0df006a9cf",
+  "block": "finn_grutail",
+  "recipe_adapters": {
+    "drive_paths_forward_slashes": true,
+    "finn_root_resolved": true,
+    "run_from_project_dir": true,
+    "hdl_files_with_forward_slash_paths": 0,
+    "vivado2020_2_without_ipi_drc": true,
+    "vitis2020_2_hls_stream_port_names": {
+      "GTDPH0": {
+        "in0_V": "in0_V_V",
+        "out0_V": "out0_V_V",
+        "out1_V": "out1_V_V"
+      },
+      "GTMVH0": {
+        "in0_V": "in0_V_V",
+        "in1_V": "in1_V_V",
+        "out0_V": "out0_V_V"
+      }
+    }
+  },
+  "interfaces": {
+    "clk": [
+      "ap_clk"
+    ],
+    "rst": [
+      "ap_rst_n"
+    ],
+    "s_axis": [
+      [
+        "s_axis_0",
+        224
+      ]
+    ],
+    "m_axis": [
+      [
+        "m_axis_0",
+        64
+      ]
+    ],
+    "aximm": [],
+    "axilite": [
+      "s_axilite_0",
+      "s_axilite_1",
+      "s_axilite_2"
+    ],
+    "ap_none": []
+  },
+  "nodes": [
+    {
+      "name": "GTFFR0",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTISR0",
+      "op_type": "IntStreamSplit_rtl"
+    },
+    {
+      "name": "GTFFR1",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR2",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR3",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTIGR0",
+      "op_type": "IntGRUCell_rtl"
+    },
+    {
+      "name": "GTFFR4",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR0",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR5",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDPH0",
+      "op_type": "DuplicateStreams_hls"
+    },
+    {
+      "name": "GTFFR6",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTFFR7",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTMVH0",
+      "op_type": "MVAU_hls"
+    },
+    {
+      "name": "GTFFR8",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR1",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR9",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTTHR0",
+      "op_type": "Thresholding_rtl"
+    },
+    {
+      "name": "GTFFR10",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTDWR2",
+      "op_type": "StreamingDataWidthConverter_rtl"
+    },
+    {
+      "name": "GTFFR11",
+      "op_type": "StreamingFIFO_rtl"
+    },
+    {
+      "name": "GTISR1",
+      "op_type": "IntStreamConcat_rtl"
+    },
+    {
+      "name": "GTFFR12",
+      "op_type": "StreamingFIFO_rtl"
+    }
+  ],
+  "first_node": "GTFFR0",
+  "last_node": "GTFFR12",
+  "structure": null,
+  "external_weights": [],
+  "axilite": [
+    {
+      "port": "s_axilite_0",
+      "node": "GTIGR0",
+      "op_type": "IntGRUCell_rtl",
+      "address_bits": 16
+    },
+    {
+      "port": "s_axilite_1",
+      "node": "GTMVH0",
+      "op_type": "MVAU_hls",
+      "address_bits": 11
+    },
+    {
+      "port": "s_axilite_2",
+      "node": "GTTHR0",
+      "op_type": "Thresholding_rtl",
+      "address_bits": 15
+    }
+  ],
+  "runtime_weights": [
+    {
+      "port": "s_axilite_1",
+      "node": "GTMVH0",
+      "op_type": "MVAU_hls",
+      "mac": "MVAU",
+      "PE": 7,
+      "SIMD": 4,
+      "MW": 64,
+      "MH": 28,
+      "depth": 64,
+      "line_bits": 224,
+      "memory_bits": 224,
+      "weight_dtype": "INT8",
+      "input_dtype": "INT12",
+      "accumulator_dtype": "INT26",
+      "memblock": "build/code_gen_ipgen_GTMVH0_q51mscq9/memblock.dat",
+      "memblock_sha256": "72117f91e3c75b00d696dfdef960f1f44e9971b56ce2a3858540d97ac8a4e269",
+      "words_per_line": 8,
+      "address_bits": 11,
+      "window_bytes": 2048
+    }
+  ],
+  "fifo_storage": {
+    "ramb36_budget": 12.0,
+    "candidates": 13,
+    "fifos": {
+      "GTFFR0": {
+        "name": "GTFFR0",
+        "width": 224,
+        "raw_width": 224,
+        "data_type": "INT32",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 179,
+        "shift_ff": 176,
+        "block_lut": 59,
+        "block_ff": 28,
+        "ramb18": 7,
+        "lut_saved": 120,
+        "ff_saved": 148,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR0_ej1bvypy/GTFFR0.v",
+        "wrapper_generated_sha256": "515e6e73a86504af706321e650ee42ac87b648b954f72e68d132ecca2238783f",
+        "wrapper_sha256": "ffbf5cc50afcfcf997fe1139a992bd96485e23932c8fdbd98eb0abda4fcbd356"
+      },
+      "GTFFR1": {
+        "name": "GTFFR1",
+        "width": 80,
+        "raw_width": 78,
+        "data_type": "INT26",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 90,
+        "shift_ff": 86,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 3,
+        "lut_saved": 32,
+        "ff_saved": 58,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR1_0pfa6dls/GTFFR1.v",
+        "wrapper_generated_sha256": "f8126e48d4555d54d4d3f0029a17797cf7c6bc9453f86359c058c4f2d2f7475a",
+        "wrapper_sha256": "9fb599ad491d53cdf0094d0cafdaf9b8bf8ee8527a685ae8ddab8a2b7fa569ef"
+      },
+      "GTFFR2": {
+        "name": "GTFFR2",
+        "width": 80,
+        "raw_width": 78,
+        "data_type": "INT26",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 90,
+        "shift_ff": 86,
+        "block_lut": 58,
+        "block_ff": 28,
+        "ramb18": 3,
+        "lut_saved": 32,
+        "ff_saved": 58,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR2_4eoyn3nd/GTFFR2.v",
+        "wrapper_generated_sha256": "b1b8d79309b9c06a0fde2ecded3c7f05b100c11efb1b4bff3442d0e2428f44ab",
+        "wrapper_sha256": "6ad5462f7c23c4a005d08c29c20bec623034d6ba5d92233c514b8ecc600294f0"
+      },
+      "GTFFR6": {
+        "name": "GTFFR6",
+        "width": 48,
+        "raw_width": 48,
+        "data_type": "INT12",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 67,
+        "shift_ff": 56,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": 10,
+        "ff_saved": 28,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR6_lqsa1rp6/GTFFR6.v",
+        "wrapper_generated_sha256": "c36898570f40aa64f2102768c9fced83b05a06f1ede5d99d7f4a7cabe12706ac",
+        "wrapper_sha256": "0587d8e2ce683ca9713e7099fd63403fa90ea92814854f72204cc42a0d6ec451"
+      },
+      "GTFFR8": {
+        "name": "GTFFR8",
+        "width": 184,
+        "raw_width": 182,
+        "data_type": "INT26",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 190,
+        "shift_ff": 190,
+        "block_lut": 59,
+        "block_ff": 28,
+        "ramb18": 6,
+        "lut_saved": 131,
+        "ff_saved": 162,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR8_mrscxsla/GTFFR8.v",
+        "wrapper_generated_sha256": "9228f60eea328f63eb4a496dd4386dbe77c09f3c07c5d016fdbf9af941a0b0b5",
+        "wrapper_sha256": "b07dc61fdc1b0852385f805999b6b5f9e7f5abc2408406fb339ebdd6989ad5bd"
+      },
+      "GTFFR11": {
+        "name": "GTFFR11",
+        "width": 32,
+        "raw_width": 32,
+        "data_type": "UINT8",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 60,
+        "shift_ff": 40,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 1,
+        "lut_saved": 3,
+        "ff_saved": 12,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR11_85hjybp4/GTFFR11.v",
+        "wrapper_generated_sha256": "23a36479b184cc150b7cb099998764df748f9f0e3b665711710aca9d26082c59",
+        "wrapper_sha256": "e7a75885a9592f2b329bd1acc2c65e487ceb3c411e93517db46bdefda270f0c6"
+      },
+      "GTFFR12": {
+        "name": "GTFFR12",
+        "width": 64,
+        "raw_width": 64,
+        "data_type": "INT16",
+        "depth": 32,
+        "ram_style": "auto",
+        "shift_basis": "synthesis",
+        "shift_lut": 76,
+        "shift_ff": 72,
+        "block_lut": 57,
+        "block_ff": 28,
+        "ramb18": 2,
+        "lut_saved": 19,
+        "ff_saved": 44,
+        "depth_built": 34,
+        "ram_style_built": "block",
+        "wrapper": "build/code_gen_ipgen_GTFFR12_8fxo81_0/GTFFR12.v",
+        "wrapper_generated_sha256": "76849e8636dbfc04086ab4d3af79a51a07e242dd870e9f8961138054ee2833c9",
+        "wrapper_sha256": "8cfd0b86d7f923e20f6d58ff565965a3b10af8aafdf1c0c7657cce0f69fcddfb"
+      }
+    },
+    "ramb36_estimate": 12.0,
+    "lut_saved_estimate": 347,
+    "ff_saved_estimate": 510,
+    "utilization": {
+      "path": "<local>/utilization-hier.rpt",
+      "sha256": "d3e1b0ab5594c2d18a6d8151032f8a92dde08ee8e4c29c7cb5fd2b9195913050",
+      "fifo_cells": 13
+    },
+    "basis": "block RAM tiles and block RAM FIFO LUTs: FINN fifo.sv cost model (StreamingFIFO.get_fifo_cost); flip-flops: fifo.sv registers; shift-register FIFOs: the utilization report where given; estimates, not results of this stitch"
+  },
+  "axilite_ranges": {
+    "s_axilite_0": 65536,
+    "s_axilite_1": 4096,
+    "s_axilite_2": 32768
+  },
+  "schema": "f-astra/directrtl-stitch/v1",
+  "directrtl_manifest_sha256": "5c0b72d173bbfc87e835b51a094dbe4a90957271b7f58ae07802d2e30ff54fc3",
+  "hls_record_sha256": "04e1d4a657a8c341746c56c222486e132134bd20a9b5348adf0406a47da1794f",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 125,
+  "run_id": "80378d3fa86ee9ec8c299cda",
+  "wrapper": "build/vivado_stitch_proj_2uq4nuot/finn_vivado_stitch_proj.gen/sources_1/bd/finn_grutail/hdl/finn_grutail_wrapper.v",
+  "directrtl_manifest": "<local>/directrtl.json"
+}

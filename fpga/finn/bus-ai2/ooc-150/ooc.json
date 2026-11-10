@@ -1,0 +1,18 @@
+{
+  "schema": "f-astra/directrtl-ooc/v1",
+  "stitch_record_sha256": "3401bcc6e48acb231fc557fe321d7cfb73daad8a212d933555a16cdca117c9f5",
+  "target_part": "xc7z030sbg485-1",
+  "clock_mhz": 150.0,
+  "tool_version": "2020.2",
+  "run_id": "b86f411d3c51d47119c0f540",
+  "attempts": 1,
+  "wns_ns": 0.364,
+  "whs_ns": 0.037,
+  "lut": 19042.0,
+  "ff": 29377.0,
+  "bram36": 54.5,
+  "dsp": 81.0,
+  "vectorless_power_w": 1.145,
+  "power_confidence": "Medium",
+  "basis": "out-of-context synthesis, placement and route (Vivado); power is the vectorless estimate"
+}
