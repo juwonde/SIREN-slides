@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-11-10",
+  "as_of": "2026-11-12",
   "source": "https://www.figma.com/deck/TYaGwNEZ2GewJvkSowhTiQ/SIREN-%C2%B7-KSSS-2026-Fall-%C2%B7-Slides?node-id=5-2&t=cUETSI8kuK4kP7eD-1",
   "main_slides": 24,
-  "appendix_slides": 18,
+  "appendix_slides": 20,
   "speaker_notes_included": false,
   "hidden_slides_included": false,
   "slides": [
@@ -14,8 +14,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/01.png",
-      "sha256": "5527379ef73c5468b187c3583fb8bbfa751f573833861574b81b66586a2ccbb7",
-      "bytes": 408004
+      "sha256": "18e7571dd467d52ddd7dfe3dfc887cf4cbe825b27e3e0d66b16e7bce401823d6",
+      "bytes": 399554
     },
     {
       "id": "534:12",
@@ -64,13 +64,13 @@
     {
       "id": "206:19",
       "n": 6,
-      "title": "SIREN’s Budget",
+      "title": "SIREN’s Budget & Requirements",
       "section": "main",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/06.png",
-      "sha256": "397ab1311702447b202918ebc90e9bc46b81c5fd77f4dd7bec562b7b774f4d40",
-      "bytes": 180106
+      "sha256": "5677b6cdb5a2a0f82276fdd1fb46f38d56079d6af7b217cfca8e16327f3e0022",
+      "bytes": 180561
     },
     {
       "id": "365:6",
@@ -102,8 +102,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/09.png",
-      "sha256": "3721a02cc8ac4844363d2c1f5c30100e9857f5e410ebbb49b8bcad86010b229f",
-      "bytes": 93872
+      "sha256": "cf80a4420e58be0c340b99c3169bf791bacb7155ea9360de21f11b75a8e78db5",
+      "bytes": 94476
     },
     {
       "id": "7:13",
@@ -124,8 +124,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/11.png",
-      "sha256": "00f078302aac3044d0bc161a56f0d36244d1e981b93ed5709aa6a808396e2c9b",
-      "bytes": 313871
+      "sha256": "9c973101d66bb31668f254c1545345b8cefdcc1239061ecacb03b3c4c4e8ba2f",
+      "bytes": 314126
     },
     {
       "id": "7:65",
@@ -185,13 +185,13 @@
     {
       "id": "365:518",
       "n": 17,
-      "title": "Three AIs on one FPGA SoC",
+      "title": "FPGA implementation",
       "section": "main",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/17.png",
-      "sha256": "65dfd54758d05c36283e074d6e7b3b2c50a5d944daec5d5d30865b836f5fcf9c",
-      "bytes": 188966
+      "sha256": "5aae6369685310d78a74d673aa441a68660183bf84e691da758c5aea6d3213d0",
+      "bytes": 235824
     },
     {
       "id": "602:16",
@@ -212,8 +212,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/19.png",
-      "sha256": "0c8fb6ca9961cd45bf32c6b93059e577200586d864c07e3858fa31918c47b3e5",
-      "bytes": 345943
+      "sha256": "b6f79469648f9a24d63d7f5ad96771c2dd2c80dd41f4ecf6bfc6fdfff4f75fcf",
+      "bytes": 338642
     },
     {
       "id": "245:4",
@@ -223,8 +223,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/20.png",
-      "sha256": "8bf9583c6a4f0853b782069283d1c78720b4dac9233d03686f03b97b089ad6c3",
-      "bytes": 226531
+      "sha256": "249701353b52e58ce3f81650d64d873a0c8d4d45c88706076673f5b34197091f",
+      "bytes": 223675
     },
     {
       "id": "13:179",
@@ -256,8 +256,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/23.png",
-      "sha256": "954bebf1e14765e8ec7052dea528e52d1db1d9603eb338122d9f02d3cf0c6c6f",
-      "bytes": 109068
+      "sha256": "e7d88a23ad68c3cde3e014cb7701c38f90b1770846446e2608a26a9a13ac8f80",
+      "bytes": 166137
     },
     {
       "id": "14:101",
@@ -267,8 +267,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/24.png",
-      "sha256": "880231ef5c54b7ed1347faa87220b1a001af608e22bd9c4d67a3cb483cc3dc43",
-      "bytes": 231222
+      "sha256": "50fd69558014dfd163bfeb2d0de185c1dfecf37c65f017814b087367eb7c5c2e",
+      "bytes": 180810
     },
     {
       "id": "349:24",
@@ -289,8 +289,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/26.png",
-      "sha256": "353af89b632ec49e16c35a79384e34e1ac6d8392f93e7fbf19bb342ecc090b78",
-      "bytes": 203279
+      "sha256": "9930bd63fd5970546ab5475e6fbafddcd8d8dd44e48c206fe08c8967347d3039",
+      "bytes": 201355
     },
     {
       "id": "334:20592",
@@ -333,8 +333,8 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/30.png",
-      "sha256": "8052c4123c9920233685cb7efbc20c5e7dddfc64ed7c7bc9934708a44e63c674",
-      "bytes": 210803
+      "sha256": "0dfed1657b596efd0c6b1907408fc8b4b71fed0956476b34a52bb0db600f35ba",
+      "bytes": 210830
     },
     {
       "id": "117:123",
@@ -344,129 +344,151 @@
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/31.png",
-      "sha256": "a963a90bd582dc863b07ad906a30830fd23d5d638305fe2c71fef11aff882519",
-      "bytes": 201694
+      "sha256": "851501aa6dde63d1dcf51e740d21e7c6d57809e5b8bd7c87d03d13769ffa6e24",
+      "bytes": 201349
     },
     {
-      "id": "14:197",
+      "id": "810:22",
       "n": 32,
-      "title": "How is correctness verified?",
+      "title": "AI #1 on the FPGA: ModernTCN layer by layer",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/32.png",
-      "sha256": "98b075a910335c11c7a15eb2e0fd54457a28d4f5775ef1e112250d4794606c39",
-      "bytes": 155785
+      "sha256": "7ce2574c95c978785a924c442dff47b765e8806328d8f9e191f0c101c471d789",
+      "bytes": 236880
     },
     {
-      "id": "14:233",
+      "id": "810:684",
       "n": 33,
-      "title": "Resources, timing and weight update",
+      "title": "AI #3 on the FPGA: one GRU step",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/33.png",
-      "sha256": "314f3c8119d26ff4c42d0419529eb14a4d1f4a4391de5d30b18362f48d1545d9",
-      "bytes": 175045
+      "sha256": "f6d901ac0bbe9b1b98e2e66e3b9a5be23648d7107292fd65a4993a6dcaa3b384",
+      "bytes": 234469
     },
     {
-      "id": "13:100",
+      "id": "14:197",
       "n": 34,
-      "title": "Performance trade-off per model",
+      "title": "How is correctness verified?",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/34.png",
-      "sha256": "3cbe8a0de4bd4ae412883ab3a7742b0263de3e03f343fd0667b3287cad762ff6",
-      "bytes": 243493
+      "sha256": "f0e9a6581ebcf87e1e6e856a3a64d4cd83706d2224112f8c2d470fadc8ff15f8",
+      "bytes": 155692
     },
     {
-      "id": "411:931",
+      "id": "14:233",
       "n": 35,
-      "title": "Two modes versus one orbit mode",
+      "title": "Resources, timing and weight update",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/35.png",
-      "sha256": "0c290fa607776b4fa49714fe469a5f594566ee422b7b7cb155db4ea82f40e328",
-      "bytes": 230229
+      "sha256": "2f6a57cb9bd12154a91bc4ccde9d5bab5d165f2e1c8e1c8661b5585794644521",
+      "bytes": 180290
     },
     {
-      "id": "13:124",
+      "id": "13:100",
       "n": 36,
-      "title": "Fault management as implemented",
+      "title": "Performance trade-off per model",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/36.png",
-      "sha256": "ba442f98b0e57835deb5a892dac073691f4ab12ee4b7fb94dc438f0619377cca",
-      "bytes": 242989
+      "sha256": "4648af4b35109cffd18a410bde61677612fa707ec462853f6836285f1f5e3c5c",
+      "bytes": 242948
     },
     {
-      "id": "54:4",
+      "id": "411:931",
       "n": 37,
-      "title": "Fault management items (1/2): hardware",
+      "title": "Two modes versus one orbit mode",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/37.png",
-      "sha256": "920449b23d26426898772ed72b1bf0e4ce9e685146fe95d99a7e55445d4d6060",
-      "bytes": 249522
+      "sha256": "1a007ddb662e9dac4e4c793764706eb52e36ae794aaad9cd2f121f96596b418c",
+      "bytes": 228257
     },
     {
-      "id": "54:82",
+      "id": "13:124",
       "n": 38,
-      "title": "Fault management items (2/2): service and system",
+      "title": "Fault management as implemented",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/38.png",
-      "sha256": "49fd4d806faf62239a70dd2e0c0fec222ce4fa2696af46288d2349c10edb88ec",
-      "bytes": 227001
+      "sha256": "cd32835c19d65ccb4a2ae4eb3fec4b5c3f1cb88dbedcdc295489133f9c3677f9",
+      "bytes": 239312
     },
     {
-      "id": "14:2",
+      "id": "54:4",
       "n": 39,
-      "title": "Digital Twin data and retraining",
+      "title": "Fault management items (1/2): hardware",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/39.png",
-      "sha256": "5b908283818291e5d6cfaab9d56f1e474fc035cf3cab9da7e73f5354c43962f7",
-      "bytes": 224556
+      "sha256": "21bf07235487dc31f27a9ddcbb59f0f36aa38175aae484ca2146f05c6af6dda5",
+      "bytes": 248745
     },
     {
-      "id": "14:291",
+      "id": "54:82",
       "n": 40,
-      "title": "Abbreviations",
+      "title": "Fault management items (2/2): service and system",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/40.png",
-      "sha256": "3869697f94132c5e36bfdbe79c9cd245cd5eec7bc617c1df832329304a78ed2f",
-      "bytes": 176788
+      "sha256": "cdb5e3a1701568a4c094e3632ea470b4f14a770913eaa6380036bf986a2d5b17",
+      "bytes": 218199
     },
     {
-      "id": "580:12",
+      "id": "14:2",
       "n": 41,
-      "title": "COMP on POES/MetOp data",
+      "title": "Digital Twin data and retraining",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/41.png",
-      "sha256": "34165666965e8d00a4f984d18a8f76e5b4d68aab67ed9c2b05c0e7553454a54b",
-      "bytes": 226600
+      "sha256": "e281d1aa87813d7134e77323f75efba8bc1ce4bf5c8159a68928aafbaa65233e",
+      "bytes": 223956
     },
     {
-      "id": "580:483",
+      "id": "580:12",
       "n": 42,
-      "title": "COMP on POES by the AI #1 event criterion",
+      "title": "COMP on POES/MetOp data",
       "section": "appendix",
       "width": 1920,
       "height": 1080,
       "preview": "assets/slides/42.png",
-      "sha256": "256fb0b2431686202c799e1c39adfa1bbf0695b07bd3a58d3036248a2917fad5",
-      "bytes": 231321
+      "sha256": "bd142fb65ed11b360f2aab53cdbc29c2c24b52c634598be5a923b86d1c2c3f76",
+      "bytes": 227058
+    },
+    {
+      "id": "580:483",
+      "n": 43,
+      "title": "COMP on POES by the AI #1 event criterion",
+      "section": "appendix",
+      "width": 1920,
+      "height": 1080,
+      "preview": "assets/slides/43.png",
+      "sha256": "faa1993c4cf4f5285b4d82633f9080779c9844b68631584ec040e333a64cad7b",
+      "bytes": 230965
+    },
+    {
+      "id": "14:291",
+      "n": 44,
+      "title": "Abbreviations",
+      "section": "appendix",
+      "width": 1920,
+      "height": 1080,
+      "preview": "assets/slides/44.png",
+      "sha256": "a03bafd9aaf7c0eb3bd321bc7b7bcaf9d4db971c924ff7a4c356fe877f700399",
+      "bytes": 176591
     }
   ]
 }
